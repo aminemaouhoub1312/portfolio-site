@@ -122,3 +122,16 @@ document.querySelectorAll('.profile-photo, .project-image').forEach(img => {
 
 // 5. Automatically update the copyright year.
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// 6. Expand / collapse education details.
+document.querySelectorAll('.timeline-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const panelId = button.getAttribute('aria-controls');
+    const panel = document.getElementById(panelId);
+
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isOpen));
+    panel.hidden = isOpen;
+  });
+});
