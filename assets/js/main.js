@@ -4,7 +4,7 @@
 // ============================================================
 // AMINE MAOUHOUB — PREMIUM PORTFOLIO
 // Main JavaScript
-// Features: Theme, Navigation, Images, Education Accordion
+// Theme | Navigation | Images | Education Accordion
 // ============================================================
 
 
@@ -22,7 +22,7 @@ try {
     root.dataset.theme = savedTheme;
   }
 } catch (_) {
-  // Local storage may be disabled by the browser.
+  // Browser storage may be unavailable.
 }
 
 function syncThemeLabel() {
@@ -50,7 +50,9 @@ function syncThemeLabel() {
 syncThemeLabel();
 
 if (themeButton) {
+
   themeButton.addEventListener('click', () => {
+
     root.dataset.theme =
       root.dataset.theme === 'light' ? 'dark' : 'light';
 
@@ -60,16 +62,17 @@ if (themeButton) {
         root.dataset.theme
       );
     } catch (_) {
-      // Ignore browser storage errors.
+      // Ignore storage errors.
     }
 
     syncThemeLabel();
   });
+
 }
 
 
 // ============================================================
-// 2. MOBILE NAVIGATION MENU
+// 2. MOBILE NAVIGATION
 // ============================================================
 
 const menuToggle = document.getElementById('menu-toggle');
@@ -94,36 +97,31 @@ function setMenuOpen(open) {
 if (menuToggle && nav) {
 
   menuToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.contains('open');
-    setMenuOpen(!isOpen);
+    setMenuOpen(!nav.classList.contains('open'));
   });
 
-  // Close the menu after selecting a navigation link.
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       setMenuOpen(false);
     });
   });
 
-  // Close the menu when pressing Escape.
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') {
       setMenuOpen(false);
     }
   });
 
-  // Close the menu when clicking outside the navigation.
   document.addEventListener('click', event => {
-    const isMenuOpen = nav.classList.contains('open');
-
     if (
-      isMenuOpen &&
+      nav.classList.contains('open') &&
       !nav.contains(event.target) &&
       !menuToggle.contains(event.target)
     ) {
       setMenuOpen(false);
     }
   });
+
 }
 
 
@@ -140,8 +138,8 @@ const sections = [
 ];
 
 function setActiveNavigation(id) {
-  navLinks.forEach(link => {
 
+  navLinks.forEach(link => {
     const isActive =
       link.getAttribute('href') === `#${id}`;
 
@@ -153,6 +151,7 @@ function setActiveNavigation(id) {
       link.removeAttribute('aria-current');
     }
   });
+
 }
 
 if ('IntersectionObserver' in window) {
@@ -160,18 +159,16 @@ if ('IntersectionObserver' in window) {
   const activeObserver = new IntersectionObserver(
     entries => {
 
-      const visibleSections = entries
+      const visible = entries
         .filter(entry => entry.isIntersecting)
         .sort(
           (a, b) =>
             b.intersectionRatio - a.intersectionRatio
         );
 
-      if (!visibleSections.length) return;
+      if (!visible.length) return;
 
-      const activeId = visibleSections[0].target.id;
-
-      setActiveNavigation(activeId);
+      setActiveNavigation(visible[0].target.id);
 
     },
     {
@@ -183,22 +180,17 @@ if ('IntersectionObserver' in window) {
   sections.forEach(section => {
     activeObserver.observe(section);
   });
+
 }
 
 
 // ============================================================
-// 4. AUTOMATIC IMAGE LOADING
+// 4. OPTIONAL IMAGE LOADING
 // ============================================================
 
-// Images are displayed only when the files are available.
-// This keeps the portfolio visually clean before adding
-// profile photos, project screenshots, and other images.
-
-const optionalImages = document.querySelectorAll(
+document.querySelectorAll(
   '.profile-photo, .project-image'
-);
-
-optionalImages.forEach(img => {
+).forEach(img => {
 
   function showIfReady() {
     if (img.naturalWidth > 0) {
@@ -231,11 +223,9 @@ if (yearElement) {
 
 
 // ============================================================
-// 6. EDUCATION — EXPAND / COLLAPSE DETAILS
+// 6. EDUCATION ACCORDION
+// ECE PARIS + ENSA TANGIER
 // ============================================================
-
-// Opens detailed information about each education entry.
-// Supports ECE Paris and future education entries.
 
 const educationButtons = document.querySelectorAll(
   '.timeline-toggle'
@@ -248,45 +238,47 @@ educationButtons.forEach(button => {
 
   if (!panel) return;
 
+  let schoolName = 'Education';
+
+  if (panelId === 'ece-details') {
+    schoolName = 'ECE Paris';
+  }
+
+  if (panelId === 'ensa-details') {
+    schoolName = 'ENSA Tangier';
+  }
+
   function setEducationExpanded(expanded) {
 
-    // Update accessibility state.
     button.setAttribute(
       'aria-expanded',
       String(expanded)
     );
 
-    // Show or hide the education details.
-    panel.hidden = !expanded;
-
-    // Apply visual state to the button.
-    button.classList.toggle('is-open', expanded);
-
-    // Update the accessible button label.
-    const educationName =
-      panelId === 'ece-details'
-        ? 'ECE Paris'
-        : 'education';
-
     button.setAttribute(
       'aria-label',
       expanded
-        ? `Close ${educationName} details`
-        : `Open ${educationName} details`
+        ? `Close ${schoolName} details`
+        : `Open ${schoolName} details`
+    );
+
+    panel.hidden = !expanded;
+
+    button.classList.toggle(
+      'is-open',
+      expanded
     );
   }
 
-  // Initialize the accordion in its current state.
-  setEducationExpanded(
-    button.getAttribute('aria-expanded') === 'true'
-  );
+  // Initialize in the collapsed state.
+  setEducationExpanded(false);
 
   button.addEventListener('click', () => {
 
-    const isExpanded =
+    const expanded =
       button.getAttribute('aria-expanded') === 'true';
 
-    setEducationExpanded(!isExpanded);
+    setEducationExpanded(!expanded);
 
   });
 
@@ -294,8 +286,5 @@ educationButtons.forEach(button => {
 
 
 // ============================================================
-// 7. INITIALIZATION COMPLETE
+// END OF MAIN JAVASCRIPT
 // ============================================================
-
-// All portfolio interactions are ready.
-// Additional interactive sections can be added below.
