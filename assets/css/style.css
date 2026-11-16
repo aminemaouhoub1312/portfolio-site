@@ -364,3 +364,68 @@
 }
 
 
+
+/* =========================================
+   FIFTH PILLAR — ADVANCED AI SPECIALIZATION
+========================================= */
+
+.ensa-pillar--advanced {
+  grid-column: 1 / -1;
+  border-top: 2px solid var(--accent);
+  background: var(--panel);
+  padding: 27px;
+}
+
+.ensa-pillar--advanced h4 {
+  font-size: clamp(19px, 2vw, 24px);
+  margin: 12px 0 16px;
+}
+
+.ensa-pillar--advanced > p {
+  max-width: 900px;
+  line-height: 1.85;
+}
+
+.ensa-ai-specializations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.ensa-ai-specializations > div {
+  border: 1px solid var(--stroke);
+  background: var(--bg2);
+  padding: 19px;
+  min-width: 0;
+}
+
+.ensa-ai-specializations strong {
+  display: block;
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.ensa-ai-specializations p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .ensa-pillar--advanced {
+    grid-column: auto;
+    padding: 20px;
+  }
+
+  .ensa-ai-specializations {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
