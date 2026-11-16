@@ -429,3 +429,104 @@
 
 
 
+/* ==================================================
+   PILLAR 05 — FULL WIDTH RECTANGULAR LAYOUT
+   ================================================== */
+
+/* Expand the fifth pillar across both grid columns */
+
+.ensa-pillars > .ensa-pillar.ensa-pillar--advanced {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  box-sizing: border-box;
+
+  padding: 30px;
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+  background: var(--panel);
+}
+
+/* Main title */
+
+.ensa-pillar--advanced h4 {
+  font-size: clamp(20px, 2vw, 26px);
+  margin: 14px 0;
+  color: var(--text);
+}
+
+/* Description */
+
+.ensa-pillar--advanced > p {
+  max-width: 1050px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* Four AI specializations arranged in two columns */
+
+.ensa-pillar--advanced .ensa-ai-specializations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin-top: 26px;
+}
+
+/* Individual specialization cards */
+
+.ensa-ai-specializations > div {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--stroke);
+  background: var(--bg2);
+  transition: transform .25s, border-color .25s;
+}
+
+.ensa-ai-specializations > div:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+/* Specialization headings */
+
+.ensa-ai-specializations strong {
+  display: block;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+/* Specialization descriptions */
+
+.ensa-ai-specializations p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+/* Responsive layout */
+
+@media (max-width: 760px) {
+
+  .ensa-pillars > .ensa-pillar.ensa-pillar--advanced {
+    grid-column: 1 / -1;
+    padding: 20px;
+  }
+
+  .ensa-pillar--advanced .ensa-ai-specializations {
+    grid-template-columns: 1fr;
+  }
+
+  .ensa-ai-specializations > div {
+    padding: 17px;
+  }
+
+}
+
+
+
+
