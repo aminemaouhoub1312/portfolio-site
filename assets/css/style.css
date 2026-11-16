@@ -109,3 +109,258 @@
     min-height: 170px;
   }
 }
+
+
+/* ===================================================
+   AMINE MAOUHOUB — EDUCATION ENHANCEMENTS
+   ENSA Tangier / Engineering Curriculum
+   =================================================== */
+
+
+/* Keep collapsed education panels hidden */
+
+.timeline-panel[hidden] {
+  display: none !important;
+}
+
+
+/* ===================================================
+   ENSA SCHOOL IDENTITY
+   =================================================== */
+
+.ensa-identity {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+  text-align: center;
+  min-width: 0;
+}
+
+.ensa-identity .ensa-logo {
+  width: 100%;
+  max-height: 210px;
+  object-fit: contain;
+  aspect-ratio: 4 / 3;
+}
+
+.ensa-school-caption,
+.ensa-degree-caption,
+.ensa-pillar-id,
+.ensa-curriculum summary,
+.ensa-curriculum-grid a > span {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: .07em;
+}
+
+.ensa-school-caption {
+  color: var(--text);
+}
+
+.ensa-school-caption span {
+  color: var(--accent);
+}
+
+.ensa-degree-caption {
+  color: var(--accent2);
+}
+
+
+/* ===================================================
+   FOUR ENGINEERING PILLARS
+   =================================================== */
+
+.ensa-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 27px 0 22px;
+}
+
+.ensa-pillar {
+  background: var(--bg2);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+  padding: 19px 17px;
+  min-width: 0;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.ensa-pillar:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.ensa-pillar-id {
+  color: var(--accent2);
+  font-size: 9px;
+}
+
+.ensa-pillar h4 {
+  font-size: 15px;
+  line-height: 1.35;
+  margin: 11px 0 9px;
+  letter-spacing: -.025em;
+}
+
+.ensa-pillar p {
+  font-size: 12px;
+  line-height: 1.75;
+  margin: 0;
+  color: var(--muted);
+}
+
+
+/* ===================================================
+   ORIGINAL CURRICULUM ACCORDION
+   =================================================== */
+
+.ensa-curriculum {
+  border-top: 1px solid var(--stroke);
+  margin-top: 24px;
+  padding-top: 18px;
+}
+
+.ensa-curriculum summary {
+  cursor: pointer;
+  color: var(--accent);
+  padding: 10px 0;
+  list-style-position: inside;
+}
+
+.ensa-curriculum summary::marker {
+  color: var(--accent);
+}
+
+.ensa-curriculum summary span {
+  margin-left: 8px;
+}
+
+.education-detail-content .ensa-curriculum-intro {
+  margin: 14px 0 18px;
+}
+
+
+/* ===================================================
+   CURRICULUM IMAGE GALLERY
+   =================================================== */
+
+.ensa-curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ensa-curriculum-grid a {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 10px;
+
+  border: 1px solid var(--stroke);
+  background: var(--bg2);
+  padding: 8px;
+
+  transition:
+    border-color .2s,
+    transform .2s;
+}
+
+.ensa-curriculum-grid a:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.ensa-curriculum-grid img {
+  display: block;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  object-position: top;
+  background: #fff;
+}
+
+.ensa-curriculum-grid a > span {
+  font-size: 9px;
+  color: var(--accent2);
+}
+
+.ensa-curriculum-grid a > span > span {
+  color: var(--accent);
+}
+
+
+/* ===================================================
+   TABLET RESPONSIVENESS
+   =================================================== */
+
+@media (max-width: 1060px) {
+
+  .education-detail-card {
+    grid-template-columns: 200px minmax(0, 1fr);
+    margin-left: 30px;
+    margin-right: 0;
+  }
+
+}
+
+
+/* ===================================================
+   MOBILE RESPONSIVENESS
+   =================================================== */
+
+@media (max-width: 760px) {
+
+  .education-detail-card {
+    grid-template-columns: 1fr;
+    margin: 10px 0 0;
+  }
+
+  .ensa-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .ensa-curriculum-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ensa-curriculum-grid img {
+    height: auto;
+    max-height: 210px;
+    object-fit: contain;
+  }
+
+  .timeline-row-expandable {
+    grid-template-columns: 32px minmax(0, 1fr) 32px;
+    gap: 12px;
+  }
+
+  .timeline-row-expandable .timeline-index {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .timeline-row-expandable > div {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .timeline-row-expandable .timeline-date {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .timeline-row-expandable .timeline-toggle {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    justify-self: center;
+    align-self: center;
+  }
+
+}
+
+
