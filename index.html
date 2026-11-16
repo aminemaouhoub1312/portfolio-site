@@ -1,149 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr" data-theme="dark">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio Amine Maouhoub</title>
-<meta name="description" content="Amine Maouhoub, Cybersecurity Engineer. Cloud Security, DevSecOps and security automation.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0e">
+  <meta name="description" content="Portfolio d'Amine Maouhoub — ingénierie cybersécurité, cloud, DevSecOps et intelligence artificielle.">
+  <title>Amine Maouhoub — Cybersecurity Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
-<div class="shell">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <div class="site-grain" aria-hidden="true"></div>
 
-<aside class="rail">
-  <a class="mark" href="#about" aria-label="Home">AM<span>.</span></a>
-  <nav aria-label="Sections">
-    <a href="#about" class="on"><i>01</i>About</a>
-    <a href="#journey"><i>02</i>Journey</a>
-    <a href="#experience"><i>03</i>Experience</a>
-    <a href="#projects"><i>04</i>Projects</a>
-    <a href="#skills"><i>05</i>Skills</a>
-    <a href="#certifications"><i>06</i>Certifications</a>
-    <a href="#services"><i>07</i>Services</a>
-    <a href="#contact"><i>08</i>Contact</a>
-  </nav>
-  <div class="rail-foot">
-    <!-- CV file: assets/cv/Amine-Maouhoub-CV.pdf -->
-    <a class="btn" href="assets/cv/Amine-Maouhoub-CV.pdf">Download CV</a>
-    <button class="btn ghost" id="theme" type="button">Theme: auto</button>
-  </div>
-</aside>
+  <header class="topbar" id="haut">
+    <a class="brand" href="#accueil" aria-label="Amine Maouhoub — accueil">
+      <span class="brand-symbol">AM<span class="brand-dot">.</span></span>
+      <span class="brand-text"><strong>AMINE MAOUHOUB</strong><small>SECURITY × ENGINEERING</small></span>
+    </a>
 
-<main>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
 
-<section id="about" class="hero">
-  <div>
-    <div class="eyebrow">Open to opportunities · <span class="ph">City, Country</span></div>
-    <h1>Amine<br>Maouhoub<em>.</em></h1>
-    <div class="role">Cybersecurity Engineer</div>
-    <p>I secure cloud platforms and software delivery pipelines: Cloud Security, DevSecOps, security automation and modern architectures.</p>
-    <div class="cta">
-      <a class="btn" href="#projects">See projects</a>
-      <a class="btn ghost" href="https://github.com/aminemaouhoub1312">GitHub ↗</a>
-      <a class="btn ghost" href="https://www.linkedin.com/">LinkedIn ↗</a>
-    </div>
-  </div>
-  <!-- Photo file: assets/img/profile.jpg -->
-  <div class="portrait"><b>AM</b><small>profile.jpg</small><img src="assets/img/amine-profile.jpeg" alt="Amine Maouhoub" onerror="this.remove()"></div>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#accueil" class="nav-link active">Accueil</a>
+      <a href="#apropos" class="nav-link">À propos</a>
+      <a href="#parcours" class="nav-link">Parcours</a>
+      <a href="#experience" class="nav-link">Expériences</a>
+      <a href="#projets" class="nav-link">Projets</a>
+      <a href="#competences" class="nav-link">Compétences</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
 
-  <div class="pipe">
-    <div class="pipe-cap"><span>How I work: a security check at every stage</span><span>pipeline.yml</span></div>
-    <ol class="stages">
-      <li style="--n:0"><b>commit</b><span>code review</span></li>
-      <li style="--n:1"><b>sast</b><span>static analysis</span></li>
-      <li style="--n:2"><b>secrets</b><span>leak detection</span></li>
-      <li style="--n:3"><b>iac</b><span>Terraform checks</span></li>
-      <li style="--n:4"><b>deploy</b><span>signed images</span></li>
-      <li style="--n:5"><b>monitor</b><span>alerts and response</span></li>
-    </ol>
-  </div>
-  <div class="legend" style="grid-column:1/-1"><b></b> Dashed text = slot to fill with your content</div>
-</section>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Activer le thème clair" title="Changer de thème">
+      <svg class="theme-icon-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="theme-icon-moon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.6 14.5A9 9 0 0 1 9.5 3.4a9 9 0 1 0 11.1 11.1Z"/></svg>
+    </button>
+  </header>
 
-<section id="journey">
-  <div class="head"><i>02</i><h2>Journey</h2></div>
-  <div class="rows">
-    <div class="row"><time>20XX – 20XX</time><div class="body"><h3><span class="ph">Degree, major</span></h3><p class="muted"><span class="ph">School, city</span></p></div></div>
-  </div>
-</section>
+  <main id="contenu">
+    <section class="hero section" id="accueil" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner container">
+        <div class="hero-left">
+          <div class="eyebrow"><span class="live-dot"></span> PORTFOLIO PERSONNEL <span class="eyebrow-divider">/</span> 2026</div>
+          <p class="hero-intro">HELLO, I'M <span>AMINE MAOUHOUB</span></p>
+          <h1 id="hero-title">I BUILD <span class="hero-outline">SECURE</span><br> DIGITAL <span class="accent-word">FUTURES<span class="period">.</span></span></h1>
+          <p class="hero-lede">Cybersecurity Engineer <span class="middle-dot">·</span> Cloud Security <span class="middle-dot">·</span> DevSecOps <span class="middle-dot">·</span> AI &amp; Automation</p>
+          <p class="hero-desc">Un espace pour présenter mes réalisations, mon parcours et les technologies que j'explore. Le contenu sera enrichi progressivement.</p>
+          <div class="hero-actions">
+            <a href="#projets" class="button button-primary">Explorer mes projets <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/aminemaouhoub1312" target="_blank" rel="noopener noreferrer" class="button button-quiet">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-bottom"><span class="line-dash"></span> SCROLL TO EXPLORE <span class="scroll-icon" aria-hidden="true">↓</span></div>
+        </div>
+        <div class="hero-right" aria-label="Illustration abstraite de la cybersécurité">
+          <div class="visual-halo halo-one" aria-hidden="true"></div>
+          <div class="visual-halo halo-two" aria-hidden="true"></div>
+          <div class="visual-cross cross-one" aria-hidden="true">+</div>
+          <div class="visual-cross cross-two" aria-hidden="true">+</div>
+          <div class="profile-container">
+            <div class="profile-graphic" id="profile-graphic">
+              <div class="profile-monogram" id="profile-monogram" aria-hidden="true">AM<span>.</span></div>
+              <!-- Ajouter assets/img/profile.jpg pour afficher automatiquement sa photo ici -->
+              <img id="profile-image" class="profile-photo" src="assets/img/profile.jpg" alt="Portrait d'Amine Maouhoub" loading="eager">
+              <span class="profile-graphic-corner top-left"></span><span class="profile-graphic-corner top-right"></span><span class="profile-graphic-corner bottom-left"></span><span class="profile-graphic-corner bottom-right"></span>
+              <div class="profile-scan"></div>
+            </div>
+            <div class="floating-chip chip-top"><span class="chip-spark">✳</span> ALWAYS CURIOUS</div>
+            <div class="floating-chip chip-bottom"><span class="mini-bar"></span> BUILD. BREAK. SECURE.</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-footer container"><span>ENGINEERING / SECURITY / INNOVATION</span><span>FRANCE · GLOBAL MINDSET <span aria-hidden="true">↗</span></span></div>
+    </section>
 
-<section id="experience">
-  <div class="head"><i>03</i><h2>Experience</h2></div>
-  <div class="rows">
-    <div class="row"><time>20XX – now</time><div class="body">
-      <h3><span class="ph">Job title</span> · <span class="ph">Company</span></h3>
-      <p class="muted"><span class="ph">What you did and the result.</span></p>
-    </div></div>
-  </div>
-</section>
+    <div class="marquee" aria-label="Domaines d'intérêt"><div class="marquee-track" aria-hidden="true">CLOUD SECURITY <span>✳</span> DEVSECOPS <span>✳</span> THREAT INTELLIGENCE <span>✳</span> AI SECURITY <span>✳</span> SECURITY AUTOMATION <span>✳</span> CLOUD SECURITY <span>✳</span> DEVSECOPS <span>✳</span> THREAT INTELLIGENCE <span>✳</span> AI SECURITY <span>✳</span> SECURITY AUTOMATION <span>✳</span></div></div>
 
-<section id="projects">
-  <div class="head"><i>04</i><h2>Projects</h2></div>
-  <div class="projects">
-    <article class="proj">
-      <!-- Screenshot file: assets/img/projects/project-1.png -->
-      <div class="shot">project-1.png<img src="assets/img/projects/project-1.png" alt="" onerror="this.remove()"></div>
-      <h3><span class="ph">Project name</span></h3>
-      <p class="muted"><span class="ph">Short description.</span></p>
-      <div class="links"><a href="https://github.com/aminemaouhoub1312">Code ↗</a></div>
-    </article>
-    <article class="proj">
-      <!-- Screenshot file: assets/img/projects/project-2.png -->
-      <div class="shot">project-2.png<img src="assets/img/projects/project-2.png" alt="" onerror="this.remove()"></div>
-      <h3><span class="ph">Project name</span></h3>
-      <p class="muted"><span class="ph">Short description.</span></p>
-      <div class="links"><a href="https://github.com/aminemaouhoub1312">Code ↗</a></div>
-    </article>
-  </div>
-</section>
+    <section class="section content-section" id="apropos" aria-labelledby="about-title">
+      <div class="container two-col">
+        <div class="section-heading"><div class="section-index">01 <span>/</span> WHO I AM</div><h2 id="about-title">ABOUT <span class="text-muted">ME.</span></h2></div>
+        <div class="about-copy"><p class="lead">Ingénierie, cybersécurité et technologies émergentes : trois domaines qui façonnent ma curiosité.</p><p class="muted-copy">Cette section est volontairement courte pour le moment. Elle accueillera une présentation personnelle, mes objectifs professionnels et ce qui me distingue.</p><div class="inline-note"><span class="note-square"></span> TEXTE DE PRÉSENTATION À PERSONNALISER</div></div>
+      </div>
+    </section>
 
-<section id="skills">
-  <div class="head"><i>05</i><h2>Skills</h2></div>
-  <div class="skills">
-    <div class="skill"><h3>Cloud Security</h3><div class="tags"><span class="tag ex">add tools</span></div></div>
-    <div class="skill"><h3>DevSecOps</h3><div class="tags"><span class="tag ex">add tools</span></div></div>
-    <div class="skill"><h3>Automation</h3><div class="tags"><span class="tag ex">add tools</span></div></div>
-    <div class="skill"><h3>Architecture</h3><div class="tags"><span class="tag ex">add tools</span></div></div>
-  </div>
-</section>
+    <section class="section content-section section-contrast" id="parcours" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-heading heading-row"><div><div class="section-index">02 <span>/</span> EDUCATION</div><h2 id="education-title">MY <span class="text-muted">JOURNEY.</span></h2></div><p class="heading-aside">Formation académique<br>et apprentissage continu.</p></div>
+        <div class="timeline">
+          <article class="timeline-row"><span class="timeline-index">01</span><div><span class="small-label">FORMATION / À COMPLÉTER</span><h3>Intitulé du diplôme</h3><p>École ou université — ville</p></div><span class="timeline-date">ANNÉE — ANNÉE</span><span class="timeline-arrow" aria-hidden="true">↗</span></article>
+          <article class="timeline-row"><span class="timeline-index">02</span><div><span class="small-label">FORMATION / À COMPLÉTER</span><h3>Intitulé du diplôme précédent</h3><p>École ou université — ville</p></div><span class="timeline-date">ANNÉE — ANNÉE</span><span class="timeline-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
 
-<section id="certifications">
-  <div class="head"><i>06</i><h2>Certifications</h2></div>
-  <!-- Badge images: assets/img/certs/ -->
-  <div class="grid3">
-    <div class="cert"><span class="mono">20XX</span><h3><span class="ph">Certification name</span></h3><span class="muted"><span class="ph">Issuer</span></span></div>
-    <div class="cert"><span class="mono">20XX</span><h3><span class="ph">Certification name</span></h3><span class="muted"><span class="ph">Issuer</span></span></div>
-  </div>
-</section>
+    <section class="section content-section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading heading-row"><div><div class="section-index">03 <span>/</span> EXPERIENCE</div><h2 id="experience-title">WHERE I'VE <span class="text-muted">WORKED.</span></h2></div><p class="heading-aside">Missions, responsabilités<br>et résultats concrets.</p></div>
+        <div class="experience-grid">
+          <article class="outline-card"><div class="card-top"><span class="micro-label">EXP_001</span><span class="card-symbol" aria-hidden="true">↗</span></div><h3>Poste / expérience</h3><p class="exp-company">Entreprise ou organisation</p><p class="card-description">Décrire ici la mission, les outils utilisés et les résultats mesurables.</p><div class="card-bottom"><span>DATE À AJOUTER</span><span class="status-tag">À RENSEIGNER</span></div></article>
+          <article class="outline-card"><div class="card-top"><span class="micro-label">EXP_002</span><span class="card-symbol" aria-hidden="true">↗</span></div><h3>Poste / expérience</h3><p class="exp-company">Entreprise ou organisation</p><p class="card-description">Ajouter une autre expérience professionnelle, un stage ou une mission pertinente.</p><div class="card-bottom"><span>DATE À AJOUTER</span><span class="status-tag">À RENSEIGNER</span></div></article>
+        </div>
+      </div>
+    </section>
 
-<section id="services">
-  <div class="head"><i>07</i><h2>Services</h2></div>
-  <div class="grid3">
-    <div class="svc"><h3>Cloud audit</h3><p class="muted"><span class="ph">What you deliver.</span></p></div>
-    <div class="svc"><h3>Secure pipeline</h3><p class="muted"><span class="ph">What you deliver.</span></p></div>
-    <div class="svc"><h3>Automation</h3><p class="muted"><span class="ph">What you deliver.</span></p></div>
-  </div>
-</section>
+    <section class="section content-section section-contrast" id="projets" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading heading-row"><div><div class="section-index">04 <span>/</span> SELECTED WORK</div><h2 id="projects-title">PROJECT <span class="text-muted">ARCHIVE.</span></h2></div><p class="heading-aside">Projets réels, démonstrations<br>techniques et code source.</p></div>
+        <div class="project-grid">
+          <article class="project-card"><div class="project-media"><div class="project-gridline"></div><div class="project-placeholder"><span class="placeholder-icon">+</span><span>assets/img/projects/project-1.png</span></div><img src="assets/img/projects/project-1.png" alt="Aperçu du projet 1" loading="lazy" class="project-image"><span class="project-number">01 / 03</span></div><div class="project-content"><div class="project-tags"><span>CATÉGORIE</span><span>TECHNOLOGIES</span></div><h3>Titre du projet 01 <span aria-hidden="true">↗</span></h3><p>Décrire le problème, la solution développée et le résultat obtenu.</p><span class="project-status">EN ATTENTE DE CONTENU</span></div></article>
+          <article class="project-card"><div class="project-media"><div class="project-gridline"></div><div class="project-placeholder"><span class="placeholder-icon">+</span><span>assets/img/projects/project-2.png</span></div><img src="assets/img/projects/project-2.png" alt="Aperçu du projet 2" loading="lazy" class="project-image"><span class="project-number">02 / 03</span></div><div class="project-content"><div class="project-tags"><span>CATÉGORIE</span><span>TECHNOLOGIES</span></div><h3>Titre du projet 02 <span aria-hidden="true">↗</span></h3><p>Présenter une architecture, une démonstration ou un dépôt GitHub.</p><span class="project-status">EN ATTENTE DE CONTENU</span></div></article>
+          <article class="project-card"><div class="project-media"><div class="project-gridline"></div><div class="project-placeholder"><span class="placeholder-icon">+</span><span>assets/img/projects/project-3.png</span></div><img src="assets/img/projects/project-3.png" alt="Aperçu du projet 3" loading="lazy" class="project-image"><span class="project-number">03 / 03</span></div><div class="project-content"><div class="project-tags"><span>CATÉGORIE</span><span>TECHNOLOGIES</span></div><h3>Titre du projet 03 <span aria-hidden="true">↗</span></h3><p>Mettre en avant l'impact, le code et les captures du travail réalisé.</p><span class="project-status">EN ATTENTE DE CONTENU</span></div></article>
+        </div>
+      </div>
+    </section>
 
-<section id="contact">
-  <div class="contact">
-    <span class="mono muted">08 · Contact</span>
-    <h2>Something to secure? Let's talk.</h2>
-    <div class="chan">
-      <span><span class="ph">your.email@domain.com</span></span>
-      <span>github.com/aminemaouhoub1312</span>
-      <span>linkedin.com/in/<span class="ph">handle</span></span>
-    </div>
-  </div>
-  <footer><span>© <span id="yr">2026</span> Amine Maouhoub</span><span>Designed and coded by hand</span></footer>
-</section>
+    <section class="section content-section" id="competences" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading heading-row"><div><div class="section-index">05 <span>/</span> CAPABILITIES</div><h2 id="skills-title">THE <span class="text-muted">TOOLKIT.</span></h2></div><p class="heading-aside">Catégories à préciser<br>avec des compétences maîtrisées.</p></div>
+        <div class="skills-grid">
+          <div class="skill-box"><span class="skill-number">01</span><h3>Cybersecurity</h3><div class="skill-tags"><span>TECHNOLOGIE À AJOUTER</span><span>COMPÉTENCE À AJOUTER</span></div></div>
+          <div class="skill-box"><span class="skill-number">02</span><h3>Cloud &amp; DevSecOps</h3><div class="skill-tags"><span>TECHNOLOGIE À AJOUTER</span><span>COMPÉTENCE À AJOUTER</span></div></div>
+          <div class="skill-box"><span class="skill-number">03</span><h3>AI &amp; Automation</h3><div class="skill-tags"><span>TECHNOLOGIE À AJOUTER</span><span>COMPÉTENCE À AJOUTER</span></div></div>
+          <div class="skill-box"><span class="skill-number">04</span><h3>Engineering &amp; Tools</h3><div class="skill-tags"><span>TECHNOLOGIE À AJOUTER</span><span>COMPÉTENCE À AJOUTER</span></div></div>
+        </div>
+      </div>
+    </section>
 
-</main>
-</div>
-<script src="assets/js/main.js"></script>
+    <section class="section content-section section-contrast" id="certifications" aria-labelledby="cert-title">
+      <div class="container"><div class="section-heading heading-row"><div><div class="section-index">06 <span>/</span> VALIDATED KNOWLEDGE</div><h2 id="cert-title">CERTIFICATIONS<span class="period">.</span></h2></div><p class="heading-aside">Seules les certifications<br>obtenues seront affichées.</p></div>
+        <div class="cert-grid"><div class="cert-card"><span class="cert-placeholder" aria-hidden="true">✳</span><div><span class="small-label">BADGE 01 / À AJOUTER</span><h3>Certification obtenue</h3><p>Organisme · Date</p><code>assets/img/certs/</code></div></div><div class="cert-card"><span class="cert-placeholder" aria-hidden="true">✳</span><div><span class="small-label">BADGE 02 / À AJOUTER</span><h3>Certification obtenue</h3><p>Organisme · Date</p><code>assets/img/certs/</code></div></div></div>
+      </div>
+    </section>
+
+    <section class="section content-section" id="services" aria-labelledby="services-title">
+      <div class="container"><div class="section-heading heading-row"><div><div class="section-index">07 <span>/</span> COLLABORATIONS</div><h2 id="services-title">WHAT I CAN <span class="text-muted">DO.</span></h2></div><p class="heading-aside">Section facultative :<br>à compléter avant publication finale.</p></div>
+        <div class="services-list"><div class="service-row"><span>01</span><h3>Domaine d'intervention</h3><p>Ajouter ici une offre ou une compétence concrète.</p><span aria-hidden="true">↗</span></div><div class="service-row"><span>02</span><h3>Domaine d'intervention</h3><p>Ajouter ici une autre offre ou une compétence concrète.</p><span aria-hidden="true">↗</span></div></div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout"><div class="section-index">08 <span>/</span> GET IN TOUCH</div><h2 id="contact-title">LET'S BUILD<br><span>SOMETHING</span> BETTER<span class="period">.</span></h2><p>Pour une opportunité professionnelle, un projet ou une collaboration, retrouvez-moi sur GitHub. D'autres moyens de contact seront ajoutés ici.</p><div class="contact-actions"><a class="button button-dark" href="https://github.com/aminemaouhoub1312" target="_blank" rel="noopener noreferrer">Voir mon GitHub <span aria-hidden="true">↗</span></a><span class="contact-placeholder">EMAIL / LINKEDIN : À AJOUTER</span></div></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-content"><a href="#accueil" class="footer-logo">AM<span>.</span></a><span>© <span id="year">2026</span> AMINE MAOUHOUB. BUILT WITH INTENTION.</span><a href="#haut" class="to-top">BACK TO TOP ↑</a></div></footer>
 </body>
 </html>
-
