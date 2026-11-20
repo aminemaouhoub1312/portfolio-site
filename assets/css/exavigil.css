@@ -3,8 +3,17 @@
    EXAVIGIL — PREMIUM PROJECT DOCUMENTATION
    AMINE MAOUHOUB / 2026
 
-   Uses shared variables from style.css
-   Dark & Light Mode / Responsive / Accessible
+   Shared stylesheet: assets/css/style.css
+   Project stylesheet: assets/css/exavigil.css
+
+   Chapters:
+   01 — Executive Overview
+   02 — Unified IT/OT/Cloud Architecture
+   03 — Agentic SOC & Intelligent Investigation
+   04 — AI Security
+   05 — Security Validation
+   06 — Technical Demonstrations
+   07 — Engineering Impact
 ============================================================ */
 
 
@@ -41,18 +50,21 @@
   left: 0;
   right: 0;
   height: 2px;
-
   background: var(--accent);
   transform: scaleX(0);
   transform-origin: left center;
-
   z-index: 59;
   pointer-events: none;
 }
 
+.xp-page a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 
 /* ============================================================
-   02 / TYPOGRAPHY & SHARED ELEMENTS
+   02 / TYPOGRAPHY
 ============================================================ */
 
 .xp-back-link,
@@ -71,13 +83,10 @@
 .xp-demo-info > span,
 .xp-final > span,
 .xp-overview-kicker,
+.xp-arch-kicker,
+.xp-agent-kicker,
 .xp-figure-heading > div > span {
   font-family: "DM Mono", monospace;
-}
-
-.xp-page a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
 }
 
 
@@ -141,7 +150,6 @@
 
   gap: clamp(35px, 5vw, 95px);
   align-items: center;
-
   padding-bottom: 90px;
 }
 
@@ -156,7 +164,6 @@
 
   color: var(--accent2);
   padding: 8px 0;
-
   font-size: 10px;
   letter-spacing: .09em;
 
@@ -191,7 +198,8 @@
   border-radius: 50%;
   background: var(--accent);
 
-  box-shadow: 0 0 16px rgba(197, 250, 95, .5);
+  box-shadow:
+    0 0 16px rgba(197, 250, 95, .5);
 }
 
 .xp-hero-title {
@@ -224,11 +232,10 @@
 
 .xp-hero-description {
   max-width: 590px;
-
   color: var(--muted);
+
   font-size: 14px;
   line-height: 1.9;
-
   margin: 0 0 26px;
 }
 
@@ -240,7 +247,6 @@
 
 .xp-hero-tags span {
   padding: 8px 10px;
-
   background: var(--panel);
   border: 1px solid var(--stroke);
 
@@ -297,10 +303,12 @@
 
 .xp-hero-metadata {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
+  gap: 16px;
   border-top: 1px solid var(--stroke);
+
   padding-top: 24px;
   margin-top: 45px;
 }
@@ -311,18 +319,17 @@
 
 .xp-hero-metadata span {
   display: block;
-
   color: var(--subtle);
+
   font-size: 9px;
   letter-spacing: .08em;
-
   margin-bottom: 8px;
 }
 
 .xp-hero-metadata strong {
   display: block;
-
   color: var(--text);
+
   font-size: 11px;
   font-weight: 500;
   line-height: 1.6;
@@ -384,7 +391,9 @@
 
 .xp-domain-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
   gap: 10px;
   margin-top: 45px;
 }
@@ -420,11 +429,10 @@
 
 .xp-domain strong {
   font-family: Manrope, sans-serif;
-
   font-size: clamp(20px, 2.3vw, 33px);
+
   letter-spacing: -.05em;
   line-height: 1.2;
-
   margin: 5px 0;
 }
 
@@ -461,13 +469,13 @@
 
   min-height: 174px;
   padding: 22px;
-
   text-align: center;
 
   background: rgba(197, 250, 95, .045);
   border: 1px solid var(--accent);
 
-  animation: xp-breathe 5s ease-in-out infinite;
+  animation:
+    xp-breathe 5s ease-in-out infinite;
 }
 
 .xp-control-label {
@@ -479,8 +487,8 @@
 .xp-control-plane strong {
   font-family: Manrope, sans-serif;
   font-size: clamp(27px, 3.3vw, 46px);
-  font-weight: 800;
 
+  font-weight: 800;
   letter-spacing: -.06em;
   line-height: 1.5;
 }
@@ -524,13 +532,10 @@
   min-width: 0;
 }
 
-/* Sticky sidebar */
-
 .xp-rail {
   position: sticky;
   top: 130px;
   align-self: start;
-
   padding-top: 28px;
 }
 
@@ -585,11 +590,10 @@
 
 .xp-rail-back {
   display: inline-block;
-
   color: var(--accent);
+
   font-size: 10px;
   letter-spacing: .08em;
-
   margin-top: 35px;
 }
 
@@ -635,12 +639,11 @@
   border: 1px solid var(--stroke);
 }
 
-.xp-chapter h2 {
+.xp-page .xp-document .xp-chapter h2 {
   font-family: Manrope, sans-serif;
-
   font-size: clamp(32px, 3.7vw, 59px);
-  font-weight: 800;
 
+  font-weight: 800;
   letter-spacing: -.06em;
   line-height: 1.16;
 
@@ -648,24 +651,23 @@
   color: var(--text);
 }
 
-.xp-chapter h2 span {
+.xp-page .xp-document .xp-chapter h2 span {
   display: block;
   color: var(--subtle);
 }
 
 .xp-chapter-lead {
   max-width: 900px;
-
   color: var(--muted);
+
   font-size: 15px;
   line-height: 1.9;
-
   margin: 0 0 34px;
 }
 
 
 /* ============================================================
-   07 / OVERVIEW TEXT & SUBSECTIONS
+   07 / CHAPTER 01 — EXECUTIVE OVERVIEW
 ============================================================ */
 
 .xp-overview-block {
@@ -699,8 +701,6 @@
   margin: 0 0 20px;
 }
 
-/* Correct paragraph appearance */
-
 .xp-page .xp-overview-block > p {
   color: var(--muted);
 
@@ -716,9 +716,7 @@
 }
 
 
-/* ============================================================
-   08 / ENGINEERING QUESTION
-============================================================ */
+/* Engineering question */
 
 .xp-engineering-question {
   margin-top: 28px;
@@ -736,25 +734,21 @@
 
   font-size: 10px;
   letter-spacing: .08em;
-
   margin-bottom: 14px;
 }
 
 .xp-engineering-question p {
   color: var(--text);
   font-size: clamp(16px, 1.6vw, 21px);
-  font-weight: 700;
 
+  font-weight: 700;
   line-height: 1.65;
   letter-spacing: -.02em;
-
   margin: 0;
 }
 
 
-/* ============================================================
-   09 / ARCHITECTURAL PRINCIPLE
-============================================================ */
+/* Architectural principle */
 
 .xp-principle {
   margin-top: 29px;
@@ -773,7 +767,6 @@
 
   font-size: 10px;
   letter-spacing: .08em;
-
   margin-bottom: 14px;
 }
 
@@ -782,15 +775,15 @@
 
   color: var(--text);
   font-size: clamp(17px, 1.8vw, 25px);
-  font-weight: 800;
 
+  font-weight: 800;
   line-height: 1.55;
   letter-spacing: -.035em;
 }
 
 
 /* ============================================================
-   10 / PROJECT FIGURES
+   08 / PROJECT FIGURES — ALL CHAPTERS
 ============================================================ */
 
 .xp-overview-figure {
@@ -817,10 +810,11 @@
 .xp-figure-heading > div > span {
   display: block;
 
+  font-family: "DM Mono", monospace;
   color: var(--accent2);
+
   font-size: 9px;
   letter-spacing: .08em;
-
   margin-bottom: 8px;
 }
 
@@ -862,7 +856,6 @@
 
 .xp-figure-image-link img {
   display: block;
-
   width: 100%;
   height: auto;
 
@@ -885,21 +878,20 @@
   border-top: 1px solid var(--stroke);
 }
 
-/* Error state if an image is missing */
-
 .xp-figure-error {
   padding: 24px;
   background: var(--bg2);
 
   color: var(--muted);
   text-align: center;
+
   font-size: 12px;
   line-height: 1.8;
 }
 
 
 /* ============================================================
-   11 / TECHNICAL CONTENT CARDS
+   09 / SHARED TECHNICAL CONTENT CARDS
 ============================================================ */
 
 .xp-card-grid {
@@ -909,11 +901,13 @@
 }
 
 .xp-grid-two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 }
 
 .xp-grid-three {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 }
 
 .xp-info-card {
@@ -940,7 +934,6 @@
   color: var(--accent2);
   font-size: 9px;
   letter-spacing: .06em;
-
   margin-bottom: 16px;
 }
 
@@ -957,15 +950,15 @@
 
 .xp-info-card p {
   color: var(--muted);
+
   font-size: 12px;
   line-height: 1.85;
-
   margin: 0;
 }
 
 
 /* ============================================================
-   12 / ENGINEERING CONCLUSION
+   10 / ENGINEERING CONCLUSIONS
 ============================================================ */
 
 .xp-overview-conclusion {
@@ -992,12 +985,12 @@
 
   font-size: 10px;
   letter-spacing: .08em;
-
   margin-bottom: 14px;
 }
 
 .xp-overview-conclusion p {
   color: var(--text);
+
   font-size: clamp(17px, 1.85vw, 24px);
   font-weight: 700;
 
@@ -1008,7 +1001,7 @@
 
 
 /* ============================================================
-   13 / ENGINEERING NOTES & PLACEHOLDERS
+   11 / NOTES & TECHNICAL PLACEHOLDERS
 ============================================================ */
 
 .xp-note {
@@ -1027,12 +1020,12 @@
 
   font-size: 10px;
   letter-spacing: .08em;
-
   margin-bottom: 10px;
 }
 
 .xp-note p {
   color: var(--muted);
+
   font-size: 12px;
   line-height: 1.85;
   margin: 0;
@@ -1081,6 +1074,7 @@
 
 .xp-placeholder p {
   color: var(--muted);
+
   font-size: 12px;
   line-height: 1.8;
   margin: 0;
@@ -1117,12 +1111,14 @@
 
 
 /* ============================================================
-   14 / ARCHITECTURE PROCESS FLOW
+   12 / GENERIC ARCHITECTURE FLOW
 ============================================================ */
 
 .xp-flow {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
   gap: 9px;
 }
 
@@ -1163,7 +1159,491 @@
 
 
 /* ============================================================
-   15 / VALIDATION TABLE
+   13 / CHAPTER 02 — UNIFIED ARCHITECTURE
+============================================================ */
+
+.xp-arch-layers {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+  margin: 30px 0 45px;
+}
+
+.xp-arch-layer {
+  min-width: 0;
+  padding: 23px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+}
+
+.xp-arch-layer > span,
+.xp-arch-kicker,
+.xp-arch-control-grid > div > span {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .07em;
+  color: var(--accent2);
+}
+
+.xp-arch-layer strong {
+  display: block;
+
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+
+  margin: 13px 0 8px;
+}
+
+.xp-arch-layer p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.xp-arch-block {
+  margin: 42px 0 30px;
+}
+
+.xp-arch-kicker {
+  margin-bottom: 13px;
+}
+
+.xp-arch-block > h3 {
+  font-size: clamp(21px, 2.2vw, 28px);
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+  line-height: 1.35;
+
+  color: var(--text);
+  margin: 0 0 19px;
+}
+
+.xp-page .xp-arch-block > p {
+  color: var(--muted);
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.9;
+
+  max-width: 950px;
+  margin: 0 0 17px;
+}
+
+.xp-arch-block .xp-card-grid {
+  margin-top: 24px;
+}
+
+.xp-architecture .xp-overview-figure {
+  margin: 32px 0 48px;
+}
+
+.xp-architecture .xp-figure-image-link img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  max-height: none;
+
+  object-fit: contain;
+}
+
+
+/* Alert processing pipeline */
+
+.xp-arch-pipeline {
+  display: grid;
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.xp-arch-step {
+  min-width: 0;
+  padding: 17px 13px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-arch-step > span {
+  display: block;
+
+  font: 10px "DM Mono", monospace;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+
+.xp-arch-step strong {
+  display: block;
+
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.xp-arch-step small {
+  display: block;
+
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--muted);
+
+  margin-top: 6px;
+}
+
+.xp-arch-block > .xp-arch-detail {
+  font-size: 12px;
+  color: var(--subtle);
+}
+
+
+/* Authorization boundaries */
+
+.xp-arch-control-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.xp-arch-control-grid > div {
+  min-width: 0;
+  padding: 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.xp-arch-control-grid strong {
+  display: block;
+
+  font-size: 16px;
+  color: var(--text);
+  margin: 13px 0 10px;
+}
+
+.xp-arch-control-grid p {
+  font-size: 12px;
+  line-height: 1.85;
+
+  color: var(--muted);
+  margin: 0;
+}
+
+
+/* ============================================================
+   14 / CHAPTER 03 — AGENTIC SOC
+============================================================ */
+
+/* Subsection layout */
+
+.xp-agent-block {
+  margin: 42px 0 32px;
+}
+
+.xp-agent-kicker {
+  display: block;
+
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .08em;
+
+  color: var(--accent2);
+  margin-bottom: 13px;
+}
+
+.xp-agent-block > h3 {
+  font-size: clamp(21px, 2.2vw, 28px);
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+  line-height: 1.35;
+
+  color: var(--text);
+  margin: 0 0 19px;
+}
+
+.xp-page .xp-agent-block > p {
+  color: var(--muted);
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.9;
+
+  max-width: 950px;
+  margin: 0 0 17px;
+}
+
+
+/* Agent orchestration model */
+
+.xp-agent-model {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+  margin-top: 27px;
+}
+
+.xp-agent-model > div {
+  min-width: 0;
+  padding: 18px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+}
+
+.xp-agent-model span,
+.xp-agent-evidence-card > span,
+.xp-agent-handoff > div > span {
+  display: block;
+
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .06em;
+
+  color: var(--accent2);
+  line-height: 1.6;
+  margin-bottom: 11px;
+}
+
+.xp-agent-model strong {
+  display: block;
+
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+
+/* Agent design principle */
+
+.xp-agent-boundary {
+  margin: 25px 0 42px;
+  padding: 22px 26px;
+
+  background: var(--panel);
+  border-left: 3px solid var(--accent);
+}
+
+.xp-agent-boundary > span {
+  display: block;
+
+  color: var(--accent);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .08em;
+  margin-bottom: 11px;
+}
+
+.xp-agent-boundary p {
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+
+/* Agent responsibilities and workflow figures */
+
+.xp-agent-figure {
+  margin: 30px 0 35px;
+}
+
+.xp-agent-figure .xp-figure-image-link {
+  background: #ffffff;
+  padding: 16px;
+}
+
+.xp-agent-figure .xp-figure-image-link img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.xp-agent-figure--workflow
+.xp-figure-image-link img {
+  width: min(100%, 670px);
+  margin-inline: auto;
+}
+
+
+/* Six investigation phases */
+
+.xp-agent-steps {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.xp-agent-step {
+  min-width: 0;
+  padding: 23px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.xp-agent-step:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.xp-agent-step > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 13px;
+}
+
+.xp-agent-step strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+
+  margin-bottom: 10px;
+}
+
+.xp-agent-step p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* Investigation evidence */
+
+.xp-agent-evidence-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.xp-agent-evidence-card {
+  min-width: 0;
+  padding: 25px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.xp-agent-evidence-card h4 {
+  font-size: 17px;
+  font-weight: 800;
+
+  color: var(--text);
+  margin: 0 0 18px;
+}
+
+.xp-agent-evidence-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.xp-agent-evidence-card li {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  padding: 4px 0;
+}
+
+.xp-agent-evidence-card li::marker {
+  color: var(--accent);
+}
+
+.xp-agent-block > .xp-agent-detail {
+  color: var(--subtle);
+
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+
+/* Controlled response handoff */
+
+.xp-agent-handoff {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    24px
+    minmax(0, 1fr)
+    24px
+    minmax(0, 1fr);
+
+  gap: 12px;
+  align-items: center;
+
+  margin-top: 27px;
+}
+
+.xp-agent-handoff > div {
+  min-width: 0;
+  min-height: 112px;
+  padding: 18px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-agent-handoff > div strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.xp-agent-handoff-arrow {
+  color: var(--accent);
+
+  font-size: 22px;
+  text-align: center;
+}
+
+
+/* ============================================================
+   15 / VALIDATION TABLE — CHAPTER 05
 ============================================================ */
 
 .xp-table-wrap {
@@ -1196,6 +1676,7 @@
 
 .xp-validation-table td {
   color: var(--muted);
+
   font-size: 11px;
   line-height: 1.7;
 
@@ -1214,7 +1695,7 @@
 
 
 /* ============================================================
-   16 / TECHNICAL DEMONSTRATION CARDS
+   16 / DEMONSTRATION CARDS — CHAPTER 06
 ============================================================ */
 
 .xp-demo-card {
@@ -1290,14 +1771,15 @@
 
 .xp-demo-info h3 {
   color: var(--text);
+
   font-size: 16px;
   letter-spacing: -.03em;
-
   margin: 0 0 12px;
 }
 
 .xp-demo-info p {
   color: var(--muted);
+
   font-size: 12px;
   line-height: 1.75;
 
@@ -1312,7 +1794,7 @@
 
 
 /* ============================================================
-   17 / PROJECT FINAL SECTION
+   17 / PROJECT FINAL SECTION — CHAPTER 07
 ============================================================ */
 
 .xp-final {
@@ -1333,6 +1815,7 @@
 
 .xp-final > span {
   color: var(--accent2);
+
   font-size: 10px;
   letter-spacing: .1em;
 }
@@ -1368,14 +1851,10 @@
   }
 }
 
-/* Visible by default */
-
 .xp-reveal {
   opacity: 1;
   transform: none;
 }
-
-/* Enhanced by JavaScript */
 
 .xp-js .xp-reveal {
   opacity: 0;
@@ -1393,7 +1872,7 @@
 
 
 /* ============================================================
-   19 / LAPTOP
+   19 / LAPTOP — MAX 1180PX
 ============================================================ */
 
 @media (max-width: 1180px) {
@@ -1407,19 +1886,41 @@
   }
 
   .xp-layout {
-    grid-template-columns: 175px minmax(0, 1fr);
+    grid-template-columns:
+      175px minmax(0, 1fr);
+
     gap: 32px;
   }
 
   .xp-grid-three {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
 /* ============================================================
-   20 / TABLET
+   20 / AGENTIC GRID — MAX 1100PX
+============================================================ */
+
+@media (max-width: 1100px) {
+
+  .xp-agent-model {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .xp-agent-steps {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ============================================================
+   21 / TABLET — MAX 960PX
 ============================================================ */
 
 @media (max-width: 960px) {
@@ -1449,14 +1950,21 @@
     padding-top: 10px;
   }
 
+  .xp-arch-pipeline {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
 }
 
 
 /* ============================================================
-   21 / MOBILE
+   22 / MOBILE — MAX 760PX
 ============================================================ */
 
 @media (max-width: 760px) {
+
+  /* Page */
 
   .xp-shell {
     width: calc(100% - 42px);
@@ -1503,7 +2011,7 @@
     gap: 20px;
   }
 
-  /* Architecture visual */
+  /* Architecture hero visual */
 
   .xp-visual {
     padding: 17px;
@@ -1549,7 +2057,7 @@
     padding: 42px 0 65px;
   }
 
-  .xp-chapter h2 {
+  .xp-page .xp-document .xp-chapter h2 {
     font-size: clamp(30px, 7vw, 45px);
   }
 
@@ -1557,7 +2065,7 @@
     font-size: 13px;
   }
 
-  /* Overview */
+  /* Chapter 01 */
 
   .xp-overview-block {
     margin: 29px 0;
@@ -1593,7 +2101,7 @@
     font-size: 9px;
   }
 
-  /* Technical grids */
+  /* Shared technical cards */
 
   .xp-grid-two,
   .xp-grid-three {
@@ -1605,7 +2113,8 @@
   }
 
   .xp-flow {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .xp-placeholder {
@@ -1617,11 +2126,85 @@
     padding: 25px;
   }
 
+  /* Chapter 02 */
+
+  .xp-arch-layers,
+  .xp-arch-control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-arch-pipeline {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .xp-page .xp-arch-block > p {
+    font-size: 13px;
+  }
+
+  .xp-arch-layer,
+  .xp-arch-control-grid > div {
+    padding: 19px;
+  }
+
+  .xp-arch-step {
+    padding: 14px 11px;
+  }
+
+  /* Chapter 03 */
+
+  .xp-agent-block {
+    margin: 32px 0 25px;
+  }
+
+  .xp-page .xp-agent-block > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .xp-agent-model,
+  .xp-agent-steps,
+  .xp-agent-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-agent-model > div,
+  .xp-agent-step,
+  .xp-agent-evidence-card {
+    padding: 19px;
+  }
+
+  .xp-agent-boundary {
+    padding: 19px;
+  }
+
+  .xp-agent-boundary p {
+    font-size: 13px;
+  }
+
+  .xp-agent-figure .xp-figure-image-link {
+    padding: 8px;
+  }
+
+  .xp-agent-handoff {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .xp-agent-handoff > div {
+    min-height: auto;
+  }
+
+  .xp-agent-handoff-arrow {
+    transform: rotate(90deg);
+    font-size: 19px;
+  }
+
 }
 
 
 /* ============================================================
-   22 / REDUCED MOTION
+   23 / ACCESSIBILITY — REDUCED MOTION
 ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1636,1390 +2219,17 @@
     transition: none;
   }
 
-}
-
-
-/* ============================================================
-   EXAVIGIL — SECTION 02
-   UNIFIED IT/OT/CLOUD AGENTIC SOC ARCHITECTURE
-============================================================ */
-
-/* Architecture layers */
-
-.xp-arch-layers {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 30px 0 45px;
-}
-
-.xp-arch-layer {
-  min-width: 0;
-  padding: 23px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent2);
-}
-
-.xp-arch-layer > span,
-.xp-arch-kicker,
-.xp-arch-control-grid > div > span {
-  display: block;
-  font-family: "DM Mono", monospace;
-  font-size: 10px;
-  letter-spacing: .07em;
-  color: var(--accent2);
-}
-
-.xp-arch-layer strong {
-  display: block;
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--text);
-  margin: 13px 0 8px;
-}
-
-.xp-arch-layer p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Section subsections */
-
-.xp-arch-block {
-  margin: 42px 0 30px;
-}
-
-.xp-arch-kicker {
-  margin-bottom: 13px;
-}
-
-.xp-arch-block > h3 {
-  font-size: clamp(21px, 2.2vw, 28px);
-  font-weight: 800;
-  letter-spacing: -.04em;
-  line-height: 1.35;
-  color: var(--text);
-  margin: 0 0 19px;
-}
-
-.xp-arch-block > p {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.9;
-  max-width: 950px;
-  margin: 0 0 17px;
-}
-
-.xp-arch-block .xp-card-grid {
-  margin-top: 24px;
-}
-
-/* Architecture figures */
-
-.xp-architecture .xp-overview-figure {
-  margin: 32px 0 48px;
-}
-
-.xp-architecture .xp-figure-image-link img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-}
-
-/* Alert processing pipeline */
-
-.xp-arch-pipeline {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-  margin: 24px 0;
-}
-
-.xp-arch-step {
-  min-width: 0;
-  padding: 17px 13px;
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent);
-}
-
-.xp-arch-step > span {
-  display: block;
-  font: 10px "DM Mono", monospace;
-  color: var(--accent2);
-  margin-bottom: 12px;
-}
-
-.xp-arch-step strong {
-  display: block;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--text);
-}
-
-.xp-arch-step small {
-  display: block;
-  font-size: 10px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin-top: 6px;
-}
-
-.xp-arch-block > .xp-arch-detail {
-  font-size: 12px;
-  color: var(--subtle);
-}
-
-/* Security boundary cards */
-
-.xp-arch-control-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 24px 0;
-}
-
-.xp-arch-control-grid > div {
-  min-width: 0;
-  padding: 24px;
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-}
-
-.xp-arch-control-grid strong {
-  display: block;
-  font-size: 16px;
-  margin: 13px 0 10px;
-  color: var(--text);
-}
-
-.xp-arch-control-grid p {
-  font-size: 12px;
-  line-height: 1.85;
-  color: var(--muted);
-  margin: 0;
-}
-
-/* Responsive */
-
-@media (max-width: 960px) {
-  .xp-arch-pipeline {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 760px) {
-
-  .xp-arch-layers,
-  .xp-arch-control-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .xp-arch-pipeline {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .xp-arch-block > p {
-    font-size: 13px;
-  }
-
-  .xp-arch-layer,
-  .xp-arch-control-grid > div {
-    padding: 19px;
-  }
-
-  .xp-arch-step {
-    padding: 14px 11px;
-  }
-
-}
-
-/* END SECTION 02 */
-
-/* ============================================================
-   END OF EXAVIGIL.CSS
-============================================================ */
-
-
-/* ============================================================
-   EXAVIGIL — SECTION 02
-   UNIFIED IT/OT/CLOUD AGENTIC SOC ARCHITECTURE
-============================================================ */
-
-/* Architecture layers */
-
-.xp-arch-layers {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 30px 0 45px;
-}
-
-.xp-arch-layer {
-  min-width: 0;
-  padding: 23px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent2);
-}
-
-.xp-arch-layer > span,
-.xp-arch-kicker,
-.xp-arch-control-grid > div > span {
-  display: block;
-  font-family: "DM Mono", monospace;
-  font-size: 10px;
-  letter-spacing: .07em;
-  color: var(--accent2);
-}
-
-.xp-arch-layer strong {
-  display: block;
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--text);
-  margin: 13px 0 8px;
-}
-
-.xp-arch-layer p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Section subsections */
-
-.xp-arch-block {
-  margin: 42px 0 30px;
-}
-
-.xp-arch-kicker {
-  margin-bottom: 13px;
-}
-
-.xp-arch-block > h3 {
-  font-size: clamp(21px, 2.2vw, 28px);
-  font-weight: 800;
-  letter-spacing: -.04em;
-  line-height: 1.35;
-  color: var(--text);
-  margin: 0 0 19px;
-}
-
-.xp-arch-block > p {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.9;
-  max-width: 950px;
-  margin: 0 0 17px;
-}
-
-.xp-arch-block .xp-card-grid {
-  margin-top: 24px;
-}
-
-/* Architecture figures */
-
-.xp-architecture .xp-overview-figure {
-  margin: 32px 0 48px;
-}
-
-.xp-architecture .xp-figure-image-link img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-}
-
-/* Alert processing pipeline */
-
-.xp-arch-pipeline {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-  margin: 24px 0;
-}
-
-.xp-arch-step {
-  min-width: 0;
-  padding: 17px 13px;
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent);
-}
-
-.xp-arch-step > span {
-  display: block;
-  font: 10px "DM Mono", monospace;
-  color: var(--accent2);
-  margin-bottom: 12px;
-}
-
-.xp-arch-step strong {
-  display: block;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--text);
-}
-
-.xp-arch-step small {
-  display: block;
-  font-size: 10px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin-top: 6px;
-}
-
-.xp-arch-block > .xp-arch-detail {
-  font-size: 12px;
-  color: var(--subtle);
-}
-
-/* Security boundary cards */
-
-.xp-arch-control-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 24px 0;
-}
-
-.xp-arch-control-grid > div {
-  min-width: 0;
-  padding: 24px;
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-}
-
-.xp-arch-control-grid strong {
-  display: block;
-  font-size: 16px;
-  margin: 13px 0 10px;
-  color: var(--text);
-}
-
-.xp-arch-control-grid p {
-  font-size: 12px;
-  line-height: 1.85;
-  color: var(--muted);
-  margin: 0;
-}
-
-/* Responsive */
-
-@media (max-width: 960px) {
-  .xp-arch-pipeline {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 760px) {
-
-  .xp-arch-layers,
-  .xp-arch-control-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .xp-arch-pipeline {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .xp-arch-block > p {
-    font-size: 13px;
-  }
-
-  .xp-arch-layer,
-  .xp-arch-control-grid > div {
-    padding: 19px;
-  }
-
-  .xp-arch-step {
-    padding: 14px 11px;
-  }
-
-}
-
-
-/* ============================================================
-   EXAVIGIL — CHAPTER 03
-   AGENTIC SOC & INTELLIGENT INVESTIGATION
-============================================================ */
-
-/* Subsection structure */
-
-.xp-agent-block {
-  margin: 42px 0 32px;
-}
-
-.xp-agent-kicker {
-  display: block;
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .08em;
-  color: var(--accent2);
-  margin-bottom: 13px;
-}
-
-.xp-agent-block > h3 {
-  font-size: clamp(21px, 2.2vw, 28px);
-  font-weight: 800;
-  letter-spacing: -.04em;
-  line-height: 1.35;
-  color: var(--text);
-  margin: 0 0 19px;
-}
-
-.xp-agent-block > p {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.9;
-  max-width: 950px;
-  margin: 0 0 17px;
-}
-
-/* Orchestration model */
-
-.xp-agent-model {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 27px;
-}
-
-.xp-agent-model > div {
-  min-width: 0;
-  padding: 18px;
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent2);
-}
-
-.xp-agent-model span,
-.xp-agent-evidence-card > span,
-.xp-agent-handoff > div > span {
-  display: block;
-  font: 500 9px "DM Mono", monospace;
-  letter-spacing: .06em;
-  color: var(--accent2);
-  line-height: 1.6;
-  margin-bottom: 11px;
-}
-
-.xp-agent-model strong {
-  display: block;
-  font-size: 12px;
-  line-height: 1.55;
-  color: var(--text);
-}
-
-/* Agent design boundary */
-
-.xp-agent-boundary {
-  margin: 25px 0 42px;
-  padding: 22px 26px;
-  background: var(--panel);
-  border-left: 3px solid var(--accent);
-}
-
-.xp-agent-boundary > span {
-  display: block;
-  color: var(--accent);
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .08em;
-  margin-bottom: 11px;
-}
-
-.xp-agent-boundary p {
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Agent table and workflow figures */
-
-.xp-agent-figure {
-  margin: 30px 0 35px;
-}
-
-.xp-agent-figure .xp-figure-image-link {
-  background: #ffffff;
-  padding: 16px;
-}
-
-.xp-agent-figure .xp-figure-image-link img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Portrait workflow remains legible
-   without filling the whole desktop width */
-
-.xp-agent-figure--workflow
-.xp-figure-image-link img {
-  width: min(100%, 670px);
-  margin-inline: auto;
-}
-
-/* Six workflow phases */
-
-.xp-agent-steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.xp-agent-step {
-  min-width: 0;
-  padding: 23px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent2);
-
-  transition:
-    transform .25s ease,
-    border-color .25s ease;
-}
-
-.xp-agent-step:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-}
-
-.xp-agent-step > span {
-  display: block;
-  color: var(--accent2);
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .05em;
-  margin-bottom: 13px;
-}
-
-.xp-agent-step strong {
-  display: block;
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-.xp-agent-step p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.85;
-  margin: 0;
-}
-
-/* Investigation evidence */
-
-.xp-agent-evidence-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 26px 0;
-}
-
-.xp-agent-evidence-card {
-  min-width: 0;
-  padding: 25px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-}
-
-.xp-agent-evidence-card h4 {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--text);
-  margin: 0 0 18px;
-}
-
-.xp-agent-evidence-card ul {
-  padding-left: 18px;
-  margin: 0;
-}
-
-.xp-agent-evidence-card li {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.85;
-  padding: 4px 0;
-}
-
-.xp-agent-evidence-card li::marker {
-  color: var(--accent);
-}
-
-.xp-agent-block > .xp-agent-detail {
-  color: var(--subtle);
-  font-size: 12px;
-  margin-top: 15px;
-}
-
-/* Controlled execution handoff */
-
-.xp-agent-handoff {
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1fr) 24px
-    minmax(0, 1fr) 24px
-    minmax(0, 1fr);
-
-  gap: 12px;
-  align-items: center;
-  margin-top: 27px;
-}
-
-.xp-agent-handoff > div {
-  min-width: 0;
-  min-height: 112px;
-  padding: 18px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent);
-}
-
-.xp-agent-handoff > div strong {
-  color: var(--text);
-  font-size: 12px;
-  line-height: 1.7;
-  display: block;
-}
-
-.xp-agent-handoff-arrow {
-  color: var(--accent);
-  font-size: 22px;
-  text-align: center;
-}
-
-/* Tablet */
-
-@media (max-width: 1100px) {
-  .xp-agent-model {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .xp-agent-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 760px) {
-
-  .xp-agent-block {
-    margin: 32px 0 25px;
-  }
-
-  .xp-agent-block > p {
-    font-size: 13px;
-    line-height: 1.85;
-  }
-
-  .xp-agent-model,
-  .xp-agent-steps,
-  .xp-agent-evidence-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .xp-agent-model > div,
+  .xp-button,
+  .xp-domain,
+  .xp-info-card,
   .xp-agent-step,
-  .xp-agent-evidence-card {
-    padding: 19px;
+  .xp-demo-card {
+    transition: none;
   }
 
-  .xp-agent-boundary {
-    padding: 19px;
-  }
-
-  .xp-agent-boundary p {
-    font-size: 13px;
-  }
-
-  .xp-agent-figure .xp-figure-image-link {
-    padding: 8px;
-  }
-
-  .xp-agent-handoff {
-    grid-template-columns: 1fr;
-    gap: 9px;
-  }
-
-  .xp-agent-handoff > div {
-    min-height: auto;
-  }
-
-  .xp-agent-handoff-arrow {
-    transform: rotate(90deg);
-    font-size: 19px;
-  }
 }
-
-/* END CHAPTER 03 */
 
 
 /* ============================================================
-   EXAVIGIL — CHAPTER 03
-   AGENTIC SOC & INTELLIGENT INVESTIGATION
+   END — EXAVIGIL PROJECT STYLESHEET
 ============================================================ */
-
-/* Subsection structure */
-
-.xp-agent-block {
-  margin: 42px 0 32px;
-}
-
-.xp-agent-kicker {
-  display: block;
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .08em;
-  color: var(--accent2);
-  margin-bottom: 13px;
-}
-
-.xp-agent-block > h3 {
-  font-size: clamp(21px, 2.2vw, 28px);
-  font-weight: 800;
-  letter-spacing: -.04em;
-  line-height: 1.35;
-  color: var(--text);
-  margin: 0 0 19px;
-}
-
-.xp-agent-block > p {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.9;
-  max-width: 950px;
-  margin: 0 0 17px;
-}
-
-/* Orchestration model */
-
-.xp-agent-model {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 27px;
-}
-
-.xp-agent-model > div {
-  min-width: 0;
-  padding: 18px;
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent2);
-}
-
-.xp-agent-model span,
-.xp-agent-evidence-card > span,
-.xp-agent-handoff > div > span {
-  display: block;
-  font: 500 9px "DM Mono", monospace;
-  letter-spacing: .06em;
-  color: var(--accent2);
-  line-height: 1.6;
-  margin-bottom: 11px;
-}
-
-.xp-agent-model strong {
-  display: block;
-  font-size: 12px;
-  line-height: 1.55;
-  color: var(--text);
-}
-
-/* Agent design boundary */
-
-.xp-agent-boundary {
-  margin: 25px 0 42px;
-  padding: 22px 26px;
-  background: var(--panel);
-  border-left: 3px solid var(--accent);
-}
-
-.xp-agent-boundary > span {
-  display: block;
-  color: var(--accent);
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .08em;
-  margin-bottom: 11px;
-}
-
-.xp-agent-boundary p {
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Agent table and workflow figures */
-
-.xp-agent-figure {
-  margin: 30px 0 35px;
-}
-
-.xp-agent-figure .xp-figure-image-link {
-  background: #ffffff;
-  padding: 16px;
-}
-
-.xp-agent-figure .xp-figure-image-link img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Portrait workflow remains legible
-   without filling the whole desktop width */
-
-.xp-agent-figure--workflow
-.xp-figure-image-link img {
-  width: min(100%, 670px);
-  margin-inline: auto;
-}
-
-/* Six workflow phases */
-
-.xp-agent-steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.xp-agent-step {
-  min-width: 0;
-  padding: 23px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent2);
-
-  transition:
-    transform .25s ease,
-    border-color .25s ease;
-}
-
-.xp-agent-step:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-}
-
-.xp-agent-step > span {
-  display: block;
-  color: var(--accent2);
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .05em;
-  margin-bottom: 13px;
-}
-
-.xp-agent-step strong {
-  display: block;
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-.xp-agent-step p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.85;
-  margin: 0;
-}
-
-/* Investigation evidence */
-
-.xp-agent-evidence-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 26px 0;
-}
-
-.xp-agent-evidence-card {
-  min-width: 0;
-  padding: 25px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-}
-
-.xp-agent-evidence-card h4 {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--text);
-  margin: 0 0 18px;
-}
-
-.xp-agent-evidence-card ul {
-  padding-left: 18px;
-  margin: 0;
-}
-
-.xp-agent-evidence-card li {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.85;
-  padding: 4px 0;
-}
-
-.xp-agent-evidence-card li::marker {
-  color: var(--accent);
-}
-
-.xp-agent-block > .xp-agent-detail {
-  color: var(--subtle);
-  font-size: 12px;
-  margin-top: 15px;
-}
-
-/* Controlled execution handoff */
-
-.xp-agent-handoff {
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1fr) 24px
-    minmax(0, 1fr) 24px
-    minmax(0, 1fr);
-
-  gap: 12px;
-  align-items: center;
-  margin-top: 27px;
-}
-
-.xp-agent-handoff > div {
-  min-width: 0;
-  min-height: 112px;
-  padding: 18px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent);
-}
-
-.xp-agent-handoff > div strong {
-  color: var(--text);
-  font-size: 12px;
-  line-height: 1.7;
-  display: block;
-}
-
-.xp-agent-handoff-arrow {
-  color: var(--accent);
-  font-size: 22px;
-  text-align: center;
-}
-
-/* Tablet */
-
-@media (max-width: 1100px) {
-  .xp-agent-model {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .xp-agent-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 760px) {
-
-  .xp-agent-block {
-    margin: 32px 0 25px;
-  }
-
-  .xp-agent-block > p {
-    font-size: 13px;
-    line-height: 1.85;
-  }
-
-  .xp-agent-model,
-  .xp-agent-steps,
-  .xp-agent-evidence-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .xp-agent-model > div,
-  .xp-agent-step,
-  .xp-agent-evidence-card {
-    padding: 19px;
-  }
-
-  .xp-agent-boundary {
-    padding: 19px;
-  }
-
-  .xp-agent-boundary p {
-    font-size: 13px;
-  }
-
-  .xp-agent-figure .xp-figure-image-link {
-    padding: 8px;
-  }
-
-  .xp-agent-handoff {
-    grid-template-columns: 1fr;
-    gap: 9px;
-  }
-
-  .xp-agent-handoff > div {
-    min-height: auto;
-  }
-
-  .xp-agent-handoff-arrow {
-    transform: rotate(90deg);
-    font-size: 19px;
-  }
-}
-
-/* END CHAPTER 03 */
-
-
-/* ============================================================
-   EXAVIGIL — CHAPTER 03
-   AGENTIC SOC & INTELLIGENT INVESTIGATION
-============================================================ */
-
-/* Subsection structure */
-
-.xp-agent-block {
-  margin: 42px 0 32px;
-}
-
-.xp-agent-kicker {
-  display: block;
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .08em;
-  color: var(--accent2);
-  margin-bottom: 13px;
-}
-
-.xp-agent-block > h3 {
-  font-size: clamp(21px, 2.2vw, 28px);
-  font-weight: 800;
-  letter-spacing: -.04em;
-  line-height: 1.35;
-  color: var(--text);
-  margin: 0 0 19px;
-}
-
-.xp-agent-block > p {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.9;
-  max-width: 950px;
-  margin: 0 0 17px;
-}
-
-/* Orchestration model */
-
-.xp-agent-model {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 27px;
-}
-
-.xp-agent-model > div {
-  min-width: 0;
-  padding: 18px;
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent2);
-}
-
-.xp-agent-model span,
-.xp-agent-evidence-card > span,
-.xp-agent-handoff > div > span {
-  display: block;
-  font: 500 9px "DM Mono", monospace;
-  letter-spacing: .06em;
-  color: var(--accent2);
-  line-height: 1.6;
-  margin-bottom: 11px;
-}
-
-.xp-agent-model strong {
-  display: block;
-  font-size: 12px;
-  line-height: 1.55;
-  color: var(--text);
-}
-
-/* Agent design boundary */
-
-.xp-agent-boundary {
-  margin: 25px 0 42px;
-  padding: 22px 26px;
-  background: var(--panel);
-  border-left: 3px solid var(--accent);
-}
-
-.xp-agent-boundary > span {
-  display: block;
-  color: var(--accent);
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .08em;
-  margin-bottom: 11px;
-}
-
-.xp-agent-boundary p {
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.8;
-  margin: 0;
-}
-
-/* Agent table and workflow figures */
-
-.xp-agent-figure {
-  margin: 30px 0 35px;
-}
-
-.xp-agent-figure .xp-figure-image-link {
-  background: #ffffff;
-  padding: 16px;
-}
-
-.xp-agent-figure .xp-figure-image-link img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Portrait workflow remains legible
-   without filling the whole desktop width */
-
-.xp-agent-figure--workflow
-.xp-figure-image-link img {
-  width: min(100%, 670px);
-  margin-inline: auto;
-}
-
-/* Six workflow phases */
-
-.xp-agent-steps {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 24px;
-}
-
-.xp-agent-step {
-  min-width: 0;
-  padding: 23px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent2);
-
-  transition:
-    transform .25s ease,
-    border-color .25s ease;
-}
-
-.xp-agent-step:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-}
-
-.xp-agent-step > span {
-  display: block;
-  color: var(--accent2);
-  font: 500 10px "DM Mono", monospace;
-  letter-spacing: .05em;
-  margin-bottom: 13px;
-}
-
-.xp-agent-step strong {
-  display: block;
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-
-.xp-agent-step p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.85;
-  margin: 0;
-}
-
-/* Investigation evidence */
-
-.xp-agent-evidence-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin: 26px 0;
-}
-
-.xp-agent-evidence-card {
-  min-width: 0;
-  padding: 25px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-}
-
-.xp-agent-evidence-card h4 {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--text);
-  margin: 0 0 18px;
-}
-
-.xp-agent-evidence-card ul {
-  padding-left: 18px;
-  margin: 0;
-}
-
-.xp-agent-evidence-card li {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.85;
-  padding: 4px 0;
-}
-
-.xp-agent-evidence-card li::marker {
-  color: var(--accent);
-}
-
-.xp-agent-block > .xp-agent-detail {
-  color: var(--subtle);
-  font-size: 12px;
-  margin-top: 15px;
-}
-
-/* Controlled execution handoff */
-
-.xp-agent-handoff {
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1fr) 24px
-    minmax(0, 1fr) 24px
-    minmax(0, 1fr);
-
-  gap: 12px;
-  align-items: center;
-  margin-top: 27px;
-}
-
-.xp-agent-handoff > div {
-  min-width: 0;
-  min-height: 112px;
-  padding: 18px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent);
-}
-
-.xp-agent-handoff > div strong {
-  color: var(--text);
-  font-size: 12px;
-  line-height: 1.7;
-  display: block;
-}
-
-.xp-agent-handoff-arrow {
-  color: var(--accent);
-  font-size: 22px;
-  text-align: center;
-}
-
-/* Tablet */
-
-@media (max-width: 1100px) {
-  .xp-agent-model {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .xp-agent-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 760px) {
-
-  .xp-agent-block {
-    margin: 32px 0 25px;
-  }
-
-  .xp-agent-block > p {
-    font-size: 13px;
-    line-height: 1.85;
-  }
-
-  .xp-agent-model,
-  .xp-agent-steps,
-  .xp-agent-evidence-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .xp-agent-model > div,
-  .xp-agent-step,
-  .xp-agent-evidence-card {
-    padding: 19px;
-  }
-
-  .xp-agent-boundary {
-    padding: 19px;
-  }
-
-  .xp-agent-boundary p {
-    font-size: 13px;
-  }
-
-  .xp-agent-figure .xp-figure-image-link {
-    padding: 8px;
-  }
-
-  .xp-agent-handoff {
-    grid-template-columns: 1fr;
-    gap: 9px;
-  }
-
-  .xp-agent-handoff > div {
-    min-height: auto;
-  }
-
-  .xp-agent-handoff-arrow {
-    transform: rotate(90deg);
-    font-size: 19px;
-  }
-}
-
-/* END CHAPTER 03 */
-
-
