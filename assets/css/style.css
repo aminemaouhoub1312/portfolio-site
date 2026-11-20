@@ -2536,3 +2536,42 @@ summary:focus-visible {
 
 }
 
+
+/* =========================================
+   EXAVIGIL — CLICKABLE PROJECT CARD
+========================================= */
+
+.exavigil-card-link {
+  display: block;
+  width: 100%;
+}
+
+.exavigil-project-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  color: var(--text);
+  transition: color .2s ease;
+}
+
+.exavigil-project-title span {
+  color: var(--accent);
+  font-size: 25px;
+  transition: transform .25s ease;
+}
+
+.exavigil-project-title:hover {
+  color: var(--accent);
+}
+
+.project-card:hover .exavigil-project-title span {
+  transform: translate(3px, -3px);
+}
+
+.exavigil-card-link:focus-visible,
+.exavigil-project-title:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
