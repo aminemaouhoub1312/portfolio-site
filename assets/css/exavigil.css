@@ -1,1 +1,1282 @@
 
+/* ============================================================
+   EXAVIGIL — PROJECT DOCUMENTATION
+   Premium Portfolio / Project Detail Page
+   Uses the existing portfolio color system
+============================================================ */
+
+
+/* ============================================================
+   01. PAGE FOUNDATION
+============================================================ */
+
+.xp-page {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: clip;
+}
+
+.xp-shell {
+  width: min(1380px, calc(100% - 112px));
+  margin-inline: auto;
+}
+
+.xp-page section[id] {
+  scroll-margin-top: 110px;
+}
+
+.xp-reading-progress {
+  position: fixed;
+  top: 84px;
+  left: 0;
+  right: 0;
+  height: 2px;
+
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  z-index: 59;
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   02. PROJECT HERO
+============================================================ */
+
+.xp-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding-top: 95px;
+
+  background:
+    radial-gradient(
+      ellipse at 85% 36%,
+      rgba(115, 180, 142, .10),
+      transparent 55%
+    ),
+    var(--bg2);
+
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      var(--stroke-soft) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      var(--stroke-soft) 1px,
+      transparent 1px
+    );
+
+  background-size: 72px 72px;
+  opacity: .28;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      #000 60%
+    );
+
+  pointer-events: none;
+}
+
+.xp-hero-grid {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, .9fr);
+
+  gap: clamp(35px, 5vw, 95px);
+  align-items: center;
+
+  padding-bottom: 90px;
+}
+
+.xp-hero-copy {
+  min-width: 0;
+}
+
+.xp-back-link,
+.xp-eyebrow,
+.xp-hero-tags,
+.xp-hero-metadata,
+.xp-hero-bottom,
+.xp-visual,
+.xp-rail,
+.xp-chapter-label,
+.xp-card-number,
+.xp-placeholder,
+.xp-figure-caption,
+.xp-validation-table,
+.xp-demo-media,
+.xp-demo-info > span,
+.xp-final > span {
+  font-family: "DM Mono", monospace;
+}
+
+.xp-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 8px 0;
+
+  color: var(--accent2);
+  font-size: 10px;
+  letter-spacing: .09em;
+
+  transition: color .2s;
+}
+
+.xp-back-link:hover {
+  color: var(--accent);
+}
+
+.xp-back-link span {
+  font-size: 20px;
+}
+
+.xp-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--accent2);
+  font-size: 10px;
+  letter-spacing: .10em;
+
+  margin: 70px 0 15px;
+}
+
+.xp-live-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+
+  background: var(--accent);
+  box-shadow: 0 0 16px rgba(197, 250, 95, .5);
+}
+
+.xp-hero-title {
+  font-size: clamp(60px, 8.2vw, 138px);
+  line-height: 1.05;
+
+  font-weight: 800;
+  letter-spacing: -.085em;
+
+  margin: 0 0 22px;
+}
+
+.xp-hero-title span {
+  color: var(--accent);
+}
+
+.xp-hero-subtitle {
+  max-width: 760px;
+
+  font-size: clamp(22px, 2.35vw, 34px);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1.36;
+
+  margin: 0 0 22px;
+}
+
+.xp-hero-description {
+  max-width: 590px;
+
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.95;
+
+  margin: 0 0 26px;
+}
+
+.xp-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.xp-hero-tags span {
+  border: 1px solid var(--stroke);
+  background: var(--panel);
+
+  padding: 8px 10px;
+
+  color: var(--accent2);
+  font-size: 9px;
+  letter-spacing: .04em;
+}
+
+.xp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 34px;
+}
+
+.xp-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+
+  padding: 15px 19px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition:
+    transform .25s,
+    background .25s,
+    border-color .25s;
+}
+
+.xp-button:hover {
+  transform: translateY(-3px);
+}
+
+.xp-button-primary {
+  background: var(--accent);
+  color: #102008;
+}
+
+.xp-button-primary:hover {
+  background: #d6ff94;
+}
+
+.xp-button-outline {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.xp-button-outline:hover {
+  border-color: var(--accent);
+}
+
+.xp-hero-metadata {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+
+  border-top: 1px solid var(--stroke);
+  padding-top: 24px;
+  margin-top: 50px;
+}
+
+.xp-hero-metadata div {
+  min-width: 0;
+}
+
+.xp-hero-metadata span {
+  display: block;
+  color: var(--subtle);
+  font-size: 9px;
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+}
+
+.xp-hero-metadata strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.xp-hero-bottom {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border-top: 1px solid var(--stroke);
+
+  padding-top: 22px;
+  padding-bottom: 22px;
+
+  color: var(--subtle);
+  font-size: 9px;
+  letter-spacing: .07em;
+}
+
+
+/* ============================================================
+   03. SYSTEM ARCHITECTURE HERO VISUAL
+============================================================ */
+
+.xp-visual {
+  position: relative;
+
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+
+  background:
+    radial-gradient(
+      circle at 50% 58%,
+      rgba(197, 250, 95, .07),
+      transparent 60%
+    ),
+    var(--panel);
+
+  padding: 25px;
+  min-width: 0;
+
+  box-shadow: 0 30px 100px var(--shadow);
+}
+
+.xp-visual-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  color: var(--accent2);
+  font-size: 9px;
+  letter-spacing: .06em;
+
+  border-bottom: 1px solid var(--stroke);
+  padding-bottom: 18px;
+}
+
+.xp-domain-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+
+  margin-top: 45px;
+}
+
+.xp-domain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 112px;
+  min-width: 0;
+  padding: 12px 6px;
+
+  text-align: center;
+
+  border: 1px solid var(--stroke);
+  background: var(--bg2);
+
+  transition:
+    border-color .25s,
+    transform .25s;
+}
+
+.xp-domain:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.xp-domain > span {
+  font-size: 8px;
+  color: var(--subtle);
+}
+
+.xp-domain strong {
+  margin: 5px 0;
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(20px, 2.3vw, 33px);
+  line-height: 1.2;
+  letter-spacing: -.05em;
+}
+
+.xp-domain small {
+  font-size: 8px;
+  line-height: 1.5;
+  color: var(--accent2);
+}
+
+.xp-connectors {
+  height: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.xp-connectors span {
+  width: 1px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      var(--accent),
+      var(--stroke)
+    );
+}
+
+.xp-control-plane {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--accent);
+  background: rgba(197, 250, 95, .045);
+
+  text-align: center;
+  min-height: 174px;
+  padding: 22px;
+
+  animation: xp-breathe 5s ease-in-out infinite;
+}
+
+.xp-control-label {
+  font-size: 9px;
+  color: var(--accent2);
+  letter-spacing: .08em;
+}
+
+.xp-control-plane strong {
+  font-family: Manrope, sans-serif;
+
+  font-size: clamp(27px, 3.3vw, 46px);
+  font-weight: 800;
+
+  letter-spacing: -.06em;
+  line-height: 1.5;
+}
+
+.xp-control-plane small {
+  font-size: 10px;
+  color: var(--accent);
+}
+
+.xp-visual-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 27px;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--stroke);
+
+  font-size: 9px;
+  color: var(--subtle);
+}
+
+
+/* ============================================================
+   04. DOCUMENTATION LAYOUT & SIDE NAVIGATION
+============================================================ */
+
+.xp-layout {
+  display: grid;
+  grid-template-columns: 205px minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(32px, 5vw, 80px);
+
+  padding-top: 48px;
+  padding-bottom: 110px;
+}
+
+.xp-rail {
+  position: sticky;
+  top: 130px;
+  align-self: start;
+
+  padding-top: 28px;
+}
+
+.xp-rail-label {
+  display: block;
+  color: var(--accent2);
+
+  font-size: 10px;
+  letter-spacing: .10em;
+  margin-bottom: 25px;
+}
+
+.xp-rail nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.xp-rail-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  border-left: 1px solid var(--stroke);
+  padding: 12px 9px 12px 14px;
+
+  color: var(--muted);
+  font-size: 10px;
+
+  transition:
+    color .2s,
+    border-color .2s,
+    background .2s;
+}
+
+.xp-rail-link span {
+  color: var(--subtle);
+}
+
+.xp-rail-link:hover,
+.xp-rail-link.is-current {
+  color: var(--text);
+  border-left-color: var(--accent);
+
+  background: rgba(197, 250, 95, .035);
+}
+
+.xp-rail-link.is-current span {
+  color: var(--accent);
+}
+
+.xp-rail-back {
+  display: inline-block;
+
+  margin-top: 35px;
+  font-size: 10px;
+  color: var(--accent);
+
+  letter-spacing: .08em;
+}
+
+.xp-document {
+  min-width: 0;
+}
+
+
+/* ============================================================
+   05. CHAPTER HEADINGS
+============================================================ */
+
+.xp-chapter {
+  padding: 46px 0 80px;
+
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-chapter:first-child {
+  padding-top: 25px;
+}
+
+.xp-chapter:last-child {
+  border-bottom: 0;
+}
+
+.xp-chapter-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: var(--accent2);
+  font-size: 10px;
+  letter-spacing: .10em;
+
+  margin-bottom: 21px;
+}
+
+.xp-chapter-label span {
+  display: grid;
+  place-items: center;
+
+  width: 33px;
+  height: 33px;
+
+  color: var(--accent);
+  border: 1px solid var(--stroke);
+}
+
+.xp-chapter h2 {
+  font-size: clamp(32px, 3.7vw, 59px);
+  font-weight: 800;
+
+  letter-spacing: -.06em;
+  line-height: 1.16;
+
+  margin: 0 0 24px;
+}
+
+.xp-chapter h2 span {
+  display: block;
+  color: var(--subtle);
+}
+
+.xp-chapter-lead {
+  max-width: 900px;
+
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.95;
+
+  margin: 0 0 34px;
+}
+
+
+/* ============================================================
+   06. TECHNICAL CONTENT CARDS
+============================================================ */
+
+.xp-card-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.xp-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.xp-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.xp-info-card {
+  min-width: 0;
+  padding: 25px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+
+  transition:
+    border-color .25s,
+    transform .25s;
+}
+
+.xp-info-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.xp-card-number {
+  display: block;
+
+  color: var(--accent2);
+  font-size: 9px;
+  letter-spacing: .06em;
+
+  margin-bottom: 16px;
+}
+
+.xp-info-card h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: -.03em;
+
+  margin: 0 0 14px;
+}
+
+.xp-info-card p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   07. ENGINEERING NOTES & PLACEHOLDERS
+============================================================ */
+
+.xp-note {
+  margin-top: 25px;
+
+  border-left: 3px solid var(--accent2);
+  background: var(--panel);
+
+  padding: 21px 25px;
+}
+
+.xp-note strong {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+
+  letter-spacing: .08em;
+  color: var(--accent2);
+
+  margin-bottom: 10px;
+}
+
+.xp-note p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+
+  margin: 0;
+}
+
+.xp-placeholder {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+
+  min-height: 245px;
+  padding: 30px;
+
+  background:
+    linear-gradient(
+      rgba(135, 196, 209, .035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(135, 196, 209, .035) 1px,
+      transparent 1px
+    ),
+    var(--panel);
+
+  background-size: 27px 27px;
+
+  border: 1px dashed var(--stroke);
+}
+
+.xp-placeholder > span:first-child {
+  color: var(--accent2);
+  font-size: 9px;
+}
+
+.xp-placeholder strong {
+  font-family: Manrope, sans-serif;
+
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.035em;
+}
+
+.xp-placeholder p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+.xp-placeholder-status {
+  display: inline-block;
+  align-self: flex-start;
+
+  padding: 7px 9px;
+  margin-top: 8px;
+
+  color: var(--accent);
+  background: var(--bg2);
+  border: 1px solid var(--stroke);
+
+  font-size: 9px;
+}
+
+.xp-placeholder-wide {
+  margin-top: 20px;
+  min-height: 230px;
+}
+
+.xp-figure-caption {
+  color: var(--subtle);
+  font-size: 10px;
+  line-height: 1.7;
+
+  margin: 18px 0 24px;
+}
+
+
+/* ============================================================
+   08. ARCHITECTURE PROCESS FLOW
+============================================================ */
+
+.xp-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.xp-flow-step {
+  position: relative;
+  min-width: 0;
+
+  padding: 18px 12px;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+}
+
+.xp-flow-step > span {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  font-size: 9px;
+  color: var(--accent2);
+
+  margin-bottom: 14px;
+}
+
+.xp-flow-step strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.xp-flow-step small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   09. VALIDATION TABLE
+============================================================ */
+
+.xp-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid var(--stroke);
+  background: var(--panel);
+}
+
+.xp-validation-table {
+  width: 100%;
+  min-width: 610px;
+
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.xp-validation-table th {
+  color: var(--accent2);
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: .05em;
+  background: var(--bg2);
+
+  padding: 17px 20px;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-validation-table td {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-validation-table td:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.xp-validation-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+/* ============================================================
+   10. DEMONSTRATION CARDS
+============================================================ */
+
+.xp-demo-card {
+  min-width: 0;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+
+  transition:
+    border-color .25s,
+    transform .25s;
+}
+
+.xp-demo-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.xp-demo-media {
+  position: relative;
+
+  min-height: 185px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(197, 250, 95, .09),
+      transparent 60%
+    ),
+    var(--bg2);
+
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-demo-media > span {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  color: var(--accent2);
+  font-size: 9px;
+}
+
+.xp-demo-media strong {
+  display: grid;
+  place-items: center;
+
+  width: 55px;
+  height: 55px;
+
+  border: 1px solid var(--stroke);
+  border-radius: 50%;
+
+  font-size: 26px;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.xp-demo-media small {
+  font-size: 9px;
+  color: var(--subtle);
+}
+
+.xp-demo-info {
+  padding: 23px;
+}
+
+.xp-demo-info h3 {
+  font-size: 16px;
+  margin: 0 0 12px;
+  letter-spacing: -.03em;
+}
+
+.xp-demo-info p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+
+  min-height: 65px;
+  margin: 0 0 20px;
+}
+
+.xp-demo-info > span {
+  font-size: 9px;
+  color: var(--accent2);
+}
+
+
+/* ============================================================
+   11. PROJECT END SECTION
+============================================================ */
+
+.xp-final {
+  margin-top: 45px;
+  padding: 47px;
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(197, 250, 95, .08),
+      transparent 65%
+    ),
+    var(--panel);
+
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-final > span {
+  color: var(--accent2);
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+
+.xp-final h3 {
+  font-size: clamp(25px, 3vw, 44px);
+  line-height: 1.3;
+  letter-spacing: -.05em;
+
+  margin: 24px 0 30px;
+}
+
+.xp-final .xp-button {
+  width: fit-content;
+}
+
+
+/* ============================================================
+   12. ANIMATIONS
+============================================================ */
+
+@keyframes xp-breathe {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(197, 250, 95, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(197, 250, 95, .10);
+  }
+}
+
+.xp-reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* Only hide sections when JavaScript enhancement is active */
+
+.xp-js .xp-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.xp-js .xp-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+   13. RESPONSIVE — LAPTOP / TABLET
+============================================================ */
+
+@media (max-width: 1180px) {
+
+  .xp-shell {
+    width: calc(100% - 76px);
+  }
+
+  .xp-hero-grid {
+    gap: 35px;
+  }
+
+  .xp-layout {
+    grid-template-columns: 175px minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .xp-grid-three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ============================================================
+   14. RESPONSIVE — TABLET
+============================================================ */
+
+@media (max-width: 960px) {
+
+  .xp-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-hero-copy {
+    max-width: 760px;
+  }
+
+  .xp-visual {
+    max-width: 650px;
+    width: 100%;
+  }
+
+  .xp-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-rail {
+    display: none;
+  }
+
+  .xp-chapter:first-child {
+    padding-top: 10px;
+  }
+
+}
+
+
+/* ============================================================
+   15. RESPONSIVE — MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+  .xp-shell {
+    width: calc(100% - 42px);
+  }
+
+  .xp-page section[id] {
+    scroll-margin-top: 90px;
+  }
+
+  .xp-reading-progress {
+    top: 72px;
+  }
+
+  .xp-hero {
+    padding-top: 38px;
+  }
+
+  .xp-hero-grid {
+    padding-bottom: 50px;
+    gap: 34px;
+  }
+
+  .xp-eyebrow {
+    margin-top: 43px;
+    font-size: 9px;
+  }
+
+  .xp-hero-title {
+    font-size: clamp(49px, 12vw, 82px);
+  }
+
+  .xp-hero-subtitle {
+    font-size: clamp(21px, 5.5vw, 28px);
+  }
+
+  .xp-hero-description {
+    font-size: 13px;
+  }
+
+  .xp-hero-metadata {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .xp-visual {
+    padding: 17px;
+  }
+
+  .xp-visual-header {
+    font-size: 8px;
+  }
+
+  .xp-domain {
+    min-height: 98px;
+    padding: 10px 5px;
+  }
+
+  .xp-domain small {
+    font-size: 7px;
+  }
+
+  .xp-control-plane {
+    min-height: 145px;
+  }
+
+  .xp-visual-footer {
+    font-size: 8px;
+  }
+
+  .xp-hero-bottom {
+    font-size: 8px;
+  }
+
+  .xp-hero-bottom span:last-child {
+    display: none;
+  }
+
+  .xp-layout {
+    padding-top: 35px;
+    padding-bottom: 45px;
+  }
+
+  .xp-chapter {
+    padding: 42px 0 65px;
+  }
+
+  .xp-chapter h2 {
+    font-size: clamp(30px, 7vw, 45px);
+  }
+
+  .xp-chapter-lead {
+    font-size: 13px;
+  }
+
+  .xp-grid-two,
+  .xp-grid-three {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-info-card {
+    padding: 21px;
+  }
+
+  .xp-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xp-placeholder {
+    min-height: 200px;
+    padding: 24px;
+  }
+
+  .xp-final {
+    padding: 25px;
+  }
+
+}
+
+
+/* ============================================================
+   16. ACCESSIBILITY — REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .xp-control-plane {
+    animation: none;
+  }
+
+  .xp-js .xp-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+}
+
+/* ============================================================
+   END OF EXAVIGIL STYLESHEET
+============================================================ */
+
