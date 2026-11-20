@@ -2,21 +2,38 @@
 'use strict';
 
 // ============================================================
-// EXAVIGIL — PROJECT DETAIL PAGE
-// Scroll Progress | Section Reveal | Chapter Navigation
+// EXAVIGIL — PROJECT DOCUMENTATION
+// Scroll Progress | Active Chapters | Reveal | Image Checks
 // ============================================================
 
 (() => {
 
   // ==========================================================
-  // 1. READING PROGRESS INDICATOR
+  // 1. ELEMENT REFERENCES
   // ==========================================================
 
   const progressBar = document.getElementById(
     'xp-reading-progress'
   );
 
-  let scrollUpdatePending = false;
+  const chapters = [
+    ...document.querySelectorAll('.xp-chapter[id]')
+  ];
+
+  const chapterLinks = [
+    ...document.querySelectorAll('.xp-rail-link')
+  ];
+
+  const revealElements = [
+    ...document.querySelectorAll('.xp-reveal')
+  ];
+
+  let updatePending = false;
+
+
+  // ==========================================================
+  // 2. READING PROGRESS
+  // ==========================================================
 
   function updateReadingProgress() {
 
@@ -40,50 +57,13 @@
 
     progressBar.style.transform =
       `scaleX(${progress})`;
+
   }
-
-  function requestProgressUpdate() {
-
-    if (scrollUpdatePending) return;
-
-    scrollUpdatePending = true;
-
-    requestAnimationFrame(() => {
-      updateReadingProgress();
-      scrollUpdatePending = false;
-    });
-  }
-
-  window.addEventListener(
-    'scroll',
-    requestProgressUpdate,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    'resize',
-    requestProgressUpdate
-  );
-
-  window.addEventListener(
-    'load',
-    requestProgressUpdate
-  );
-
-  updateReadingProgress();
 
 
   // ==========================================================
-  // 2. ACTIVE CHAPTER IN SIDE NAVIGATION
+  // 3. ACTIVE CHAPTER NAVIGATION
   // ==========================================================
-
-  const chapters = [
-    ...document.querySelectorAll('.xp-chapter[id]')
-  ];
-
-  const chapterLinks = [
-    ...document.querySelectorAll('.xp-rail-link')
-  ];
 
   function setActiveChapter(id) {
 
@@ -98,7 +78,10 @@
       );
 
       if (isCurrent) {
-        link.setAttribute('aria-current', 'location');
+        link.setAttribute(
+          'aria-current',
+          'location'
+        );
       } else {
         link.removeAttribute('aria-current');
       }
@@ -107,71 +90,126 @@
 
   }
 
-  if ('IntersectionObserver' in window) {
 
-    const chapterObserver = new IntersectionObserver(
-      entries => {
+  function updateActiveChapter() {
 
-        const visible = entries
-          .filter(entry => entry.isIntersecting)
-          .sort(
-            (a, b) =>
-              b.intersectionRatio - a.intersectionRatio
-          );
+    if (!chapters.length) return;
 
-        if (!visible.length) return;
+    const activationPoint =
+      Math.max(135, window.innerHeight * 0.25);
 
-        setActiveChapter(visible[0].target.id);
-
-      },
-      {
-        rootMargin: '-20% 0px -55% 0px',
-        threshold: [0, 0.05, 0.15, 0.3]
-      }
-    );
+    let activeId = chapters[0].id;
 
     chapters.forEach(chapter => {
-      chapterObserver.observe(chapter);
+
+      const rectangle =
+        chapter.getBoundingClientRect();
+
+      if (rectangle.top <= activationPoint) {
+        activeId = chapter.id;
+      }
+
     });
+
+    setActiveChapter(activeId);
 
   }
 
 
   // ==========================================================
-  // 3. SCROLL REVEAL ANIMATIONS
+  // 4. OPTIMIZED SCROLL HANDLER
   // ==========================================================
 
-  const reducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
+  function updatePageState() {
 
-  const revealElements = [
-    ...document.querySelectorAll('.xp-reveal')
-  ];
+    updateReadingProgress();
+    updateActiveChapter();
 
-  if (!reducedMotion && 'IntersectionObserver' in window) {
+    updatePending = false;
 
-    document.documentElement.classList.add('xp-js');
+  }
 
-    const revealObserver = new IntersectionObserver(
-      entries => {
+  function requestPageUpdate() {
 
-        entries.forEach(entry => {
+    if (updatePending) return;
 
-          if (!entry.isIntersecting) return;
+    updatePending = true;
 
-          entry.target.classList.add('is-visible');
-
-          revealObserver.unobserve(entry.target);
-
-        });
-
-      },
-      {
-        threshold: 0.05,
-        rootMargin: '0px 0px -5% 0px'
-      }
+    window.requestAnimationFrame(
+      updatePageState
     );
+
+  }
+
+  window.addEventListener(
+    'scroll',
+    requestPageUpdate,
+    { passive: true }
+  );
+
+  window.addEventListener(
+    'resize',
+    requestPageUpdate
+  );
+
+  window.addEventListener(
+    'hashchange',
+    requestPageUpdate
+  );
+
+  window.addEventListener(
+    'load',
+    requestPageUpdate
+  );
+
+  requestPageUpdate();
+
+
+  // ==========================================================
+  // 5. SCROLL REVEAL ANIMATIONS
+  // ==========================================================
+
+  const prefersReducedMotion =
+    window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+  if (
+    !prefersReducedMotion &&
+    'IntersectionObserver' in window
+  ) {
+
+    document.documentElement.classList.add(
+      'xp-js'
+    );
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add(
+              'is-visible'
+            );
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          });
+
+        },
+
+        {
+          threshold: 0.02,
+          rootMargin: '0px 0px -4% 0px'
+        }
+
+      );
 
     revealElements.forEach(element => {
       revealObserver.observe(element);
@@ -185,9 +223,71 @@
 
   }
 
+
+  // ==========================================================
+  // 6. PROJECT FIGURE IMAGE CHECKS
+  // ==========================================================
+
+  const projectImages = [
+    ...document.querySelectorAll(
+      '.xp-overview-figure img'
+    )
+  ];
+
+  projectImages.forEach(img => {
+
+    function handleImageError() {
+
+      const imageLink = img.closest(
+        '.xp-figure-image-link'
+      );
+
+      if (!imageLink) return;
+
+      if (imageLink.querySelector('.xp-figure-error')) {
+        return;
+      }
+
+      img.style.display = 'none';
+
+      const errorMessage =
+        document.createElement('div');
+
+      errorMessage.className =
+        'xp-figure-error';
+
+      errorMessage.setAttribute(
+        'role',
+        'status'
+      );
+
+      errorMessage.textContent =
+        'Figure unavailable. Verify the image filename and GitHub repository path.';
+
+      imageLink.appendChild(errorMessage);
+
+      console.warn(
+        'EXAVIGIL: Missing figure:',
+        img.getAttribute('src')
+      );
+
+    }
+
+    img.addEventListener(
+      'error',
+      handleImageError,
+      { once: true }
+    );
+
+    // Handle images that failed before the listener was added.
+    if (img.complete && img.naturalWidth === 0) {
+      handleImageError();
+    }
+
+  });
+
 })();
 
 // ============================================================
 // END — EXAVIGIL PROJECT JAVASCRIPT
 // ============================================================
-
