@@ -1638,6 +1638,211 @@
 
 }
 
+
+/* ============================================================
+   EXAVIGIL — SECTION 02
+   UNIFIED IT/OT/CLOUD AGENTIC SOC ARCHITECTURE
+============================================================ */
+
+/* Architecture layers */
+
+.xp-arch-layers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 30px 0 45px;
+}
+
+.xp-arch-layer {
+  min-width: 0;
+  padding: 23px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+}
+
+.xp-arch-layer > span,
+.xp-arch-kicker,
+.xp-arch-control-grid > div > span {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: .07em;
+  color: var(--accent2);
+}
+
+.xp-arch-layer strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 13px 0 8px;
+}
+
+.xp-arch-layer p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Section subsections */
+
+.xp-arch-block {
+  margin: 42px 0 30px;
+}
+
+.xp-arch-kicker {
+  margin-bottom: 13px;
+}
+
+.xp-arch-block > h3 {
+  font-size: clamp(21px, 2.2vw, 28px);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.35;
+  color: var(--text);
+  margin: 0 0 19px;
+}
+
+.xp-arch-block > p {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.9;
+  max-width: 950px;
+  margin: 0 0 17px;
+}
+
+.xp-arch-block .xp-card-grid {
+  margin-top: 24px;
+}
+
+/* Architecture figures */
+
+.xp-architecture .xp-overview-figure {
+  margin: 32px 0 48px;
+}
+
+.xp-architecture .xp-figure-image-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Alert processing pipeline */
+
+.xp-arch-pipeline {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.xp-arch-step {
+  min-width: 0;
+  padding: 17px 13px;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-arch-step > span {
+  display: block;
+  font: 10px "DM Mono", monospace;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+
+.xp-arch-step strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.xp-arch-step small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.xp-arch-block > .xp-arch-detail {
+  font-size: 12px;
+  color: var(--subtle);
+}
+
+/* Security boundary cards */
+
+.xp-arch-control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.xp-arch-control-grid > div {
+  min-width: 0;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.xp-arch-control-grid strong {
+  display: block;
+  font-size: 16px;
+  margin: 13px 0 10px;
+  color: var(--text);
+}
+
+.xp-arch-control-grid p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  .xp-arch-pipeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+
+  .xp-arch-layers,
+  .xp-arch-control-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-arch-pipeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xp-arch-block > p {
+    font-size: 13px;
+  }
+
+  .xp-arch-layer,
+  .xp-arch-control-grid > div {
+    padding: 19px;
+  }
+
+  .xp-arch-step {
+    padding: 14px 11px;
+  }
+
+}
+
+/* END SECTION 02 */
+
 /* ============================================================
    END OF EXAVIGIL.CSS
 ============================================================ */
