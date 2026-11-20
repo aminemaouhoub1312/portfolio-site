@@ -1,71 +1,38 @@
 
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 
 <head>
-  <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090c0f">
 
   <meta
     name="description"
-    content="EXAVIGIL — Next-Generation IT/OT/Cloud Agentic SOC and AI Security Platform. Cybersecurity engineering project documentation."
+    content="EXAVIGIL — Next-Generation IT/OT/Cloud Agentic SOC and AI Security Platform. Cybersecurity engineering proof of concept."
   >
 
   <title>
     EXAVIGIL — Agentic SOC & AI Security | Amine Maouhoub
   </title>
 
-  <!-- Fonts -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <!-- Portfolio styles -->
+  <!-- Shared portfolio design -->
+  <link rel="stylesheet" href="../assets/css/style.css">
 
-  <link
-    rel="stylesheet"
-    href="../assets/css/style.css"
-  >
-
-  <!-- EXAVIGIL specific styles -->
-
-  <link
-    rel="stylesheet"
-    href="../assets/css/exavigil.css"
-  >
+  <!-- Dedicated EXAVIGIL design -->
+  <link rel="stylesheet" href="../assets/css/exavigil.css?v=4">
 
   <!-- JavaScript -->
-
-  <script
-    defer
-    src="../assets/js/main.js"
-  ></script>
-
-  <script
-    defer
-    src="../assets/js/exavigil.js"
-  ></script>
-
+  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/exavigil.js?v=4"></script>
 </head>
 
 
@@ -78,9 +45,9 @@
   <div class="site-grain" aria-hidden="true"></div>
 
 
-  <!-- ==========================================
-       HEADER
-  =========================================== -->
+  <!-- ======================================================
+       HEADER / PROJECT NAVIGATION
+  ======================================================= -->
 
   <header class="topbar" id="top">
 
@@ -89,7 +56,6 @@
       href="../index.html#projects"
       aria-label="Return to Amine Maouhoub portfolio"
     >
-
       <span class="brand-symbol">
         AM<span class="brand-dot">.</span>
       </span>
@@ -98,18 +64,17 @@
         <strong>AMINE MAOUHOUB</strong>
         <small>PROJECT / EXAVIGIL</small>
       </span>
-
     </a>
 
 
-    <!-- Mobile navigation -->
+    <!-- Mobile menu -->
 
     <button
       class="menu-toggle"
       id="menu-toggle"
       type="button"
-      aria-expanded="false"
       aria-controls="nav"
+      aria-expanded="false"
       aria-label="Open navigation menu"
     >
       <span></span>
@@ -118,42 +83,40 @@
     </button>
 
 
-    <!-- Project chapters navigation -->
+    <!-- Seven project chapters -->
 
     <nav
       class="nav"
       id="nav"
-      aria-label="EXAVIGIL chapters"
+      aria-label="Project chapters"
     >
-
-      <a href="#overview" class="nav-link active">
+      <a class="nav-link active" href="#overview">
         Overview
       </a>
 
-      <a href="#architecture" class="nav-link">
+      <a class="nav-link" href="#architecture">
         Architecture
       </a>
 
-      <a href="#agentic-soc" class="nav-link">
+      <a class="nav-link" href="#agentic-soc">
         Agentic SOC
       </a>
 
-      <a href="#ai-security" class="nav-link">
+      <a class="nav-link" href="#ai-security">
         AI Security
       </a>
 
-      <a href="#validation" class="nav-link">
+      <a class="nav-link" href="#validation">
         Validation
       </a>
 
-      <a href="#demonstrations" class="nav-link">
+      <a class="nav-link" href="#demonstrations">
         Demos
       </a>
 
-      <a href="#impact" class="nav-link">
+      <a class="nav-link" href="#impact">
         Impact
       </a>
-
     </nav>
 
 
@@ -166,12 +129,11 @@
       aria-label="Switch to light mode"
       title="Toggle color theme"
     >
-
       <svg
         class="theme-icon-sun"
-        viewBox="0 0 24 24"
         width="19"
         height="19"
+        viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         stroke-width="1.7"
@@ -184,9 +146,9 @@
 
       <svg
         class="theme-icon-moon"
-        viewBox="0 0 24 24"
         width="19"
         height="19"
+        viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
         stroke-width="1.7"
@@ -195,13 +157,12 @@
       >
         <path d="M20.6 14.5A9 9 0 0 1 9.5 3.4a9 9 0 1 0 11.1 11.1Z"/>
       </svg>
-
     </button>
 
   </header>
 
 
-  <!-- Reading progress indicator -->
+  <!-- Scroll progress -->
 
   <div
     class="xp-reading-progress"
@@ -213,22 +174,19 @@
   <main id="main-content">
 
 
-    <!-- ==========================================
-         PROJECT COVER / HERO
-    =========================================== -->
+    <!-- ======================================================
+         PROJECT HERO
+    ======================================================= -->
 
     <div class="xp-hero">
 
       <div class="xp-shell xp-hero-grid">
 
-
-        <!-- Left: Project identity -->
-
         <div class="xp-hero-copy">
 
           <a
-            href="../index.html#projects"
             class="xp-back-link"
+            href="../index.html#projects"
           >
             <span aria-hidden="true">←</span>
             BACK TO PROJECTS
@@ -236,7 +194,7 @@
 
           <div class="xp-eyebrow">
             <span class="xp-live-dot"></span>
-            FEATURED ENGINEERING PROJECT / 2026
+            CYBERSECURITY ENGINEERING / 2026
           </div>
 
           <h1 class="xp-hero-title">
@@ -249,10 +207,10 @@
           </p>
 
           <p class="xp-hero-description">
-            Exploring the evolution of conventional
-            security operations into an integrated,
-            intelligent and controlled cybersecurity
-            architecture across enterprise IT,
+            A cybersecurity engineering proof of concept
+            exploring unified security monitoring,
+            intelligent investigation and controlled
+            automation across enterprise IT,
             industrial OT and Cloud environments.
           </p>
 
@@ -265,16 +223,19 @@
 
           <div class="xp-hero-actions">
 
-            <a href="#overview" class="xp-button xp-button-primary">
+            <a
+              class="xp-button xp-button-primary"
+              href="#overview"
+            >
               Explore Project
               <span aria-hidden="true">↘</span>
             </a>
 
             <a
-              href="../index.html#projects"
               class="xp-button xp-button-outline"
+              href="../index.html#projects"
             >
-              Portfolio
+              All Projects
               <span aria-hidden="true">↗</span>
             </a>
 
@@ -293,7 +254,7 @@
             </div>
 
             <div>
-              <span>SCOPE</span>
+              <span>TECHNICAL SCOPE</span>
               <strong>IT / OT / Cloud / AI</strong>
             </div>
 
@@ -302,12 +263,12 @@
         </div>
 
 
-        <!-- Right: Animated architecture visual -->
+        <!-- Animated conceptual visual -->
 
         <div
           class="xp-visual"
           role="img"
-          aria-label="Conceptual EXAVIGIL architecture showing IT, OT and Cloud security domains connected to an Agentic SOC and AI Security control plane"
+          aria-label="Conceptual EXAVIGIL system connecting IT, OT and Cloud to the Agentic SOC and AI Security control plane"
         >
 
           <div class="xp-visual-header">
@@ -344,7 +305,6 @@
           </div>
 
           <div class="xp-control-plane">
-
             <span class="xp-control-label">
               UNIFIED SECURITY LAYER
             </span>
@@ -354,7 +314,6 @@
             <small>
               AGENTIC SOC / AI SECURITY
             </small>
-
           </div>
 
           <div class="xp-visual-footer">
@@ -369,22 +328,26 @@
       </div>
 
       <div class="xp-shell xp-hero-bottom">
-        <span>ARCHITECTURE / SYSTEM INTEGRATION / VALIDATION</span>
-        <span>SCROLL TO EXPLORE ↓</span>
+        <span>
+          ARCHITECTURE / SYSTEM INTEGRATION / VALIDATION
+        </span>
+
+        <span>
+          SCROLL TO EXPLORE ↓
+        </span>
       </div>
 
     </div>
-    <!-- END HERO -->
 
 
-    <!-- ==========================================
-         DOCUMENTATION LAYOUT
-    =========================================== -->
+    <!-- ======================================================
+         PROJECT DOCUMENTATION LAYOUT
+    ======================================================= -->
 
     <div class="xp-shell xp-layout">
 
 
-      <!-- Sticky chapter navigation -->
+      <!-- STICKY SIDE NAVIGATION -->
 
       <aside class="xp-rail">
 
@@ -392,39 +355,39 @@
           PROJECT INDEX / 07
         </span>
 
-        <nav aria-label="Project document index">
+        <nav aria-label="Documentation index">
 
-          <a href="#overview" class="xp-rail-link is-current">
+          <a class="xp-rail-link is-current" href="#overview">
             <span>01</span>
             Executive Overview
           </a>
 
-          <a href="#architecture" class="xp-rail-link">
+          <a class="xp-rail-link" href="#architecture">
             <span>02</span>
             Unified Architecture
           </a>
 
-          <a href="#agentic-soc" class="xp-rail-link">
+          <a class="xp-rail-link" href="#agentic-soc">
             <span>03</span>
             Intelligent Investigation
           </a>
 
-          <a href="#ai-security" class="xp-rail-link">
+          <a class="xp-rail-link" href="#ai-security">
             <span>04</span>
             AI Security
           </a>
 
-          <a href="#validation" class="xp-rail-link">
+          <a class="xp-rail-link" href="#validation">
             <span>05</span>
             Security Validation
           </a>
 
-          <a href="#demonstrations" class="xp-rail-link">
+          <a class="xp-rail-link" href="#demonstrations">
             <span>06</span>
             Demonstrations
           </a>
 
-          <a href="#impact" class="xp-rail-link">
+          <a class="xp-rail-link" href="#impact">
             <span>07</span>
             Engineering Impact
           </a>
@@ -432,8 +395,8 @@
         </nav>
 
         <a
-          href="../index.html#projects"
           class="xp-rail-back"
+          href="../index.html#projects"
         >
           ← ALL PROJECTS
         </a>
@@ -441,529 +404,500 @@
       </aside>
 
 
-      <!-- Main project documentation -->
+      <!-- PROJECT DOCUMENT -->
 
       <div class="xp-document">
 
 
-       
-<!-- ============================================================
-     01 / EXECUTIVE OVERVIEW & VALUE PROPOSITION
-     EXAVIGIL — CYBERSECURITY ENGINEERING PROJECT
-============================================================ -->
-
-<section
-  class="xp-chapter xp-reveal"
-  id="overview"
-  aria-labelledby="xp-overview-title"
->
-
-  <!-- SECTION HEADING -->
-
-  <div class="xp-chapter-label">
-    <span>01</span>
-    EXECUTIVE OVERVIEW / VALUE PROPOSITION
-  </div>
-
-  <h2 id="xp-overview-title">
-    Executive Overview
-    <span>&amp; Value Proposition</span>
-  </h2>
-
-  <p class="xp-chapter-lead">
-    EXAVIGIL explores the convergence of unified
-    security monitoring, cyber threat intelligence,
-    agentic investigation and AI security within
-    a controlled IT/OT/Cloud Security Operations
-    Center architecture.
-  </p>
-
-
-  <!-- ==========================================================
-       01.1 / PROJECT BACKGROUND
-  =========================================================== -->
-
-  <div class="xp-overview-block">
-
-    <span class="xp-overview-kicker">
-      01.1 / CONTEXT
-    </span>
-
-    <h3 class="xp-overview-heading">
-      Project Background
-    </h3>
-
-    <p>
-      EXAVIGIL is a cybersecurity engineering project
-      developed as a local proof of concept within the
-      context of an OCP office in Morocco.
-    </p>
-
-    <p>
-      The project investigates how security operations
-      can evolve beyond isolated monitoring tools by
-      combining enterprise IT, industrial OT and Cloud
-      security visibility with threat intelligence,
-      AI-assisted investigation and controlled response.
-    </p>
-
-    <p>
-      The work focuses on system architecture,
-      technical integration, security engineering
-      and controlled laboratory demonstrations.
-      It does not represent a deployment on OCP
-      production infrastructure.
-    </p>
-
-  </div>
-
-
-  <!-- ==========================================================
-       01.2 / THE ENGINEERING CHALLENGE
-  =========================================================== -->
-
-  <div class="xp-overview-block">
-
-    <span class="xp-overview-kicker">
-      01.2 / PROBLEM STATEMENT
-    </span>
-
-    <h3 class="xp-overview-heading">
-      The Engineering Challenge
-    </h3>
-
-    <p>
-      Modern Security Operations Centers must process
-      large volumes of events across different technologies,
-      infrastructures and security tools.
-      Fragmented visibility and limited contextual
-      correlation can slow down triage, investigation
-      and response planning.
-    </p>
-
-    <p>
-      Industrial environments introduce additional
-      constraints. Security monitoring must preserve
-      operational availability, system integrity and
-      safety while respecting the separation between
-      enterprise networks and sensitive industrial
-      control environments.
-    </p>
-
-    <p>
-      Agentic AI offers opportunities to automate
-      investigative tasks, enrich security findings
-      and support analyst decisions. However,
-      AI agents also introduce new risks when
-      processing untrusted intelligence, retrieving
-      external documents, accessing credentials
-      or interacting with operational tools.
-    </p>
-
-    <!-- CENTRAL ENGINEERING QUESTION -->
-
-    <div class="xp-engineering-question">
-
-      <span>
-        THE CORE ENGINEERING QUESTION
-      </span>
-
-      <p>
-        How can intelligent security investigation
-        be integrated into a unified SOC without
-        allowing AI-generated decisions to bypass
-        authorization, operational controls
-        or human oversight?
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <!-- ==========================================================
-       01.3 / THE EXAVIGIL APPROACH
-  =========================================================== -->
-
-  <div class="xp-overview-block">
-
-    <span class="xp-overview-kicker">
-      01.3 / ENGINEERING RESPONSE
-    </span>
-
-    <h3 class="xp-overview-heading">
-      The EXAVIGIL Approach
-    </h3>
-
-    <p>
-      EXAVIGIL proposes a layered SOC architecture
-      that brings together centralized monitoring,
-      cyber threat intelligence, contextual
-      investigation and specialized AI agents
-      within a unified security workflow.
-    </p>
-
-    <p>
-      The architectural design incorporates
-      Wazuh SIEM for security monitoring,
-      MISP for threat intelligence exchange,
-      OpenSearch for indexing and analysis,
-      and contextual retrieval capabilities
-      supporting RAG-assisted investigation.
-    </p>
-
-    <p>
-      Specialized agents are designed to assist
-      with alert triage, intelligence enrichment,
-      incident investigation and response planning.
-      Their role is to support analysis and
-      recommend actions rather than independently
-      authorize sensitive operations.
-    </p>
-
-    <p>
-      A dedicated Policy Gateway establishes
-      a separation between AI-generated decisions
-      and operational execution. The security design
-      incorporates Keycloak for identity and access
-      management, OPA for policy evaluation,
-      and OpenBao for sensitive secret management.
-    </p>
-
-    <p>
-      Authorization rules and human approval
-      are intended to govern sensitive actions,
-      while industrial control environments
-      remain subject to strict monitoring
-      and execution boundaries.
-    </p>
-
-    <!-- ARCHITECTURAL PRINCIPLE -->
-
-    <div class="xp-principle">
-
-      <span>
-        CORE ARCHITECTURAL PRINCIPLE
-      </span>
-
-      <strong>
-        Intelligent Investigation.
-        Independent Authorization.
-        Controlled Execution.
-      </strong>
-
-    </div>
-
-  </div>
-
-
-  <!-- ==========================================================
-       FIGURE 01 / OPERATIONAL OVERVIEW
-  =========================================================== -->
-
-  <figure class="xp-overview-figure">
-
-    <div class="xp-figure-heading">
-
-      <div>
-        <span>FIGURE 01 / OPERATIONAL WORKFLOW</span>
-        <h3>EXAVIGIL Operational Overview</h3>
-      </div>
-
-      <a
-        href="../assets/img/projects/exavigil/exavigil-operational-overview.png"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="xp-figure-open"
-      >
-        VIEW FULL SIZE ↗
-      </a>
-
-    </div>
-
-    <a
-      href="../assets/img/projects/exavigil/exavigil-operational-overview.png"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="xp-figure-image-link"
-      aria-label="View full-size EXAVIGIL operational workflow"
-    >
-
-      <img
-        src="../assets/img/projects/exavigil/exavigil-operational-overview.png"
-        alt="EXAVIGIL operational workflow: IT, OT and Cloud sources, Wazuh SIEM, CTI and RAG, Agentic SOC, Policy Gateway and Controlled Response"
-        loading="lazy"
-        decoding="async"
-      >
-
-    </a>
-
-    <figcaption>
-      Figure 01. Conceptual operational sequence
-      connecting IT/OT/Cloud monitoring,
-      threat intelligence and RAG,
-      agentic investigation,
-      policy enforcement and controlled response.
-      This high-level diagram does not represent
-      the complete deployment topology.
-    </figcaption>
-
-  </figure>
-
-
-  <!-- ==========================================================
-       01.4 / PROJECT OBJECTIVES
-  =========================================================== -->
-
-  <div class="xp-overview-block">
-
-    <span class="xp-overview-kicker">
-      01.4 / ENGINEERING OBJECTIVES
-    </span>
-
-    <h3 class="xp-overview-heading">
-      Project Objectives
-    </h3>
-
-    <p>
-      The project is structured around seven
-      engineering objectives covering unified
-      security visibility, intelligence-driven
-      detection, agentic investigation,
-      AI security, controlled automation,
-      operational safety and security validation.
-    </p>
-
-    <p>
-      These objectives establish the intended
-      capabilities and security requirements
-      against which the architecture and
-      laboratory scenarios can be evaluated.
-    </p>
-
-  </div>
-
-
-  <!-- ==========================================================
-       FIGURE 02 / PROJECT OBJECTIVES
-  =========================================================== -->
-
-  <figure class="xp-overview-figure">
-
-    <div class="xp-figure-heading">
-
-      <div>
-        <span>FIGURE 02 / ENGINEERING OBJECTIVES</span>
-        <h3>Project Objectives &amp; Engineering Goals</h3>
-      </div>
-
-      <a
-        href="../assets/img/projects/exavigil/exavigil-objectives.png"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="xp-figure-open"
-      >
-        VIEW FULL SIZE ↗
-      </a>
-
-    </div>
-
-    <a
-      href="../assets/img/projects/exavigil/exavigil-objectives.png"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="xp-figure-image-link"
-      aria-label="View full-size project objectives table"
-    >
-
-      <img
-        src="../assets/img/projects/exavigil/exavigil-objectives.png"
-        alt="Table of seven EXAVIGIL engineering objectives, including unified visibility, threat intelligence, agentic investigation, AI security, controlled automation, OT safety and validation"
-        loading="lazy"
-        decoding="async"
-      >
-
-    </a>
-
-    <figcaption>
-      Figure 02. Seven engineering objectives
-      defining the intended monitoring,
-      investigation, automation,
-      AI security and validation capabilities
-      of EXAVIGIL.
-    </figcaption>
-
-  </figure>
-
-
-  <!-- ==========================================================
-       01.5 / VALUE PROPOSITION
-  =========================================================== -->
-
-  <div class="xp-overview-block">
-
-    <span class="xp-overview-kicker">
-      01.5 / ENGINEERING VALUE
-    </span>
+        <!-- ==================================================
+             01 / EXECUTIVE OVERVIEW & VALUE PROPOSITION
+        =================================================== -->
+
+        <section
+          class="xp-chapter xp-reveal"
+          id="overview"
+          aria-labelledby="xp-overview-title"
+        >
+
+          <div class="xp-chapter-label">
+            <span>01</span>
+            EXECUTIVE OVERVIEW / VALUE PROPOSITION
+          </div>
+
+          <h2 id="xp-overview-title">
+            Executive Overview
+            <span>&amp; Value Proposition</span>
+          </h2>
+
+          <p class="xp-chapter-lead">
+            EXAVIGIL explores the convergence of unified
+            security monitoring, cyber threat intelligence,
+            agentic investigation and AI security within
+            a controlled IT/OT/Cloud Security Operations
+            Center architecture.
+          </p>
+
+
+          <!-- 01.1 / PROJECT BACKGROUND -->
+
+          <div class="xp-overview-block">
+
+            <span class="xp-overview-kicker">
+              01.1 / CONTEXT
+            </span>
+
+            <h3 class="xp-overview-heading">
+              Project Background
+            </h3>
+
+            <p>
+              EXAVIGIL is a cybersecurity engineering
+              project developed as a local proof of concept
+              within the context of an OCP office in Morocco.
+            </p>
+
+            <p>
+              The project investigates how security
+              operations can evolve beyond isolated
+              monitoring tools by combining enterprise IT,
+              industrial OT and Cloud security visibility
+              with threat intelligence, AI-assisted
+              investigation and controlled response.
+            </p>
+
+            <p>
+              The work focuses on system architecture,
+              technical integration, security engineering
+              and controlled laboratory demonstrations.
+              It does not represent a deployment on
+              OCP production infrastructure.
+            </p>
+
+          </div>
+
+
+          <!-- 01.2 / ENGINEERING CHALLENGE -->
+
+          <div class="xp-overview-block">
+
+            <span class="xp-overview-kicker">
+              01.2 / PROBLEM STATEMENT
+            </span>
+
+            <h3 class="xp-overview-heading">
+              The Engineering Challenge
+            </h3>
+
+            <p>
+              Modern Security Operations Centers must
+              process large volumes of events across
+              different technologies, infrastructures
+              and security tools. Fragmented visibility
+              and limited contextual correlation can
+              slow down triage, investigation and
+              response planning.
+            </p>
+
+            <p>
+              Industrial environments introduce additional
+              constraints. Security monitoring must preserve
+              operational availability, system integrity
+              and safety while respecting the separation
+              between enterprise networks and sensitive
+              industrial control environments.
+            </p>
+
+            <p>
+              Agentic AI offers opportunities to automate
+              investigative tasks, enrich security findings
+              and support analyst decisions. However,
+              AI agents also introduce new risks when
+              processing untrusted intelligence, retrieving
+              external documents, accessing credentials
+              or interacting with operational tools.
+            </p>
+
+            <div class="xp-engineering-question">
+
+              <span>
+                THE CORE ENGINEERING QUESTION
+              </span>
+
+              <p>
+                How can intelligent security investigation
+                be integrated into a unified SOC without
+                allowing AI-generated decisions to bypass
+                authorization, operational controls
+                or human oversight?
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- 01.3 / EXAVIGIL APPROACH -->
+
+          <div class="xp-overview-block">
+
+            <span class="xp-overview-kicker">
+              01.3 / ENGINEERING RESPONSE
+            </span>
+
+            <h3 class="xp-overview-heading">
+              The EXAVIGIL Approach
+            </h3>
+
+            <p>
+              EXAVIGIL proposes a layered SOC architecture
+              that brings together centralized monitoring,
+              cyber threat intelligence, contextual
+              investigation and specialized AI agents
+              within a unified security workflow.
+            </p>
+
+            <p>
+              The architectural design incorporates Wazuh
+              SIEM for security monitoring, MISP for threat
+              intelligence exchange, OpenSearch for indexing
+              and analysis, and contextual retrieval
+              capabilities supporting RAG-assisted
+              investigation.
+            </p>
+
+            <p>
+              Specialized agents are designed to assist
+              with alert triage, intelligence enrichment,
+              incident investigation and response planning.
+              Their role is to support analysis and
+              recommend actions rather than independently
+              authorize sensitive operations.
+            </p>
+
+            <p>
+              A dedicated Policy Gateway establishes a
+              separation between AI-generated decisions
+              and operational execution. The security
+              design incorporates Keycloak for identity
+              and access management, OPA for policy
+              evaluation and OpenBao for sensitive
+              secret management.
+            </p>
+
+            <p>
+              Authorization rules and human approval
+              are intended to govern sensitive actions,
+              while industrial control environments
+              remain subject to strict monitoring
+              and execution boundaries.
+            </p>
+
+            <div class="xp-principle">
+
+              <span>
+                CORE ARCHITECTURAL PRINCIPLE
+              </span>
+
+              <strong>
+                Intelligent Investigation.
+                Independent Authorization.
+                Controlled Execution.
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <!-- FIGURE 01 / OPERATIONAL WORKFLOW -->
+
+          <figure class="xp-overview-figure">
+
+            <div class="xp-figure-heading">
+
+              <div>
+                <span>
+                  FIGURE 01 / OPERATIONAL WORKFLOW
+                </span>
+
+                <h3>
+                  EXAVIGIL Operational Overview
+                </h3>
+              </div>
+
+              <a
+                class="xp-figure-open"
+                href="../assets/img/projects/exavigil-operational-overview.png"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                VIEW FULL SIZE ↗
+              </a>
+
+            </div>
+
+            <a
+              class="xp-figure-image-link"
+              href="../assets/img/projects/exavigil-operational-overview.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View full-size EXAVIGIL operational overview"
+            >
+
+              <img
+                src="../assets/img/projects/exavigil-operational-overview.png"
+                alt="EXAVIGIL operational workflow connecting IT, OT and Cloud to Wazuh SIEM, CTI and RAG, Agentic SOC, Policy Gateway and Controlled Response"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </a>
+
+            <figcaption>
+              Figure 01. Conceptual operational sequence
+              connecting IT/OT/Cloud monitoring,
+              threat intelligence, agentic investigation,
+              policy enforcement and controlled response.
+              This is a high-level workflow rather
+              than a complete deployment topology.
+            </figcaption>
+
+          </figure>
+
+
+          <!-- 01.4 / PROJECT OBJECTIVES -->
+
+          <div class="xp-overview-block">
+
+            <span class="xp-overview-kicker">
+              01.4 / ENGINEERING OBJECTIVES
+            </span>
+
+            <h3 class="xp-overview-heading">
+              Project Objectives
+            </h3>
+
+            <p>
+              The project is structured around seven
+              engineering objectives covering unified
+              security visibility, intelligence-driven
+              detection, agentic investigation,
+              AI security, controlled automation,
+              operational safety and security validation.
+            </p>
+
+            <p>
+              These objectives establish the intended
+              capabilities and security requirements
+              against which the architecture and
+              laboratory scenarios can be evaluated.
+            </p>
+
+          </div>
+
+
+          <!-- FIGURE 02 / PROJECT OBJECTIVES -->
+
+          <figure class="xp-overview-figure">
+
+            <div class="xp-figure-heading">
+
+              <div>
+                <span>
+                  FIGURE 02 / ENGINEERING OBJECTIVES
+                </span>
+
+                <h3>
+                  Project Objectives &amp; Engineering Goals
+                </h3>
+              </div>
+
+              <a
+                class="xp-figure-open"
+                href="../assets/img/projects/exavigil-objectives.png"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                VIEW FULL SIZE ↗
+              </a>
+
+            </div>
+
+            <a
+              class="xp-figure-image-link"
+              href="../assets/img/projects/exavigil-objectives.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View full-size project objectives"
+            >
+
+              <img
+                src="../assets/img/projects/exavigil-objectives.png"
+                alt="EXAVIGIL table of seven project objectives and engineering goals"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </a>
+
+            <figcaption>
+              Figure 02. Seven engineering objectives
+              defining the intended monitoring,
+              investigation, AI security,
+              automation control, OT safety
+              and validation capabilities.
+            </figcaption>
+
+          </figure>
 
-    <h3 class="xp-overview-heading">
-      Value Proposition
-    </h3>
+
+          <!-- 01.5 / VALUE PROPOSITION -->
 
-    <p>
-      EXAVIGIL brings together three complementary
-      engineering disciplines to explore a
-      more integrated, intelligent and
-      security-controlled approach
-      to modern SOC operations.
-    </p>
-
-  </div>
-
-
-  <!-- THREE VALUE PILLARS -->
-
-  <div class="xp-card-grid xp-grid-three">
-
-    <!-- VALUE 01 -->
-
-    <article class="xp-info-card">
-
-      <span class="xp-card-number">
-        01 / UNIFIED SOC ENGINEERING
-      </span>
-
-      <h3>
-        Unified Security Operations
-      </h3>
-
-      <p>
-        Combine IT, OT and Cloud security
-        monitoring with cyber threat intelligence,
-        contextual analysis and incident
-        investigation workflows within
-        a coherent architectural model.
-      </p>
-
-    </article>
-
-
-    <!-- VALUE 02 -->
-
-    <article class="xp-info-card">
-
-      <span class="xp-card-number">
-        02 / AGENTIC AI ENGINEERING
-      </span>
-
-      <h3>
-        Intelligent Investigation
-      </h3>
-
-      <p>
-        Use specialized AI agents, contextual
-        retrieval and RAG-assisted analysis
-        to support triage, threat correlation,
-        investigation and response planning
-        while keeping analysts involved
-        in critical decisions.
-      </p>
-
-    </article>
-
-
-    <!-- VALUE 03 -->
-
-    <article class="xp-info-card">
-
-      <span class="xp-card-number">
-        03 / AI SECURITY ENGINEERING
-      </span>
-
-      <h3>
-        Secure &amp; Controlled Automation
-      </h3>
-
-      <p>
-        Establish enforceable boundaries
-        between AI reasoning and sensitive
-        tool execution through identity,
-        policy enforcement, authorization,
-        human approval and auditable
-        security operations.
-      </p>
-
-    </article>
-
-  </div>
-
-
-  <!-- ==========================================================
-       01.6 / EXPECTED ENGINEERING VALUE
-  =========================================================== -->
-
-  <div class="xp-overview-block">
-
-    <span class="xp-overview-kicker">
-      01.6 / EXPECTED OUTCOMES
-    </span>
-
-    <h3 class="xp-overview-heading">
-      Expected Engineering Value
-    </h3>
-
-    <p>
-      The expected benefits include more
-      consistent security investigations,
-      better contextualization of alerts,
-      reduced manual investigation effort
-      and stronger control over
-      AI-assisted security actions.
-    </p>
-
-    <p>
-      These are engineering goals rather
-      than measured production outcomes.
-      Implementation evidence, validation
-      results and technical limitations
-      are addressed in the subsequent
-      project chapters.
-    </p>
-
-  </div>
-
-
-  <!-- ==========================================================
-       FINAL ENGINEERING STATEMENT
-  =========================================================== -->
-
-  <div class="xp-overview-conclusion">
-
-    <span>
-      EXAVIGIL / ENGINEERING PRINCIPLE
-    </span>
-
-    <p>
-      The central contribution of EXAVIGIL
-      is not simply the addition of AI
-      capabilities to security operations,
-      but the design of the security
-      boundaries required to investigate
-      intelligently and execute actions
-      under explicit control.
-    </p>
-
-  </div>
-
-
-</section>
-<!-- END EXECUTIVE OVERVIEW & VALUE PROPOSITION -->
-
-        
-
-        <!-- ======================================
-             02 / UNIFIED ARCHITECTURE
-        ======================================= -->
+          <div class="xp-overview-block">
+
+            <span class="xp-overview-kicker">
+              01.5 / ENGINEERING VALUE
+            </span>
+
+            <h3 class="xp-overview-heading">
+              Value Proposition
+            </h3>
+
+            <p>
+              EXAVIGIL brings together three complementary
+              engineering disciplines to explore a more
+              integrated, intelligent and security-controlled
+              approach to modern SOC operations.
+            </p>
+
+          </div>
+
+
+          <!-- THREE VALUE PILLARS -->
+
+          <div class="xp-card-grid xp-grid-three">
+
+            <article class="xp-info-card">
+
+              <span class="xp-card-number">
+                01 / UNIFIED SOC ENGINEERING
+              </span>
+
+              <h3>
+                Unified Security Operations
+              </h3>
+
+              <p>
+                Combine IT, OT and Cloud security monitoring
+                with cyber threat intelligence, contextual
+                analysis and incident investigation workflows
+                within a coherent architectural model.
+              </p>
+
+            </article>
+
+            <article class="xp-info-card">
+
+              <span class="xp-card-number">
+                02 / AGENTIC AI ENGINEERING
+              </span>
+
+              <h3>
+                Intelligent Investigation
+              </h3>
+
+              <p>
+                Use specialized AI agents, contextual
+                retrieval and RAG-assisted analysis
+                to support triage, threat correlation,
+                investigation and response planning
+                while keeping analysts involved
+                in critical decisions.
+              </p>
+
+            </article>
+
+            <article class="xp-info-card">
+
+              <span class="xp-card-number">
+                03 / AI SECURITY ENGINEERING
+              </span>
+
+              <h3>
+                Secure &amp; Controlled Automation
+              </h3>
+
+              <p>
+                Establish enforceable boundaries between
+                AI reasoning and sensitive tool execution
+                through identity, policy enforcement,
+                authorization, human approval
+                and auditable security operations.
+              </p>
+
+            </article>
+
+          </div>
+
+
+          <!-- 01.6 / EXPECTED ENGINEERING VALUE -->
+
+          <div class="xp-overview-block">
+
+            <span class="xp-overview-kicker">
+              01.6 / EXPECTED OUTCOMES
+            </span>
+
+            <h3 class="xp-overview-heading">
+              Expected Engineering Value
+            </h3>
+
+            <p>
+              The expected benefits include more
+              consistent security investigations,
+              better contextualization of alerts,
+              reduced manual investigation effort
+              and stronger control over
+              AI-assisted security actions.
+            </p>
+
+            <p>
+              These are engineering goals rather than
+              measured production outcomes.
+              Implementation evidence, validation
+              results and technical limitations
+              are addressed in subsequent chapters.
+            </p>
+
+          </div>
+
+
+          <!-- FINAL ENGINEERING STATEMENT -->
+
+          <div class="xp-overview-conclusion">
+
+            <span>
+              EXAVIGIL / ENGINEERING PRINCIPLE
+            </span>
+
+            <p>
+              The central contribution of EXAVIGIL
+              is not simply the addition of AI capabilities
+              to security operations, but the design
+              of the security boundaries required to
+              investigate intelligently and execute
+              actions under explicit control.
+            </p>
+
+          </div>
+
+        </section>
+        <!-- END CHAPTER 01 -->
+
+
+        <!-- ==================================================
+             02 / UNIFIED IT/OT/CLOUD ARCHITECTURE
+        =================================================== -->
 
         <section
           class="xp-chapter xp-reveal"
@@ -982,11 +916,14 @@
           </h2>
 
           <p class="xp-chapter-lead">
-            A system-level view of how diverse
-            security signals, intelligence sources
-            and investigation capabilities
-            can be integrated into one architecture.
+            A system-level view of how security signals,
+            intelligence sources, investigation capabilities
+            and policy enforcement can be brought together
+            through a layered security architecture.
           </p>
+
+
+          <!-- CONCEPTUAL PROCESS -->
 
           <div class="xp-flow">
 
@@ -1023,20 +960,27 @@
           </div>
 
           <p class="xp-figure-caption">
-            Conceptual workflow — detailed system
-            diagrams and verified integrations
-            will be documented here.
+            Conceptual process. Detailed integration
+            architecture and verified trust boundaries
+            will be documented in this chapter.
           </p>
+
 
           <div class="xp-card-grid xp-grid-two">
 
             <div class="xp-placeholder">
               <span>ARCHITECTURE / FIGURE 01</span>
-              <strong>Unified System Architecture</strong>
+
+              <strong>
+                Unified System Architecture
+              </strong>
+
               <p>
-                Add the complete IT/OT/Cloud
-                architecture diagram here.
+                Reserved for the complete architecture
+                diagram, security components and
+                integration layers.
               </p>
+
               <span class="xp-placeholder-status">
                 DIAGRAM TO BE ADDED
               </span>
@@ -1044,11 +988,17 @@
 
             <div class="xp-placeholder">
               <span>ARCHITECTURE / FIGURE 02</span>
-              <strong>Data Flow &amp; Trust Boundaries</strong>
+
+              <strong>
+                Data Flow &amp; Trust Boundaries
+              </strong>
+
               <p>
-                Add data movement, security zones
-                and integration boundaries here.
+                Reserved for data flows, security
+                zones, communication channels
+                and authorization boundaries.
               </p>
+
               <span class="xp-placeholder-status">
                 DIAGRAM TO BE ADDED
               </span>
@@ -1059,9 +1009,9 @@
         </section>
 
 
-        <!-- ======================================
-             03 / AGENTIC SOC
-        ======================================= -->
+        <!-- ==================================================
+             03 / AGENTIC SOC & INTELLIGENT INVESTIGATION
+        =================================================== -->
 
         <section
           class="xp-chapter xp-reveal"
@@ -1080,71 +1030,91 @@
           </h2>
 
           <p class="xp-chapter-lead">
-            This chapter will explain the role
-            of AI-assisted workflows in event
-            analysis, threat intelligence enrichment,
-            contextual investigation and analyst support.
+            This chapter explores how specialized AI agents
+            can support security analysis, event triage,
+            threat intelligence enrichment, contextual
+            investigation and response planning
+            under analyst oversight.
           </p>
 
           <div class="xp-card-grid xp-grid-three">
 
             <article class="xp-info-card">
               <span class="xp-card-number">
-                INVESTIGATION AREA / 01
+                INVESTIGATION / 01
               </span>
-              <h3>Detection &amp; Triage</h3>
+
+              <h3>
+                Detection &amp; Triage
+              </h3>
+
               <p>
-                Document how security events
-                are collected, classified,
-                correlated and prioritized.
+                Document alert collection, event
+                correlation, classification
+                and prioritization workflows.
               </p>
             </article>
 
             <article class="xp-info-card">
               <span class="xp-card-number">
-                INVESTIGATION AREA / 02
+                INVESTIGATION / 02
               </span>
-              <h3>Context &amp; Threat Intelligence</h3>
+
+              <h3>
+                Threat Intelligence &amp; Context
+              </h3>
+
               <p>
-                Explain intelligence enrichment,
-                contextual reasoning, retrieval
-                and evidence-supported analysis.
+                Describe IOC enrichment,
+                contextual retrieval, threat
+                relationships and RAG-assisted analysis.
               </p>
             </article>
 
             <article class="xp-info-card">
               <span class="xp-card-number">
-                INVESTIGATION AREA / 03
+                INVESTIGATION / 03
               </span>
-              <h3>Analyst Assistance</h3>
+
+              <h3>
+                Analyst Decision Support
+              </h3>
+
               <p>
-                Present human-in-the-loop
-                investigation, recommendations
-                and analyst decision support.
+                Explain evidence-supported
+                recommendations, investigation
+                summaries and human review.
               </p>
             </article>
 
           </div>
 
           <div class="xp-placeholder xp-placeholder-wide">
-            <span>AGENTIC SOC / WORKFLOW</span>
-            <strong>Agent Orchestration &amp; Investigation Flow</strong>
+
+            <span>AGENTIC SOC / ARCHITECTURE</span>
+
+            <strong>
+              Agent Orchestration &amp; Investigation Flow
+            </strong>
+
             <p>
-              Reserved for the actual orchestration
-              diagram, agent responsibilities
-              and investigation sequence.
+              Reserved for agent responsibilities,
+              orchestration logic, RAG retrieval
+              and investigation execution sequences.
             </p>
+
             <span class="xp-placeholder-status">
-              WORKFLOW DOCUMENTATION PENDING
+              WORKFLOW TO BE DOCUMENTED
             </span>
+
           </div>
 
         </section>
 
 
-        <!-- ======================================
-             04 / AI SECURITY
-        ======================================= -->
+        <!-- ==================================================
+             04 / AI SECURITY & CONTROLLED AUTOMATION
+        =================================================== -->
 
         <section
           class="xp-chapter xp-reveal"
@@ -1163,11 +1133,10 @@
           </h2>
 
           <p class="xp-chapter-lead">
-            Security boundaries, authorization,
-            policy enforcement and controlled
-            execution are essential when
-            AI agents interact with sensitive
-            cybersecurity tools and environments.
+            A security-focused approach to agent
+            permissions, untrusted data processing,
+            policy enforcement, secret management
+            and controlled operational execution.
           </p>
 
           <div class="xp-card-grid xp-grid-two">
@@ -1176,12 +1145,16 @@
               <span class="xp-card-number">
                 SECURITY DOMAIN / 01
               </span>
-              <h3>Protecting AI Workflows</h3>
+
+              <h3>
+                Protecting AI Workflows
+              </h3>
+
               <p>
-                Document controls for prompt
-                injection, untrusted intelligence,
-                RAG poisoning, sensitive data
-                exposure and agent misuse.
+                Explore prompt injection risks,
+                RAG poisoning, untrusted intelligence,
+                sensitive information disclosure
+                and agent misuse scenarios.
               </p>
             </article>
 
@@ -1189,35 +1162,47 @@
               <span class="xp-card-number">
                 SECURITY DOMAIN / 02
               </span>
-              <h3>Authorized Tool Execution</h3>
+
+              <h3>
+                Independent Authorization
+              </h3>
+
               <p>
-                Describe identity, permissions,
-                policy checks, secret management,
-                approvals, audit trails and
-                human-controlled response actions.
+                Document the use of Keycloak,
+                OPA, OpenBao, identity controls,
+                policy decisions, approval requirements
+                and auditable tool execution.
               </p>
             </article>
 
           </div>
 
           <div class="xp-placeholder xp-placeholder-wide">
-            <span>SECURITY CONTROL PLANE</span>
-            <strong>Agent Authorization &amp; Execution Architecture</strong>
+
+            <span>AI SECURITY / CONTROL PLANE</span>
+
+            <strong>
+              Agent Authorization &amp; Secure Execution
+            </strong>
+
             <p>
-              Reserved for the detailed security
-              architecture and enforcement sequence.
+              Reserved for the Policy Gateway
+              architecture, authorization sequence,
+              tool permissions and execution controls.
             </p>
+
             <span class="xp-placeholder-status">
-              SECURITY DESIGN TO BE ADDED
+              SECURITY ARCHITECTURE TO BE ADDED
             </span>
+
           </div>
 
         </section>
 
 
-        <!-- ======================================
-             05 / SECURITY VALIDATION
-        ======================================= -->
+        <!-- ==================================================
+             05 / SECURITY ENGINEERING & VALIDATION
+        =================================================== -->
 
         <section
           class="xp-chapter xp-reveal"
@@ -1227,7 +1212,7 @@
 
           <div class="xp-chapter-label">
             <span>05</span>
-            SECURITY ENGINEERING / TESTING
+            SECURITY ENGINEERING / VALIDATION
           </div>
 
           <h2 id="xp-validation-title">
@@ -1236,10 +1221,10 @@
           </h2>
 
           <p class="xp-chapter-lead">
-            This section will document the
-            security assumptions, threat models,
-            validation scenarios, testing
-            methodology and observed evidence.
+            This chapter will present security assumptions,
+            threat models, functional validation scenarios,
+            adversarial testing and reproducible
+            technical evidence.
           </p>
 
           <div class="xp-table-wrap">
@@ -1248,7 +1233,7 @@
 
               <thead>
                 <tr>
-                  <th scope="col">AREA</th>
+                  <th scope="col">TEST AREA</th>
                   <th scope="col">VALIDATION OBJECTIVE</th>
                   <th scope="col">EVIDENCE</th>
                 </tr>
@@ -1258,25 +1243,37 @@
 
                 <tr>
                   <td>Prompt Injection</td>
-                  <td>Check resistance to untrusted instructions</td>
+                  <td>
+                    Evaluate resistance to
+                    untrusted instructions
+                  </td>
                   <td>To document</td>
                 </tr>
 
                 <tr>
                   <td>RAG Poisoning</td>
-                  <td>Evaluate the handling of manipulated context</td>
+                  <td>
+                    Assess the handling of
+                    manipulated retrieved context
+                  </td>
                   <td>To document</td>
                 </tr>
 
                 <tr>
                   <td>Tool Authorization</td>
-                  <td>Validate permission and policy boundaries</td>
+                  <td>
+                    Validate permission checks
+                    and policy enforcement
+                  </td>
                   <td>To document</td>
                 </tr>
 
                 <tr>
                   <td>OT Safety</td>
-                  <td>Assess restrictions on sensitive actions</td>
+                  <td>
+                    Evaluate restrictions
+                    on sensitive operational actions
+                  </td>
                   <td>To document</td>
                 </tr>
 
@@ -1287,21 +1284,25 @@
           </div>
 
           <div class="xp-note">
-            <strong>VALIDATION PRINCIPLE</strong>
+            <strong>
+              VALIDATION PRINCIPLE
+            </strong>
+
             <p>
-              Test outcomes will be added only
-              when supported by actual execution,
-              screenshots, logs or other
-              reproducible evidence.
+              Results will be published only when
+              supported by actual tests, technical logs,
+              screenshots and reproducible evidence.
+              Planned test scenarios are not presented
+              as completed validations.
             </p>
           </div>
 
         </section>
 
 
-        <!-- ======================================
-             06 / TECHNICAL DEMONSTRATIONS
-        ======================================= -->
+        <!-- ==================================================
+             06 / TECHNICAL DEMONSTRATIONS & RESULTS
+        =================================================== -->
 
         <section
           class="xp-chapter xp-reveal"
@@ -1311,7 +1312,7 @@
 
           <div class="xp-chapter-label">
             <span>06</span>
-            ENGINEERING DEMOS / EVIDENCE
+            TECHNICAL DEMONSTRATIONS / EVIDENCE
           </div>
 
           <h2 id="xp-demos-title">
@@ -1320,10 +1321,10 @@
           </h2>
 
           <p class="xp-chapter-lead">
-            A dedicated area for technical
-            screenshots, architecture walkthroughs,
-            controlled experiments and
-            reproducible proof-of-concept evidence.
+            A dedicated space for laboratory
+            demonstrations, technical screenshots,
+            architecture walkthroughs and observed
+            proof-of-concept results.
           </p>
 
           <div class="xp-card-grid xp-grid-three">
@@ -1337,15 +1338,21 @@
               </div>
 
               <div class="xp-demo-info">
-                <h3>Unified Security Monitoring</h3>
+                <h3>
+                  Unified Security Monitoring
+                </h3>
+
                 <p>
-                  Add a verified detection
-                  and monitoring demonstration.
+                  Add monitoring and detection
+                  screenshots supported by
+                  actual laboratory execution.
                 </p>
+
                 <span>NOT YET DOCUMENTED</span>
               </div>
 
             </article>
+
 
             <article class="xp-demo-card">
 
@@ -1356,15 +1363,21 @@
               </div>
 
               <div class="xp-demo-info">
-                <h3>Intelligent Investigation</h3>
+                <h3>
+                  Intelligent Investigation
+                </h3>
+
                 <p>
-                  Add an investigation workflow
-                  with supporting technical evidence.
+                  Present agent-assisted investigation,
+                  contextual enrichment and
+                  evidence-supported analysis.
                 </p>
+
                 <span>NOT YET DOCUMENTED</span>
               </div>
 
             </article>
+
 
             <article class="xp-demo-card">
 
@@ -1375,11 +1388,16 @@
               </div>
 
               <div class="xp-demo-info">
-                <h3>Controlled Security Response</h3>
+                <h3>
+                  Controlled Security Response
+                </h3>
+
                 <p>
-                  Add a policy-based
-                  response demonstration.
+                  Present authorized actions,
+                  policy decisions and
+                  controlled response behavior.
                 </p>
+
                 <span>NOT YET DOCUMENTED</span>
               </div>
 
@@ -1390,9 +1408,9 @@
         </section>
 
 
-        <!-- ======================================
-             07 / ENGINEERING IMPACT
-        ======================================= -->
+        <!-- ==================================================
+             07 / ENGINEERING IMPACT & FUTURE DEVELOPMENT
+        =================================================== -->
 
         <section
           class="xp-chapter xp-reveal"
@@ -1411,11 +1429,10 @@
           </h2>
 
           <p class="xp-chapter-lead">
-            Closing the engineering documentation
-            with architectural lessons,
-            demonstrated capabilities,
-            current limitations and
-            opportunities for further development.
+            The final chapter will discuss engineering
+            contributions, architectural trade-offs,
+            observed limitations, validated capabilities
+            and future development directions.
           </p>
 
           <div class="xp-card-grid xp-grid-two">
@@ -1426,13 +1443,15 @@
                 ENGINEERING REVIEW
               </span>
 
-              <h3>Architecture &amp; Lessons Learned</h3>
+              <h3>
+                Architecture &amp; Lessons Learned
+              </h3>
 
               <p>
-                Reserved for integration findings,
-                design trade-offs, security boundaries,
-                validated capabilities and
-                technical limitations.
+                Reserved for actual integration findings,
+                security design decisions,
+                technical constraints and
+                lessons from laboratory validation.
               </p>
 
             </article>
@@ -1443,32 +1462,39 @@
                 FUTURE DEVELOPMENT
               </span>
 
-              <h3>Scalability &amp; Next Steps</h3>
+              <h3>
+                Scalability &amp; Next Steps
+              </h3>
 
               <p>
-                Reserved for the engineering roadmap,
-                further automation, platform hardening,
-                extended validation and
-                potential future capabilities.
+                Reserved for platform hardening,
+                additional security integrations,
+                extended validation,
+                operational improvements
+                and future engineering priorities.
               </p>
 
             </article>
 
           </div>
 
+
+          <!-- END OF DOCUMENT -->
+
           <div class="xp-final">
 
-            <span>END OF PROJECT DOCUMENTATION</span>
+            <span>
+              END OF PROJECT DOCUMENTATION
+            </span>
 
             <h3>
-              Engineering security.
-              <br>
+              Engineering security.<br>
               Advancing intelligent defense.
             </h3>
 
             <a
-              href="../index.html#projects"
               class="xp-button xp-button-primary"
+              href="../index.html#projects"
             >
               ← Back to All Projects
             </a>
@@ -1477,19 +1503,18 @@
 
         </section>
 
-
       </div>
-      <!-- END DOCUMENT -->
+      <!-- END XP DOCUMENT -->
 
     </div>
-    <!-- END DOCUMENTATION LAYOUT -->
+    <!-- END XP LAYOUT -->
 
   </main>
 
 
-  <!-- ==========================================
+  <!-- ======================================================
        FOOTER
-  =========================================== -->
+  ======================================================= -->
 
   <footer class="footer">
 
@@ -1505,11 +1530,10 @@
 
       <span>
         © <span id="year">2026</span>
-        AMINE MAOUHOUB.
-        EXAVIGIL ENGINEERING PROJECT.
+        AMINE MAOUHOUB. EXAVIGIL ENGINEERING PROJECT.
       </span>
 
-      <a href="#top" class="to-top">
+      <a class="to-top" href="#top">
         BACK TO TOP ↑
       </a>
 
