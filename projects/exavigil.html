@@ -1398,108 +1398,533 @@
 
         
 
-        <!-- ==================================================
-             03 / AGENTIC SOC & INTELLIGENT INVESTIGATION
-        =================================================== -->
 
-        <section
-          class="xp-chapter xp-reveal"
-          id="agentic-soc"
-          aria-labelledby="xp-agentic-title"
-        >
 
-          <div class="xp-chapter-label">
-            <span>03</span>
-            AGENTIC SECURITY OPERATIONS
-          </div>
 
-          <h2 id="xp-agentic-title">
-            Agentic SOC
-            <span>&amp; Intelligent Investigation</span>
-          </h2>
 
-          <p class="xp-chapter-lead">
-            This chapter explores how specialized AI agents
-            can support security analysis, event triage,
-            threat intelligence enrichment, contextual
-            investigation and response planning
-            under analyst oversight.
-          </p>
 
-          <div class="xp-card-grid xp-grid-three">
+<!-- ============================================================
+     03 / AGENTIC SOC & INTELLIGENT INVESTIGATION
+     EXAVIGIL — ENGINEERING DOCUMENTATION
+============================================================ -->
 
-            <article class="xp-info-card">
-              <span class="xp-card-number">
-                INVESTIGATION / 01
-              </span>
+<section
+  class="xp-chapter xp-reveal xp-agentic"
+  id="agentic-soc"
+  aria-labelledby="xp-agentic-title"
+>
 
-              <h3>
-                Detection &amp; Triage
-              </h3>
+  <!-- CHAPTER HEADER -->
 
-              <p>
-                Document alert collection, event
-                correlation, classification
-                and prioritization workflows.
-              </p>
-            </article>
+  <div class="xp-chapter-label">
+    <span>03</span>
+    AGENTIC SOC / INTELLIGENT INVESTIGATION
+  </div>
 
-            <article class="xp-info-card">
-              <span class="xp-card-number">
-                INVESTIGATION / 02
-              </span>
+  <h2 id="xp-agentic-title">
+    Agentic SOC
+    <span>&amp; Intelligent Investigation</span>
+  </h2>
 
-              <h3>
-                Threat Intelligence &amp; Context
-              </h3>
+  <p class="xp-chapter-lead">
+    EXAVIGIL introduces a structured multi-agent
+    investigation model combining security alerts,
+    cyber threat intelligence, contextual retrieval
+    and analyst-controlled response planning.
+  </p>
 
-              <p>
-                Describe IOC enrichment,
-                contextual retrieval, threat
-                relationships and RAG-assisted analysis.
-              </p>
-            </article>
 
-            <article class="xp-info-card">
-              <span class="xp-card-number">
-                INVESTIGATION / 03
-              </span>
+  <!-- ==========================================================
+       3.1 / INVESTIGATION ORCHESTRATION
+  =========================================================== -->
 
-              <h3>
-                Analyst Decision Support
-              </h3>
+  <div class="xp-agent-block">
 
-              <p>
-                Explain evidence-supported
-                recommendations, investigation
-                summaries and human review.
-              </p>
-            </article>
+    <span class="xp-agent-kicker">
+      3.1 / ORCHESTRATION MODEL
+    </span>
 
-          </div>
+    <h3>Intelligent Investigation Approach</h3>
 
-          <div class="xp-placeholder xp-placeholder-wide">
+    <p>
+      Rather than delegating an entire investigation
+      to a single autonomous model, EXAVIGIL
+      separates security analysis into specialized
+      agent responsibilities.
+    </p>
 
-            <span>AGENTIC SOC / ARCHITECTURE</span>
+    <p>
+      The orchestration design is based on
+      LangGraph, Python and API/MCP integrations,
+      allowing agents to exchange structured
+      investigation context and interact
+      with authorized security services.
+    </p>
 
-            <strong>
-              Agent Orchestration &amp; Investigation Flow
-            </strong>
+    <p>
+      Agents support alert classification,
+      intelligence enrichment, evidence correlation
+      and response preparation. Their outputs
+      remain subject to verification and do not
+      independently authorize operational actions.
+    </p>
 
-            <p>
-              Reserved for agent responsibilities,
-              orchestration logic, RAG retrieval
-              and investigation execution sequences.
-            </p>
+    <div class="xp-agent-model">
 
-            <span class="xp-placeholder-status">
-              WORKFLOW TO BE DOCUMENTED
-            </span>
+      <div>
+        <span>ORCHESTRATION</span>
+        <strong>LangGraph / Python</strong>
+      </div>
 
-          </div>
+      <div>
+        <span>SECURITY CONTEXT</span>
+        <strong>Wazuh / MISP / RAG</strong>
+      </div>
 
-        </section>
+      <div>
+        <span>CASE HANDLING</span>
+        <strong>TheHive / Cortex</strong>
+      </div>
 
+      <div>
+        <span>ACTION CONTROL</span>
+        <strong>Policy Gateway / SOAR</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.2 / SPECIALIZED AI AGENTS
+  =========================================================== -->
+
+  <div class="xp-agent-block">
+
+    <span class="xp-agent-kicker">
+      3.2 / AGENT RESPONSIBILITIES
+    </span>
+
+    <h3>Specialized AI Agents</h3>
+
+    <p>
+      Four agents define the investigation
+      workflow: Triage, CTI, Investigation
+      and Response. Each has a distinct
+      responsibility and expected output,
+      reducing ambiguity between analytical
+      tasks and operational decisions.
+    </p>
+
+  </div>
+
+
+  <!-- TABLE 03-1 / AGENT RESPONSIBILITIES -->
+
+  <figure class="xp-overview-figure xp-agent-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>TABLE 03-1 / AGENT RESPONSIBILITIES</span>
+
+        <h3>
+          Specialized AI Agents &amp; Expected Outputs
+        </h3>
+      </div>
+
+      <a
+        href="../assets/img/projects/exavigil-agent-responsibilities.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="xp-figure-open"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+    <a
+      href="../assets/img/projects/exavigil-agent-responsibilities.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="xp-figure-image-link"
+      aria-label="View full-size AI agent responsibilities table"
+    >
+
+      <img
+        src="../assets/img/projects/exavigil-agent-responsibilities.png"
+        alt="Table describing Triage, CTI, Investigation and Response agents, their responsibilities and expected outputs"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+    <figcaption>
+      Table 03-1. Functional separation of
+      the four specialized agents.
+      Outputs represent investigation artifacts
+      and response proposals, not direct
+      operational execution permissions.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- AGENT DESIGN RULE -->
+
+  <div class="xp-agent-boundary">
+
+    <span>AGENT DESIGN PRINCIPLE</span>
+
+    <p>
+      Agent responsibilities are separated
+      from execution privileges.
+      Producing an investigation finding
+      or recommending remediation does
+      not grant permission to execute it.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.3 / INVESTIGATION WORKFLOW
+  =========================================================== -->
+
+  <div class="xp-agent-block">
+
+    <span class="xp-agent-kicker">
+      3.3 / END-TO-END WORKFLOW
+    </span>
+
+    <h3>Agentic Investigation Workflow</h3>
+
+    <p>
+      The workflow begins with a Wazuh security
+      alert and progresses through triage,
+      threat intelligence enrichment,
+      contextual investigation,
+      case management and response planning.
+    </p>
+
+    <p>
+      MISP provides threat intelligence context,
+      while Qdrant, Neo4j and RAG represent
+      complementary semantic and relationship-based
+      retrieval capabilities in the investigation
+      architecture.
+    </p>
+
+    <p>
+      The Response Agent prepares a proposed
+      action and its execution context.
+      The Policy Gateway then evaluates
+      authorization and approval requirements
+      before any permitted laboratory response.
+    </p>
+
+  </div>
+
+
+  <!-- FIGURE 03-A / INVESTIGATION WORKFLOW -->
+
+  <figure
+    class="xp-overview-figure xp-agent-figure xp-agent-figure--workflow"
+  >
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>FIGURE 03-A / INVESTIGATION WORKFLOW</span>
+
+        <h3>
+          Multi-Agent Investigation &amp; Controlled Response
+        </h3>
+      </div>
+
+      <a
+        href="../assets/img/projects/exavigil-investigation-workflow.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="xp-figure-open"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+    <a
+      href="../assets/img/projects/exavigil-investigation-workflow.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="xp-figure-image-link"
+      aria-label="View full-size agentic investigation workflow"
+    >
+
+      <img
+        src="../assets/img/projects/exavigil-investigation-workflow.png"
+        alt="Workflow from Wazuh alert through Triage, CTI and Investigation agents, TheHive, Response Agent, Policy Gateway and conditional authorization or denial"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+    <figcaption>
+      Figure 03-A. Conceptual multi-agent workflow
+      showing intelligence enrichment,
+      investigation, case creation,
+      response planning and authorization.
+      Approved requests may proceed to
+      Shuffle SOAR within the authorized
+      laboratory scope; denied requests
+      are recorded for audit.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- WORKFLOW PHASES -->
+
+  <div class="xp-agent-block">
+
+    <span class="xp-agent-kicker">
+      INVESTIGATION SEQUENCE / SIX PHASES
+    </span>
+
+    <div class="xp-agent-steps">
+
+      <div class="xp-agent-step">
+        <span>01 / ALERT INTAKE</span>
+        <strong>Security Event</strong>
+        <p>
+          Retrieve a Wazuh alert and identify
+          relevant assets, event attributes
+          and detection context.
+        </p>
+      </div>
+
+      <div class="xp-agent-step">
+        <span>02 / TRIAGE</span>
+        <strong>Classification &amp; Priority</strong>
+        <p>
+          Assess severity, affected systems
+          and investigation priority.
+        </p>
+      </div>
+
+      <div class="xp-agent-step">
+        <span>03 / ENRICHMENT</span>
+        <strong>Threat &amp; Knowledge Context</strong>
+        <p>
+          Retrieve IOC intelligence,
+          semantic evidence and available
+          security relationships.
+        </p>
+      </div>
+
+      <div class="xp-agent-step">
+        <span>04 / INVESTIGATION</span>
+        <strong>Findings &amp; Case Context</strong>
+        <p>
+          Correlate available information
+          and prepare evidence-supported
+          investigation findings.
+        </p>
+      </div>
+
+      <div class="xp-agent-step">
+        <span>05 / RESPONSE PLANNING</span>
+        <strong>Recommended Action</strong>
+        <p>
+          Prepare remediation recommendations,
+          case updates and any required
+          authorization request.
+        </p>
+      </div>
+
+      <div class="xp-agent-step">
+        <span>06 / CONTROLLED HANDOFF</span>
+        <strong>Authorize or Deny</strong>
+        <p>
+          Evaluate policy and approval
+          requirements before permitting
+          an authorized laboratory action.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.4 / EVIDENCE & CASE HANDOFF
+  =========================================================== -->
+
+  <div class="xp-agent-block">
+
+    <span class="xp-agent-kicker">
+      3.4 / EVIDENCE TRACEABILITY
+    </span>
+
+    <h3>Investigation Evidence &amp; Case Handoff</h3>
+
+    <p>
+      Investigation quality depends on preserving
+      the relationship between an alert, its
+      intelligence sources, retrieved context
+      and the conclusions produced by the agents.
+    </p>
+
+    <p>
+      The target investigation model keeps
+      source references separate from generated
+      analysis, allowing analysts to review
+      the evidence supporting a finding
+      or recommended action.
+    </p>
+
+    <div class="xp-agent-evidence-grid">
+
+      <div class="xp-agent-evidence-card">
+
+        <span>INPUT / INVESTIGATION CONTEXT</span>
+
+        <h4>Evidence Sources</h4>
+
+        <ul>
+          <li>Wazuh alert ID, timestamp and affected asset</li>
+          <li>MISP indicators and intelligence context</li>
+          <li>Retrieved RAG documents and source references</li>
+          <li>Available graph relationships and prior case data</li>
+        </ul>
+
+      </div>
+
+      <div class="xp-agent-evidence-card">
+
+        <span>OUTPUT / ANALYST REVIEW</span>
+
+        <h4>Structured Findings</h4>
+
+        <ul>
+          <li>Alert classification and investigation priority</li>
+          <li>Correlated indicators and supporting evidence</li>
+          <li>Investigation summary and unresolved questions</li>
+          <li>TheHive case context and proposed next actions</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <p class="xp-agent-detail">
+      Evidence references, action provenance
+      and output structure are design requirements.
+      Their implemented behavior and validation
+      will be documented with laboratory results.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.5 / HUMAN OVERSIGHT
+  =========================================================== -->
+
+  <div class="xp-agent-block">
+
+    <span class="xp-agent-kicker">
+      3.5 / HUMAN-IN-THE-LOOP CONTROL
+    </span>
+
+    <h3>Human Oversight &amp; Execution Boundaries</h3>
+
+    <p>
+      EXAVIGIL is designed to assist SOC analysts
+      without transferring unrestricted operational
+      authority to AI agents. Investigation findings
+      can support TheHive case handling,
+      with Cortex providing additional analysis
+      where required.
+    </p>
+
+    <p>
+      A sensitive response proposal must pass
+      through an independent authorization process.
+      Requests that satisfy the applicable policy
+      and human approval requirements may be
+      passed to Shuffle SOAR for execution
+      on explicitly authorized laboratory targets.
+    </p>
+
+    <p>
+      Denied requests must not trigger a response
+      action and should be retained as auditable
+      security decisions. Industrial controllers
+      and production OT operations remain outside
+      direct autonomous execution scope.
+    </p>
+
+    <div class="xp-agent-handoff">
+
+      <div>
+        <span>AI AGENTS</span>
+        <strong>Investigate &amp; Recommend</strong>
+      </div>
+
+      <span class="xp-agent-handoff-arrow" aria-hidden="true">
+        →
+      </span>
+
+      <div>
+        <span>POLICY GATEWAY</span>
+        <strong>Authorize &amp; Approve</strong>
+      </div>
+
+      <span class="xp-agent-handoff-arrow" aria-hidden="true">
+        →
+      </span>
+
+      <div>
+        <span>SHUFFLE SOAR</span>
+        <strong>Execute Within Approved Scope</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       ENGINEERING CONCLUSION
+  =========================================================== -->
+
+  <div class="xp-overview-conclusion">
+
+    <span>
+      EXAVIGIL / AGENTIC SOC ENGINEERING PRINCIPLE
+    </span>
+
+    <p>
+      Specialized agents support investigation,
+      evidence correlation and response planning.
+      Operational authority remains independent,
+      policy-governed and subject to human
+      oversight where required.
+    </p>
+
+  </div>
+
+</section>
+<!-- END CHAPTER 03 -->
+
+
+        
 
         <!-- ==================================================
              04 / AI SECURITY & CONTROLLED AUTOMATION
