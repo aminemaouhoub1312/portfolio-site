@@ -1,14 +1,15 @@
 
 /* ============================================================
-   EXAVIGIL — PROJECT DOCUMENTATION
-   Premium Portfolio / Project Detail Page
-   Uses the existing portfolio color system
+   EXAVIGIL — PREMIUM PROJECT DOCUMENTATION
+   AMINE MAOUHOUB / 2026
+
+   Uses shared variables from style.css
+   Dark & Light Mode / Responsive / Accessible
 ============================================================ */
 
 
-
 /* ============================================================
-   01. PAGE FOUNDATION
+   01 / PAGE FOUNDATION
 ============================================================ */
 
 .xp-page {
@@ -23,7 +24,15 @@
 }
 
 .xp-page section[id] {
-  scroll-margin-top: 110px;
+  scroll-margin-top: 120px;
+}
+
+.xp-page p {
+  overflow-wrap: break-word;
+}
+
+.xp-page img {
+  max-width: 100%;
 }
 
 .xp-reading-progress {
@@ -43,13 +52,42 @@
 
 
 /* ============================================================
-   02. PROJECT HERO
+   02 / TYPOGRAPHY & SHARED ELEMENTS
+============================================================ */
+
+.xp-back-link,
+.xp-eyebrow,
+.xp-hero-tags,
+.xp-hero-metadata,
+.xp-hero-bottom,
+.xp-visual,
+.xp-rail,
+.xp-chapter-label,
+.xp-card-number,
+.xp-placeholder,
+.xp-figure-caption,
+.xp-validation-table,
+.xp-demo-media,
+.xp-demo-info > span,
+.xp-final > span,
+.xp-overview-kicker,
+.xp-figure-heading > div > span {
+  font-family: "DM Mono", monospace;
+}
+
+.xp-page a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+
+/* ============================================================
+   03 / PROJECT HERO
 ============================================================ */
 
 .xp-hero {
   position: relative;
   overflow: hidden;
-
   padding-top: 95px;
 
   background:
@@ -111,36 +149,18 @@
   min-width: 0;
 }
 
-.xp-back-link,
-.xp-eyebrow,
-.xp-hero-tags,
-.xp-hero-metadata,
-.xp-hero-bottom,
-.xp-visual,
-.xp-rail,
-.xp-chapter-label,
-.xp-card-number,
-.xp-placeholder,
-.xp-figure-caption,
-.xp-validation-table,
-.xp-demo-media,
-.xp-demo-info > span,
-.xp-final > span {
-  font-family: "DM Mono", monospace;
-}
-
 .xp-back-link {
   display: inline-flex;
   align-items: center;
   gap: 11px;
 
+  color: var(--accent2);
   padding: 8px 0;
 
-  color: var(--accent2);
   font-size: 10px;
   letter-spacing: .09em;
 
-  transition: color .2s;
+  transition: color .2s ease;
 }
 
 .xp-back-link:hover {
@@ -160,27 +180,30 @@
   font-size: 10px;
   letter-spacing: .10em;
 
-  margin: 70px 0 15px;
+  margin: 65px 0 15px;
 }
 
 .xp-live-dot {
-  flex-shrink: 0;
   width: 7px;
   height: 7px;
-  border-radius: 50%;
+  flex-shrink: 0;
 
+  border-radius: 50%;
   background: var(--accent);
+
   box-shadow: 0 0 16px rgba(197, 250, 95, .5);
 }
 
 .xp-hero-title {
+  font-family: Manrope, sans-serif;
   font-size: clamp(60px, 8.2vw, 138px);
-  line-height: 1.05;
-
   font-weight: 800;
+
+  line-height: 1.05;
   letter-spacing: -.085em;
 
   margin: 0 0 22px;
+  color: var(--text);
 }
 
 .xp-hero-title span {
@@ -188,13 +211,14 @@
 }
 
 .xp-hero-subtitle {
-  max-width: 760px;
-
   font-size: clamp(22px, 2.35vw, 34px);
   font-weight: 700;
-  letter-spacing: -.045em;
-  line-height: 1.36;
 
+  max-width: 760px;
+  letter-spacing: -.045em;
+  line-height: 1.4;
+
+  color: var(--text);
   margin: 0 0 22px;
 }
 
@@ -203,7 +227,7 @@
 
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.95;
+  line-height: 1.9;
 
   margin: 0 0 26px;
 }
@@ -215,10 +239,10 @@
 }
 
 .xp-hero-tags span {
-  border: 1px solid var(--stroke);
-  background: var(--panel);
-
   padding: 8px 10px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
 
   color: var(--accent2);
   font-size: 9px;
@@ -229,7 +253,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-
   margin-top: 34px;
 }
 
@@ -240,14 +263,13 @@
   gap: 35px;
 
   padding: 15px 19px;
-
   font-size: 12px;
   font-weight: 800;
 
   transition:
-    transform .25s,
-    background .25s,
-    border-color .25s;
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease;
 }
 
 .xp-button:hover {
@@ -266,6 +288,7 @@
 .xp-button-outline {
   background: var(--panel);
   border: 1px solid var(--stroke);
+  color: var(--text);
 }
 
 .xp-button-outline:hover {
@@ -279,7 +302,7 @@
 
   border-top: 1px solid var(--stroke);
   padding-top: 24px;
-  margin-top: 50px;
+  margin-top: 45px;
 }
 
 .xp-hero-metadata div {
@@ -288,18 +311,21 @@
 
 .xp-hero-metadata span {
   display: block;
+
   color: var(--subtle);
   font-size: 9px;
   letter-spacing: .08em;
+
   margin-bottom: 8px;
 }
 
 .xp-hero-metadata strong {
   display: block;
+
+  color: var(--text);
   font-size: 11px;
   font-weight: 500;
   line-height: 1.6;
-  color: var(--text);
 }
 
 .xp-hero-bottom {
@@ -307,14 +333,12 @@
   z-index: 1;
 
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
 
   border-top: 1px solid var(--stroke);
-
-  padding-top: 22px;
-  padding-bottom: 22px;
+  padding: 22px 0;
 
   color: var(--subtle);
   font-size: 9px;
@@ -323,11 +347,12 @@
 
 
 /* ============================================================
-   03. SYSTEM ARCHITECTURE HERO VISUAL
+   04 / ANIMATED SYSTEM ARCHITECTURE
 ============================================================ */
 
 .xp-visual {
   position: relative;
+  min-width: 0;
 
   border: 1px solid var(--stroke);
   border-top: 2px solid var(--accent);
@@ -341,8 +366,6 @@
     var(--panel);
 
   padding: 25px;
-  min-width: 0;
-
   box-shadow: 0 30px 100px var(--shadow);
 }
 
@@ -363,7 +386,6 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-
   margin-top: 45px;
 }
 
@@ -378,13 +400,12 @@
   padding: 12px 6px;
 
   text-align: center;
-
-  border: 1px solid var(--stroke);
   background: var(--bg2);
+  border: 1px solid var(--stroke);
 
   transition:
-    border-color .25s,
-    transform .25s;
+    transform .25s ease,
+    border-color .25s ease;
 }
 
 .xp-domain:hover {
@@ -393,23 +414,24 @@
 }
 
 .xp-domain > span {
-  font-size: 8px;
   color: var(--subtle);
+  font-size: 8px;
 }
 
 .xp-domain strong {
-  margin: 5px 0;
-
   font-family: Manrope, sans-serif;
+
   font-size: clamp(20px, 2.3vw, 33px);
-  line-height: 1.2;
   letter-spacing: -.05em;
+  line-height: 1.2;
+
+  margin: 5px 0;
 }
 
 .xp-domain small {
+  color: var(--accent2);
   font-size: 8px;
   line-height: 1.5;
-  color: var(--accent2);
 }
 
 .xp-connectors {
@@ -432,32 +454,30 @@
 }
 
 .xp-control-plane {
-  position: relative;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid var(--accent);
-  background: rgba(197, 250, 95, .045);
-
-  text-align: center;
   min-height: 174px;
   padding: 22px;
+
+  text-align: center;
+
+  background: rgba(197, 250, 95, .045);
+  border: 1px solid var(--accent);
 
   animation: xp-breathe 5s ease-in-out infinite;
 }
 
 .xp-control-label {
-  font-size: 9px;
   color: var(--accent2);
+  font-size: 9px;
   letter-spacing: .08em;
 }
 
 .xp-control-plane strong {
   font-family: Manrope, sans-serif;
-
   font-size: clamp(27px, 3.3vw, 46px);
   font-weight: 800;
 
@@ -466,8 +486,8 @@
 }
 
 .xp-control-plane small {
-  font-size: 10px;
   color: var(--accent);
+  font-size: 10px;
 }
 
 .xp-visual-footer {
@@ -476,29 +496,35 @@
   flex-wrap: wrap;
   gap: 10px;
 
+  border-top: 1px solid var(--stroke);
   margin-top: 27px;
   padding-top: 18px;
 
-  border-top: 1px solid var(--stroke);
-
-  font-size: 9px;
   color: var(--subtle);
+  font-size: 9px;
 }
 
 
 /* ============================================================
-   04. DOCUMENTATION LAYOUT & SIDE NAVIGATION
+   05 / DOCUMENTATION LAYOUT
 ============================================================ */
 
 .xp-layout {
   display: grid;
   grid-template-columns: 205px minmax(0, 1fr);
-  align-items: start;
+
   gap: clamp(32px, 5vw, 80px);
+  align-items: start;
 
   padding-top: 48px;
   padding-bottom: 110px;
 }
+
+.xp-document {
+  min-width: 0;
+}
+
+/* Sticky sidebar */
 
 .xp-rail {
   position: sticky;
@@ -510,10 +536,11 @@
 
 .xp-rail-label {
   display: block;
-  color: var(--accent2);
 
+  color: var(--accent2);
   font-size: 10px;
   letter-spacing: .10em;
+
   margin-bottom: 25px;
 }
 
@@ -533,11 +560,12 @@
 
   color: var(--muted);
   font-size: 10px;
+  line-height: 1.6;
 
   transition:
-    color .2s,
-    border-color .2s,
-    background .2s;
+    color .2s ease,
+    border-color .2s ease,
+    background .2s ease;
 }
 
 .xp-rail-link span {
@@ -548,7 +576,6 @@
 .xp-rail-link.is-current {
   color: var(--text);
   border-left-color: var(--accent);
-
   background: rgba(197, 250, 95, .035);
 }
 
@@ -559,25 +586,20 @@
 .xp-rail-back {
   display: inline-block;
 
-  margin-top: 35px;
-  font-size: 10px;
   color: var(--accent);
-
+  font-size: 10px;
   letter-spacing: .08em;
-}
 
-.xp-document {
-  min-width: 0;
+  margin-top: 35px;
 }
 
 
 /* ============================================================
-   05. CHAPTER HEADINGS
+   06 / CHAPTER HEADINGS
 ============================================================ */
 
 .xp-chapter {
   padding: 46px 0 80px;
-
   border-bottom: 1px solid var(--stroke);
 }
 
@@ -601,9 +623,10 @@
   margin-bottom: 21px;
 }
 
-.xp-chapter-label span {
+.xp-chapter-label > span {
   display: grid;
   place-items: center;
+  flex-shrink: 0;
 
   width: 33px;
   height: 33px;
@@ -613,6 +636,8 @@
 }
 
 .xp-chapter h2 {
+  font-family: Manrope, sans-serif;
+
   font-size: clamp(32px, 3.7vw, 59px);
   font-weight: 800;
 
@@ -620,6 +645,7 @@
   line-height: 1.16;
 
   margin: 0 0 24px;
+  color: var(--text);
 }
 
 .xp-chapter h2 span {
@@ -632,19 +658,254 @@
 
   color: var(--muted);
   font-size: 15px;
-  line-height: 1.95;
+  line-height: 1.9;
 
   margin: 0 0 34px;
 }
 
 
 /* ============================================================
-   06. TECHNICAL CONTENT CARDS
+   07 / OVERVIEW TEXT & SUBSECTIONS
+============================================================ */
+
+.xp-overview-block {
+  margin: 42px 0;
+  max-width: 100%;
+}
+
+.xp-overview-kicker {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  color: var(--accent2);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .09em;
+  line-height: 1.6;
+
+  margin-bottom: 12px;
+}
+
+.xp-overview-heading {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(21px, 2.3vw, 29px);
+
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -.045em;
+
+  color: var(--text);
+  margin: 0 0 20px;
+}
+
+/* Correct paragraph appearance */
+
+.xp-page .xp-overview-block > p {
+  color: var(--muted);
+
+  font-family: Manrope, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.9;
+  letter-spacing: normal;
+
+  margin: 0 0 18px;
+  max-width: 950px;
+}
+
+
+/* ============================================================
+   08 / ENGINEERING QUESTION
+============================================================ */
+
+.xp-engineering-question {
+  margin-top: 28px;
+  padding: 27px 30px;
+
+  border-left: 3px solid var(--accent2);
+  background: var(--panel);
+}
+
+.xp-engineering-question span {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  color: var(--accent2);
+
+  font-size: 10px;
+  letter-spacing: .08em;
+
+  margin-bottom: 14px;
+}
+
+.xp-engineering-question p {
+  color: var(--text);
+  font-size: clamp(16px, 1.6vw, 21px);
+  font-weight: 700;
+
+  line-height: 1.65;
+  letter-spacing: -.02em;
+
+  margin: 0;
+}
+
+
+/* ============================================================
+   09 / ARCHITECTURAL PRINCIPLE
+============================================================ */
+
+.xp-principle {
+  margin-top: 29px;
+  padding: 25px 29px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-principle span {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  color: var(--accent2);
+
+  font-size: 10px;
+  letter-spacing: .08em;
+
+  margin-bottom: 14px;
+}
+
+.xp-principle strong {
+  display: block;
+
+  color: var(--text);
+  font-size: clamp(17px, 1.8vw, 25px);
+  font-weight: 800;
+
+  line-height: 1.55;
+  letter-spacing: -.035em;
+}
+
+
+/* ============================================================
+   10 / PROJECT FIGURES
+============================================================ */
+
+.xp-overview-figure {
+  width: 100%;
+  margin: 38px 0 45px;
+
+  border: 1px solid var(--stroke);
+  background: var(--panel);
+
+  overflow: hidden;
+}
+
+.xp-figure-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  padding: 21px 24px;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-figure-heading > div > span {
+  display: block;
+
+  color: var(--accent2);
+  font-size: 9px;
+  letter-spacing: .08em;
+
+  margin-bottom: 8px;
+}
+
+.xp-figure-heading h3 {
+  font-family: Manrope, sans-serif;
+
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 800;
+
+  line-height: 1.4;
+  letter-spacing: -.035em;
+  margin: 0;
+}
+
+.xp-figure-open {
+  font-family: "DM Mono", monospace;
+
+  color: var(--accent);
+  font-size: 10px;
+
+  padding: 8px 0;
+  white-space: nowrap;
+
+  transition: opacity .2s ease;
+}
+
+.xp-figure-open:hover {
+  opacity: .7;
+}
+
+.xp-figure-image-link {
+  display: block;
+  width: 100%;
+  padding: 20px;
+
+  background: #ffffff;
+}
+
+.xp-figure-image-link img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.xp-figure-image-link:hover img {
+  opacity: .97;
+}
+
+.xp-overview-figure figcaption {
+  font-family: "DM Mono", monospace;
+
+  color: var(--subtle);
+  font-size: 10px;
+  line-height: 1.8;
+
+  padding: 17px 24px;
+  border-top: 1px solid var(--stroke);
+}
+
+/* Error state if an image is missing */
+
+.xp-figure-error {
+  padding: 24px;
+  background: var(--bg2);
+
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* ============================================================
+   11 / TECHNICAL CONTENT CARDS
 ============================================================ */
 
 .xp-card-grid {
   display: grid;
   gap: 14px;
+  width: 100%;
 }
 
 .xp-grid-two {
@@ -664,8 +925,8 @@
   border-top: 2px solid var(--accent);
 
   transition:
-    border-color .25s,
-    transform .25s;
+    border-color .25s ease,
+    transform .25s ease;
 }
 
 .xp-info-card:hover {
@@ -684,10 +945,13 @@
 }
 
 .xp-info-card h3 {
-  font-size: 17px;
-  line-height: 1.4;
-  letter-spacing: -.03em;
+  color: var(--text);
 
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+
+  letter-spacing: -.03em;
   margin: 0 0 14px;
 }
 
@@ -695,31 +959,74 @@
   color: var(--muted);
   font-size: 12px;
   line-height: 1.85;
+
   margin: 0;
 }
 
 
 /* ============================================================
-   07. ENGINEERING NOTES & PLACEHOLDERS
+   12 / ENGINEERING CONCLUSION
+============================================================ */
+
+.xp-overview-conclusion {
+  margin-top: 43px;
+  padding: 34px 36px;
+
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent);
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(197, 250, 95, .07),
+      transparent 60%
+    ),
+    var(--panel);
+}
+
+.xp-overview-conclusion span {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  color: var(--accent);
+
+  font-size: 10px;
+  letter-spacing: .08em;
+
+  margin-bottom: 14px;
+}
+
+.xp-overview-conclusion p {
+  color: var(--text);
+  font-size: clamp(17px, 1.85vw, 24px);
+  font-weight: 700;
+
+  line-height: 1.65;
+  letter-spacing: -.035em;
+  margin: 0;
+}
+
+
+/* ============================================================
+   13 / ENGINEERING NOTES & PLACEHOLDERS
 ============================================================ */
 
 .xp-note {
   margin-top: 25px;
+  padding: 21px 25px;
 
   border-left: 3px solid var(--accent2);
   background: var(--panel);
-
-  padding: 21px 25px;
 }
 
 .xp-note strong {
   display: block;
 
   font-family: "DM Mono", monospace;
-  font-size: 10px;
-
-  letter-spacing: .08em;
   color: var(--accent2);
+
+  font-size: 10px;
+  letter-spacing: .08em;
 
   margin-bottom: 10px;
 }
@@ -728,19 +1035,17 @@
   color: var(--muted);
   font-size: 12px;
   line-height: 1.85;
-
   margin: 0;
 }
 
 .xp-placeholder {
-  position: relative;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 14px;
 
   min-height: 245px;
+  min-width: 0;
   padding: 30px;
 
   background:
@@ -756,7 +1061,6 @@
     var(--panel);
 
   background-size: 27px 27px;
-
   border: 1px dashed var(--stroke);
 }
 
@@ -768,8 +1072,10 @@
 .xp-placeholder strong {
   font-family: Manrope, sans-serif;
 
+  color: var(--text);
   font-size: 19px;
   font-weight: 800;
+
   letter-spacing: -.035em;
 }
 
@@ -777,7 +1083,6 @@
   color: var(--muted);
   font-size: 12px;
   line-height: 1.8;
-
   margin: 0;
 }
 
@@ -785,14 +1090,14 @@
   display: inline-block;
   align-self: flex-start;
 
+  color: var(--accent);
+  font-size: 9px;
+
   padding: 7px 9px;
   margin-top: 8px;
 
-  color: var(--accent);
   background: var(--bg2);
   border: 1px solid var(--stroke);
-
-  font-size: 9px;
 }
 
 .xp-placeholder-wide {
@@ -802,6 +1107,8 @@
 
 .xp-figure-caption {
   color: var(--subtle);
+
+  font-family: "DM Mono", monospace;
   font-size: 10px;
   line-height: 1.7;
 
@@ -810,7 +1117,7 @@
 
 
 /* ============================================================
-   08. ARCHITECTURE PROCESS FLOW
+   14 / ARCHITECTURE PROCESS FLOW
 ============================================================ */
 
 .xp-flow {
@@ -820,10 +1127,9 @@
 }
 
 .xp-flow-step {
-  position: relative;
   min-width: 0;
-
   padding: 18px 12px;
+
   background: var(--panel);
   border: 1px solid var(--stroke);
   border-top: 2px solid var(--accent2);
@@ -833,20 +1139,23 @@
   display: block;
 
   font-family: "DM Mono", monospace;
-  font-size: 9px;
   color: var(--accent2);
 
+  font-size: 9px;
   margin-bottom: 14px;
 }
 
 .xp-flow-step strong {
   display: block;
+
+  color: var(--text);
   font-size: 13px;
   margin-bottom: 6px;
 }
 
 .xp-flow-step small {
   display: block;
+
   color: var(--muted);
   font-size: 10px;
   line-height: 1.5;
@@ -854,7 +1163,7 @@
 
 
 /* ============================================================
-   09. VALIDATION TABLE
+   15 / VALIDATION TABLE
 ============================================================ */
 
 .xp-table-wrap {
@@ -875,11 +1184,11 @@
 
 .xp-validation-table th {
   color: var(--accent2);
+  background: var(--bg2);
+
   font-size: 10px;
   font-weight: 500;
-
   letter-spacing: .05em;
-  background: var(--bg2);
 
   padding: 17px 20px;
   border-bottom: 1px solid var(--stroke);
@@ -905,7 +1214,7 @@
 
 
 /* ============================================================
-   10. DEMONSTRATION CARDS
+   16 / TECHNICAL DEMONSTRATION CARDS
 ============================================================ */
 
 .xp-demo-card {
@@ -915,8 +1224,8 @@
   border: 1px solid var(--stroke);
 
   transition:
-    border-color .25s,
-    transform .25s;
+    border-color .25s ease,
+    transform .25s ease;
 }
 
 .xp-demo-card:hover {
@@ -927,13 +1236,13 @@
 .xp-demo-media {
   position: relative;
 
-  min-height: 185px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 14px;
+
+  min-height: 185px;
 
   background:
     radial-gradient(
@@ -965,14 +1274,14 @@
   border: 1px solid var(--stroke);
   border-radius: 50%;
 
-  font-size: 26px;
   color: var(--accent);
+  font-size: 26px;
   font-weight: 400;
 }
 
 .xp-demo-media small {
-  font-size: 9px;
   color: var(--subtle);
+  font-size: 9px;
 }
 
 .xp-demo-info {
@@ -980,9 +1289,11 @@
 }
 
 .xp-demo-info h3 {
+  color: var(--text);
   font-size: 16px;
-  margin: 0 0 12px;
   letter-spacing: -.03em;
+
+  margin: 0 0 12px;
 }
 
 .xp-demo-info p {
@@ -995,18 +1306,21 @@
 }
 
 .xp-demo-info > span {
-  font-size: 9px;
   color: var(--accent2);
+  font-size: 9px;
 }
 
 
 /* ============================================================
-   11. PROJECT END SECTION
+   17 / PROJECT FINAL SECTION
 ============================================================ */
 
 .xp-final {
   margin-top: 45px;
   padding: 47px;
+
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
 
   background:
     radial-gradient(
@@ -1015,9 +1329,6 @@
       transparent 65%
     ),
     var(--panel);
-
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent);
 }
 
 .xp-final > span {
@@ -1027,6 +1338,8 @@
 }
 
 .xp-final h3 {
+  color: var(--text);
+
   font-size: clamp(25px, 3vw, 44px);
   line-height: 1.3;
   letter-spacing: -.05em;
@@ -1040,33 +1353,37 @@
 
 
 /* ============================================================
-   12. ANIMATIONS
+   18 / ANIMATIONS
 ============================================================ */
 
 @keyframes xp-breathe {
   0%, 100% {
-    box-shadow: 0 0 0 rgba(197, 250, 95, 0);
+    box-shadow:
+      0 0 0 rgba(197, 250, 95, 0);
   }
 
   50% {
-    box-shadow: 0 0 30px rgba(197, 250, 95, .10);
+    box-shadow:
+      0 0 30px rgba(197, 250, 95, .10);
   }
 }
+
+/* Visible by default */
 
 .xp-reveal {
   opacity: 1;
   transform: none;
 }
 
-/* Only hide sections when JavaScript enhancement is active */
+/* Enhanced by JavaScript */
 
 .xp-js .xp-reveal {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(20px);
 
   transition:
-    opacity .7s ease,
-    transform .7s ease;
+    opacity .65s ease,
+    transform .65s ease;
 }
 
 .xp-js .xp-reveal.is-visible {
@@ -1076,7 +1393,7 @@
 
 
 /* ============================================================
-   13. RESPONSIVE — LAPTOP / TABLET
+   19 / LAPTOP
 ============================================================ */
 
 @media (max-width: 1180px) {
@@ -1102,7 +1419,7 @@
 
 
 /* ============================================================
-   14. RESPONSIVE — TABLET
+   20 / TABLET
 ============================================================ */
 
 @media (max-width: 960px) {
@@ -1116,8 +1433,8 @@
   }
 
   .xp-visual {
-    max-width: 650px;
     width: 100%;
+    max-width: 650px;
   }
 
   .xp-layout {
@@ -1136,7 +1453,7 @@
 
 
 /* ============================================================
-   15. RESPONSIVE — MOBILE
+   21 / MOBILE
 ============================================================ */
 
 @media (max-width: 760px) {
@@ -1146,12 +1463,14 @@
   }
 
   .xp-page section[id] {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 95px;
   }
 
   .xp-reading-progress {
     top: 72px;
   }
+
+  /* Hero */
 
   .xp-hero {
     padding-top: 38px;
@@ -1183,6 +1502,8 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  /* Architecture visual */
 
   .xp-visual {
     padding: 17px;
@@ -1217,6 +1538,8 @@
     display: none;
   }
 
+  /* Documentation */
+
   .xp-layout {
     padding-top: 35px;
     padding-bottom: 45px;
@@ -1233,6 +1556,44 @@
   .xp-chapter-lead {
     font-size: 13px;
   }
+
+  /* Overview */
+
+  .xp-overview-block {
+    margin: 29px 0;
+  }
+
+  .xp-page .xp-overview-block > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .xp-engineering-question,
+  .xp-principle,
+  .xp-overview-conclusion {
+    padding: 22px 19px;
+  }
+
+  /* Figures */
+
+  .xp-figure-heading {
+    padding: 17px;
+  }
+
+  .xp-figure-heading h3 {
+    font-size: 16px;
+  }
+
+  .xp-figure-image-link {
+    padding: 10px;
+  }
+
+  .xp-overview-figure figcaption {
+    padding: 14px 17px;
+    font-size: 9px;
+  }
+
+  /* Technical grids */
 
   .xp-grid-two,
   .xp-grid-three {
@@ -1260,7 +1621,7 @@
 
 
 /* ============================================================
-   16. ACCESSIBILITY — REDUCED MOTION
+   22 / REDUCED MOTION
 ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1278,275 +1639,5 @@
 }
 
 /* ============================================================
-   END OF EXAVIGIL STYLESHEET
+   END OF EXAVIGIL.CSS
 ============================================================ */
-
-
-
-/* ============================================================
-   EXAVIGIL — SECTION 01
-   EXECUTIVE OVERVIEW & VALUE PROPOSITION
-============================================================ */
-
-
-/* Content blocks */
-
-.xp-overview-block {
-  margin: 38px 0;
-  max-width: 100%;
-}
-
-.xp-overview-kicker {
-  display: block;
-
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .09em;
-
-  color: var(--accent2);
-  margin-bottom: 12px;
-}
-
-.xp-overview-heading {
-  font-size: clamp(21px, 2.3vw, 29px);
-  font-weight: 800;
-  line-height: 1.35;
-
-  letter-spacing: -.045em;
-  color: var(--text);
-
-  margin: 0 0 20px;
-}
-
-.xp-overview-block > p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.95;
-
-  margin: 0 0 17px;
-  max-width: 950px;
-}
-
-
-/* Engineering challenge */
-
-.xp-engineering-question {
-  margin-top: 28px;
-  padding: 27px 30px;
-
-  border-left: 3px solid var(--accent2);
-  background: var(--panel);
-}
-
-.xp-engineering-question span,
-.xp-principle span,
-.xp-overview-conclusion span {
-  display: block;
-
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .08em;
-
-  color: var(--accent2);
-  margin-bottom: 14px;
-}
-
-.xp-engineering-question p {
-  color: var(--text);
-  font-weight: 700;
-
-  font-size: clamp(16px, 1.6vw, 21px);
-  line-height: 1.65;
-
-  letter-spacing: -.02em;
-  margin: 0;
-}
-
-
-/* Architectural principle */
-
-.xp-principle {
-  margin-top: 29px;
-  padding: 25px 29px;
-
-  background: var(--panel);
-  border: 1px solid var(--stroke);
-  border-top: 2px solid var(--accent);
-}
-
-.xp-principle strong {
-  display: block;
-
-  font-size: clamp(17px, 1.8vw, 25px);
-  font-weight: 800;
-
-  line-height: 1.55;
-  letter-spacing: -.035em;
-  color: var(--text);
-}
-
-
-/* Figures */
-
-.xp-overview-figure {
-  margin: 38px 0 45px;
-
-  border: 1px solid var(--stroke);
-  background: var(--panel);
-
-  overflow: hidden;
-}
-
-.xp-figure-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
-
-  padding: 21px 24px;
-  border-bottom: 1px solid var(--stroke);
-}
-
-.xp-figure-heading span {
-  display: block;
-
-  font-family: 'DM Mono', monospace;
-  color: var(--accent2);
-
-  font-size: 9px;
-  letter-spacing: .08em;
-  margin-bottom: 8px;
-}
-
-.xp-figure-heading h3 {
-  color: var(--text);
-  font-size: 18px;
-  letter-spacing: -.035em;
-  margin: 0;
-}
-
-.xp-figure-open {
-  font-family: 'DM Mono', monospace;
-
-  font-size: 10px;
-  color: var(--accent);
-
-  padding: 8px 0;
-  white-space: nowrap;
-
-  transition: opacity .2s ease;
-}
-
-.xp-figure-open:hover {
-  opacity: .7;
-}
-
-.xp-figure-image-link {
-  display: block;
-  padding: 20px;
-
-  background: #fff;
-}
-
-.xp-figure-image-link img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.xp-figure-image-link:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: -5px;
-}
-
-.xp-overview-figure figcaption {
-  font-family: 'DM Mono', monospace;
-
-  font-size: 10px;
-  line-height: 1.8;
-
-  padding: 17px 24px;
-  color: var(--subtle);
-
-  border-top: 1px solid var(--stroke);
-}
-
-
-/* Conclusion */
-
-.xp-overview-conclusion {
-  margin-top: 43px;
-  padding: 34px 36px;
-
-  border: 1px solid var(--stroke);
-  border-left: 3px solid var(--accent);
-
-  background:
-    radial-gradient(
-      ellipse at 100% 0%,
-      rgba(197, 250, 95, .07),
-      transparent 60%
-    ),
-    var(--panel);
-}
-
-.xp-overview-conclusion span {
-  color: var(--accent);
-}
-
-.xp-overview-conclusion p {
-  color: var(--text);
-
-  font-size: clamp(17px, 1.85vw, 24px);
-  font-weight: 700;
-
-  line-height: 1.65;
-  letter-spacing: -.035em;
-
-  margin: 0;
-}
-
-
-/* Mobile */
-
-@media (max-width: 760px) {
-
-  .xp-overview-block {
-    margin: 29px 0;
-  }
-
-  .xp-overview-block > p {
-    font-size: 13px;
-    line-height: 1.85;
-  }
-
-  .xp-engineering-question,
-  .xp-principle,
-  .xp-overview-conclusion {
-    padding: 22px 19px;
-  }
-
-  .xp-figure-heading {
-    padding: 17px;
-  }
-
-  .xp-figure-heading h3 {
-    font-size: 16px;
-  }
-
-  .xp-figure-image-link {
-    padding: 10px;
-  }
-
-  .xp-overview-figure figcaption {
-    padding: 14px 17px;
-    font-size: 9px;
-  }
-
-}
-
-/* END SECTION 01 */
-
-
