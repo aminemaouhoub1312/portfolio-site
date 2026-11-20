@@ -1280,3 +1280,272 @@
    END OF EXAVIGIL STYLESHEET
 ============================================================ */
 
+
+
+/* ============================================================
+   EXAVIGIL — SECTION 01
+   EXECUTIVE OVERVIEW & VALUE PROPOSITION
+============================================================ */
+
+
+/* Content blocks */
+
+.xp-overview-block {
+  margin: 38px 0;
+  max-width: 100%;
+}
+
+.xp-overview-kicker {
+  display: block;
+
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .09em;
+
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+
+.xp-overview-heading {
+  font-size: clamp(21px, 2.3vw, 29px);
+  font-weight: 800;
+  line-height: 1.35;
+
+  letter-spacing: -.045em;
+  color: var(--text);
+
+  margin: 0 0 20px;
+}
+
+.xp-overview-block > p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.95;
+
+  margin: 0 0 17px;
+  max-width: 950px;
+}
+
+
+/* Engineering challenge */
+
+.xp-engineering-question {
+  margin-top: 28px;
+  padding: 27px 30px;
+
+  border-left: 3px solid var(--accent2);
+  background: var(--panel);
+}
+
+.xp-engineering-question span,
+.xp-principle span,
+.xp-overview-conclusion span {
+  display: block;
+
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .08em;
+
+  color: var(--accent2);
+  margin-bottom: 14px;
+}
+
+.xp-engineering-question p {
+  color: var(--text);
+  font-weight: 700;
+
+  font-size: clamp(16px, 1.6vw, 21px);
+  line-height: 1.65;
+
+  letter-spacing: -.02em;
+  margin: 0;
+}
+
+
+/* Architectural principle */
+
+.xp-principle {
+  margin-top: 29px;
+  padding: 25px 29px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-principle strong {
+  display: block;
+
+  font-size: clamp(17px, 1.8vw, 25px);
+  font-weight: 800;
+
+  line-height: 1.55;
+  letter-spacing: -.035em;
+  color: var(--text);
+}
+
+
+/* Figures */
+
+.xp-overview-figure {
+  margin: 38px 0 45px;
+
+  border: 1px solid var(--stroke);
+  background: var(--panel);
+
+  overflow: hidden;
+}
+
+.xp-figure-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  padding: 21px 24px;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-figure-heading span {
+  display: block;
+
+  font-family: 'DM Mono', monospace;
+  color: var(--accent2);
+
+  font-size: 9px;
+  letter-spacing: .08em;
+  margin-bottom: 8px;
+}
+
+.xp-figure-heading h3 {
+  color: var(--text);
+  font-size: 18px;
+  letter-spacing: -.035em;
+  margin: 0;
+}
+
+.xp-figure-open {
+  font-family: 'DM Mono', monospace;
+
+  font-size: 10px;
+  color: var(--accent);
+
+  padding: 8px 0;
+  white-space: nowrap;
+
+  transition: opacity .2s ease;
+}
+
+.xp-figure-open:hover {
+  opacity: .7;
+}
+
+.xp-figure-image-link {
+  display: block;
+  padding: 20px;
+
+  background: #fff;
+}
+
+.xp-figure-image-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.xp-figure-image-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -5px;
+}
+
+.xp-overview-figure figcaption {
+  font-family: 'DM Mono', monospace;
+
+  font-size: 10px;
+  line-height: 1.8;
+
+  padding: 17px 24px;
+  color: var(--subtle);
+
+  border-top: 1px solid var(--stroke);
+}
+
+
+/* Conclusion */
+
+.xp-overview-conclusion {
+  margin-top: 43px;
+  padding: 34px 36px;
+
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent);
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(197, 250, 95, .07),
+      transparent 60%
+    ),
+    var(--panel);
+}
+
+.xp-overview-conclusion span {
+  color: var(--accent);
+}
+
+.xp-overview-conclusion p {
+  color: var(--text);
+
+  font-size: clamp(17px, 1.85vw, 24px);
+  font-weight: 700;
+
+  line-height: 1.65;
+  letter-spacing: -.035em;
+
+  margin: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 760px) {
+
+  .xp-overview-block {
+    margin: 29px 0;
+  }
+
+  .xp-overview-block > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .xp-engineering-question,
+  .xp-principle,
+  .xp-overview-conclusion {
+    padding: 22px 19px;
+  }
+
+  .xp-figure-heading {
+    padding: 17px;
+  }
+
+  .xp-figure-heading h3 {
+    font-size: 16px;
+  }
+
+  .xp-figure-image-link {
+    padding: 10px;
+  }
+
+  .xp-overview-figure figcaption {
+    padding: 14px 17px;
+    font-size: 9px;
+  }
+
+}
+
+/* END SECTION 01 */
+
+
