@@ -895,119 +895,508 @@
         <!-- END CHAPTER 01 -->
 
 
-        <!-- ==================================================
-             02 / UNIFIED IT/OT/CLOUD ARCHITECTURE
-        =================================================== -->
-
-        <section
-          class="xp-chapter xp-reveal"
-          id="architecture"
-          aria-labelledby="xp-architecture-title"
-        >
-
-          <div class="xp-chapter-label">
-            <span>02</span>
-            SYSTEM DESIGN / INTEGRATION
-          </div>
-
-          <h2 id="xp-architecture-title">
-            Unified IT/OT/Cloud
-            <span>Agentic SOC Architecture</span>
-          </h2>
-
-          <p class="xp-chapter-lead">
-            A system-level view of how security signals,
-            intelligence sources, investigation capabilities
-            and policy enforcement can be brought together
-            through a layered security architecture.
-          </p>
 
 
-          <!-- CONCEPTUAL PROCESS -->
+<!-- ============================================================
+     02 / UNIFIED IT/OT/CLOUD AGENTIC SOC ARCHITECTURE
+============================================================ -->
 
-          <div class="xp-flow">
+<section
+  class="xp-chapter xp-reveal xp-architecture"
+  id="architecture"
+  aria-labelledby="xp-architecture-title"
+>
 
-            <div class="xp-flow-step">
-              <span>01</span>
-              <strong>Collect</strong>
-              <small>IT / OT / Cloud</small>
-            </div>
+  <!-- SECTION HEADER -->
 
-            <div class="xp-flow-step">
-              <span>02</span>
-              <strong>Correlate</strong>
-              <small>Security Context</small>
-            </div>
+  <div class="xp-chapter-label">
+    <span>02</span>
+    SYSTEM ARCHITECTURE / TECHNICAL INTEGRATION
+  </div>
 
-            <div class="xp-flow-step">
-              <span>03</span>
-              <strong>Investigate</strong>
-              <small>AI Assistance</small>
-            </div>
+  <h2 id="xp-architecture-title">
+    Unified IT/OT/Cloud
+    <span>Agentic SOC Architecture</span>
+  </h2>
 
-            <div class="xp-flow-step">
-              <span>04</span>
-              <strong>Authorize</strong>
-              <small>Policy Controls</small>
-            </div>
-
-            <div class="xp-flow-step">
-              <span>05</span>
-              <strong>Respond</strong>
-              <small>Controlled Actions</small>
-            </div>
-
-          </div>
-
-          <p class="xp-figure-caption">
-            Conceptual process. Detailed integration
-            architecture and verified trust boundaries
-            will be documented in this chapter.
-          </p>
+  <p class="xp-chapter-lead">
+    EXAVIGIL defines a layered security architecture
+    integrating IT, OT and Cloud telemetry,
+    threat intelligence, contextual enrichment,
+    agentic investigation and policy-controlled response.
+  </p>
 
 
-          <div class="xp-card-grid xp-grid-two">
+  <!-- TWO ARCHITECTURAL LAYERS -->
 
-            <div class="xp-placeholder">
-              <span>ARCHITECTURE / FIGURE 01</span>
+  <div class="xp-arch-layers">
 
-              <strong>
-                Unified System Architecture
-              </strong>
+    <div class="xp-arch-layer">
+      <span>ARCHITECTURE LAYER / 01</span>
+      <strong>Infrastructure &amp; Security Sources</strong>
+      <p>
+        Network, endpoint, industrial and Cloud
+        telemetry collection.
+      </p>
+    </div>
 
-              <p>
-                Reserved for the complete architecture
-                diagram, security components and
-                integration layers.
-              </p>
+    <div class="xp-arch-layer">
+      <span>ARCHITECTURE LAYER / 02</span>
+      <strong>SOC Core &amp; Agentic Investigation</strong>
+      <p>
+        Detection, CTI enrichment, case management,
+        AI assistance and controlled response.
+      </p>
+    </div>
 
-              <span class="xp-placeholder-status">
-                DIAGRAM TO BE ADDED
-              </span>
-            </div>
+  </div>
 
-            <div class="xp-placeholder">
-              <span>ARCHITECTURE / FIGURE 02</span>
 
-              <strong>
-                Data Flow &amp; Trust Boundaries
-              </strong>
+  <!-- ==========================================================
+       2.1 / INFRASTRUCTURE & SECURITY SOURCES
+  =========================================================== -->
 
-              <p>
-                Reserved for data flows, security
-                zones, communication channels
-                and authorization boundaries.
-              </p>
+  <div class="xp-arch-block">
 
-              <span class="xp-placeholder-status">
-                DIAGRAM TO BE ADDED
-              </span>
-            </div>
+    <span class="xp-arch-kicker">
+      2.1 / SECURITY TELEMETRY
+    </span>
 
-          </div>
+    <h3>Infrastructure &amp; Security Sources</h3>
 
-        </section>
+    <p>
+      The infrastructure layer separates three
+      monitored domains while consolidating
+      security-relevant telemetry into the SOC.
+      Collection mechanisms are selected according
+      to each environment's operational constraints.
+    </p>
 
+    <div class="xp-card-grid xp-grid-three">
+
+      <article class="xp-info-card">
+        <span class="xp-card-number">
+          DOMAIN / IT
+        </span>
+
+        <h3>Enterprise IT</h3>
+
+        <p>
+          Active Directory, servers, applications,
+          databases, endpoints, firewalls,
+          WAF, Zeek and Suricata.
+          Telemetry includes authentication,
+          network, host and application events.
+        </p>
+      </article>
+
+      <article class="xp-info-card">
+        <span class="xp-card-number">
+          DOMAIN / OT
+        </span>
+
+        <h3>Industrial OT</h3>
+
+        <p>
+          OT gateways, industrial monitoring
+          sensors, SCADA, historians and
+          PLC-related network segments.
+          Visibility is designed around passive
+          observation and approved read-only access.
+        </p>
+      </article>
+
+      <article class="xp-info-card">
+        <span class="xp-card-number">
+          DOMAIN / CLOUD
+        </span>
+
+        <h3>Cloud &amp; SaaS</h3>
+
+        <p>
+          Microsoft 365, Azure AD, GitHub
+          and SaaS platforms.
+          Identity, audit, administrative
+          and application events extend
+          visibility beyond on-premise systems.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <!-- FIGURE 02-A -->
+
+  <figure class="xp-overview-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>FIGURE 02-A / SECURITY SOURCES</span>
+        <h3>IT/OT/Cloud Log Sources Architecture</h3>
+      </div>
+
+      <a
+        href="../assets/img/projects/exavigil-log-sources.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="xp-figure-open"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+    <a
+      href="../assets/img/projects/exavigil-log-sources.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="xp-figure-image-link"
+      aria-label="View full-size IT OT Cloud architecture"
+    >
+
+      <img
+        src="../assets/img/projects/exavigil-log-sources.png"
+        alt="EXAVIGIL infrastructure architecture showing enterprise IT, industrial OT, Cloud and SaaS security telemetry feeding the SOC platform"
+        loading="lazy"
+        decoding="async"
+        width="1448"
+        height="1086"
+      >
+
+    </a>
+
+    <figcaption>
+      Figure 02-A. Security zones, network
+      monitoring components and telemetry flows
+      connecting IT, OT and Cloud sources
+      to the SOC platform. Response paths
+      are subject to separate authorization.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- ==========================================================
+       2.2 / SOC CORE
+  =========================================================== -->
+
+  <div class="xp-arch-block">
+
+    <span class="xp-arch-kicker">
+      2.2 / DETECTION &amp; INTELLIGENCE
+    </span>
+
+    <h3>SOC Core &amp; Intelligence Processing</h3>
+
+    <p>
+      Wazuh forms the detection backbone through
+      its Manager, Indexer and Dashboard.
+      The architecture distinguishes raw alerts
+      from context-enriched investigation records.
+    </p>
+
+    <p>
+      MISP and the CTI feeder supply normalized
+      indicators, while Logstash performs IOC
+      lookups and alert enrichment.
+      A RAG knowledge layer provides additional
+      investigation context for specialized agents.
+    </p>
+
+  </div>
+
+
+  <!-- FIGURE 02-B -->
+
+  <figure class="xp-overview-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>FIGURE 02-B / SOC PROCESSING</span>
+        <h3>Agentic SOC-Core Architecture</h3>
+      </div>
+
+      <a
+        href="../assets/img/projects/exavigil-soc-core.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="xp-figure-open"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+    <a
+      href="../assets/img/projects/exavigil-soc-core.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="xp-figure-image-link"
+      aria-label="View full-size Agentic SOC Core architecture"
+    >
+
+      <img
+        src="../assets/img/projects/exavigil-soc-core.png"
+        alt="EXAVIGIL SOC Core architecture showing Wazuh, MISP, CTI feeder, Logstash, RAG, specialized agents, Policy Gateway, TheHive, Cortex and Shuffle SOAR"
+        loading="lazy"
+        decoding="async"
+        width="1448"
+        height="1086"
+      >
+
+    </a>
+
+    <figcaption>
+      Figure 02-B. Detailed conceptual integration
+      of Wazuh alert processing, CTI enrichment,
+      RAG context, agentic investigation,
+      incident case management and
+      controlled SOAR execution.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- ALERT PROCESSING PIPELINE -->
+
+  <div class="xp-arch-block">
+
+    <span class="xp-arch-kicker">
+      PROCESSING MODEL / DATA FLOW
+    </span>
+
+    <h3>Alert Processing Pipeline</h3>
+
+    <div class="xp-arch-pipeline">
+
+      <div class="xp-arch-step">
+        <span>01</span>
+        <strong>Detection</strong>
+        <small>Wazuh alerts</small>
+      </div>
+
+      <div class="xp-arch-step">
+        <span>02</span>
+        <strong>Enrichment</strong>
+        <small>CTI / Logstash / RAG</small>
+      </div>
+
+      <div class="xp-arch-step">
+        <span>03</span>
+        <strong>Investigation</strong>
+        <small>Specialized AI agents</small>
+      </div>
+
+      <div class="xp-arch-step">
+        <span>04</span>
+        <strong>Case Handling</strong>
+        <small>TheHive / Cortex</small>
+      </div>
+
+      <div class="xp-arch-step">
+        <span>05</span>
+        <strong>Response</strong>
+        <small>Policy / Shuffle SOAR</small>
+      </div>
+
+    </div>
+
+    <p class="xp-arch-detail">
+      The processing design separates raw events,
+      threat intelligence indicators and enriched
+      alerts into distinct logical datasets,
+      supporting traceability and investigation.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       2.3 / AGENTIC INVESTIGATION & CASE MANAGEMENT
+  =========================================================== -->
+
+  <div class="xp-arch-block">
+
+    <span class="xp-arch-kicker">
+      2.3 / INVESTIGATION &amp; ORCHESTRATION
+    </span>
+
+    <h3>Agentic Investigation &amp; Case Management</h3>
+
+    <p>
+      Four specialized agents support triage,
+      CTI analysis, investigation and response
+      planning. Their outputs provide
+      investigation context and proposed actions,
+      not independent execution authority.
+    </p>
+
+    <p>
+      Enriched alerts and investigation findings
+      can be associated with TheHive cases.
+      Cortex supports additional analyzer-based
+      enrichment, while Shuffle SOAR represents
+      the controlled response orchestration layer.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       2.4 / POLICY GATEWAY & OT SAFETY
+  =========================================================== -->
+
+  <div class="xp-arch-block">
+
+    <span class="xp-arch-kicker">
+      2.4 / TRUST BOUNDARIES
+    </span>
+
+    <h3>Policy Enforcement &amp; Operational Safety</h3>
+
+    <p>
+      The Policy Gateway establishes an independent
+      authorization boundary between AI-generated
+      recommendations and sensitive tool execution.
+      Its design incorporates identity, policy
+      evaluation, secret management and
+      human approval requirements.
+    </p>
+
+    <div class="xp-arch-control-grid">
+
+      <div>
+        <span>CONTROL / 01</span>
+        <strong>Independent Authorization</strong>
+        <p>
+          Keycloak, OPA and OpenBao support the
+          proposed identity, policy and
+          secret-management control model.
+        </p>
+      </div>
+
+      <div>
+        <span>CONTROL / 02</span>
+        <strong>Industrial Safety Boundary</strong>
+        <p>
+          OT monitoring is designed to remain passive
+          or read-only. No direct autonomous
+          PLC or SCADA command execution is permitted.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="xp-note">
+
+      <strong>EXECUTION BOUNDARY</strong>
+
+      <p>
+        Any containment or blocking action shown
+        in the diagrams is subject to authorization
+        and restricted to approved laboratory targets.
+        Diagrammed response paths do not imply
+        permission to modify industrial controllers
+        or production infrastructure.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       2.5 / ARCHITECTURE RATIONALE
+  =========================================================== -->
+
+  <div class="xp-arch-block">
+
+    <span class="xp-arch-kicker">
+      2.5 / ENGINEERING DECISIONS
+    </span>
+
+    <h3>Architecture Design Rationale</h3>
+
+    <div class="xp-card-grid xp-grid-three">
+
+      <article class="xp-info-card">
+
+        <span class="xp-card-number">
+          01 / SEGMENTATION
+        </span>
+
+        <h3>Separate Security Domains</h3>
+
+        <p>
+          Preserve IT, OT and Cloud trust boundaries
+          while consolidating their security
+          telemetry for investigation.
+        </p>
+
+      </article>
+
+      <article class="xp-info-card">
+
+        <span class="xp-card-number">
+          02 / TRACEABILITY
+        </span>
+
+        <h3>Preserve Investigation Context</h3>
+
+        <p>
+          Maintain distinguishable raw alerts,
+          intelligence indicators, enriched
+          evidence and case records.
+        </p>
+
+      </article>
+
+      <article class="xp-info-card">
+
+        <span class="xp-card-number">
+          03 / ENFORCEMENT
+        </span>
+
+        <h3>Decouple Analysis &amp; Execution</h3>
+
+        <p>
+          Keep AI investigation independent
+          from authorization and operational
+          response enforcement.
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <!-- FINAL ARCHITECTURE STATEMENT -->
+
+  <div class="xp-overview-conclusion">
+
+    <span>EXAVIGIL / ARCHITECTURAL PRINCIPLE</span>
+
+    <p>
+      Unified visibility and intelligent
+      investigation must operate within
+      clearly defined trust boundaries,
+      with authorization enforced separately
+      from AI reasoning.
+    </p>
+
+  </div>
+
+</section>
+<!-- END SECTION 02 -->
+
+
+        
 
         <!-- ==================================================
              03 / AGENTIC SOC & INTELLIGENT INVESTIGATION
