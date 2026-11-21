@@ -2575,3 +2575,29 @@ summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
 }
+
+
+
+
+/* SHADOWSCOPE AM — PORTFOLIO PROJECT LINK */
+
+.ss-project-card-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ss-project-card-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.ss-project-card-link .project-content h3 {
+  color: var(--text);
+}
+
+.ss-project-card-link:hover .project-content h3 {
+  color: var(--accent);
+}
+
