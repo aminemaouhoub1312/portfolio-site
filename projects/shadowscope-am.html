@@ -992,44 +992,925 @@
         <!-- END CHAPTER 01 -->
 
 
-        <!-- ===================================================
-             CHAPTER 02 — FOUNDATION
-        ==================================================== -->
+      
+<!-- ============================================================
+     02 / GLOBAL CTI ARCHITECTURE & INTELLIGENCE PIPELINE
+     SHADOWSCOPE AM — ENGINEERING DOCUMENTATION
+============================================================ -->
 
-        <section
-          class="xp-chapter xp-reveal ss-upcoming"
-          id="cti-architecture"
-          aria-labelledby="ss-ch02-title"
+<section
+  class="xp-chapter xp-reveal ss-a2"
+  id="cti-architecture"
+  aria-labelledby="ss-a2-title"
+>
+
+  <!-- CHAPTER HEADER -->
+
+  <div class="xp-chapter-label">
+    <span>02</span>
+    CTI ARCHITECTURE / INTELLIGENCE PIPELINE
+  </div>
+
+  <h2 id="ss-a2-title">
+    Global CTI Architecture
+    <span>&amp; Intelligence Pipeline</span>
+  </h2>
+
+  <p class="xp-chapter-lead">
+    A modular intelligence architecture connecting
+    multi-source threat acquisition, automated
+    enrichment, structured indexing, graph-based
+    correlation, semantic retrieval, AI-assisted
+    investigation and detection engineering.
+  </p>
+
+
+  <!-- ==========================================================
+       2.1 / ARCHITECTURE OVERVIEW
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      2.1 / SYSTEM ARCHITECTURE
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Architecture Overview
+    </h3>
+
+    <p>
+      ShadowScope AM is organized as a modular
+      Cyber Threat Intelligence platform designed
+      to transform heterogeneous security data
+      into structured, correlated and
+      investigation-ready intelligence.
+    </p>
+
+    <p>
+      The architecture separates source acquisition,
+      data processing, intelligence indexing,
+      knowledge representation, contextual
+      investigation and detection engineering.
+      Each layer has a distinct engineering
+      responsibility and exchanges information
+      through defined processing workflows.
+    </p>
+
+    <p>
+      A proposed cross-cutting security, governance
+      and assurance layer extends the design
+      to address AI trust boundaries, authorization,
+      evidence quality and operational accountability.
+    </p>
+
+  </div>
+
+
+  <!-- FIGURE 02 / COMPLETE CTI ARCHITECTURE -->
+
+  <figure class="xp-overview-figure ss-a2-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+
+        <span>
+          FIGURE 02 / SYSTEM ARCHITECTURE
+        </span>
+
+        <h3>
+          ShadowScope AM — Global CTI Architecture
+        </h3>
+
+      </div>
+
+      <a
+        class="xp-figure-open"
+        href="../assets/img/projects/shadowscope-cti-architecture.png"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+
+    <div
+      class="ss-a2-image-viewport"
+      role="region"
+      tabindex="0"
+      aria-label="Scrollable ShadowScope AM architecture diagram"
+    >
+
+      <a
+        class="xp-figure-image-link"
+        href="../assets/img/projects/shadowscope-cti-architecture.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open complete ShadowScope AM CTI architecture"
+      >
+
+        <img
+          src="../assets/img/projects/shadowscope-cti-architecture.png"
+          alt="ShadowScope AM global architecture showing external CTI sources, Python acquisition and normalization, MinIO, OpenSearch intelligence processing, Neo4j graph relationships, Qdrant semantic search, AI investigation, detection engineering and proposed security governance and assurance controls"
+          width="1448"
+          height="1086"
+          loading="lazy"
+          decoding="async"
         >
 
-          <div class="xp-chapter-label">
-            <span>02</span>
-            INTELLIGENCE ARCHITECTURE / PIPELINE
-          </div>
+      </a>
 
-          <h2 id="ss-ch02-title">
-            Global CTI Architecture
-            <span>&amp; Intelligence Pipeline</span>
-          </h2>
-
-          <p class="xp-chapter-lead">
-            Multi-source collection, enrichment,
-            normalization, IOC scoring, storage
-            and intelligence processing.
-          </p>
-
-          <div class="ss-chapter-placeholder">
-            <span>CHAPTER 02 / DOCUMENTATION IN PROGRESS</span>
-            <strong>Architecture &amp; Data Flow</strong>
-            <p>
-              Detailed CTI pipeline, source connectors,
-              processing components and intelligence storage.
-            </p>
-          </div>
-
-        </section>
+    </div>
 
 
+    <figcaption>
+      Figure 02. End-to-end intelligence processing
+      architecture, from CTI collection and enrichment
+      to graph knowledge, semantic investigation
+      and detection engineering. The security,
+      governance and assurance layer represents
+      the proposed extension.
+    </figcaption>
+
+    <div class="ss-a2-figure-hint">
+      <span>ARCHITECTURE / HIGH-RESOLUTION VIEW</span>
+      <span>OPEN FULL SIZE TO INSPECT COMPONENTS ↗</span>
+    </div>
+
+  </figure>
+
+
+  <!-- ARCHITECTURE RESPONSIBILITIES -->
+
+  <div class="ss-a2-layer-strip">
+
+    <div>
+      <span>01 / ACQUISITION</span>
+      <strong>Collect &amp; Preserve</strong>
+    </div>
+
+    <div>
+      <span>02 / PROCESSING</span>
+      <strong>Normalize &amp; Correlate</strong>
+    </div>
+
+    <div>
+      <span>03 / KNOWLEDGE</span>
+      <strong>Connect &amp; Retrieve</strong>
+    </div>
+
+    <div>
+      <span>04 / APPLICATION</span>
+      <strong>Investigate &amp; Detect</strong>
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       2.2 / MULTI-SOURCE ACQUISITION
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      2.2 / DATA ACQUISITION
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Multi-Source CTI Acquisition &amp; Normalization
+    </h3>
+
+    <p>
+      The acquisition layer handles heterogeneous
+      intelligence obtained from external APIs,
+      threat feeds, vulnerability advisories
+      and structured data files.
+    </p>
+
+    <p>
+      Python collectors and ingestion scripts
+      provide the processing foundation.
+      Incoming records pass through parsing,
+      normalization, field validation
+      and deduplication before being
+      prepared for intelligence indexing.
+    </p>
+
+  </div>
+
+
+  <!-- SOURCE CATEGORIES -->
+
+  <div class="ss-a2-source-grid">
+
+    <article class="ss-a2-source">
+
+      <span>01 / MALWARE &amp; IOC</span>
+
+      <h4>Threat Indicators</h4>
+
+      <p>
+        OTX, MalwareBazaar
+      </p>
+
+    </article>
+
+
+    <article class="ss-a2-source">
+
+      <span>02 / VULNERABILITY INTELLIGENCE</span>
+
+      <h4>Exposure &amp; Risk</h4>
+
+      <p>
+        CISA KEV, NVD
+      </p>
+
+    </article>
+
+
+    <article class="ss-a2-source">
+
+      <span>03 / REPUTATION INTELLIGENCE</span>
+
+      <h4>IP &amp; Indicator Reputation</h4>
+
+      <p>
+        AbuseIPDB, VirusTotal
+      </p>
+
+    </article>
+
+
+    <article class="ss-a2-source">
+
+      <span>04 / PHISHING INTELLIGENCE</span>
+
+      <h4>Malicious Infrastructure</h4>
+
+      <p>
+        PhishTank, OpenPhish
+      </p>
+
+    </article>
+
+
+    <article class="ss-a2-source">
+
+      <span>05 / INFRASTRUCTURE CONTEXT</span>
+
+      <h4>Asset &amp; Exposure Intelligence</h4>
+
+      <p>
+        Shodan, Recorded Future
+      </p>
+
+    </article>
+
+  </div>
+
+
+  <!-- DATA PROCESSING CONTROLS -->
+
+  <div class="ss-a2-processing">
+
+    <div class="ss-a2-processing-header">
+
+      <span>
+        ACQUISITION PIPELINE / PYTHON
+      </span>
+
+      <h4>Processing &amp; Data Integrity</h4>
+
+    </div>
+
+    <div class="ss-a2-processing-grid">
+
+      <div>
+        <span>01</span>
+        <strong>Parsing</strong>
+        <p>Extract source-specific fields</p>
+      </div>
+
+      <div>
+        <span>02</span>
+        <strong>Normalization</strong>
+        <p>Produce consistent CTI records</p>
+      </div>
+
+      <div>
+        <span>03</span>
+        <strong>Validation</strong>
+        <p>Check data structure and values</p>
+      </div>
+
+      <div>
+        <span>04</span>
+        <strong>Deduplication</strong>
+        <p>Consolidate repeated observations</p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- SOURCE PRESERVATION -->
+
+  <div class="ss-a2-engineering-note">
+
+    <span>
+      DATA ENGINEERING PRINCIPLE
+    </span>
+
+    <p>
+      Original source records are preserved
+      separately from normalized and correlated
+      intelligence. MinIO supports raw-object
+      retention, while processed datasets
+      provide a consistent foundation
+      for further investigation.
+      Source identifiers and timestamps
+      should remain associated with
+      derived intelligence.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       2.3 / CTI PROCESSING & INDEXING
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      2.3 / INTELLIGENCE PROCESSING
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Intelligence Processing, Correlation
+      &amp; Prioritization
+    </h3>
+
+    <p>
+      Once normalized, intelligence records
+      enter correlation and prioritization
+      workflows. Python processing scripts
+      consolidate observations, identify
+      related indicators and prepare
+      investigation-oriented datasets.
+    </p>
+
+    <p>
+      OpenSearch acts as the structured
+      intelligence indexing and retrieval layer.
+      The design separates broader CTI records,
+      correlated observations and selected
+      high-priority intelligence.
+    </p>
+
+  </div>
+
+
+  <!-- INTELLIGENCE STORAGE RESPONSIBILITIES -->
+
+  <div class="ss-a2-storage-grid">
+
+    <article class="ss-a2-storage-card">
+
+      <span>01 / SOURCE EVIDENCE</span>
+
+      <h4>Raw Intelligence Storage</h4>
+
+      <p>
+        Retains original source objects
+        for reprocessing, inspection
+        and provenance review.
+      </p>
+
+      <div class="ss-a2-tech-label">
+        MINIO / OBJECT STORAGE
+      </div>
+
+    </article>
+
+
+    <article class="ss-a2-storage-card">
+
+      <span>02 / SEARCHABLE INTELLIGENCE</span>
+
+      <h4>Correlation Index</h4>
+
+      <p>
+        Supports indicator lookup,
+        correlation queries and analysis
+        of related intelligence records.
+      </p>
+
+      <div class="ss-a2-tech-label">
+        OPENSEARCH / STRUCTURED INDEX
+      </div>
+
+    </article>
+
+
+    <article class="ss-a2-storage-card">
+
+      <span>03 / PRIORITIZED INTELLIGENCE</span>
+
+      <h4>Critical CTI Dataset</h4>
+
+      <p>
+        Organizes curated indicators
+        and relevant intelligence
+        selected for investigation
+        or detection preparation.
+      </p>
+
+      <div class="ss-a2-tech-label">
+        OPENSEARCH / CURATED DATASET
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <!-- CORRELATION PRINCIPLE -->
+
+  <div class="ss-a2-engineering-note">
+
+    <span>
+      CORRELATION / ENGINEERING OBJECTIVE
+    </span>
+
+    <p>
+      The processing layer is intended
+      to move beyond isolated IOC storage.
+      Enrichment, relationship context,
+      confidence information and
+      prioritization should help analysts
+      distinguish relevant security
+      observations from raw intelligence volume.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       2.4 / KNOWLEDGE GRAPHS & SEMANTIC SEARCH
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      2.4 / CONNECTED KNOWLEDGE
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Knowledge Graphs &amp; Semantic Search
+    </h3>
+
+    <p>
+      ShadowScope AM combines graph-based
+      exploration and vector-based retrieval
+      to provide complementary forms of
+      intelligence context.
+    </p>
+
+    <p>
+      These components serve different purposes:
+      graph queries expose explicit relationships,
+      while semantic search retrieves content
+      based on contextual similarity.
+    </p>
+
+  </div>
+
+
+  <!-- GRAPH VS VECTOR SEARCH -->
+
+  <div class="ss-a2-knowledge-grid">
+
+    <article class="ss-a2-knowledge-card">
+
+      <div class="ss-a2-knowledge-heading">
+
+        <span>KNOWLEDGE ENGINE / 01</span>
+
+        <h4>Neo4j Knowledge Graph</h4>
+
+        <div>EXPLICIT RELATIONSHIPS</div>
+
+      </div>
+
+      <p>
+        Neo4j represents CTI entities
+        and their relationships,
+        enabling analysts to examine
+        connected infrastructure,
+        indicators, malware families,
+        threat actors and observations.
+      </p>
+
+      <div class="ss-a2-knowledge-example">
+
+        <span>INVESTIGATION CAPABILITY</span>
+
+        <strong>
+          Explore how entities
+          are connected.
+        </strong>
+
+      </div>
+
+    </article>
+
+
+    <article class="ss-a2-knowledge-card">
+
+      <div class="ss-a2-knowledge-heading">
+
+        <span>RETRIEVAL ENGINE / 02</span>
+
+        <h4>Qdrant Vector Search</h4>
+
+        <div>CONTEXTUAL SIMILARITY</div>
+
+      </div>
+
+      <p>
+        Qdrant stores vector embeddings
+        generated from intelligence content,
+        supporting similarity-based
+        retrieval of relevant reports,
+        descriptions and investigation context.
+      </p>
+
+      <div class="ss-a2-knowledge-example">
+
+        <span>INVESTIGATION CAPABILITY</span>
+
+        <strong>
+          Retrieve intelligence
+          beyond exact keyword matches.
+        </strong>
+
+      </div>
+
+    </article>
+
+  </div>
+
+
+  <!-- KNOWLEDGE FUSION -->
+
+  <div class="ss-a2-fusion">
+
+    <span>
+      KNOWLEDGE FUSION
+    </span>
+
+    <h4>
+      Graph Evidence + Semantic Context
+    </h4>
+
+    <p>
+      Graph relationships and vector search
+      results can be combined with structured
+      CTI records to assemble investigation
+      context. Retrieved information remains
+      supporting evidence and should retain
+      its source references.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       2.5 / AI INVESTIGATION & DETECTION ENGINEERING
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      2.5 / INTELLIGENT INVESTIGATION
+    </span>
+
+    <h3 class="xp-overview-heading">
+      AI Investigation &amp; Detection Engineering
+    </h3>
+
+    <p>
+      The investigation layer combines analyst
+      queries, structured intelligence, graph
+      context and semantic retrieval results.
+      Python-based context preparation builds
+      the evidence supplied to the LLM interface.
+    </p>
+
+    <p>
+      The assistant supports contextual threat
+      analysis, investigation summaries
+      and structured reporting. Outputs
+      should distinguish retrieved evidence
+      from model-generated interpretations.
+    </p>
+
+  </div>
+
+
+  <!-- INVESTIGATION WORKFLOW -->
+
+  <div class="ss-a2-investigation-flow">
+
+    <span class="ss-a2-flow-label">
+      AI INVESTIGATION WORKFLOW
+    </span>
+
+    <ol>
+
+      <li>
+        <span>01</span>
+        <strong>Analyst Query</strong>
+        <small>Investigation objective</small>
+      </li>
+
+      <li>
+        <span>02</span>
+        <strong>Context Retrieval</strong>
+        <small>CTI / Graph / Vectors</small>
+      </li>
+
+      <li>
+        <span>03</span>
+        <strong>Context Fusion</strong>
+        <small>Evidence preparation</small>
+      </li>
+
+      <li>
+        <span>04</span>
+        <strong>LLM Analysis</strong>
+        <small>Reasoning assistance</small>
+      </li>
+
+      <li>
+        <span>05</span>
+        <strong>Investigation Output</strong>
+        <small>Findings / Report</small>
+      </li>
+
+    </ol>
+
+  </div>
+
+
+  <!-- DETECTION ENGINEERING -->
+
+  <div class="ss-a2-detection">
+
+    <div class="ss-a2-detection-intro">
+
+      <span>
+        DETECTION ENGINEERING
+      </span>
+
+      <h4>
+        From Curated Intelligence
+        to Detection Content
+      </h4>
+
+      <p>
+        Classification and detection-content
+        preparation workflows use relevant CTI
+        context and curated intelligence to
+        draft detection rules and queries
+        for security monitoring platforms.
+      </p>
+
+    </div>
+
+
+    <div class="ss-a2-detection-targets">
+
+      <span>Sigma</span>
+      <span>Splunk</span>
+      <span>Wazuh</span>
+      <span>Suricata</span>
+
+    </div>
+
+  </div>
+
+
+  <div class="ss-a2-engineering-note">
+
+    <span>
+      DETECTION QUALITY REQUIREMENT
+    </span>
+
+    <p>
+      Generated rules and queries require
+      syntax validation, environment-specific
+      testing, false-positive assessment
+      and analyst approval before
+      production deployment.
+      Generated content is a reviewable
+      engineering artifact, not an
+      automatically trusted detection.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       2.6 / SECURITY, GOVERNANCE & ASSURANCE
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      2.6 / PLANNED CROSS-CUTTING CONTROLS
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Security, Governance &amp; Assurance
+    </h3>
+
+    <p>
+      The proposed next development phase
+      introduces cross-cutting controls
+      around AI-assisted investigation
+      and detection engineering.
+    </p>
+
+    <p>
+      These capabilities are intended
+      to strengthen the security,
+      accountability and reliability
+      of AI-enabled workflows.
+      Their implementation and effectiveness
+      require separate engineering validation.
+    </p>
+
+  </div>
+
+
+  <!-- PLANNED CAPABILITIES -->
+
+  <div class="ss-a2-governance-grid">
+
+    <article class="ss-a2-governance-card">
+
+      <span>01 / AI SECURITY</span>
+
+      <h4>Identity &amp; Authorization</h4>
+
+      <p>
+        IAM/RBAC, prompt-injection protection,
+        input and output controls,
+        agent permissions and
+        independent tool authorization.
+      </p>
+
+      <small>PLANNED EXTENSION</small>
+
+    </article>
+
+
+    <article class="ss-a2-governance-card">
+
+      <span>02 / AI GOVERNANCE</span>
+
+      <h4>Risk &amp; Accountability</h4>
+
+      <p>
+        Model usage policies,
+        risk management,
+        human oversight,
+        governance responsibilities
+        and applicable regulatory mapping.
+      </p>
+
+      <small>PLANNED EXTENSION</small>
+
+    </article>
+
+
+    <article class="ss-a2-governance-card">
+
+      <span>03 / AI ASSURANCE</span>
+
+      <h4>Continuous Evaluation</h4>
+
+      <p>
+        Evidence grounding, retrieval quality,
+        response evaluation, adversarial
+        testing and measurable
+        reliability criteria.
+      </p>
+
+      <small>PLANNED EXTENSION</small>
+
+    </article>
+
+
+    <article class="ss-a2-governance-card">
+
+      <span>04 / TRACEABILITY</span>
+
+      <h4>Evidence &amp; Audit</h4>
+
+      <p>
+        Intelligence provenance,
+        model and prompt versions,
+        retrieved evidence,
+        tool decisions, audit logs
+        and evaluation records.
+      </p>
+
+      <small>PLANNED EXTENSION</small>
+
+    </article>
+
+  </div>
+
+
+  <!-- ARCHITECTURAL BOUNDARY -->
+
+  <div class="ss-a2-security-boundary">
+
+    <span>
+      TRUST BOUNDARY / DESIGN REQUIREMENT
+    </span>
+
+    <strong>
+      Intelligence content is evidence,
+      not execution authority.
+    </strong>
+
+    <p>
+      External intelligence, graph context
+      and retrieved documents must not
+      grant AI systems unrestricted authority
+      over security tools.
+      Any future operational tool execution
+      should be governed by independent
+      authorization and traceable decisions.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       ENGINEERING CONCLUSION
+  =========================================================== -->
+
+  <div class="xp-overview-conclusion">
+
+    <span>
+      SHADOWSCOPE AM / ARCHITECTURE PRINCIPLE
+    </span>
+
+    <p>
+      Preserve Evidence. Connect Intelligence.
+      Control AI.
+      The architecture establishes a foundation
+      for contextual threat investigation
+      while defining the security and assurance
+      requirements needed for its evolution.
+    </p>
+
+  </div>
+
+
+  <!-- NEXT CHAPTER -->
+
+  <a class="ss-next-chapter" href="#knowledge">
+
+    <span>
+      NEXT CHAPTER / 03
+    </span>
+
+    <strong>
+      Knowledge Graphs, Semantic Search
+      &amp; Investigation
+    </strong>
+
+    <span aria-hidden="true">↗</span>
+
+  </a>
+
+</section>
+
+<!-- END CHAPTER 02 -->
+
+        
         <!-- ===================================================
              CHAPTER 03 — CONNECTED KNOWLEDGE
         ==================================================== -->
