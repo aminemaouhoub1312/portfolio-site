@@ -3271,3 +3271,585 @@
    END — EXAVIGIL CHAPTER 05
 ============================================================ */
 
+
+
+/* ============================================================
+   EXAVIGIL — CHAPTER 06
+   TECHNICAL DEMONSTRATIONS & RESULTS
+============================================================ */
+
+
+/* ============================================================
+   01 / INTRODUCTION
+============================================================ */
+
+.xp-d6-intro {
+  max-width: 900px;
+
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+
+  margin: -8px 0 30px;
+}
+
+
+/* ============================================================
+   02 / DEMONSTRATION OVERVIEW
+============================================================ */
+
+.xp-d6-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 28px 0 43px;
+}
+
+.xp-d6-overview > div {
+  min-width: 0;
+  padding: 22px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-d6-overview span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 9px "DM Mono", monospace;
+
+  letter-spacing: .06em;
+  line-height: 1.6;
+}
+
+.xp-d6-overview strong {
+  display: block;
+
+  color: var(--text);
+  font-family: Manrope, sans-serif;
+  font-size: clamp(27px, 3vw, 41px);
+  font-weight: 800;
+
+  letter-spacing: -.05em;
+  margin: 11px 0 5px;
+}
+
+.xp-d6-overview small {
+  display: block;
+
+  color: var(--muted);
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   03 / DEMONSTRATION CARD
+============================================================ */
+
+.xp-d6-demo {
+  margin: 35px 0 48px;
+  scroll-margin-top: 120px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+
+  overflow: hidden;
+}
+
+.xp-d6-demo-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 26px 28px;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-d6-demo-index {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 60px;
+  height: 60px;
+
+  font: 500 21px "DM Mono", monospace;
+  color: var(--accent);
+
+  border: 1px solid var(--stroke);
+  background: var(--bg2);
+}
+
+.xp-d6-demo-heading-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.xp-d6-kicker,
+.xp-d6-label {
+  display: block;
+
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .07em;
+  line-height: 1.6;
+
+  color: var(--accent2);
+}
+
+.xp-d6-demo-heading h3 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+  line-height: 1.35;
+
+  margin: 10px 0 9px;
+}
+
+.xp-d6-demo-heading-content p {
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.xp-d6-reference {
+  flex-shrink: 0;
+
+  color: var(--accent);
+  font: 500 10px "DM Mono", monospace;
+
+  border: 1px solid var(--stroke);
+  padding: 10px 12px;
+}
+
+
+/* ============================================================
+   04 / EVIDENCE PREVIEW
+============================================================ */
+
+.xp-d6-preview {
+  margin: 0;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.xp-d6-preview > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #101820;
+  padding: 22px;
+
+  transition: background .2s ease;
+}
+
+.xp-d6-preview > a:hover {
+  background: #18242d;
+}
+
+.xp-d6-preview img {
+  display: block;
+
+  width: 100%;
+  max-height: 410px;
+  height: auto;
+
+  object-fit: contain;
+  object-position: center;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  transition: transform .25s ease;
+}
+
+.xp-d6-preview > a:hover img {
+  transform: scale(1.01);
+}
+
+.xp-d6-preview figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  color: var(--subtle);
+  font: 500 9px "DM Mono", monospace;
+
+  line-height: 1.7;
+  padding: 14px 24px;
+}
+
+.xp-d6-preview figcaption span {
+  color: var(--accent);
+}
+
+
+/* ============================================================
+   05 / DEMONSTRATION CONTENT
+============================================================ */
+
+.xp-d6-demo-content {
+  padding: 30px 28px 27px;
+}
+
+.xp-d6-demo-content > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+
+  max-width: 950px;
+  margin: 0 0 16px;
+}
+
+
+/* ============================================================
+   06 / TECHNICAL WORKFLOW
+============================================================ */
+
+.xp-d6-workflow {
+  margin: 28px 0;
+}
+
+.xp-d6-workflow > .xp-d6-label {
+  margin-bottom: 15px;
+}
+
+.xp-d6-workflow ol {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 9px;
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+  counter-reset: workflow;
+}
+
+.xp-d6-workflow li {
+  min-width: 0;
+  min-height: 98px;
+  padding: 15px 12px;
+
+  background: var(--bg2);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.6;
+
+  counter-increment: workflow;
+}
+
+.xp-d6-workflow li::before {
+  content: counter(workflow, decimal-leading-zero);
+
+  display: block;
+  color: var(--accent);
+
+  font: 500 9px "DM Mono", monospace;
+  margin-bottom: 10px;
+}
+
+
+/* ============================================================
+   07 / EVALUATION PANELS
+============================================================ */
+
+.xp-d6-assessment {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 26px 0;
+}
+
+.xp-d6-assessment > div {
+  min-width: 0;
+  padding: 22px;
+
+  background: var(--bg2);
+  border: 1px solid var(--stroke);
+}
+
+.xp-d6-assessment .xp-d6-label {
+  margin-bottom: 12px;
+}
+
+.xp-d6-assessment p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   08 / EVIDENCE NAVIGATION
+============================================================ */
+
+.xp-d6-evidence-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  padding-top: 22px;
+
+  border-top: 1px solid var(--stroke);
+}
+
+.xp-d6-evidence-links > span {
+  color: var(--subtle);
+
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .06em;
+
+  margin-right: 10px;
+}
+
+.xp-d6-evidence-links a {
+  display: inline-flex;
+  align-items: center;
+
+  color: var(--accent);
+  font: 500 10px "DM Mono", monospace;
+
+  line-height: 1.6;
+  border: 1px solid var(--stroke);
+
+  padding: 10px 12px;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.xp-d6-evidence-links a:hover {
+  border-color: var(--accent);
+  background: rgba(197, 250, 95, .045);
+}
+
+
+/* ============================================================
+   09 / ENGINEERING EVALUATION TABLE
+============================================================ */
+
+.xp-d6-section {
+  margin: 55px 0 25px;
+}
+
+.xp-d6-section h3 {
+  font-family: Manrope, sans-serif;
+
+  font-size: clamp(21px, 2.2vw, 28px);
+  font-weight: 800;
+  letter-spacing: -.04em;
+
+  color: var(--text);
+  margin: 13px 0 17px;
+}
+
+.xp-d6-section p {
+  max-width: 900px;
+
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+
+  margin: 0;
+}
+
+.xp-d6-table-wrap {
+  margin: 24px 0 26px;
+}
+
+.xp-d6-table {
+  min-width: 750px;
+}
+
+.xp-d6-table th {
+  white-space: nowrap;
+}
+
+.xp-d6-table td {
+  vertical-align: top;
+}
+
+.xp-d6-table td:first-child {
+  color: var(--text);
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   10 / QUANTITATIVE METRICS NOTE
+============================================================ */
+
+.xp-d6-metrics-note {
+  margin: 23px 0 45px;
+  padding: 22px 26px;
+
+  background: var(--panel);
+  border-left: 3px solid var(--accent2);
+}
+
+.xp-d6-metrics-note span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .07em;
+  margin-bottom: 12px;
+}
+
+.xp-d6-metrics-note p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+
+/* ============================================================
+   11 / TABLET
+============================================================ */
+
+@media (max-width: 1100px) {
+
+  .xp-d6-workflow ol {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ============================================================
+   12 / MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+  .xp-d6-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-d6-overview > div {
+    padding: 18px;
+  }
+
+  .xp-d6-demo-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 13px;
+
+    padding: 20px;
+  }
+
+  .xp-d6-demo-index {
+    width: 45px;
+    height: 45px;
+    font-size: 15px;
+  }
+
+  .xp-d6-demo-heading h3 {
+    font-size: 20px;
+  }
+
+  .xp-d6-reference {
+    margin-left: 58px;
+  }
+
+  .xp-d6-preview > a {
+    padding: 10px;
+  }
+
+  .xp-d6-preview img {
+    max-height: 260px;
+  }
+
+  .xp-d6-preview figcaption {
+    padding: 12px;
+    font-size: 8px;
+  }
+
+  .xp-d6-demo-content {
+    padding: 22px 17px;
+  }
+
+  .xp-d6-demo-content > p {
+    font-size: 12px;
+  }
+
+  .xp-d6-workflow ol {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .xp-d6-workflow li {
+    min-height: 85px;
+  }
+
+  .xp-d6-assessment {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-d6-assessment > div {
+    padding: 19px;
+  }
+
+  .xp-d6-evidence-links {
+    align-items: stretch;
+  }
+
+  .xp-d6-evidence-links > span {
+    width: 100%;
+  }
+
+  .xp-d6-section {
+    margin-top: 40px;
+  }
+
+  .xp-d6-metrics-note {
+    padding: 20px;
+  }
+
+}
+
+
+/* ============================================================
+   13 / REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .xp-d6-preview img,
+  .xp-d6-evidence-links a {
+    transition: none;
+  }
+
+  .xp-d6-preview > a:hover img {
+    transform: none;
+  }
+
+}
+
+/* ============================================================
+   END — EXAVIGIL CHAPTER 06
+============================================================ */
+
+
+
