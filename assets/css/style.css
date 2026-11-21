@@ -2601,3 +2601,1007 @@ summary:focus-visible {
   color: var(--accent);
 }
 
+
+/* ============================================================
+   SHADOWSCOPE AM — CHAPTER 06
+   AI GOVERNANCE, RISK & EU AI ACT ALIGNMENT
+
+   Governance | Risk Register | Regulatory Readiness
+   Accountability | Evidence | Continuous Improvement
+============================================================ */
+
+
+/* ============================================================
+   01 / CHAPTER FOUNDATION
+============================================================ */
+
+.ss-a6 {
+  min-width: 0;
+}
+
+.ss-a6 .xp-overview-block {
+  margin: 44px 0 27px;
+}
+
+.ss-a6 .xp-overview-heading {
+  font-size: clamp(21px, 2.25vw, 29px);
+}
+
+.ss-a6 .xp-overview-block > p {
+  max-width: 960px;
+  line-height: 1.9;
+}
+
+
+/* ============================================================
+   02 / GOVERNANCE STATUS
+============================================================ */
+
+.ss-a6-status {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  padding: 23px 25px;
+  margin: 28px 0 44px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent2);
+}
+
+.ss-a6-status-label {
+  flex-shrink: 0;
+  display: inline-block;
+
+  padding: 9px 12px;
+
+  color: var(--accent2);
+  background: var(--bg2);
+  border: 1px solid var(--stroke);
+
+  font: 500 10px/1.6 "DM Mono", monospace;
+  letter-spacing: .04em;
+}
+
+.ss-a6-status p {
+  flex: 1 1 340px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+
+/* ============================================================
+   03 / GOVERNANCE DOMAINS
+============================================================ */
+
+.ss-a6-domains {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 29px 0 46px;
+}
+
+.ss-a6-domain {
+  grid-column: span 2;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 240px;
+  padding: 25px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.ss-a6-domain:nth-child(n+4) {
+  grid-column: span 3;
+}
+
+.ss-a6-domain:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.ss-a6-domain > span {
+  color: var(--accent2);
+
+  font: 500 9px/1.7 "DM Mono", monospace;
+  letter-spacing: .05em;
+}
+
+.ss-a6-domain h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.45;
+
+  margin: 22px 0 14px;
+}
+
+.ss-a6-domain p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0 0 24px;
+}
+
+.ss-a6-domain small {
+  display: block;
+
+  margin-top: auto;
+  padding-top: 15px;
+
+  color: var(--accent2);
+  border-top: 1px solid var(--stroke);
+
+  font: 500 9px/1.7 "DM Mono", monospace;
+}
+
+
+/* ============================================================
+   04 / GOVERNANCE LIFECYCLE FIGURE
+============================================================ */
+
+.ss-a6-figure {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 35px 0 40px;
+  overflow: hidden;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.ss-a6-figure .xp-figure-heading {
+  background: var(--panel);
+}
+
+.ss-a6-figure .xp-figure-image-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 18px;
+
+  background: #f7f9fc;
+  overflow: hidden;
+}
+
+.ss-a6-figure .xp-figure-image-link img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 790px;
+
+  object-fit: contain;
+  object-position: center;
+
+  transition: transform .3s ease;
+}
+
+.ss-a6-figure .xp-figure-image-link:hover img {
+  transform: scale(1.008);
+}
+
+.ss-a6-figure figcaption {
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.85;
+
+  padding: 18px 22px;
+  margin: 0;
+
+  border-top: 1px solid var(--stroke);
+}
+
+
+/* ============================================================
+   05 / GOVERNANCE LIFECYCLE
+============================================================ */
+
+.ss-a6-lifecycle,
+.ss-a6-readiness,
+.ss-a6-evidence {
+  margin: 30px 0 38px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.ss-a6-lifecycle-header,
+.ss-a6-readiness-heading,
+.ss-a6-evidence-heading {
+  padding: 28px;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a6-lifecycle-header > span,
+.ss-a6-readiness-heading > span,
+.ss-a6-evidence-heading > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px/1.7 "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 17px;
+}
+
+.ss-a6-lifecycle-header h4,
+.ss-a6-readiness-heading h4,
+.ss-a6-evidence-heading h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(20px, 2.1vw, 28px);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.4;
+
+  margin: 0 0 14px;
+}
+
+.ss-a6-lifecycle-header p,
+.ss-a6-evidence-heading p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+
+/* ============================================================
+   06 / COMMON SIX-CARD GRIDS
+============================================================ */
+
+.ss-a6-lifecycle-grid,
+.ss-a6-readiness-grid,
+.ss-a6-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ss-a6-lifecycle-grid article,
+.ss-a6-readiness-grid article,
+.ss-a6-evidence-grid article {
+  min-width: 0;
+  padding: 25px;
+
+  border-right: 1px solid var(--stroke);
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a6-lifecycle-grid article:nth-child(3n),
+.ss-a6-readiness-grid article:nth-child(3n),
+.ss-a6-evidence-grid article:nth-child(3n) {
+  border-right: none;
+}
+
+.ss-a6-lifecycle-grid article:nth-last-child(-n+3),
+.ss-a6-readiness-grid article:nth-last-child(-n+3),
+.ss-a6-evidence-grid article:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.ss-a6-lifecycle-grid article > span,
+.ss-a6-readiness-grid article > span,
+.ss-a6-evidence-grid article > span {
+  display: block;
+
+  color: var(--accent);
+  font: 500 12px "DM Mono", monospace;
+
+  margin-bottom: 19px;
+}
+
+.ss-a6-lifecycle-grid h4,
+.ss-a6-readiness-grid strong,
+.ss-a6-evidence-grid strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+
+  margin: 0 0 12px;
+}
+
+.ss-a6-lifecycle-grid p,
+.ss-a6-readiness-grid p,
+.ss-a6-evidence-grid p {
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   07 / GOVERNANCE PRINCIPLE
+============================================================ */
+
+.ss-a6-principle {
+  margin: 30px 0 48px;
+  padding: 29px;
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0,
+      rgba(197, 250, 95, .05),
+      transparent 65%
+    ),
+    var(--panel);
+
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent);
+}
+
+.ss-a6-principle > span {
+  display: block;
+
+  color: var(--accent);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 18px;
+}
+
+.ss-a6-principle strong {
+  display: block;
+
+  color: var(--text);
+  font-family: Manrope, sans-serif;
+  font-size: clamp(19px, 2.1vw, 28px);
+
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.45;
+
+  margin-bottom: 17px;
+}
+
+.ss-a6-principle p {
+  max-width: 950px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+
+/* ============================================================
+   08 / GOVERNANCE & RISK MATRICES
+============================================================ */
+
+.ss-a6-table-wrap {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 28px 0 40px;
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.ss-a6-matrix {
+  width: 100%;
+  min-width: 740px;
+
+  border-collapse: collapse;
+  background: var(--panel);
+}
+
+.ss-a6-matrix th,
+.ss-a6-matrix td {
+  padding: 19px 21px;
+
+  text-align: left;
+  vertical-align: top;
+
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a6-matrix thead th {
+  color: var(--accent2);
+  background: var(--bg2);
+
+  font: 500 10px/1.7 "DM Mono", monospace;
+  letter-spacing: .045em;
+}
+
+.ss-a6-matrix tbody th {
+  color: var(--text);
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.75;
+}
+
+.ss-a6-matrix td {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.ss-a6-matrix tbody tr:last-child th,
+.ss-a6-matrix tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ss-a6-matrix tbody tr {
+  transition: background .2s ease;
+}
+
+.ss-a6-matrix tbody tr:hover {
+  background: var(--bg2);
+}
+
+
+/* ============================================================
+   09 / AI RISK REGISTER
+============================================================ */
+
+.ss-a6-risk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+  padding: 24px 26px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-bottom: none;
+}
+
+.ss-a6-risk-header div > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  margin-bottom: 13px;
+}
+
+.ss-a6-risk-header h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+
+  margin: 0;
+}
+
+.ss-a6-risk-type {
+  flex-shrink: 0;
+
+  color: var(--accent2);
+  padding: 8px 10px;
+
+  border: 1px solid var(--stroke);
+  font: 500 10px "DM Mono", monospace;
+}
+
+.ss-a6-risk-table-wrap {
+  margin-top: 0;
+  margin-bottom: 27px;
+}
+
+.ss-a6-risk-id {
+  color: var(--accent);
+  font: 600 12px "DM Mono", monospace;
+}
+
+.ss-a6-risk-table-wrap td:nth-child(2) {
+  color: var(--text);
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   10 / RISK ASSESSMENT FIELDS
+============================================================ */
+
+.ss-a6-risk-process {
+  margin: 26px 0 30px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.ss-a6-risk-process > span {
+  display: block;
+
+  padding: 20px 23px;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a6-risk-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ss-a6-risk-fields > div {
+  min-width: 0;
+  padding: 23px;
+
+  border-right: 1px solid var(--stroke);
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a6-risk-fields > div:nth-child(3n) {
+  border-right: none;
+}
+
+.ss-a6-risk-fields > div:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.ss-a6-risk-fields strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 800;
+
+  margin-bottom: 10px;
+}
+
+.ss-a6-risk-fields small {
+  display: block;
+
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+
+/* ============================================================
+   11 / ENGINEERING & REGULATORY NOTES
+============================================================ */
+
+.ss-a6-engineering-note,
+.ss-a6-regulatory-note {
+  margin: 28px 0 49px;
+  padding: 27px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent2);
+}
+
+.ss-a6-engineering-note > span,
+.ss-a6-regulatory-note > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 15px;
+}
+
+.ss-a6-regulatory-note strong {
+  display: block;
+
+  color: var(--text);
+  font-family: Manrope, sans-serif;
+  font-size: clamp(18px, 2vw, 25px);
+
+  font-weight: 800;
+  letter-spacing: -.04em;
+
+  margin-bottom: 17px;
+}
+
+.ss-a6-engineering-note p,
+.ss-a6-regulatory-note p {
+  max-width: 950px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+
+  margin: 0 0 13px;
+}
+
+.ss-a6-engineering-note p:last-child,
+.ss-a6-regulatory-note p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   12 / REGULATORY REFERENCES
+============================================================ */
+
+.ss-a6-references {
+  margin: -18px 0 49px;
+  padding: 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.ss-a6-references > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  margin-bottom: 19px;
+}
+
+.ss-a6-references > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.ss-a6-references a {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 11px 14px;
+
+  color: var(--text);
+  background: var(--bg2);
+  border: 1px solid var(--stroke);
+
+  font: 500 10px/1.6 "DM Mono", monospace;
+  text-decoration: none;
+
+  transition:
+    color .2s ease,
+    border-color .2s ease;
+}
+
+.ss-a6-references a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+
+/* ============================================================
+   13 / ACCOUNTABILITY
+============================================================ */
+
+.ss-a6-accountability {
+  margin: 29px 0 48px;
+  padding: 26px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+}
+
+.ss-a6-accountability > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  margin-bottom: 23px;
+}
+
+.ss-a6-accountability-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.ss-a6-accountability-grid article {
+  min-width: 0;
+  padding: 23px;
+
+  background: var(--bg2);
+  border: 1px solid var(--stroke);
+}
+
+.ss-a6-accountability-grid strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+}
+
+.ss-a6-accountability-grid p {
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.ss-a6-accountability-note {
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 20px 0 0;
+}
+
+
+/* ============================================================
+   14 / ENGINEERING VALUE
+============================================================ */
+
+.ss-a6-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 29px 0 47px;
+}
+
+.ss-a6-value-grid article {
+  min-width: 0;
+  padding: 25px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.ss-a6-value-grid span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 9px/1.7 "DM Mono", monospace;
+
+  margin-bottom: 20px;
+}
+
+.ss-a6-value-grid h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.45;
+
+  margin: 0 0 14px;
+}
+
+.ss-a6-value-grid p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   15 / TABLET
+============================================================ */
+
+@media (max-width: 1100px) {
+
+  .ss-a6-domains {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-a6-domain,
+  .ss-a6-domain:nth-child(n+4) {
+    grid-column: auto;
+  }
+
+  .ss-a6-domain:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ss-a6-lifecycle-grid,
+  .ss-a6-readiness-grid,
+  .ss-a6-evidence-grid,
+  .ss-a6-risk-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-a6-lifecycle-grid article,
+  .ss-a6-readiness-grid article,
+  .ss-a6-evidence-grid article,
+  .ss-a6-risk-fields > div {
+    border-right: 1px solid var(--stroke);
+    border-bottom: 1px solid var(--stroke);
+  }
+
+  .ss-a6-lifecycle-grid article:nth-child(2n),
+  .ss-a6-readiness-grid article:nth-child(2n),
+  .ss-a6-evidence-grid article:nth-child(2n),
+  .ss-a6-risk-fields > div:nth-child(2n) {
+    border-right: none;
+  }
+
+  .ss-a6-lifecycle-grid article:nth-last-child(-n+2),
+  .ss-a6-readiness-grid article:nth-last-child(-n+2),
+  .ss-a6-evidence-grid article:nth-last-child(-n+2),
+  .ss-a6-risk-fields > div:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  .ss-a6-value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-a6-value-grid article:last-child {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* ============================================================
+   16 / MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+  .ss-a6 .xp-overview-block {
+    margin: 33px 0 24px;
+  }
+
+  .ss-a6-domains,
+  .ss-a6-lifecycle-grid,
+  .ss-a6-readiness-grid,
+  .ss-a6-evidence-grid,
+  .ss-a6-risk-fields,
+  .ss-a6-accountability-grid,
+  .ss-a6-value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ss-a6-domain,
+  .ss-a6-domain:nth-child(n+4),
+  .ss-a6-domain:last-child,
+  .ss-a6-value-grid article:last-child {
+    grid-column: auto;
+  }
+
+  .ss-a6-domain {
+    min-height: auto;
+    padding: 21px;
+  }
+
+  .ss-a6-status,
+  .ss-a6-principle,
+  .ss-a6-engineering-note,
+  .ss-a6-regulatory-note,
+  .ss-a6-accountability {
+    padding: 21px;
+  }
+
+  .ss-a6-figure .xp-figure-image-link {
+    padding: 9px;
+  }
+
+  .ss-a6-figure .xp-figure-image-link img {
+    max-height: none;
+  }
+
+  .ss-a6-figure figcaption {
+    padding: 13px;
+    font-size: 10px;
+  }
+
+  .ss-a6-lifecycle-header,
+  .ss-a6-readiness-heading,
+  .ss-a6-evidence-heading {
+    padding: 21px;
+  }
+
+  .ss-a6-lifecycle-grid article,
+  .ss-a6-readiness-grid article,
+  .ss-a6-evidence-grid article,
+  .ss-a6-risk-fields > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--stroke) !important;
+
+    padding: 21px;
+  }
+
+  .ss-a6-lifecycle-grid article:last-child,
+  .ss-a6-readiness-grid article:last-child,
+  .ss-a6-evidence-grid article:last-child,
+  .ss-a6-risk-fields > div:last-child {
+    border-bottom: none !important;
+  }
+
+  .ss-a6-risk-header {
+    flex-wrap: wrap;
+    padding: 21px;
+  }
+
+  .ss-a6-references {
+    padding: 19px;
+  }
+
+  .ss-a6-references > div {
+    flex-direction: column;
+  }
+
+  .ss-a6-references a {
+    width: 100%;
+  }
+
+  .ss-a6-accountability-grid article,
+  .ss-a6-value-grid article {
+    padding: 21px;
+  }
+
+}
+
+
+/* ============================================================
+   17 / ACCESSIBILITY
+============================================================ */
+
+.ss-a6 a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ss-a6-domain,
+  .ss-a6-matrix tbody tr,
+  .ss-a6-references a,
+  .ss-a6-figure .xp-figure-image-link img {
+    transition: none;
+  }
+
+  .ss-a6-domain:hover,
+  .ss-a6-figure .xp-figure-image-link:hover img {
+    transform: none;
+  }
+
+}
+
+/* ============================================================
+   END — SHADOWSCOPE AM CHAPTER 06
+============================================================ */
