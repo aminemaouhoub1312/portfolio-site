@@ -1926,92 +1926,621 @@
 
         
 
-        <!-- ==================================================
-             04 / AI SECURITY & CONTROLLED AUTOMATION
-        =================================================== -->
 
-        <section
-          class="xp-chapter xp-reveal"
-          id="ai-security"
-          aria-labelledby="xp-ai-security-title"
-        >
 
-          <div class="xp-chapter-label">
-            <span>04</span>
-            AI SECURITY / CONTROLLED AUTOMATION
-          </div>
 
-          <h2 id="xp-ai-security-title">
-            AI Security
-            <span>&amp; Controlled Automation</span>
-          </h2>
 
-          <p class="xp-chapter-lead">
-            A security-focused approach to agent
-            permissions, untrusted data processing,
-            policy enforcement, secret management
-            and controlled operational execution.
-          </p>
+<!-- ============================================================
+     04 / AI SECURITY & CONTROLLED AUTOMATION
+     EXAVIGIL — ENGINEERING DOCUMENTATION
+============================================================ -->
 
-          <div class="xp-card-grid xp-grid-two">
+<section
+  class="xp-chapter xp-reveal xp-ai-security"
+  id="ai-security"
+  aria-labelledby="xp-ai-security-title"
+>
 
-            <article class="xp-info-card">
-              <span class="xp-card-number">
-                SECURITY DOMAIN / 01
-              </span>
+  <!-- CHAPTER HEADER -->
 
-              <h3>
-                Protecting AI Workflows
-              </h3>
+  <div class="xp-chapter-label">
+    <span>04</span>
+    AI SECURITY / CONTROLLED AUTOMATION
+  </div>
 
-              <p>
-                Explore prompt injection risks,
-                RAG poisoning, untrusted intelligence,
-                sensitive information disclosure
-                and agent misuse scenarios.
-              </p>
-            </article>
+  <h2 id="xp-ai-security-title">
+    AI Security
+    <span>&amp; Controlled Automation</span>
+  </h2>
 
-            <article class="xp-info-card">
-              <span class="xp-card-number">
-                SECURITY DOMAIN / 02
-              </span>
+  <p class="xp-chapter-lead">
+    EXAVIGIL introduces an independent security
+    control plane for agent identities, tool
+    permissions, secret access and operational
+    execution, separating AI-generated
+    recommendations from authorization decisions.
+  </p>
 
-              <h3>
-                Independent Authorization
-              </h3>
 
-              <p>
-                Document the use of Keycloak,
-                OPA, OpenBao, identity controls,
-                policy decisions, approval requirements
-                and auditable tool execution.
-              </p>
-            </article>
+  <!-- ==========================================================
+       4.1 / SECURITY BY DESIGN
+  =========================================================== -->
 
-          </div>
+  <div class="xp-sec-block">
 
-          <div class="xp-placeholder xp-placeholder-wide">
+    <span class="xp-sec-kicker">
+      4.1 / SECURITY ARCHITECTURE
+    </span>
 
-            <span>AI SECURITY / CONTROL PLANE</span>
+    <h3>Security by Design</h3>
 
-            <strong>
-              Agent Authorization &amp; Secure Execution
-            </strong>
+    <p>
+      Introducing AI agents into a Security
+      Operations Center expands the attack
+      surface beyond conventional detection
+      and incident response systems.
+      Agents process untrusted threat intelligence,
+      retrieved documents and investigation data
+      while interacting with sensitive APIs
+      and operational tools.
+    </p>
 
-            <p>
-              Reserved for the Policy Gateway
-              architecture, authorization sequence,
-              tool permissions and execution controls.
-            </p>
+    <p>
+      EXAVIGIL addresses these risks through
+      an independent Agent Security Gateway,
+      designed to mediate agent-to-tool requests
+      and enforce identity, policy and approval
+      requirements before sensitive execution.
+    </p>
 
-            <span class="xp-placeholder-status">
-              SECURITY ARCHITECTURE TO BE ADDED
-            </span>
+    <div class="xp-sec-principle">
 
-          </div>
+      <span>CORE SECURITY PRINCIPLE</span>
 
-        </section>
+      <strong>
+        AI agents can propose actions.
+        They cannot authorize themselves
+        to execute them.
+      </strong>
+
+      <p>
+        Model output is treated as an untrusted
+        recommendation, never as proof
+        of authorization.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.2 / AGENT SECURITY & POLICY ENFORCEMENT
+  =========================================================== -->
+
+  <div class="xp-sec-block">
+
+    <span class="xp-sec-kicker">
+      4.2 / SECURITY CONTROL PLANE
+    </span>
+
+    <h3>Agent Security &amp; Policy Enforcement</h3>
+
+    <p>
+      The proposed control plane combines
+      centralized identity management,
+      externalized policy decisions,
+      protected secret access,
+      mediated tool execution and
+      human approval for sensitive actions.
+    </p>
+
+    <p>
+      Keycloak establishes authenticated
+      identities and roles. OPA evaluates
+      authorization rules against the requested
+      action, tool and target resource.
+      OpenBao protects credentials and tokens
+      used by authorized services.
+    </p>
+
+    <p>
+      The MCP Security Gateway acts as the
+      enforcement boundary. Agents do not
+      receive unrestricted access to operational
+      tools or protected credentials.
+      Execution and audit responsibilities
+      remain outside the LLM reasoning process.
+    </p>
+
+  </div>
+
+
+  <!-- TABLE 04-1 / SECURITY RESPONSIBILITIES -->
+
+  <figure class="xp-overview-figure xp-sec-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>
+          TABLE 04-1 / SECURITY CONTROL RESPONSIBILITIES
+        </span>
+
+        <h3>
+          Security Components &amp; Engineering Responsibilities
+        </h3>
+      </div>
+
+      <a
+        href="../assets/img/projects/exavigil-security-controls.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="xp-figure-open"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+    <a
+      href="../assets/img/projects/exavigil-security-controls.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="xp-figure-image-link"
+      aria-label="View security control responsibilities table"
+    >
+
+      <img
+        src="../assets/img/projects/exavigil-security-controls.png"
+        alt="Security responsibilities for Keycloak IAM, OPA, OpenBao, MCP Security Gateway, Human Approval Gate and Audit Monitoring"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+    <figcaption>
+      Table 04-1. Responsibilities of the
+      security components involved in identity,
+      policy enforcement, secret protection,
+      agent-to-tool mediation, human approval
+      and operational traceability.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- SECURITY CONTROL REQUIREMENTS -->
+
+  <div class="xp-sec-control-grid">
+
+    <div class="xp-sec-control-card">
+
+      <span>CONTROL REQUIREMENT / 01</span>
+
+      <h4>Least Privilege</h4>
+
+      <p>
+        Restrict agents to explicitly permitted
+        tools, actions and target resources.
+      </p>
+
+    </div>
+
+    <div class="xp-sec-control-card">
+
+      <span>CONTROL REQUIREMENT / 02</span>
+
+      <h4>Independent Decisions</h4>
+
+      <p>
+        Evaluate authorization outside the
+        LLM and its generated reasoning.
+      </p>
+
+    </div>
+
+    <div class="xp-sec-control-card">
+
+      <span>CONTROL REQUIREMENT / 03</span>
+
+      <h4>Protected Credentials</h4>
+
+      <p>
+        Keep service secrets within controlled
+        access paths rather than exposing
+        them to agent prompts or outputs.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.3 / CONTROLLED AGENT EXECUTION
+  =========================================================== -->
+
+  <div class="xp-sec-block">
+
+    <span class="xp-sec-kicker">
+      4.3 / AUTHORIZATION &amp; EXECUTION
+    </span>
+
+    <h3>Controlled Agent Execution</h3>
+
+    <p>
+      The execution workflow separates
+      a proposed response from the authority
+      required to perform it. Each sensitive
+      request passes through identity verification,
+      policy evaluation and, where required,
+      explicit human approval.
+    </p>
+
+    <div class="xp-sec-steps">
+
+      <div class="xp-sec-step">
+
+        <span>01 / REQUEST</span>
+        <strong>Agent Action Proposal</strong>
+
+        <p>
+          An agent submits a structured request
+          identifying the intended action,
+          target resource and investigation context.
+        </p>
+
+      </div>
+
+      <div class="xp-sec-step">
+
+        <span>02 / IDENTITY</span>
+        <strong>Identity Verification</strong>
+
+        <p>
+          The gateway verifies the requesting
+          principal and its assigned
+          roles or service permissions.
+        </p>
+
+      </div>
+
+      <div class="xp-sec-step">
+
+        <span>03 / POLICY</span>
+        <strong>Authorization Decision</strong>
+
+        <p>
+          OPA evaluates applicable rules,
+          permitted tools, requested operations
+          and resource restrictions.
+        </p>
+
+      </div>
+
+      <div class="xp-sec-step">
+
+        <span>04 / APPROVAL</span>
+        <strong>Human Authorization</strong>
+
+        <p>
+          High-impact actions require
+          explicit approval before execution.
+          Rejected or missing approvals
+          prevent execution.
+        </p>
+
+      </div>
+
+      <div class="xp-sec-step">
+
+        <span>05 / EXECUTION</span>
+        <strong>Controlled Tool Access</strong>
+
+        <p>
+          Authorized requests may reach
+          permitted MCP tools or SOAR playbooks
+          within an approved laboratory scope.
+        </p>
+
+      </div>
+
+      <div class="xp-sec-step">
+
+        <span>06 / AUDIT</span>
+        <strong>Decision Traceability</strong>
+
+        <p>
+          Requests, policy decisions,
+          approval outcomes and execution
+          results are recorded for review.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FIGURE 04-A / SECURITY WORKFLOW -->
+
+  <figure class="xp-overview-figure xp-sec-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>
+          FIGURE 04-A / CONTROLLED EXECUTION
+        </span>
+
+        <h3>
+          End-to-End Security Workflow
+        </h3>
+      </div>
+
+      <a
+        href="../assets/img/projects/exavigil-security-workflow.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="xp-figure-open"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+    <a
+      href="../assets/img/projects/exavigil-security-workflow.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="xp-figure-image-link"
+      aria-label="View end-to-end AI agent security workflow"
+    >
+
+      <img
+        src="../assets/img/projects/exavigil-security-workflow.png"
+        alt="End-to-end security workflow from agent request through the Agent Security Gateway, Keycloak, OPA, OpenBao, authorization and human approval to permitted tools or Block and Audit"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+    <figcaption>
+      Figure 04-A. Conceptual security workflow
+      separating agent requests from independent
+      policy decisions, conditional human approval
+      and authorized tool execution. Denied
+      requests are routed to blocking and auditing.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- FAIL-CLOSED BEHAVIOR -->
+
+  <div class="xp-sec-boundary">
+
+    <span>
+      EXECUTION POLICY / DENY BY DEFAULT
+    </span>
+
+    <h4>Fail-Closed Authorization</h4>
+
+    <p>
+      Missing identity, insufficient privileges,
+      denied policy decisions or unmet approval
+      requirements must prevent sensitive execution.
+      A service failure must not be interpreted
+      as permission to bypass the security gateway.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.4 / AI THREATS & DEFENSIVE CONTROLS
+  =========================================================== -->
+
+  <div class="xp-sec-block">
+
+    <span class="xp-sec-kicker">
+      4.4 / AI THREAT MODEL
+    </span>
+
+    <h3>AI Threats &amp; Defensive Controls</h3>
+
+    <p>
+      EXAVIGIL considers attacks against
+      agent reasoning, retrieved information,
+      tool interfaces, credentials
+      and response execution.
+    </p>
+
+    <p>
+      The defense strategy combines
+      safer handling of untrusted content
+      with independent authorization
+      at the execution boundary.
+      Content-based protections alone
+      cannot establish tool permissions.
+    </p>
+
+  </div>
+
+
+  <!-- TABLE 04-2 / THREAT CONTROL MATRIX -->
+
+  <figure class="xp-overview-figure xp-sec-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>
+          TABLE 04-2 / THREAT CONTROL MAPPING
+        </span>
+
+        <h3>
+          AI Threat Scenarios &amp; Defensive Controls
+        </h3>
+      </div>
+
+      <a
+        href="../assets/img/projects/exavigil-threat-controls.png"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="xp-figure-open"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+    <a
+      href="../assets/img/projects/exavigil-threat-controls.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="xp-figure-image-link"
+      aria-label="View AI threat scenarios and defensive controls"
+    >
+
+      <img
+        src="../assets/img/projects/exavigil-threat-controls.png"
+        alt="Threat control matrix mapping indirect prompt injection T03, RAG poisoning T04, unauthorized MCP execution T05, privilege escalation T06, unsafe automated response T07, AI service failure T08, unauthorized OT commands T09 and secret disclosure T10"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+    <figcaption>
+      Table 04-2. Eight selected adversarial
+      scenarios mapped to defensive control
+      requirements and validation identifiers
+      T03–T10. Test outcomes and supporting
+      evidence belong to Chapter 05.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- SECURITY ASSURANCE NOTE -->
+
+  <div class="xp-sec-assurance">
+
+    <span>
+      SECURITY ASSURANCE / DESIGN INTENT
+    </span>
+
+    <p>
+      The mapped controls define expected
+      defensive behavior. Their effectiveness
+      must be demonstrated through reproducible
+      positive and negative tests, including
+      attempts to bypass authorization
+      and approval requirements.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.5 / HUMAN OVERSIGHT & OPERATIONAL SAFETY
+  =========================================================== -->
+
+  <div class="xp-sec-block">
+
+    <span class="xp-sec-kicker">
+      4.5 / OPERATIONAL SAFETY
+    </span>
+
+    <h3>Human Oversight &amp; Operational Safety</h3>
+
+    <p>
+      EXAVIGIL is designed to preserve
+      analyst authority over sensitive
+      security operations. AI-generated
+      findings support decisions,
+      but do not replace identity checks,
+      authorization or required approvals.
+    </p>
+
+    <div class="xp-sec-safety-grid">
+
+      <article class="xp-sec-safety-card">
+
+        <span>IT / LAB RESPONSE</span>
+
+        <h4>Authorized Response Scope</h4>
+
+        <p>
+          Firewall modifications, domain
+          blocking and endpoint isolation
+          require explicit scope restrictions,
+          policy authorization and human
+          approval where applicable.
+        </p>
+
+      </article>
+
+      <article class="xp-sec-safety-card">
+
+        <span>INDUSTRIAL OT</span>
+
+        <h4>Industrial Execution Boundary</h4>
+
+        <p>
+          Industrial telemetry is collected
+          through passive or approved
+          read-only mechanisms.
+          AI agents are not permitted
+          to issue direct PLC or SCADA
+          control commands.
+        </p>
+
+      </article>
+
+    </div>
+
+    <p>
+      Security decisions and execution
+      results are intended to remain
+      traceable, supporting investigation
+      reviews, accountability and
+      verification of policy enforcement.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       ENGINEERING CONCLUSION
+  =========================================================== -->
+
+  <div class="xp-overview-conclusion">
+
+    <span>
+      EXAVIGIL / AI SECURITY ENGINEERING PRINCIPLE
+    </span>
+
+    <p>
+      AI-generated recommendations remain
+      separate from operational authority.
+      Identity verification, independent policy
+      enforcement and human oversight establish
+      the security boundaries for controlled
+      agent-to-tool execution.
+    </p>
+
+  </div>
+
+</section>
+<!-- END CHAPTER 04 -->
+
+        
 
 
         <!-- ==================================================
