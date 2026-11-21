@@ -288,6 +288,56 @@
 
 })();
 
+
+
+
+// ============================================================
+// CHAPTER 05 — VALIDATION EVIDENCE NAVIGATION
+// Open test details when accessed through a link
+// ============================================================
+
+(() => {
+
+  function openValidationCaseFromHash() {
+
+    const id = window.location.hash.slice(1);
+    const target = document.getElementById(id);
+
+    if (!target || !target.matches('details.xp-val-case')) {
+      return;
+    }
+
+    target.open = true;
+  }
+
+  document.querySelectorAll(
+    '.xp-val-matrix a[href^="#test-"]'
+  ).forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      const target = document.querySelector(
+        link.getAttribute('href')
+      );
+
+      if (target) {
+        target.open = true;
+      }
+
+    });
+
+  });
+
+  window.addEventListener(
+    'hashchange',
+    openValidationCaseFromHash
+  );
+
+  openValidationCaseFromHash();
+
+})();
+
+
 // ============================================================
 // END — EXAVIGIL PROJECT JAVASCRIPT
 // ============================================================
