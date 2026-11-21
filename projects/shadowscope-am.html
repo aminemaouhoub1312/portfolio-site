@@ -1911,43 +1911,870 @@
 <!-- END CHAPTER 02 -->
 
         
-        <!-- ===================================================
-             CHAPTER 03 — CONNECTED KNOWLEDGE
-        ==================================================== -->
+       
+<!-- ============================================================
+     03 / KNOWLEDGE GRAPHS, SEMANTIC SEARCH & INVESTIGATION
+     SHADOWSCOPE AM — ENGINEERING DOCUMENTATION
+============================================================ -->
 
-        <section
-          class="xp-chapter xp-reveal ss-upcoming"
-          id="knowledge"
-          aria-labelledby="ss-ch03-title"
-        >
+<section
+  class="xp-chapter xp-reveal ss-a3"
+  id="knowledge"
+  aria-labelledby="ss-a3-title"
+>
 
-          <div class="xp-chapter-label">
-            <span>03</span>
-            KNOWLEDGE ENGINEERING / INVESTIGATION
-          </div>
+  <!-- CHAPTER HEADER -->
 
-          <h2 id="ss-ch03-title">
-            Knowledge Graphs, Semantic Search
-            <span>&amp; Investigation</span>
-          </h2>
+  <div class="xp-chapter-label">
+    <span>03</span>
+    CONNECTED INTELLIGENCE / CONTEXTUAL INVESTIGATION
+  </div>
 
-          <p class="xp-chapter-lead">
-            Neo4j graph relationships,
-            Qdrant vector retrieval,
-            semantic investigation
-            and LLM integration.
-          </p>
+  <h2 id="ss-a3-title">
+    Knowledge Graphs, Semantic Search
+    <span>&amp; Investigation</span>
+  </h2>
 
-          <div class="ss-chapter-placeholder">
-            <span>CHAPTER 03 / DOCUMENTATION IN PROGRESS</span>
-            <strong>Connected Investigation Context</strong>
-            <p>
-              Graph modeling, embeddings,
-              RAG architecture and evidence retrieval.
-            </p>
-          </div>
+  <p class="xp-chapter-lead">
+    Combining explicit threat relationships,
+    vector-based semantic retrieval and local
+    LLM-assisted analysis to support contextual,
+    evidence-oriented cybersecurity investigations.
+  </p>
 
-        </section>
+
+  <!-- ==========================================================
+       THREE COMPLEMENTARY CAPABILITIES
+  =========================================================== -->
+
+  <div class="ss-a3-capabilities">
+
+    <article class="ss-a3-capability">
+
+      <span>01 / GRAPH INTELLIGENCE</span>
+
+      <h3>Neo4j</h3>
+
+      <p>
+        Explore explicit relationships between
+        indicators, malware, infrastructure
+        and correlation clusters.
+      </p>
+
+      <small>RELATIONSHIP-BASED ANALYSIS</small>
+
+    </article>
+
+
+    <article class="ss-a3-capability">
+
+      <span>02 / SEMANTIC RETRIEVAL</span>
+
+      <h3>Qdrant</h3>
+
+      <p>
+        Retrieve contextually similar threat
+        intelligence records using
+        vector embeddings.
+      </p>
+
+      <small>SIMILARITY-BASED DISCOVERY</small>
+
+    </article>
+
+
+    <article class="ss-a3-capability">
+
+      <span>03 / INTELLIGENT ANALYSIS</span>
+
+      <h3>Local LLM</h3>
+
+      <p>
+        Combine available CTI evidence
+        into structured assessments
+        for analyst review.
+      </p>
+
+      <small>AI-ASSISTED INVESTIGATION</small>
+
+    </article>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.1 / THREAT KNOWLEDGE GRAPHS
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      3.1 / GRAPH-BASED THREAT INTELLIGENCE
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Threat Knowledge Graphs
+    </h3>
+
+    <p>
+      ShadowScope AM uses Neo4j to represent
+      Cyber Threat Intelligence entities
+      as connected nodes and relationships.
+      Processed CTI records are transformed
+      into graph structures through
+      Python-based loading workflows.
+    </p>
+
+    <p>
+      The graph model supports the exploration
+      of indicators, malware families,
+      network infrastructure, intelligence
+      sources and correlation clusters.
+      Cypher queries allow analysts to
+      investigate explicit associations
+      rather than relying exclusively
+      on isolated IOC lookups.
+    </p>
+
+    <p>
+      Graph exploration is particularly useful
+      when multiple observations share
+      infrastructure attributes, correlation
+      records or malware associations.
+      These relationships provide investigation
+      context without independently proving
+      common attribution.
+    </p>
+
+  </div>
+
+
+  <!-- FIGURE 03-A / NEO4J -->
+
+  <figure class="xp-overview-figure ss-a3-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>FIGURE 03-A / GRAPH EXPLORATION</span>
+
+        <h3>
+          Neo4j — FlowerStorm Threat Relationships
+        </h3>
+      </div>
+
+      <a
+        class="xp-figure-open"
+        href="../assets/img/projects/shadowscope-neo4j-graph.png"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+
+    <a
+      class="xp-figure-image-link"
+      href="../assets/img/projects/shadowscope-neo4j-graph.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open Neo4j threat knowledge graph"
+    >
+
+      <img
+        src="../assets/img/projects/shadowscope-neo4j-graph.png"
+        alt="Neo4j Cypher query exploring FlowerStorm malware associations with indicators, clusters, ASN and infrastructure relationships"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+
+    <figcaption>
+      Figure 03-A. Neo4j exploration of FlowerStorm
+      associations, showing indicators, correlation
+      clusters and related infrastructure entities.
+      Node and relationship counts describe the
+      displayed query result, not the entire platform.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- GRAPH ENGINEERING DETAILS -->
+
+  <div class="ss-a3-technical-grid">
+
+    <article class="ss-a3-technical-card">
+
+      <span>GRAPH MODEL</span>
+
+      <h4>Entity Representation</h4>
+
+      <p>
+        Threat intelligence is represented
+        through entities such as indicators,
+        malware, clusters, sources, ASN
+        and contextual infrastructure.
+      </p>
+
+    </article>
+
+
+    <article class="ss-a3-technical-card">
+
+      <span>CORRELATION MODEL</span>
+
+      <h4>Relationship Exploration</h4>
+
+      <p>
+        Cypher queries expose stored
+        associations, shared attributes
+        and cluster membership to support
+        investigation and hypothesis building.
+      </p>
+
+    </article>
+
+  </div>
+
+
+  <div class="ss-a3-engineering-note">
+
+    <span>GRAPH EVIDENCE BOUNDARY</span>
+
+    <p>
+      A graph relationship reflects the
+      underlying source records and correlation
+      rules. Shared infrastructure, cluster
+      membership or a recorded malware
+      association must be interpreted
+      with the available provenance and
+      confidence information.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.2 / SEMANTIC THREAT INTELLIGENCE
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      3.2 / VECTOR-BASED INTELLIGENCE RETRIEVAL
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Semantic Threat Intelligence
+    </h3>
+
+    <p>
+      ShadowScope AM integrates Qdrant
+      to complement structured intelligence
+      searches with vector-based
+      semantic retrieval.
+    </p>
+
+    <p>
+      CTI descriptions and correlation context
+      can be transformed into embeddings
+      and stored with associated metadata.
+      Analyst queries are converted into
+      query vectors and compared against
+      indexed intelligence records.
+    </p>
+
+    <p>
+      Similarity-ranked results can expose
+      related infrastructure observations,
+      threat descriptions and correlation
+      clusters even when the analyst
+      does not provide an exact indicator.
+    </p>
+
+  </div>
+
+
+  <!-- FIGURE 03-B / SEMANTIC SEARCH -->
+
+  <figure class="xp-overview-figure ss-a3-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>FIGURE 03-B / SEMANTIC SEARCH</span>
+
+        <h3>
+          CTI AI Semantic Search — Investigation Results
+        </h3>
+      </div>
+
+      <a
+        class="xp-figure-open"
+        href="../assets/img/projects/shadowscope-semantic-search.png"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+
+    <a
+      class="xp-figure-image-link"
+      href="../assets/img/projects/shadowscope-semantic-search.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open semantic CTI search results"
+    >
+
+      <img
+        src="../assets/img/projects/shadowscope-semantic-search.png"
+        alt="ShadowScope CTI semantic search interface displaying ranked infrastructure correlation records with vector similarity scores, risk levels, priorities and cluster metadata"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+
+    <figcaption>
+      Figure 03-B. Semantic retrieval of CTI
+      correlation records ranked by similarity,
+      with available risk, priority, cluster
+      and infrastructure metadata.
+      Search metadata fields require an
+      interface correction in this capture.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- RETRIEVAL PROCESS -->
+
+  <div class="ss-a3-process">
+
+    <span class="ss-a3-process-label">
+      SEMANTIC RETRIEVAL WORKFLOW
+    </span>
+
+    <ol>
+
+      <li>
+        <span>01</span>
+        <strong>CTI Content</strong>
+        <small>Intelligence records</small>
+      </li>
+
+      <li>
+        <span>02</span>
+        <strong>Embedding Model</strong>
+        <small>Vector representation</small>
+      </li>
+
+      <li>
+        <span>03</span>
+        <strong>Qdrant Search</strong>
+        <small>Similarity ranking</small>
+      </li>
+
+      <li>
+        <span>04</span>
+        <strong>Contextual Results</strong>
+        <small>Metadata and evidence</small>
+      </li>
+
+    </ol>
+
+  </div>
+
+
+  <div class="ss-a3-engineering-note">
+
+    <span>RETRIEVAL ENGINEERING PRINCIPLE</span>
+
+    <p>
+      A similarity score measures proximity
+      within the configured vector space.
+      It is not a probability of maliciousness,
+      a confidence score for attribution
+      or proof that two indicators share
+      the same threat actor.
+      Risk and priority values must be
+      evaluated separately.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.3 / LLM-ASSISTED INVESTIGATION
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      3.3 / LOCAL AI-ASSISTED INVESTIGATION
+    </span>
+
+    <h3 class="xp-overview-heading">
+      LLM-Assisted Threat Investigation
+    </h3>
+
+    <p>
+      ShadowScope AM includes a Python-based
+      investigation API connected to a
+      locally hosted LLM through Ollama.
+      Analyst queries are used to prepare
+      an investigation context from
+      available threat intelligence.
+    </p>
+
+    <p>
+      The intended context combines structured
+      CTI records, semantic retrieval results
+      and available graph relationships.
+      The assistant uses this information
+      to prepare investigation summaries,
+      risk interpretations and suggested
+      defensive follow-up.
+    </p>
+
+    <p>
+      LLM-generated statements are treated
+      as analytical output rather than
+      independent threat intelligence.
+      Important conclusions must remain
+      reviewable against their original
+      evidence.
+    </p>
+
+  </div>
+
+
+  <!-- FIGURE 03-C / LLM ASSESSMENT -->
+
+  <figure class="xp-overview-figure ss-a3-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+        <span>FIGURE 03-C / INVESTIGATION API</span>
+
+        <h3>
+          Local LLM — CTI Threat Assessment
+        </h3>
+      </div>
+
+      <a
+        class="xp-figure-open"
+        href="../assets/img/projects/shadowscope-llm-assessment.png"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+
+    <a
+      class="xp-figure-image-link"
+      href="../assets/img/projects/shadowscope-llm-assessment.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open local LLM threat assessment evidence"
+    >
+
+      <img
+        src="../assets/img/projects/shadowscope-llm-assessment.png"
+        alt="Terminal showing a Python investigation API query and JSON response containing an LLM-generated threat summary, risk interpretation and related indicators"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+
+    <figcaption>
+      Figure 03-C. Local investigation API
+      queried through HTTP, returning a
+      model-generated CTI assessment.
+      The output illustrates the response
+      structure; factual conclusions require
+      verification against source evidence.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- INVESTIGATION WORKFLOW -->
+
+  <div class="ss-a3-process ss-a3-process--five">
+
+    <span class="ss-a3-process-label">
+      EVIDENCE-ASSISTED INVESTIGATION
+    </span>
+
+    <ol>
+
+      <li>
+        <span>01</span>
+        <strong>Analyst Query</strong>
+        <small>Indicator or threat question</small>
+      </li>
+
+      <li>
+        <span>02</span>
+        <strong>Context Lookup</strong>
+        <small>CTI, graph and vectors</small>
+      </li>
+
+      <li>
+        <span>03</span>
+        <strong>Context Assembly</strong>
+        <small>Relevant evidence</small>
+      </li>
+
+      <li>
+        <span>04</span>
+        <strong>LLM Assessment</strong>
+        <small>Local model interface</small>
+      </li>
+
+      <li>
+        <span>05</span>
+        <strong>Analyst Review</strong>
+        <small>Verify findings and sources</small>
+      </li>
+
+    </ol>
+
+  </div>
+
+
+  <!-- INVESTIGATION OUTPUTS -->
+
+  <div class="ss-a3-output-grid">
+
+    <article>
+      <span>01 / SUMMARY</span>
+      <strong>Threat Assessment</strong>
+      <p>
+        Summarize relevant CTI
+        and observed risk context.
+      </p>
+    </article>
+
+    <article>
+      <span>02 / CONTEXT</span>
+      <strong>Related Intelligence</strong>
+      <p>
+        Present indicators, relationships
+        and retrieved evidence.
+      </p>
+    </article>
+
+    <article>
+      <span>03 / REVIEW</span>
+      <strong>Suggested Next Steps</strong>
+      <p>
+        Prepare investigative recommendations
+        for analyst verification.
+      </p>
+    </article>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.4 / EVIDENCE INTEGRITY
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      3.4 / INVESTIGATION RELIABILITY
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Evidence Integrity &amp; Investigation Reliability
+    </h3>
+
+    <p>
+      Graph relationships, vector similarity
+      and LLM-generated assessments provide
+      complementary investigation capabilities,
+      but they do not represent the same
+      level or type of evidence.
+    </p>
+
+    <p>
+      Reliable investigations require source
+      attribution, clear separation between
+      observed data and inference, and
+      explicit handling of unavailable
+      or conflicting context.
+    </p>
+
+  </div>
+
+
+  <!-- RELIABILITY MATRIX -->
+
+  <div class="ss-a3-table-wrap">
+
+    <table class="ss-a3-matrix">
+
+      <thead>
+        <tr>
+          <th scope="col">COMPONENT</th>
+          <th scope="col">CONTRIBUTION</th>
+          <th scope="col">RELIABILITY BOUNDARY</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <th scope="row">Neo4j</th>
+          <td>
+            Explicit CTI entity relationships
+          </td>
+          <td>
+            Associations depend on source
+            quality and correlation logic.
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">Qdrant</th>
+          <td>
+            Similarity-based intelligence retrieval
+          </td>
+          <td>
+            Similarity does not establish
+            malicious association or attribution.
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">Local LLM</th>
+          <td>
+            Investigation summaries and
+            contextual interpretation
+          </td>
+          <td>
+            Model-generated claims require
+            supporting and verifiable evidence.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- FUTURE RELIABILITY REQUIREMENTS -->
+
+  <div class="ss-a3-reliability">
+
+    <div class="ss-a3-reliability-heading">
+
+      <span>ENGINEERING NEXT PHASE</span>
+
+      <h4>
+        Evidence-Grounded Investigation
+      </h4>
+
+      <p>
+        The next phase will introduce
+        systematic controls to strengthen
+        investigation quality and
+        assessment traceability.
+      </p>
+
+    </div>
+
+
+    <div class="ss-a3-reliability-grid">
+
+      <div>
+        <span>01</span>
+        <strong>Source-Level Citations</strong>
+        <p>
+          Link critical findings to
+          the intelligence records
+          supporting them.
+        </p>
+      </div>
+
+      <div>
+        <span>02</span>
+        <strong>Exact IOC Verification</strong>
+        <p>
+          Validate exact indicators
+          before inferring related
+          infrastructure or threats.
+        </p>
+      </div>
+
+      <div>
+        <span>03</span>
+        <strong>Graph Availability Checks</strong>
+        <p>
+          Report missing graph context
+          without substituting
+          unsupported relationships.
+        </p>
+      </div>
+
+      <div>
+        <span>04</span>
+        <strong>Grounding Evaluation</strong>
+        <p>
+          Assess generated statements
+          against retrieved evidence
+          through repeatable tests.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       3.5 / ENGINEERING VALUE
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      3.5 / ENGINEERING VALUE
+    </span>
+
+    <h3 class="xp-overview-heading">
+      From Isolated Indicators to Contextual Investigation
+    </h3>
+
+    <p>
+      ShadowScope AM combines three
+      complementary investigation mechanisms
+      that extend conventional
+      exact-match IOC analysis.
+    </p>
+
+  </div>
+
+
+  <div class="xp-card-grid xp-grid-three">
+
+    <article class="xp-info-card">
+
+      <span class="xp-card-number">
+        01 / CONNECTED INTELLIGENCE
+      </span>
+
+      <h3>
+        Threat Relationships
+      </h3>
+
+      <p>
+        Explore explicit associations
+        between indicators, infrastructure,
+        clusters and malware context.
+      </p>
+
+    </article>
+
+
+    <article class="xp-info-card">
+
+      <span class="xp-card-number">
+        02 / SEMANTIC RETRIEVAL
+      </span>
+
+      <h3>
+        Contextual Discovery
+      </h3>
+
+      <p>
+        Retrieve semantically related
+        intelligence beyond exact IOC
+        or keyword matching.
+      </p>
+
+    </article>
+
+
+    <article class="xp-info-card">
+
+      <span class="xp-card-number">
+        03 / AI INVESTIGATION
+      </span>
+
+      <h3>
+        Analyst-Assisted Assessment
+      </h3>
+
+      <p>
+        Consolidate relevant intelligence
+        into structured assessments
+        that remain subject
+        to evidence verification.
+      </p>
+
+    </article>
+
+  </div>
+
+
+  <!-- ENGINEERING CONCLUSION -->
+
+  <div class="xp-overview-conclusion">
+
+    <span>
+      SHADOWSCOPE AM / INVESTIGATION PRINCIPLE
+    </span>
+
+    <p>
+      Connected Intelligence.
+      Evidence-Grounded Analysis.
+      Defensible Conclusions.
+    </p>
+
+  </div>
+
+
+  <!-- NEXT CHAPTER -->
+
+  <a
+    class="ss-next-chapter"
+    href="#agent-security"
+  >
+
+    <span>NEXT CHAPTER / 04</span>
+
+    <strong>
+      Secure Agentic AI &amp; Trust Boundaries
+    </strong>
+
+    <span aria-hidden="true">↗</span>
+
+  </a>
+
+</section>
+
+<!-- END CHAPTER 03 -->
 
 
         <!-- ===================================================
