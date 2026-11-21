@@ -3666,113 +3666,790 @@
 
         
 
-        <!-- ==================================================
-             06 / TECHNICAL DEMONSTRATIONS & RESULTS
-        =================================================== -->
 
-        <section
-          class="xp-chapter xp-reveal"
-          id="demonstrations"
-          aria-labelledby="xp-demos-title"
+
+<!-- ============================================================
+     06 / TECHNICAL DEMONSTRATIONS & RESULTS
+     EXAVIGIL — ENGINEERING DOCUMENTATION
+============================================================ -->
+
+<section
+  class="xp-chapter xp-reveal xp-demos6"
+  id="demos"
+  aria-labelledby="xp-demos6-title"
+>
+
+  <!-- CHAPTER HEADER -->
+
+  <div class="xp-chapter-label">
+    <span>06</span>
+    TECHNICAL DEMONSTRATIONS / ENGINEERING EVALUATION
+  </div>
+
+  <h2 id="xp-demos6-title">
+    Technical Demonstrations
+    <span>&amp; Results</span>
+  </h2>
+
+  <p class="xp-chapter-lead">
+    Three demonstration workflows illustrate
+    security detection, intelligence enrichment,
+    agent authorization and controlled response
+    within the EXAVIGIL laboratory architecture.
+  </p>
+
+  <p class="xp-d6-intro">
+    This chapter presents observable system behavior
+    and engineering evaluation criteria.
+    The detailed scenario evidence is documented
+    in Chapter 05.
+  </p>
+
+
+  <!-- DEMONSTRATION OVERVIEW -->
+
+  <div class="xp-d6-overview">
+
+    <div>
+      <span>DEMONSTRATION WORKFLOWS</span>
+      <strong>03</strong>
+      <small>Integrated engineering areas</small>
+    </div>
+
+    <div>
+      <span>RELATED SCENARIOS</span>
+      <strong>10</strong>
+      <small>T01–T10</small>
+    </div>
+
+    <div>
+      <span>EVALUATION METHOD</span>
+      <strong>LAB</strong>
+      <small>Evidence-based assessment</small>
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       6.1 / DEMO 01 — DETECTION & CTI
+  =========================================================== -->
+
+  <article class="xp-d6-demo" id="demo-01">
+
+    <div class="xp-d6-demo-heading">
+
+      <div class="xp-d6-demo-index">
+        01
+      </div>
+
+      <div class="xp-d6-demo-heading-content">
+
+        <span class="xp-d6-kicker">
+          6.1 / SOC &amp; THREAT INTELLIGENCE
+        </span>
+
+        <h3>
+          Intelligent Threat Detection
+          &amp; CTI Enrichment
+        </h3>
+
+        <p>
+          Wazuh / MISP / OpenSearch / Python
+        </p>
+
+      </div>
+
+      <span class="xp-d6-reference">
+        T01 · T02
+      </span>
+
+    </div>
+
+
+    <!-- EVIDENCE PREVIEW -->
+
+    <figure class="xp-d6-preview">
+
+      <a
+        href="#test-t02"
+        aria-label="View technical evidence for CTI enrichment"
+      >
+
+        <img
+          src="../assets/img/projects/exavigil-t02-cti-enrichment.png"
+          alt="MISP and OpenSearch IOC enrichment with Python processing logs"
+          loading="lazy"
+          decoding="async"
         >
 
-          <div class="xp-chapter-label">
-            <span>06</span>
-            TECHNICAL DEMONSTRATIONS / EVIDENCE
-          </div>
+      </a>
 
-          <h2 id="xp-demos-title">
-            Technical Demonstrations
-            <span>&amp; Results</span>
-          </h2>
+      <figcaption>
+        EVIDENCE PREVIEW / CTI ENRICHMENT
+        <span>VIEW SCENARIO T02 ↗</span>
+      </figcaption>
 
-          <p class="xp-chapter-lead">
-            A dedicated space for laboratory
-            demonstrations, technical screenshots,
-            architecture walkthroughs and observed
-            proof-of-concept results.
+    </figure>
+
+
+    <!-- TECHNICAL DESCRIPTION -->
+
+    <div class="xp-d6-demo-content">
+
+      <p>
+        This demonstration examines the security
+        monitoring and intelligence-enrichment
+        foundations of EXAVIGIL.
+      </p>
+
+      <p>
+        Wazuh provides security event visibility,
+        while MISP and OpenSearch support IOC
+        lookup, contextual enrichment and
+        searchable threat intelligence records.
+      </p>
+
+
+      <!-- WORKFLOW -->
+
+      <div class="xp-d6-workflow">
+
+        <span class="xp-d6-label">
+          PROCESSING WORKFLOW
+        </span>
+
+        <ol>
+          <li>Security Event</li>
+          <li>Wazuh Detection</li>
+          <li>IOC Extraction</li>
+          <li>CTI Enrichment</li>
+          <li>Investigation Context</li>
+        </ol>
+
+      </div>
+
+
+      <!-- EVALUATION -->
+
+      <div class="xp-d6-assessment">
+
+        <div>
+
+          <span class="xp-d6-label">
+            OBSERVABLE EVIDENCE
+          </span>
+
+          <p>
+            Wazuh dashboards display security
+            alerts and detection metadata.
+            Separate CTI captures show MISP
+            indicators, enrichment output
+            and indexed OpenSearch records.
           </p>
 
-          <div class="xp-card-grid xp-grid-three">
+        </div>
 
-            <article class="xp-demo-card">
+        <div>
 
-              <div class="xp-demo-media">
-                <span>DEMO / 01</span>
-                <strong>+</strong>
-                <small>MEDIA PLACEHOLDER</small>
-              </div>
+          <span class="xp-d6-label">
+            FURTHER VERIFICATION
+          </span>
 
-              <div class="xp-demo-info">
-                <h3>
-                  Unified Security Monitoring
-                </h3>
+          <p>
+            End-to-end alert-to-IOC correlation,
+            processing latency and consistency
+            require timestamped execution
+            records from the same test run.
+          </p>
 
-                <p>
-                  Add monitoring and detection
-                  screenshots supported by
-                  actual laboratory execution.
-                </p>
+        </div>
 
-                <span>NOT YET DOCUMENTED</span>
-              </div>
-
-            </article>
+      </div>
 
 
-            <article class="xp-demo-card">
+      <!-- EVIDENCE LINKS -->
 
-              <div class="xp-demo-media">
-                <span>DEMO / 02</span>
-                <strong>+</strong>
-                <small>MEDIA PLACEHOLDER</small>
-              </div>
+      <div class="xp-d6-evidence-links">
 
-              <div class="xp-demo-info">
-                <h3>
-                  Intelligent Investigation
-                </h3>
+        <span>RELATED EVIDENCE</span>
 
-                <p>
-                  Present agent-assisted investigation,
-                  contextual enrichment and
-                  evidence-supported analysis.
-                </p>
+        <a href="#test-t01">
+          T01 / Security Telemetry ↗
+        </a>
 
-                <span>NOT YET DOCUMENTED</span>
-              </div>
+        <a href="#test-t02">
+          T02 / CTI Enrichment ↗
+        </a>
 
-            </article>
+      </div>
+
+    </div>
+
+  </article>
 
 
-            <article class="xp-demo-card">
+  <!-- ==========================================================
+       6.2 / DEMO 02 — AI SECURITY
+  =========================================================== -->
 
-              <div class="xp-demo-media">
-                <span>DEMO / 03</span>
-                <strong>+</strong>
-                <small>MEDIA PLACEHOLDER</small>
-              </div>
+  <article class="xp-d6-demo" id="demo-02">
 
-              <div class="xp-demo-info">
-                <h3>
-                  Controlled Security Response
-                </h3>
+    <div class="xp-d6-demo-heading">
 
-                <p>
-                  Present authorized actions,
-                  policy decisions and
-                  controlled response behavior.
-                </p>
+      <div class="xp-d6-demo-index">
+        02
+      </div>
 
-                <span>NOT YET DOCUMENTED</span>
-              </div>
+      <div class="xp-d6-demo-heading-content">
 
-            </article>
+        <span class="xp-d6-kicker">
+          6.2 / AGENT SECURITY &amp; AUTHORIZATION
+        </span>
 
-          </div>
+        <h3>
+          AI Security &amp;
+          Policy Enforcement
+        </h3>
 
-        </section>
+        <p>
+          AI Agents / Qdrant / OPA /
+          Keycloak / OpenBao / MCP
+        </p>
 
+      </div>
+
+      <span class="xp-d6-reference">
+        T03–T06 · T10
+      </span>
+
+    </div>
+
+
+    <!-- EVIDENCE PREVIEW -->
+
+    <figure class="xp-d6-preview">
+
+      <a
+        href="#test-t04"
+        aria-label="View RAG poisoning security validation evidence"
+      >
+
+        <img
+          src="../assets/img/projects/exavigil-t04-rag-poisoning.png"
+          alt="Poisoned RAG document retrieved in Qdrant with Investigation Agent refusal and OPA policy denial"
+          loading="lazy"
+          decoding="async"
+        >
+
+      </a>
+
+      <figcaption>
+        EVIDENCE PREVIEW / RAG POLICY ENFORCEMENT
+        <span>VIEW SCENARIO T04 ↗</span>
+      </figcaption>
+
+    </figure>
+
+
+    <div class="xp-d6-demo-content">
+
+      <p>
+        This demonstration evaluates security
+        boundaries around AI-assisted
+        investigations and agent-to-tool
+        interactions.
+      </p>
+
+      <p>
+        Adversarial inputs target external
+        threat intelligence, retrieved RAG
+        documents, restricted tools, agent
+        permissions and protected credentials.
+        The intended architecture requires
+        authorization decisions to remain
+        independent of model-generated content.
+      </p>
+
+
+      <!-- WORKFLOW -->
+
+      <div class="xp-d6-workflow">
+
+        <span class="xp-d6-label">
+          SECURITY ENFORCEMENT WORKFLOW
+        </span>
+
+        <ol>
+          <li>Untrusted Input</li>
+          <li>AI Investigation</li>
+          <li>Tool Request</li>
+          <li>Policy Gateway</li>
+          <li>Decision &amp; Audit</li>
+        </ol>
+
+      </div>
+
+
+      <!-- EVALUATION -->
+
+      <div class="xp-d6-assessment">
+
+        <div>
+
+          <span class="xp-d6-label">
+            OBSERVABLE EVIDENCE
+          </span>
+
+          <p>
+            Laboratory captures show DENY
+            decisions for prompt-injection
+            attempts, policy-bypass requests,
+            unauthorized MCP execution,
+            restricted resource access
+            and secret retrieval.
+          </p>
+
+        </div>
+
+        <div>
+
+          <span class="xp-d6-label">
+            FURTHER VERIFICATION
+          </span>
+
+          <p>
+            Comprehensive control assurance
+            requires repeatable tests,
+            complete policy inputs and outputs,
+            tool-side execution traces
+            and negative-test coverage.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- EVIDENCE LINKS -->
+
+      <div class="xp-d6-evidence-links">
+
+        <span>RELATED EVIDENCE</span>
+
+        <a href="#test-t03">T03 / Prompt Injection ↗</a>
+        <a href="#test-t04">T04 / RAG Poisoning ↗</a>
+        <a href="#test-t05">T05 / MCP Security ↗</a>
+        <a href="#test-t06">T06 / RBAC ↗</a>
+        <a href="#test-t10">T10 / Secret Protection ↗</a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- ==========================================================
+       6.3 / DEMO 03 — CONTROLLED RESPONSE
+  =========================================================== -->
+
+  <article class="xp-d6-demo" id="demo-03">
+
+    <div class="xp-d6-demo-heading">
+
+      <div class="xp-d6-demo-index">
+        03
+      </div>
+
+      <div class="xp-d6-demo-heading-content">
+
+        <span class="xp-d6-kicker">
+          6.3 / OPERATIONAL SECURITY
+        </span>
+
+        <h3>
+          Controlled Response
+          &amp; Operational Resilience
+        </h3>
+
+        <p>
+          Shuffle SOAR / pfSense /
+          OPA / Grafana / OT Monitoring
+        </p>
+
+      </div>
+
+      <span class="xp-d6-reference">
+        T07 · T08 · T09
+      </span>
+
+    </div>
+
+
+    <!-- EVIDENCE PREVIEW -->
+
+    <figure class="xp-d6-preview">
+
+      <a
+        href="#test-t07"
+        aria-label="View human approval and SOAR response evidence"
+      >
+
+        <img
+          src="../assets/img/projects/exavigil-t07-human-approval.png"
+          alt="Shuffle SOAR workflow paused for analyst approval and pfSense firewall rule"
+          loading="lazy"
+          decoding="async"
+        >
+
+      </a>
+
+      <figcaption>
+        EVIDENCE PREVIEW / HUMAN APPROVAL GATE
+        <span>VIEW SCENARIO T07 ↗</span>
+      </figcaption>
+
+    </figure>
+
+
+    <div class="xp-d6-demo-content">
+
+      <p>
+        This demonstration examines the
+        operational safeguards associated
+        with AI-assisted response and
+        sensitive infrastructure.
+      </p>
+
+      <p>
+        The evaluation covers human approval
+        for high-impact actions, restricted
+        behavior during agent service failures
+        and policy-enforced read-only
+        industrial monitoring.
+      </p>
+
+
+      <!-- WORKFLOW -->
+
+      <div class="xp-d6-workflow">
+
+        <span class="xp-d6-label">
+          CONTROLLED RESPONSE WORKFLOW
+        </span>
+
+        <ol>
+          <li>Response Proposal</li>
+          <li>Policy Evaluation</li>
+          <li>Required Approval</li>
+          <li>Authorized Execution</li>
+          <li>Audit &amp; Monitoring</li>
+        </ol>
+
+      </div>
+
+
+      <!-- EVALUATION -->
+
+      <div class="xp-d6-assessment">
+
+        <div>
+
+          <span class="xp-d6-label">
+            OBSERVABLE EVIDENCE
+          </span>
+
+          <p>
+            Screenshots show a paused Shuffle
+            approval step, restricted operation
+            during an AI service failure,
+            and OPA denial of OT write requests
+            alongside read-only telemetry.
+          </p>
+
+        </div>
+
+        <div>
+
+          <span class="xp-d6-label">
+            FURTHER VERIFICATION
+          </span>
+
+          <p>
+            Approval-to-execution sequencing,
+            firewall state transitions,
+            fail-safe recovery and target-side
+            OT command blocking require
+            complete execution traces.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- EVIDENCE LINKS -->
+
+      <div class="xp-d6-evidence-links">
+
+        <span>RELATED EVIDENCE</span>
+
+        <a href="#test-t07">
+          T07 / Human Approval ↗
+        </a>
+
+        <a href="#test-t08">
+          T08 / Degraded Mode ↗
+        </a>
+
+        <a href="#test-t09">
+          T09 / OT Safety ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- ==========================================================
+       6.4 / ENGINEERING EVALUATION
+  =========================================================== -->
+
+  <div class="xp-d6-section">
+
+    <span class="xp-d6-kicker">
+      6.4 / ENGINEERING ASSESSMENT
+    </span>
+
+    <h3>Engineering Evaluation Summary</h3>
+
+    <p>
+      The evaluation distinguishes observable
+      laboratory evidence from properties
+      requiring additional reproducible
+      verification.
+    </p>
+
+  </div>
+
+
+  <div class="xp-table-wrap xp-d6-table-wrap">
+
+    <table class="xp-validation-table xp-d6-table">
+
+      <thead>
+
+        <tr>
+          <th scope="col">EVALUATION AREA</th>
+          <th scope="col">AVAILABLE EVIDENCE</th>
+          <th scope="col">REMAINING VERIFICATION</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Detection &amp; CTI</td>
+          <td>
+            Wazuh alerts and indexed
+            intelligence records
+          </td>
+          <td>
+            Full alert-to-IOC trace
+            and processing measurements
+          </td>
+        </tr>
+
+        <tr>
+          <td>AI Security</td>
+          <td>
+            Policy denial of selected
+            injection and bypass attempts
+          </td>
+          <td>
+            Repeatable adversarial coverage
+            and tool-side verification
+          </td>
+        </tr>
+
+        <tr>
+          <td>Access Control</td>
+          <td>
+            OPA denials, role restrictions
+            and protected secret requests
+          </td>
+          <td>
+            Policy and audit correlation
+            across complete executions
+          </td>
+        </tr>
+
+        <tr>
+          <td>Controlled Response</td>
+          <td>
+            Shuffle human approval checkpoint
+            and pfSense rule view
+          </td>
+          <td>
+            Complete approval-to-action
+            execution trace
+          </td>
+        </tr>
+
+        <tr>
+          <td>Resilience</td>
+          <td>
+            Agent failure, degraded-mode
+            logs and monitoring
+          </td>
+          <td>
+            Repeatable failure and
+            recovery verification
+          </td>
+        </tr>
+
+        <tr>
+          <td>OT Safety</td>
+          <td>
+            Read-only telemetry and
+            denied OT write requests
+          </td>
+          <td>
+            Gateway-to-target enforcement
+            verification
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- METRICS NOTE -->
+
+  <div class="xp-d6-metrics-note">
+
+    <span>QUANTITATIVE EVALUATION</span>
+
+    <p>
+      Processing latency, investigation time,
+      blocking effectiveness and recovery time
+      are not reported without consistent,
+      repeatable laboratory measurements.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       6.5 / ENGINEERING TAKEAWAYS
+  =========================================================== -->
+
+  <div class="xp-d6-section">
+
+    <span class="xp-d6-kicker">
+      6.5 / ENGINEERING TAKEAWAYS
+    </span>
+
+    <h3>Engineering Takeaways</h3>
+
+    <p>
+      The demonstration evidence highlights
+      three complementary engineering areas
+      within the EXAVIGIL architecture.
+    </p>
+
+  </div>
+
+
+  <div class="xp-card-grid xp-grid-three">
+
+    <article class="xp-info-card">
+
+      <span class="xp-card-number">
+        01 / SOC ENGINEERING
+      </span>
+
+      <h3>Unified Security Operations</h3>
+
+      <p>
+        Combining security telemetry
+        with searchable threat intelligence
+        to support investigation workflows.
+      </p>
+
+    </article>
+
+    <article class="xp-info-card">
+
+      <span class="xp-card-number">
+        02 / AGENTIC ENGINEERING
+      </span>
+
+      <h3>Contextual Investigation</h3>
+
+      <p>
+        Structuring AI-assisted security
+        analysis around specialized
+        responsibilities and evidence.
+      </p>
+
+    </article>
+
+    <article class="xp-info-card">
+
+      <span class="xp-card-number">
+        03 / SECURITY ENGINEERING
+      </span>
+
+      <h3>Controlled Automation</h3>
+
+      <p>
+        Separating agent recommendations
+        from authorization, approval
+        and sensitive tool execution.
+      </p>
+
+    </article>
+
+  </div>
+
+
+  <!-- FINAL STATEMENT -->
+
+  <div class="xp-overview-conclusion">
+
+    <span>
+      EXAVIGIL / ENGINEERING EVALUATION
+    </span>
+
+    <p>
+      The objective is not unrestricted
+      SOC autonomy, but intelligent
+      security workflows that remain
+      controlled, explainable and auditable.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- END CHAPTER 06 -->
+
+
+
+
+
+        
+
+
+        
 
         <!-- ==================================================
              07 / ENGINEERING IMPACT & FUTURE DEVELOPMENT
