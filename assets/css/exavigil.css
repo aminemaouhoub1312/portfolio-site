@@ -2731,3 +2731,543 @@
 
 
 
+
+/* ============================================================
+   EXAVIGIL — CHAPTER 05
+   SECURITY ENGINEERING & VALIDATION
+
+   Validation Matrix | Technical Evidence | Test Cases
+============================================================ */
+
+
+/* ============================================================
+   01 / CHAPTER SUBSECTIONS
+============================================================ */
+
+.xp-val-block {
+  margin: 43px 0 30px;
+}
+
+.xp-val-kicker {
+  display: block;
+  font: 500 10px "DM Mono", monospace;
+
+  color: var(--accent2);
+  letter-spacing: .09em;
+  margin-bottom: 13px;
+}
+
+.xp-val-block > h3 {
+  font-family: Manrope, sans-serif;
+
+  color: var(--text);
+  font-size: clamp(21px, 2.2vw, 28px);
+  font-weight: 800;
+
+  line-height: 1.35;
+  letter-spacing: -.04em;
+  margin: 0 0 19px;
+}
+
+.xp-validation .xp-val-block > p {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.9;
+
+  max-width: 950px;
+  margin: 0 0 17px;
+}
+
+
+/* ============================================================
+   02 / VALIDATION OVERVIEW
+============================================================ */
+
+.xp-val-overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+
+  margin: 30px 0 44px;
+}
+
+.xp-val-overview > div {
+  min-width: 0;
+  padding: 23px 19px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-val-overview span {
+  display: block;
+  font: 500 9px "DM Mono", monospace;
+
+  line-height: 1.65;
+  letter-spacing: .05em;
+  color: var(--accent2);
+}
+
+.xp-val-overview strong {
+  display: block;
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(31px, 3.2vw, 45px);
+  font-weight: 800;
+
+  letter-spacing: -.06em;
+  color: var(--text);
+
+  margin: 11px 0 5px;
+}
+
+.xp-val-overview small {
+  display: block;
+
+  color: var(--muted);
+  font-size: 11px;
+}
+
+
+/* ============================================================
+   03 / VALIDATION METHODOLOGY
+============================================================ */
+
+.xp-val-method {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+
+  margin: 26px 0 35px;
+}
+
+.xp-val-method article {
+  min-width: 0;
+  padding: 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-left: 2px solid var(--accent2);
+}
+
+.xp-val-method span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .06em;
+  margin-bottom: 13px;
+}
+
+.xp-val-method strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.xp-val-method p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   04 / VALIDATION MATRIX
+============================================================ */
+
+.xp-val-table-wrap {
+  margin: 25px 0 45px;
+}
+
+.xp-validation .xp-val-matrix {
+  width: 100%;
+  min-width: 690px;
+}
+
+.xp-validation .xp-val-matrix th {
+  white-space: nowrap;
+}
+
+.xp-validation .xp-val-matrix td {
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+.xp-validation .xp-val-matrix td:first-child {
+  font-family: "DM Mono", monospace;
+  color: var(--accent);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.xp-val-matrix a {
+  color: var(--accent);
+  font: 500 10px "DM Mono", monospace;
+
+  white-space: nowrap;
+}
+
+.xp-val-matrix a:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================================================
+   05 / EVIDENCE INTRODUCTION
+============================================================ */
+
+.xp-validation .xp-val-block > .xp-val-qualification {
+  color: var(--subtle);
+  font-size: 12px;
+
+  border-left: 2px solid var(--stroke);
+  padding-left: 16px;
+  margin-top: 19px;
+}
+
+
+/* ============================================================
+   06 / COLLAPSIBLE TEST CASES
+============================================================ */
+
+.xp-val-cases {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  margin: 27px 0 47px;
+}
+
+.xp-val-case {
+  border: 1px solid var(--stroke);
+  background: var(--panel);
+
+  scroll-margin-top: 115px;
+  overflow: hidden;
+
+  transition: border-color .2s ease;
+}
+
+.xp-val-case[open] {
+  border-color: var(--accent2);
+}
+
+.xp-val-case > summary {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+
+  padding: 19px 22px;
+  cursor: pointer;
+  list-style: none;
+
+  transition: background .2s ease;
+}
+
+.xp-val-case > summary::-webkit-details-marker {
+  display: none;
+}
+
+.xp-val-case > summary::marker {
+  content: "";
+}
+
+.xp-val-case > summary:hover {
+  background: rgba(197, 250, 95, .035);
+}
+
+.xp-val-case > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.xp-val-id {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 38px;
+
+  border: 1px solid var(--stroke);
+  color: var(--accent);
+
+  font: 500 12px "DM Mono", monospace;
+}
+
+.xp-val-case-name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 0;
+  flex: 1;
+}
+
+.xp-val-case-name strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.xp-val-case-name small {
+  color: var(--muted);
+  font: 400 10px "DM Mono", monospace;
+  line-height: 1.6;
+}
+
+.xp-val-case-type {
+  color: var(--accent2);
+  font: 500 9px "DM Mono", monospace;
+
+  letter-spacing: .035em;
+  white-space: nowrap;
+
+  padding: 8px 10px;
+  border: 1px solid var(--stroke);
+}
+
+.xp-val-plus {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  width: 28px;
+  height: 28px;
+
+  color: var(--accent);
+  font-size: 23px;
+  font-weight: 400;
+
+  transition: transform .25s ease;
+}
+
+.xp-val-case[open] .xp-val-plus {
+  transform: rotate(45deg);
+}
+
+
+/* ============================================================
+   07 / EXPANDED TEST CONTENT
+============================================================ */
+
+.xp-val-body {
+  padding: 25px 24px 27px;
+  border-top: 1px solid var(--stroke);
+}
+
+.xp-val-body > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+
+  margin: 0 0 16px;
+}
+
+.xp-val-body > p strong {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.xp-val-body > .xp-val-observation {
+  margin: 21px 0 0;
+  padding: 16px 19px;
+
+  background: var(--bg2);
+  border-left: 2px solid var(--accent2);
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+
+/* ============================================================
+   08 / EVIDENCE GALLERY
+============================================================ */
+
+.xp-val-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 25px 0 0;
+}
+
+.xp-val-gallery figure {
+  min-width: 0;
+  margin: 0;
+
+  border: 1px solid var(--stroke);
+  background: var(--bg2);
+
+  overflow: hidden;
+}
+
+.xp-val-gallery figure:only-child {
+  grid-column: 1 / -1;
+}
+
+.xp-val-gallery figure a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px;
+  background: #ffffff;
+}
+
+.xp-val-gallery figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  transition: opacity .2s ease;
+}
+
+.xp-val-gallery figure a:hover img {
+  opacity: .85;
+}
+
+.xp-val-gallery figcaption {
+  padding: 13px 15px;
+
+  color: var(--muted);
+  font: 400 10px "DM Mono", monospace;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   09 / RESPONSIVE — LAPTOP
+============================================================ */
+
+@media (max-width: 1100px) {
+
+  .xp-val-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ============================================================
+   10 / RESPONSIVE — MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+  .xp-val-block {
+    margin: 32px 0 24px;
+  }
+
+  .xp-validation .xp-val-block > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .xp-val-overview,
+  .xp-val-method {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xp-val-overview > div {
+    padding: 17px 14px;
+  }
+
+  .xp-val-method article {
+    padding: 17px;
+  }
+
+  .xp-val-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-val-case > summary {
+    gap: 10px;
+    padding: 16px 12px;
+  }
+
+  .xp-val-id {
+    width: 40px;
+    height: 35px;
+    font-size: 11px;
+  }
+
+  .xp-val-case-name strong {
+    font-size: 12px;
+  }
+
+  .xp-val-case-name small {
+    font-size: 9px;
+  }
+
+  .xp-val-case-type {
+    display: none;
+  }
+
+  .xp-val-body {
+    padding: 19px 14px;
+  }
+
+  .xp-val-body > p {
+    font-size: 12px;
+  }
+
+  .xp-val-gallery figure a {
+    padding: 6px;
+  }
+
+  .xp-val-gallery figcaption {
+    padding: 11px 12px;
+    font-size: 9px;
+  }
+
+}
+
+
+/* ============================================================
+   11 / SMALL MOBILE
+============================================================ */
+
+@media (max-width: 430px) {
+
+  .xp-val-method {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ============================================================
+   12 / ACCESSIBILITY
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .xp-val-plus,
+  .xp-val-case,
+  .xp-val-gallery figure img {
+    transition: none;
+  }
+
+}
+
+/* ============================================================
+   END — EXAVIGIL CHAPTER 05
+============================================================ */
+
