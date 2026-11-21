@@ -2233,3 +2233,501 @@
 /* ============================================================
    END — EXAVIGIL PROJECT STYLESHEET
 ============================================================ */
+
+
+
+
+/* ============================================================
+   EXAVIGIL — CHAPTER 04
+   AI SECURITY & CONTROLLED AUTOMATION
+
+   Identity | Authorization | MCP Security
+   Human Approval | Defensive Controls | OT Safety
+============================================================ */
+
+
+/* ============================================================
+   01 / SUBSECTION STRUCTURE
+============================================================ */
+
+.xp-sec-block {
+  margin: 42px 0 32px;
+}
+
+.xp-sec-kicker {
+  display: block;
+
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .08em;
+
+  color: var(--accent2);
+  margin-bottom: 13px;
+}
+
+.xp-sec-block > h3 {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(21px, 2.2vw, 28px);
+  font-weight: 800;
+
+  line-height: 1.35;
+  letter-spacing: -.04em;
+
+  color: var(--text);
+  margin: 0 0 19px;
+}
+
+.xp-page .xp-sec-block > p {
+  color: var(--muted);
+
+  font-family: Manrope, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.9;
+
+  max-width: 950px;
+  margin: 0 0 17px;
+}
+
+
+/* ============================================================
+   02 / CORE SECURITY PRINCIPLE
+============================================================ */
+
+.xp-sec-principle {
+  margin-top: 29px;
+  padding: 29px 32px;
+
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent);
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(197, 250, 95, .06),
+      transparent 65%
+    ),
+    var(--panel);
+}
+
+.xp-sec-principle > span {
+  display: block;
+
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .08em;
+
+  color: var(--accent);
+  margin-bottom: 17px;
+}
+
+.xp-sec-principle strong {
+  display: block;
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(19px, 2.1vw, 28px);
+  font-weight: 800;
+
+  line-height: 1.55;
+  letter-spacing: -.04em;
+  color: var(--text);
+
+  max-width: 850px;
+}
+
+.xp-sec-principle p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+
+  margin: 17px 0 0;
+}
+
+
+/* ============================================================
+   03 / SECURITY CONTROL REQUIREMENTS
+============================================================ */
+
+.xp-sec-control-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  margin: 24px 0 45px;
+}
+
+.xp-sec-control-card {
+  min-width: 0;
+  min-height: 175px;
+  padding: 23px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.xp-sec-control-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.xp-sec-control-card > span {
+  display: block;
+
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .07em;
+  line-height: 1.6;
+
+  color: var(--accent2);
+  margin-bottom: 15px;
+}
+
+.xp-sec-control-card h4 {
+  font-family: Manrope, sans-serif;
+
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.45;
+
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.xp-sec-control-card p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   04 / SECURITY FIGURES
+============================================================ */
+
+.xp-sec-figure {
+  margin: 32px 0 38px;
+}
+
+.xp-sec-figure .xp-figure-image-link {
+  display: block;
+  width: 100%;
+
+  padding: 16px;
+  background: #ffffff;
+}
+
+.xp-sec-figure .xp-figure-image-link img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-height: none;
+  object-fit: contain;
+  background: #ffffff;
+}
+
+.xp-sec-figure .xp-figure-heading {
+  background: var(--panel);
+}
+
+/* Preserve image readability on large screens */
+
+.xp-ai-security .xp-overview-figure {
+  max-width: 100%;
+}
+
+.xp-ai-security .xp-overview-figure figcaption {
+  max-width: 100%;
+  line-height: 1.8;
+}
+
+
+/* ============================================================
+   05 / SIX EXECUTION PHASES
+============================================================ */
+
+.xp-sec-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+  margin: 27px 0 32px;
+}
+
+.xp-sec-step {
+  min-width: 0;
+  padding: 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+
+  transition:
+    border-color .25s ease,
+    transform .25s ease;
+}
+
+.xp-sec-step:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.xp-sec-step > span {
+  display: block;
+
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .06em;
+
+  color: var(--accent2);
+  margin-bottom: 15px;
+}
+
+.xp-sec-step strong {
+  display: block;
+
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+
+  line-height: 1.5;
+  color: var(--text);
+
+  margin-bottom: 12px;
+}
+
+.xp-sec-step p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   06 / FAIL-CLOSED EXECUTION
+============================================================ */
+
+.xp-sec-boundary {
+  margin: 24px 0 48px;
+  padding: 26px 30px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent);
+}
+
+.xp-sec-boundary > span {
+  display: block;
+
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .08em;
+  line-height: 1.6;
+
+  color: var(--accent);
+  margin-bottom: 13px;
+}
+
+.xp-sec-boundary h4 {
+  font-family: Manrope, sans-serif;
+
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -.035em;
+
+  color: var(--text);
+  margin: 0 0 13px;
+}
+
+.xp-sec-boundary p {
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+
+/* ============================================================
+   07 / SECURITY ASSURANCE
+============================================================ */
+
+.xp-sec-assurance {
+  margin: 24px 0 43px;
+  padding: 23px 27px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent2);
+}
+
+.xp-sec-assurance > span {
+  display: block;
+
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .07em;
+
+  color: var(--accent2);
+  margin-bottom: 13px;
+}
+
+.xp-sec-assurance p {
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   08 / HUMAN OVERSIGHT & OT SAFETY
+============================================================ */
+
+.xp-sec-safety-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+  margin: 27px 0 28px;
+}
+
+.xp-sec-safety-card {
+  min-width: 0;
+  padding: 26px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.xp-sec-safety-card > span {
+  display: block;
+
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .07em;
+
+  color: var(--accent2);
+  margin-bottom: 15px;
+}
+
+.xp-sec-safety-card h4 {
+  font-family: Manrope, sans-serif;
+
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+
+  color: var(--text);
+  margin: 0 0 14px;
+}
+
+.xp-sec-safety-card p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+
+/* ============================================================
+   09 / TABLET
+============================================================ */
+
+@media (max-width: 1100px) {
+
+  .xp-sec-control-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xp-sec-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ============================================================
+   10 / MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+  .xp-sec-block {
+    margin: 32px 0 26px;
+  }
+
+  .xp-page .xp-sec-block > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .xp-sec-principle {
+    padding: 23px 19px;
+  }
+
+  .xp-sec-principle strong {
+    font-size: 19px;
+  }
+
+  .xp-sec-control-grid,
+  .xp-sec-steps,
+  .xp-sec-safety-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .xp-sec-control-card,
+  .xp-sec-step,
+  .xp-sec-safety-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .xp-sec-figure .xp-figure-image-link {
+    padding: 8px;
+  }
+
+  .xp-sec-boundary,
+  .xp-sec-assurance {
+    padding: 21px 19px;
+  }
+
+  .xp-sec-safety-card h4 {
+    font-size: 16px;
+  }
+
+}
+
+
+/* ============================================================
+   11 / REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .xp-sec-control-card,
+  .xp-sec-step {
+    transition: none;
+  }
+
+  .xp-sec-control-card:hover,
+  .xp-sec-step:hover {
+    transform: none;
+  }
+
+}
+
+/* ============================================================
+   END — CHAPTER 04
+============================================================ */
+
+
+
