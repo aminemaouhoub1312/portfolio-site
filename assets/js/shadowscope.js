@@ -418,3 +418,104 @@
 // END — SHADOWSCOPE AM JAVASCRIPT
 // ============================================================
 
+
+
+'use strict';
+
+// ============================================================
+// SHADOWSCOPE AM — CHAPTER 05
+// SECURITY SCENARIO DEEP LINKS
+// AS01–AS08
+// ============================================================
+
+(() => {
+
+  const scenarioPattern = /^as0[1-8]$/;
+
+  function openScenarioFromHash() {
+
+    const hash = window.location.hash.slice(1);
+
+    let id;
+
+    try {
+      id = decodeURIComponent(hash);
+    } catch (_) {
+      return;
+    }
+
+    if (!scenarioPattern.test(id)) return;
+
+    const target = document.getElementById(id);
+
+    if (!target ||
+        !target.matches('details.ss-a5-case')) {
+      return;
+    }
+
+    target.open = true;
+
+    window.requestAnimationFrame(() => {
+      target.scrollIntoView({
+        behavior: 'instant',
+        block: 'start'
+      });
+    });
+
+  }
+
+
+  function initializeScenarioNavigation() {
+
+    document.querySelectorAll(
+      '.ss-a5-matrix a[href^="#as0"]'
+    ).forEach(link => {
+
+      link.addEventListener('click', () => {
+
+        const id = link.getAttribute('href').slice(1);
+
+        if (!scenarioPattern.test(id)) return;
+
+        const target = document.getElementById(id);
+
+        if (target &&
+            target.matches('details.ss-a5-case')) {
+          target.open = true;
+        }
+
+      });
+
+    });
+
+    openScenarioFromHash();
+
+  }
+
+
+  if (document.readyState === 'loading') {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      initializeScenarioNavigation,
+      { once: true }
+    );
+
+  } else {
+
+    initializeScenarioNavigation();
+
+  }
+
+  window.addEventListener(
+    'hashchange',
+    openScenarioFromHash
+  );
+
+})();
+
+// ============================================================
+// END — CHAPTER 05
+// ============================================================
+
+
