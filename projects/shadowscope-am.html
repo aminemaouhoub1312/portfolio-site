@@ -2777,43 +2777,1284 @@
 <!-- END CHAPTER 03 -->
 
 
-        <!-- ===================================================
-             CHAPTER 04 — SECURE AGENTIC AI
-        ==================================================== -->
 
-        <section
-          class="xp-chapter xp-reveal ss-upcoming"
-          id="agent-security"
-          aria-labelledby="ss-ch04-title"
-        >
 
-          <div class="xp-chapter-label">
-            <span>04</span>
-            AI AGENT SECURITY / TRUST BOUNDARIES
-          </div>
+<!-- ============================================================
+     04 / SECURE AGENTIC AI & TRUST BOUNDARIES
+     SHADOWSCOPE AM — ENGINEERING DOCUMENTATION
+     STATUS: PROPOSED SECURITY EXTENSION
+============================================================ -->
 
-          <h2 id="ss-ch04-title">
-            Secure Agentic AI
-            <span>&amp; Trust Boundaries</span>
-          </h2>
+<section
+  class="xp-chapter xp-reveal ss-a4"
+  id="agent-security"
+  aria-labelledby="ss-a4-title"
+>
 
-          <p class="xp-chapter-lead">
-            Security Gateway design, agent identity,
-            permissions, controlled tool execution
-            and protection against untrusted inputs.
-          </p>
+  <!-- CHAPTER HEADER -->
 
-          <div class="ss-chapter-placeholder">
-            <span>CHAPTER 04 / PLANNED EXTENSION</span>
-            <strong>Independent Agent Authorization</strong>
-            <p>
-              Trust boundaries, policy enforcement
-              and secure agent-to-tool interactions.
-            </p>
-          </div>
+  <div class="xp-chapter-label">
+    <span>04</span>
+    AI SECURITY ENGINEERING / TRUST BOUNDARIES
+  </div>
 
-        </section>
+  <h2 id="ss-a4-title">
+    Secure Agentic AI
+    <span>&amp; Trust Boundaries</span>
+  </h2>
 
+  <p class="xp-chapter-lead">
+    A proposed security enforcement architecture
+    designed to protect AI-assisted threat
+    investigation, isolate untrusted intelligence,
+    restrict sensitive tool operations and preserve
+    human authority over operational decisions.
+  </p>
+
+
+  <!-- DEVELOPMENT STATUS -->
+
+  <div class="ss-a4-status">
+
+    <span class="ss-a4-status-indicator">
+      PROPOSED SECURITY EXTENSION
+    </span>
+
+    <p>
+      This chapter documents the target security
+      architecture for ShadowScope AM.
+      The gateway, policy enforcement and approval
+      mechanisms described below are engineering
+      requirements subject to implementation
+      and dedicated laboratory validation.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.1 / AI SECURITY BY DESIGN
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      4.1 / SECURITY FOUNDATIONS
+    </span>
+
+    <h3 class="xp-overview-heading">
+      AI Security by Design
+    </h3>
+
+    <p>
+      ShadowScope AM processes threat intelligence
+      collected from external feeds, APIs,
+      indexed documents and knowledge repositories.
+      Although these sources provide valuable
+      investigation context, their content
+      must be treated as potentially untrusted.
+    </p>
+
+    <p>
+      When external intelligence becomes part
+      of an LLM investigation context,
+      malicious instructions may attempt
+      to manipulate analysis, expose sensitive
+      information or initiate unauthorized
+      operations through connected tools.
+    </p>
+
+    <p>
+      The proposed security design separates
+      evidence retrieval, AI reasoning
+      and operational authorization into
+      independently controlled responsibilities.
+    </p>
+
+  </div>
+
+
+  <!-- THREE SECURITY RESPONSIBILITIES -->
+
+  <div class="ss-a4-foundations">
+
+    <article class="ss-a4-foundation">
+
+      <span>01 / DATA BOUNDARY</span>
+
+      <h4>
+        Evidence Retrieval
+      </h4>
+
+      <p>
+        Retrieve and process external CTI
+        while preserving provenance,
+        validation rules and separation
+        between source data and
+        trusted system instructions.
+      </p>
+
+      <small>
+        UNTRUSTED INPUT HANDLING
+      </small>
+
+    </article>
+
+
+    <article class="ss-a4-foundation">
+
+      <span>02 / REASONING BOUNDARY</span>
+
+      <h4>
+        AI Investigation
+      </h4>
+
+      <p>
+        Use retrieved evidence to generate
+        threat assessments, contextual
+        interpretations and investigation
+        recommendations without granting
+        the model independent authority.
+      </p>
+
+      <small>
+        CONSTRAINED AI ASSISTANCE
+      </small>
+
+    </article>
+
+
+    <article class="ss-a4-foundation">
+
+      <span>03 / EXECUTION BOUNDARY</span>
+
+      <h4>
+        Authorization &amp; Execution
+      </h4>
+
+      <p>
+        Evaluate sensitive operations
+        against identity, resource,
+        policy and approval requirements
+        before permitting interaction
+        with protected services.
+      </p>
+
+      <small>
+        INDEPENDENT ENFORCEMENT
+      </small>
+
+    </article>
+
+  </div>
+
+
+  <!-- DESIGN PRINCIPLE -->
+
+  <div class="ss-a4-principle">
+
+    <span>
+      SECURITY DESIGN PRINCIPLE
+    </span>
+
+    <strong>
+      Untrusted Data Cannot Grant Trusted Authority.
+    </strong>
+
+    <p>
+      Retrieved intelligence may inform
+      an investigation, but it must never
+      override authorization policies,
+      assign permissions or independently
+      approve sensitive tool execution.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.2 / SECURITY ARCHITECTURE & TRUST BOUNDARIES
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      4.2 / SECURITY ARCHITECTURE
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Security Architecture &amp; Trust Boundaries
+    </h3>
+
+    <p>
+      The proposed design introduces
+      explicit trust boundaries across
+      the CTI acquisition pipeline,
+      knowledge retrieval, AI investigation
+      and detection engineering workflows.
+    </p>
+
+    <p>
+      These boundaries establish where
+      information changes security context,
+      where independently enforced decisions
+      are required and where analyst approval
+      must remain authoritative.
+    </p>
+
+  </div>
+
+
+  <!-- TRUST BOUNDARY MATRIX -->
+
+  <div class="ss-a4-table-wrap">
+
+    <table class="ss-a4-matrix">
+
+      <thead>
+        <tr>
+          <th scope="col">TRUST BOUNDARY</th>
+          <th scope="col">SECURITY OBJECTIVE</th>
+          <th scope="col">EXPECTED CONTROL</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <th scope="row">
+            External CTI → Intelligence Pipeline
+          </th>
+
+          <td>
+            Prevent malicious source content
+            from influencing trusted
+            processing instructions.
+          </td>
+
+          <td>
+            Source validation,
+            normalization and
+            untrusted-content isolation.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            Neo4j / Qdrant → LLM Context
+          </th>
+
+          <td>
+            Preserve the distinction
+            between retrieved evidence
+            and trusted application policies.
+          </td>
+
+          <td>
+            Retrieval validation,
+            context separation
+            and provenance tracking.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            LLM → Tools &amp; APIs
+          </th>
+
+          <td>
+            Prevent model-generated
+            instructions from bypassing
+            operational authorization.
+          </td>
+
+          <td>
+            Gateway mediation,
+            identity verification,
+            policy evaluation
+            and least privilege.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            AI Output → Detection Engineering
+          </th>
+
+          <td>
+            Prevent unsafe or unsupported
+            detection content from being
+            accepted for operational use.
+          </td>
+
+          <td>
+            Rule validation,
+            controlled publication,
+            testing and analyst approval.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- FIGURE 04-A / SECURITY WORKFLOW -->
+
+  <figure class="xp-overview-figure ss-a4-figure">
+
+    <div class="xp-figure-heading">
+
+      <div>
+
+        <span>
+          FIGURE 04-A / PROPOSED SECURITY WORKFLOW
+        </span>
+
+        <h3>
+          Secure AI Investigation &amp; Trust Boundaries
+        </h3>
+
+      </div>
+
+
+      <a
+        class="xp-figure-open"
+        href="../assets/img/projects/shadowscope-ai-security-workflow.png"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VIEW FULL SIZE ↗
+      </a>
+
+    </div>
+
+
+    <a
+      class="xp-figure-image-link"
+      href="../assets/img/projects/shadowscope-ai-security-workflow.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open ShadowScope AM secure AI investigation workflow"
+    >
+
+      <img
+        src="../assets/img/projects/shadowscope-ai-security-workflow.png"
+        alt="Proposed ShadowScope AI security workflow showing external CTI validation, AI investigation, Keycloak, OPA, OpenBao, independent policy decisions, human approval, audit, approved tools and detection artifact review"
+        loading="lazy"
+        decoding="async"
+      >
+
+    </a>
+
+
+    <figcaption>
+      Figure 04-A. Proposed security architecture
+      separating untrusted intelligence,
+      AI-assisted reasoning, independent
+      tool authorization and reviewed
+      detection artifacts. Policy decisions
+      are intended to enforce deny-by-default
+      behavior, approval requirements
+      and traceable execution.
+    </figcaption>
+
+  </figure>
+
+
+  <!-- EXECUTION BOUNDARY EXPLANATION -->
+
+  <div class="ss-a4-boundary-note">
+
+    <span>
+      ARCHITECTURAL REQUIREMENT
+    </span>
+
+    <h4>
+      Separate Intelligence Generation
+      from Operational Execution
+    </h4>
+
+    <p>
+      Draft investigation reports and detection
+      artifacts follow validation and analyst
+      review workflows. Requests to retrieve
+      protected data, modify configurations,
+      execute tools or deploy detections
+      follow independent authorization
+      and approval requirements.
+    </p>
+
+    <p>
+      Both workflows require appropriate
+      traceability, but content review
+      does not replace authorization
+      for actions affecting protected systems.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.3 / AI SECURITY GATEWAY
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      4.3 / POLICY ENFORCEMENT
+    </span>
+
+    <h3 class="xp-overview-heading">
+      AI Security Gateway &amp; Tool Authorization
+    </h3>
+
+    <p>
+      A dedicated AI Security Gateway is proposed
+      to mediate interactions between
+      AI-assisted investigation workflows
+      and protected APIs or security tools.
+    </p>
+
+    <p>
+      The gateway evaluates the requesting
+      identity, permitted action,
+      target resource, execution context
+      and applicable approval requirements.
+      Authorization is independent of
+      the LLM-generated reasoning or recommendation.
+    </p>
+
+  </div>
+
+
+  <!-- SECURITY COMPONENTS -->
+
+  <div class="ss-a4-components">
+
+    <article class="ss-a4-component">
+
+      <span>01 / IDENTITY</span>
+
+      <h4>Keycloak</h4>
+
+      <p>
+        Authenticate users and services,
+        manage identities and support
+        role-based access decisions.
+      </p>
+
+      <small>IAM / RBAC</small>
+
+    </article>
+
+
+    <article class="ss-a4-component">
+
+      <span>02 / AUTHORIZATION</span>
+
+      <h4>Open Policy Agent</h4>
+
+      <p>
+        Evaluate tool permissions,
+        target resources, request context
+        and security policies independently
+        of model-generated output.
+      </p>
+
+      <small>OPA / POLICY DECISION</small>
+
+    </article>
+
+
+    <article class="ss-a4-component">
+
+      <span>03 / SECRET PROTECTION</span>
+
+      <h4>OpenBao</h4>
+
+      <p>
+        Protect service credentials
+        and API secrets, with access
+        limited to approved identities
+        and execution workflows.
+      </p>
+
+      <small>SECRETS MANAGEMENT</small>
+
+    </article>
+
+
+    <article class="ss-a4-component">
+
+      <span>04 / TOOL EXECUTION</span>
+
+      <h4>Tool Security Gateway</h4>
+
+      <p>
+        Intercept AI-initiated requests,
+        enforce allowed operations
+        and prevent unauthorized access
+        to protected endpoints.
+      </p>
+
+      <small>EXECUTION CONTROL</small>
+
+    </article>
+
+
+    <article class="ss-a4-component">
+
+      <span>05 / HUMAN OVERSIGHT</span>
+
+      <h4>Human Approval</h4>
+
+      <p>
+        Require explicit review
+        for sensitive actions,
+        significant configuration changes
+        and detection deployment.
+      </p>
+
+      <small>HUMAN-IN-THE-LOOP</small>
+
+    </article>
+
+
+    <article class="ss-a4-component">
+
+      <span>06 / ACCOUNTABILITY</span>
+
+      <h4>Security Audit Layer</h4>
+
+      <p>
+        Record requests, identities,
+        policy decisions, approval outcomes
+        and tool execution results
+        for security review.
+      </p>
+
+      <small>AUDIT / TRACEABILITY</small>
+
+    </article>
+
+  </div>
+
+
+  <!-- CONTROLLED EXECUTION -->
+
+  <div class="ss-a4-execution">
+
+    <div class="ss-a4-execution-heading">
+
+      <span>
+        TARGET ENFORCEMENT MODEL
+      </span>
+
+      <h4>
+        Policy-Controlled Tool Execution
+      </h4>
+
+      <p>
+        Every sensitive request must cross
+        the same authorization boundary,
+        regardless of which AI workflow
+        generated the recommendation.
+      </p>
+
+    </div>
+
+
+    <div class="ss-a4-execution-steps">
+
+      <div>
+        <span>01</span>
+        <strong>Tool Request</strong>
+        <small>Agent proposes an operation</small>
+      </div>
+
+      <div>
+        <span>02</span>
+        <strong>Identity Check</strong>
+        <small>Authenticate the requester</small>
+      </div>
+
+      <div>
+        <span>03</span>
+        <strong>Policy Evaluation</strong>
+        <small>Verify action and resource</small>
+      </div>
+
+      <div>
+        <span>04</span>
+        <strong>Approval Check</strong>
+        <small>Require human review if necessary</small>
+      </div>
+
+      <div>
+        <span>05</span>
+        <strong>Controlled Execution</strong>
+        <small>Permit approved tool operations only</small>
+      </div>
+
+      <div>
+        <span>06</span>
+        <strong>Audit Record</strong>
+        <small>Capture decision and outcome</small>
+      </div>
+
+    </div>
+
+
+    <div class="ss-a4-decisions">
+
+      <div class="ss-a4-decision ss-a4-decision--allow">
+
+        <span>ALLOW</span>
+
+        <strong>Authorized Request</strong>
+
+        <p>
+          Execute only the explicitly
+          permitted operation within
+          the approved scope.
+        </p>
+
+      </div>
+
+
+      <div class="ss-a4-decision ss-a4-decision--review">
+
+        <span>APPROVAL REQUIRED</span>
+
+        <strong>Pending Human Review</strong>
+
+        <p>
+          Do not execute until the
+          required approval is valid
+          and the request is rechecked.
+        </p>
+
+      </div>
+
+
+      <div class="ss-a4-decision ss-a4-decision--deny">
+
+        <span>DENY</span>
+
+        <strong>Blocked Operation</strong>
+
+        <p>
+          Reject unauthorized requests,
+          prevent execution and record
+          the security decision.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.4 / AI THREATS & DEFENSIVE CONTROLS
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      4.4 / SECURITY THREATS
+    </span>
+
+    <h3 class="xp-overview-heading">
+      AI Threats &amp; Defensive Controls
+    </h3>
+
+    <p>
+      The proposed security model addresses
+      attack paths introduced by untrusted
+      CTI content, retrieved context,
+      AI-generated tool requests
+      and detection engineering outputs.
+    </p>
+
+    <p>
+      These scenarios establish the
+      security requirements for the
+      dedicated threat modeling and
+      validation work described
+      in Chapter 05.
+    </p>
+
+  </div>
+
+
+  <!-- THREAT CONTROL MATRIX -->
+
+  <div class="ss-a4-table-wrap">
+
+    <table class="ss-a4-matrix">
+
+      <thead>
+        <tr>
+          <th scope="col">THREAT SCENARIO</th>
+          <th scope="col">PROPOSED DEFENSIVE CONTROL</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <th scope="row">
+            Indirect Prompt Injection
+          </th>
+          <td>
+            Isolate instructions embedded
+            within untrusted CTI reports
+            and preserve tool authorization boundaries.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            RAG Context Poisoning
+          </th>
+          <td>
+            Validate retrieved content,
+            maintain provenance and
+            prevent contextual data
+            from overriding trusted instructions.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            Unauthorized Tool Use
+          </th>
+          <td>
+            Apply independent policy evaluation,
+            resource restrictions
+            and least-privilege permissions.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            Privilege Escalation
+          </th>
+          <td>
+            Bind permissions to verified
+            identities and restrict
+            unauthorized role or scope changes.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            Sensitive Data Disclosure
+          </th>
+          <td>
+            Protect credentials,
+            restrict access to sensitive
+            intelligence and validate
+            outbound content.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            Unsafe Detection Generation
+          </th>
+          <td>
+            Validate generated artifacts,
+            verify intended behavior
+            and require analyst review
+            before deployment.
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row">
+            Unauthorized Workflow Modification
+          </th>
+          <td>
+            Protect approved configurations,
+            system prompts, policies
+            and execution workflows
+            against unauthorized changes.
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- DEFENSE-IN-DEPTH NOTE -->
+
+  <div class="ss-a4-boundary-note">
+
+    <span>
+      DEFENSE-IN-DEPTH REQUIREMENT
+    </span>
+
+    <h4>
+      Prompt Protection Is Not Authorization
+    </h4>
+
+    <p>
+      Input filtering and prompt-injection
+      detection can reduce exposure
+      to malicious instructions,
+      but they cannot replace
+      authorization controls.
+    </p>
+
+    <p>
+      The execution gateway must evaluate
+      each sensitive request independently,
+      even when malicious content was not
+      detected earlier in the workflow.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.5 / CONTROLLED DETECTION ENGINEERING
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      4.5 / DETECTION ENGINEERING SECURITY
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Controlled Detection Engineering
+    </h3>
+
+    <p>
+      ShadowScope AM prepares detection
+      content for Sigma, Splunk,
+      Wazuh and Suricata from
+      available CTI and investigation context.
+    </p>
+
+    <p>
+      The proposed security extension
+      introduces a controlled lifecycle
+      between generated detection artifacts
+      and their operational use.
+      Syntactically valid output does not
+      establish detection correctness,
+      operational safety or effectiveness.
+    </p>
+
+  </div>
+
+
+  <!-- DETECTION LIFECYCLE -->
+
+  <div class="ss-a4-detection">
+
+    <div class="ss-a4-detection-header">
+
+      <span>
+        DETECTION CONTENT / TARGET VALIDATION PIPELINE
+      </span>
+
+      <h4>
+        From AI-Generated Content
+        to Reviewed Detection Artifacts
+      </h4>
+
+    </div>
+
+
+    <div class="ss-a4-detection-grid">
+
+      <div>
+        <span>01</span>
+        <strong>Draft Generation</strong>
+        <p>Generate platform-specific content</p>
+      </div>
+
+      <div>
+        <span>02</span>
+        <strong>Format Validation</strong>
+        <p>Check syntax and schema constraints</p>
+      </div>
+
+      <div>
+        <span>03</span>
+        <strong>Security Review</strong>
+        <p>Assess logic, scope and unsafe behavior</p>
+      </div>
+
+      <div>
+        <span>04</span>
+        <strong>Detection Testing</strong>
+        <p>Evaluate matches and false positives</p>
+      </div>
+
+      <div>
+        <span>05</span>
+        <strong>Analyst Approval</strong>
+        <p>Review evidence and intended use</p>
+      </div>
+
+      <div>
+        <span>06</span>
+        <strong>Controlled Publication</strong>
+        <p>Authorize distribution or deployment</p>
+      </div>
+
+    </div>
+
+
+    <div class="ss-a4-detection-targets">
+
+      <span>SIGMA</span>
+      <span>SPLUNK</span>
+      <span>WAZUH</span>
+      <span>SURICATA</span>
+
+    </div>
+
+  </div>
+
+
+  <!-- DETECTION AUTHORIZATION -->
+
+  <div class="ss-a4-engineering-note">
+
+    <span>
+      DETECTION DEPLOYMENT BOUNDARY
+    </span>
+
+    <p>
+      Drafting a rule and deploying a rule
+      are separate operations.
+      Publication or deployment that affects
+      protected systems requires explicit
+      authorization in addition to
+      technical validation and analyst approval.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       4.6 / SECURITY VALIDATION STRATEGY
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      4.6 / SECURITY VERIFICATION
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Security Validation Strategy
+    </h3>
+
+    <p>
+      The proposed controls require
+      reproducible laboratory tests
+      covering hostile CTI inputs,
+      compromised retrieval context,
+      unauthorized tool calls,
+      restricted secret access
+      and unsafe detection artifacts.
+    </p>
+
+    <p>
+      Validation will focus on policy
+      independence, enforcement behavior,
+      prevention of unauthorized execution
+      and correlation between requests,
+      decisions and audit records.
+    </p>
+
+  </div>
+
+
+  <!-- PROPOSED VALIDATION SCENARIOS -->
+
+  <div class="ss-a4-validation-grid">
+
+    <article>
+
+      <span>SEC-01 / INPUT SECURITY</span>
+
+      <strong>
+        Malicious CTI Instructions
+      </strong>
+
+      <p>
+        Verify that external content
+        cannot override application
+        instructions or grant privileges.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>SEC-02 / RETRIEVAL SECURITY</span>
+
+      <strong>
+        Poisoned RAG Context
+      </strong>
+
+      <p>
+        Verify that retrieved documents
+        cannot bypass trusted policy
+        or execution boundaries.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>SEC-03 / TOOL AUTHORIZATION</span>
+
+      <strong>
+        Unauthorized API Requests
+      </strong>
+
+      <p>
+        Verify deny-by-default behavior
+        for operations outside
+        an identity's permitted scope.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>SEC-04 / SECRETS PROTECTION</span>
+
+      <strong>
+        Restricted Credentials
+      </strong>
+
+      <p>
+        Verify that prohibited requests
+        cannot retrieve protected
+        credentials or service tokens.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>SEC-05 / HUMAN OVERSIGHT</span>
+
+      <strong>
+        Unauthorized Deployment
+      </strong>
+
+      <p>
+        Verify that sensitive changes
+        remain blocked without
+        valid approval and authorization.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>SEC-06 / TRACEABILITY</span>
+
+      <strong>
+        Policy Decision Audit
+      </strong>
+
+      <p>
+        Verify that requests,
+        approvals, denied operations
+        and execution outcomes
+        produce correlatable records.
+      </p>
+
+    </article>
+
+  </div>
+
+
+  <!-- VALIDATION EVIDENCE REQUIREMENTS -->
+
+  <div class="ss-a4-validation-evidence">
+
+    <span>
+      REQUIRED LABORATORY EVIDENCE
+    </span>
+
+    <p>
+      Each validation case should preserve
+      the test input, authenticated identity,
+      policy context, authorization decision,
+      execution result and associated audit events.
+      Reported outcomes must distinguish
+      observed test results from
+      expected security behavior.
+    </p>
+
+  </div>
+
+
+  <!-- ==========================================================
+       ENGINEERING VALUE
+  =========================================================== -->
+
+  <div class="xp-overview-block">
+
+    <span class="xp-overview-kicker">
+      ENGINEERING VALUE / SECURITY ARCHITECTURE
+    </span>
+
+    <h3 class="xp-overview-heading">
+      Engineering Value
+    </h3>
+
+    <p>
+      The proposed AI Security layer
+      extends ShadowScope AM toward
+      controlled, security-enforced
+      intelligence operations.
+    </p>
+
+    <p>
+      Its central architectural contribution
+      is the separation of untrusted intelligence,
+      model-generated reasoning and independently
+      authorized operational execution.
+    </p>
+
+  </div>
+
+
+  <!-- ENGINEERING VALUE CARDS -->
+
+  <div class="ss-a4-value-grid">
+
+    <article>
+
+      <span>01 / INTELLIGENCE SECURITY</span>
+
+      <h4>
+        Protected Evidence Boundaries
+      </h4>
+
+      <p>
+        Preserve separation between
+        untrusted CTI content,
+        retrieved context and
+        trusted application instructions.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>02 / EXECUTION SECURITY</span>
+
+      <h4>
+        Independent Authorization
+      </h4>
+
+      <p>
+        Constrain tool execution through
+        verified identities, explicit
+        permissions and policy decisions.
+      </p>
+
+    </article>
+
+
+    <article>
+
+      <span>03 / OPERATIONAL CONTROL</span>
+
+      <h4>
+        Reviewable &amp; Auditable Actions
+      </h4>
+
+      <p>
+        Establish human approval boundaries
+        and traceable decisions for
+        security-sensitive operations.
+      </p>
+
+    </article>
+
+  </div>
+
+
+  <!-- ENGINEERING CONCLUSION -->
+
+  <div class="xp-overview-conclusion">
+
+    <span>
+      SHADOWSCOPE AM / AI SECURITY PRINCIPLE
+    </span>
+
+    <p>
+      Untrusted Intelligence.
+      Restricted AI Authority.
+      Verified Execution.
+    </p>
+
+  </div>
+
+
+  <!-- NEXT CHAPTER -->
+
+  <a
+    class="ss-next-chapter"
+    href="#threat-modeling"
+  >
+
+    <span>
+      NEXT CHAPTER / 05
+    </span>
+
+    <strong>
+      AI Security Engineering
+      &amp; Threat Modeling
+    </strong>
+
+    <span aria-hidden="true">↗</span>
+
+  </a>
+
+</section>
+
+<!-- END CHAPTER 04 -->
+
+        
 
         <!-- ===================================================
              CHAPTER 05 — AI SECURITY ENGINEERING
