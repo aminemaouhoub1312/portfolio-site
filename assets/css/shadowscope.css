@@ -2308,3 +2308,1070 @@
    END — SHADOWSCOPE AM CHAPTER 03
 ============================================================ */
 
+
+
+/* ============================================================
+   SHADOWSCOPE AM — CHAPTER 04
+   SECURE AGENTIC AI & TRUST BOUNDARIES
+
+   Security by Design | Trust Boundaries | AI Gateway
+   Threat Controls | Detection Security | Validation
+============================================================ */
+
+/* ============================================================
+   01 / CHAPTER FOUNDATION
+============================================================ */
+
+.ss-a4 {
+  min-width: 0;
+}
+
+.ss-a4 .xp-overview-block {
+  margin: 44px 0 27px;
+}
+
+.ss-a4 .xp-overview-heading {
+  font-size: clamp(21px, 2.25vw, 29px);
+}
+
+.ss-a4 .xp-overview-block > p {
+  max-width: 960px;
+  line-height: 1.9;
+}
+
+/* ============================================================
+   02 / DEVELOPMENT STATUS
+============================================================ */
+
+.ss-a4-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 18px;
+
+  margin: 28px 0 40px;
+  padding: 21px 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent2);
+}
+
+.ss-a4-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  padding: 8px 11px;
+
+  color: var(--accent2);
+  background: var(--bg2);
+  border: 1px solid var(--stroke);
+
+  font: 500 9px/1.6 "DM Mono", monospace;
+  letter-spacing: .05em;
+}
+
+.ss-a4-status p {
+  flex: 1 1 350px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+
+  margin: 0;
+}
+
+/* ============================================================
+   03 / SECURITY FOUNDATIONS
+============================================================ */
+
+.ss-a4-foundations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 28px 0 28px;
+}
+
+.ss-a4-foundation {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 250px;
+  padding: 25px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.ss-a4-foundation:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.ss-a4-foundation > span {
+  color: var(--accent2);
+
+  font: 500 9px/1.7 "DM Mono", monospace;
+  letter-spacing: .05em;
+}
+
+.ss-a4-foundation h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+  line-height: 1.4;
+
+  margin: 23px 0 15px;
+}
+
+.ss-a4-foundation p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0 0 24px;
+}
+
+.ss-a4-foundation small {
+  display: block;
+  margin-top: auto;
+  padding-top: 17px;
+
+  border-top: 1px solid var(--stroke);
+
+  color: var(--accent2);
+  font: 500 9px/1.7 "DM Mono", monospace;
+}
+
+/* ============================================================
+   04 / SECURITY PRINCIPLE
+============================================================ */
+
+.ss-a4-principle {
+  margin: 28px 0 48px;
+  padding: 30px;
+
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent);
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0,
+      rgba(197, 250, 95, .055),
+      transparent 62%
+    ),
+    var(--panel);
+}
+
+.ss-a4-principle > span {
+  display: block;
+
+  color: var(--accent);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .06em;
+  margin-bottom: 17px;
+}
+
+.ss-a4-principle strong {
+  display: block;
+
+  color: var(--text);
+  font-family: Manrope, sans-serif;
+
+  font-size: clamp(20px, 2.4vw, 31px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.4;
+
+  margin-bottom: 17px;
+}
+
+.ss-a4-principle p {
+  max-width: 900px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* ============================================================
+   05 / SECURITY MATRICES
+============================================================ */
+
+.ss-a4-table-wrap {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+
+  margin: 28px 0 35px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.ss-a4-matrix {
+  width: 100%;
+  min-width: 720px;
+
+  border-collapse: collapse;
+  background: var(--panel);
+}
+
+.ss-a4-matrix th,
+.ss-a4-matrix td {
+  padding: 20px 21px;
+
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a4-matrix thead th {
+  color: var(--accent2);
+  background: var(--bg2);
+
+  font: 500 10px/1.7 "DM Mono", monospace;
+  letter-spacing: .045em;
+}
+
+.ss-a4-matrix tbody th {
+  color: var(--text);
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.65;
+
+  min-width: 165px;
+}
+
+.ss-a4-matrix td {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.ss-a4-matrix tbody tr:last-child th,
+.ss-a4-matrix tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ss-a4-matrix tbody tr {
+  transition: background .2s ease;
+}
+
+.ss-a4-matrix tbody tr:hover {
+  background: var(--bg2);
+}
+
+/* ============================================================
+   06 / SECURITY ARCHITECTURE FIGURE
+============================================================ */
+
+.ss-a4-figure {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 35px 0 35px;
+  overflow: hidden;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.ss-a4-figure .xp-figure-heading {
+  background: var(--panel);
+}
+
+.ss-a4-figure .xp-figure-image-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  padding: 22px;
+
+  background: #f4f7fc;
+  overflow: hidden;
+}
+
+.ss-a4-figure .xp-figure-image-link img {
+  display: block;
+
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 840px;
+
+  object-fit: contain;
+  object-position: center;
+
+  transition: transform .3s ease;
+}
+
+.ss-a4-figure .xp-figure-image-link:hover img {
+  transform: scale(1.012);
+}
+
+.ss-a4-figure figcaption {
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.9;
+
+  margin: 0;
+  padding: 18px 22px;
+
+  border-top: 1px solid var(--stroke);
+}
+
+/* ============================================================
+   07 / TRUST BOUNDARY EXPLANATIONS
+============================================================ */
+
+.ss-a4-boundary-note {
+  margin: 29px 0 48px;
+  padding: 28px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent2);
+}
+
+.ss-a4-boundary-note > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .06em;
+  margin-bottom: 17px;
+}
+
+.ss-a4-boundary-note h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+  line-height: 1.4;
+
+  margin: 0 0 18px;
+}
+
+.ss-a4-boundary-note p {
+  max-width: 950px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+
+  margin: 0 0 13px;
+}
+
+.ss-a4-boundary-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   08 / SECURITY COMPONENTS
+============================================================ */
+
+.ss-a4-components {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 28px 0 45px;
+}
+
+.ss-a4-component {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 235px;
+  padding: 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+
+  transition:
+    border-color .25s ease,
+    transform .25s ease;
+}
+
+.ss-a4-component:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.ss-a4-component > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 9px/1.7 "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 18px;
+}
+
+.ss-a4-component h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+
+  line-height: 1.4;
+  letter-spacing: -.035em;
+
+  margin: 0 0 14px;
+}
+
+.ss-a4-component p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+
+  margin: 0 0 24px;
+}
+
+.ss-a4-component small {
+  display: block;
+
+  margin-top: auto;
+  padding-top: 15px;
+
+  border-top: 1px solid var(--stroke);
+
+  color: var(--accent2);
+  font: 500 9px/1.7 "DM Mono", monospace;
+}
+
+/* ============================================================
+   09 / CONTROLLED EXECUTION PIPELINE
+============================================================ */
+
+.ss-a4-execution {
+  margin: 30px 0 47px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.ss-a4-execution-heading {
+  padding: 28px;
+
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a4-execution-heading > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 16px;
+}
+
+.ss-a4-execution-heading h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(20px, 2.1vw, 27px);
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+  line-height: 1.45;
+
+  margin: 0 0 15px;
+}
+
+.ss-a4-execution-heading p {
+  max-width: 850px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.ss-a4-execution-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ss-a4-execution-steps > div {
+  min-width: 0;
+  padding: 25px;
+
+  border-bottom: 1px solid var(--stroke);
+  border-right: 1px solid var(--stroke);
+}
+
+.ss-a4-execution-steps > div:nth-child(3n) {
+  border-right: none;
+}
+
+.ss-a4-execution-steps > div:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.ss-a4-execution-steps span {
+  display: block;
+
+  color: var(--accent);
+  font: 500 12px "DM Mono", monospace;
+
+  margin-bottom: 18px;
+}
+
+.ss-a4-execution-steps strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+
+  margin-bottom: 11px;
+}
+
+.ss-a4-execution-steps small {
+  display: block;
+
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   10 / POLICY DECISION STATES
+============================================================ */
+
+.ss-a4-decisions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+  padding: 22px;
+
+  border-top: 1px solid var(--stroke);
+  background: var(--bg2);
+}
+
+.ss-a4-decision {
+  min-width: 0;
+  padding: 20px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+}
+
+.ss-a4-decision > span {
+  display: block;
+
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .06em;
+
+  margin-bottom: 18px;
+}
+
+.ss-a4-decision strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+}
+
+.ss-a4-decision p {
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.ss-a4-decision--allow {
+  border-top-color: #72c998;
+}
+
+.ss-a4-decision--allow > span {
+  color: #72c998;
+}
+
+.ss-a4-decision--review {
+  border-top-color: #e4bf71;
+}
+
+.ss-a4-decision--review > span {
+  color: #e4bf71;
+}
+
+.ss-a4-decision--deny {
+  border-top-color: #df7777;
+}
+
+.ss-a4-decision--deny > span {
+  color: #df7777;
+}
+
+/* ============================================================
+   11 / DETECTION ENGINEERING
+============================================================ */
+
+.ss-a4-detection {
+  margin: 29px 0 29px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+}
+
+.ss-a4-detection-header {
+  padding: 27px;
+
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a4-detection-header > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 17px;
+}
+
+.ss-a4-detection-header h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+  line-height: 1.4;
+
+  margin: 0;
+}
+
+.ss-a4-detection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ss-a4-detection-grid > div {
+  min-width: 0;
+  padding: 24px;
+
+  border-right: 1px solid var(--stroke);
+  border-bottom: 1px solid var(--stroke);
+}
+
+.ss-a4-detection-grid > div:nth-child(3n) {
+  border-right: none;
+}
+
+.ss-a4-detection-grid > div:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.ss-a4-detection-grid span {
+  display: block;
+
+  color: var(--accent);
+  font: 500 11px "DM Mono", monospace;
+
+  margin-bottom: 17px;
+}
+
+.ss-a4-detection-grid strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 800;
+
+  line-height: 1.5;
+  margin-bottom: 11px;
+}
+
+.ss-a4-detection-grid p {
+  color: var(--muted);
+
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.ss-a4-detection-targets {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+  padding: 20px;
+
+  border-top: 1px solid var(--stroke);
+  background: var(--bg2);
+}
+
+.ss-a4-detection-targets span {
+  display: grid;
+  place-items: center;
+
+  min-height: 50px;
+
+  color: var(--text);
+  font: 500 11px "DM Mono", monospace;
+
+  border: 1px solid var(--stroke);
+  background: var(--panel);
+}
+
+/* ============================================================
+   12 / ENGINEERING NOTES
+============================================================ */
+
+.ss-a4-engineering-note {
+  margin: 25px 0 48px;
+  padding: 24px 27px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent2);
+}
+
+.ss-a4-engineering-note span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 13px;
+}
+
+.ss-a4-engineering-note p {
+  max-width: 950px;
+
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+
+  margin: 0;
+}
+
+/* ============================================================
+   13 / VALIDATION SCENARIOS
+============================================================ */
+
+.ss-a4-validation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 28px 0 24px;
+}
+
+.ss-a4-validation-grid article {
+  min-width: 0;
+  padding: 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+}
+
+.ss-a4-validation-grid article > span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 9px/1.7 "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 18px;
+}
+
+.ss-a4-validation-grid strong {
+  display: block;
+
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 800;
+
+  line-height: 1.5;
+  margin-bottom: 13px;
+}
+
+.ss-a4-validation-grid p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.ss-a4-validation-evidence {
+  margin: 26px 0 50px;
+  padding: 26px;
+
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--accent);
+
+  background: var(--panel);
+}
+
+.ss-a4-validation-evidence > span {
+  display: block;
+
+  color: var(--accent);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 15px;
+}
+
+.ss-a4-validation-evidence p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 0;
+}
+
+/* ============================================================
+   14 / ENGINEERING VALUE
+============================================================ */
+
+.ss-a4-value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 28px 0 45px;
+}
+
+.ss-a4-value-grid article {
+  min-width: 0;
+  padding: 25px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent);
+}
+
+.ss-a4-value-grid span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 9px/1.7 "DM Mono", monospace;
+
+  letter-spacing: .05em;
+  margin-bottom: 20px;
+}
+
+.ss-a4-value-grid h4 {
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: -.04em;
+  line-height: 1.45;
+  margin: 0 0 14px;
+}
+
+.ss-a4-value-grid p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+/* ============================================================
+   15 / LAPTOP & TABLET
+============================================================ */
+
+@media (max-width: 1100px) {
+
+  .ss-a4-foundations,
+  .ss-a4-components,
+  .ss-a4-value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-a4-execution-steps,
+  .ss-a4-detection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-a4-execution-steps > div,
+  .ss-a4-detection-grid > div {
+    border-right: 1px solid var(--stroke);
+    border-bottom: 1px solid var(--stroke);
+  }
+
+  .ss-a4-execution-steps > div:nth-child(2n),
+  .ss-a4-detection-grid > div:nth-child(2n) {
+    border-right: none;
+  }
+
+  .ss-a4-execution-steps > div:nth-last-child(-n+2),
+  .ss-a4-detection-grid > div:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+}
+
+/* ============================================================
+   16 / MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+  .ss-a4 .xp-overview-block {
+    margin: 33px 0 24px;
+  }
+
+  .ss-a4-foundations,
+  .ss-a4-components,
+  .ss-a4-decisions,
+  .ss-a4-validation-grid,
+  .ss-a4-value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ss-a4-status,
+  .ss-a4-principle,
+  .ss-a4-boundary-note,
+  .ss-a4-engineering-note,
+  .ss-a4-validation-evidence {
+    padding: 21px;
+  }
+
+  .ss-a4-foundation,
+  .ss-a4-component {
+    min-height: auto;
+    padding: 21px;
+  }
+
+  .ss-a4-figure .xp-figure-image-link {
+    padding: 9px;
+  }
+
+  .ss-a4-figure .xp-figure-image-link img {
+    max-height: 580px;
+  }
+
+  .ss-a4-figure figcaption {
+    padding: 13px;
+    font-size: 10px;
+  }
+
+  .ss-a4-execution-heading,
+  .ss-a4-detection-header {
+    padding: 21px;
+  }
+
+  .ss-a4-execution-steps,
+  .ss-a4-detection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ss-a4-execution-steps > div,
+  .ss-a4-detection-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--stroke) !important;
+
+    padding: 20px;
+  }
+
+  .ss-a4-execution-steps > div:last-child,
+  .ss-a4-detection-grid > div:last-child {
+    border-bottom: none !important;
+  }
+
+  .ss-a4-decisions {
+    padding: 13px;
+  }
+
+  .ss-a4-detection-targets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 13px;
+  }
+
+  .ss-a4-validation-grid article,
+  .ss-a4-value-grid article {
+    padding: 21px;
+  }
+
+}
+
+/* ============================================================
+   17 / ACCESSIBILITY & REDUCED MOTION
+============================================================ */
+
+.ss-a4 a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.ss-a4-table-wrap:focus-within {
+  outline-color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ss-a4-foundation,
+  .ss-a4-component,
+  .ss-a4-matrix tbody tr,
+  .ss-a4-figure .xp-figure-image-link img {
+    transition: none;
+  }
+
+  .ss-a4-foundation:hover,
+  .ss-a4-component:hover,
+  .ss-a4-figure .xp-figure-image-link:hover img {
+    transform: none;
+  }
+
+}
+
+/* ============================================================
+   END — SHADOWSCOPE AM CHAPTER 04
+============================================================ */
+
+
