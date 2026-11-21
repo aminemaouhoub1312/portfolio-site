@@ -4611,3 +4611,79 @@
 ============================================================ */
 
 
+
+/* ============================================================
+   FINAL QUALITY PATCH / RESPONSIVENESS & MEDIA FALLBACKS
+============================================================ */
+
+.xp-page .xp-document,
+.xp-page .xp-chapter,
+.xp-page .xp-d6-demo,
+.xp-page .xp-val-case {
+  min-width: 0;
+}
+
+.xp-page .xp-val-gallery img,
+.xp-page .xp-d6-preview img,
+.xp-page .xp-overview-figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+.xp-page .xp-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.xp-val-case {
+  scroll-margin-top: 120px;
+}
+
+.xp-media-unavailable {
+  cursor: default !important;
+  text-decoration: none !important;
+}
+
+.xp-media-unavailable:hover {
+  background: var(--panel) !important;
+}
+
+.xp-page .xp-media-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  padding: 22px;
+  overflow-wrap: anywhere;
+  text-align: center;
+  background: var(--panel);
+  border: 1px dashed var(--stroke);
+  color: var(--muted);
+  font: 500 11px/1.8 "DM Mono", monospace;
+}
+
+.xp-media-link-disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .xp-val-case { scroll-margin-top: 95px; }
+  .xp-page .xp-media-fallback {
+    min-height: 90px;
+    padding: 15px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .xp-page .xp-reveal,
+  .xp-page .xp-js .xp-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
