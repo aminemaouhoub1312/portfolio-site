@@ -1,1 +1,701 @@
 
+/* ============================================================
+   SHADOWSCOPE AM — PROJECT DOCUMENTATION
+   Cyber Threat Intelligence / AI Security Engineering
+
+   Shared design:
+   style.css + exavigil.css
+
+   Project-specific design:
+   shadowscope.css
+============================================================ */
+
+
+/* ============================================================
+   01 / PAGE FOUNDATION
+============================================================ */
+
+.ss-page {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: clip;
+}
+
+.ss-page .xp-document,
+.ss-page .xp-chapter {
+  min-width: 0;
+}
+
+.ss-page section[id] {
+  scroll-margin-top: 120px;
+}
+
+
+/* ============================================================
+   02 / NINE-CHAPTER NAVIGATION
+============================================================ */
+
+.ss-page .ss-nav {
+  gap: 0;
+}
+
+.ss-page .ss-nav .nav-link {
+  font-size: 10px;
+  padding-inline: 9px;
+  white-space: nowrap;
+}
+
+.ss-page .xp-rail-link {
+  line-height: 1.6;
+}
+
+.ss-page .xp-rail-link.is-current {
+  border-left-color: var(--accent);
+  background: rgba(197, 250, 95, .045);
+}
+
+.ss-page .xp-rail-link.is-current span {
+  color: var(--accent);
+}
+
+
+/* ============================================================
+   03 / PROJECT HERO
+============================================================ */
+
+.ss-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.ss-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 83% 46%,
+      rgba(197, 250, 95, .055),
+      transparent 57%
+    );
+}
+
+.ss-hero .xp-hero-grid,
+.ss-hero .xp-hero-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.ss-page .ss-hero-title {
+  font-size: clamp(44px, 5.4vw, 88px);
+  letter-spacing: -.075em;
+  line-height: 1.07;
+  overflow-wrap: anywhere;
+}
+
+.ss-hero-title span {
+  color: var(--accent);
+}
+
+.ss-hero .xp-hero-description {
+  max-width: 620px;
+}
+
+.ss-hero .xp-hero-tags {
+  margin-top: 10px;
+}
+
+
+/* ============================================================
+   04 / CONCEPTUAL CTI VISUAL
+============================================================ */
+
+.ss-visual {
+  position: relative;
+  min-width: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 55%,
+      rgba(197, 250, 95, .075),
+      transparent 65%
+    ),
+    var(--panel);
+
+  border-top: 2px solid var(--accent);
+}
+
+.ss-visual .xp-domain {
+  min-height: 110px;
+  padding: 12px 7px;
+}
+
+.ss-visual .xp-domain strong {
+  font-size: clamp(15px, 1.7vw, 26px);
+  letter-spacing: -.04em;
+}
+
+.ss-visual .xp-domain small {
+  font-size: 8px;
+}
+
+.ss-control-plane {
+  min-height: 170px;
+  overflow: hidden;
+}
+
+.ss-control-plane strong {
+  font-size: clamp(21px, 2.8vw, 39px);
+  overflow-wrap: anywhere;
+}
+
+.ss-control-plane .xp-control-label {
+  color: var(--accent2);
+}
+
+.ss-visual .xp-visual-footer {
+  gap: 9px;
+}
+
+
+/* ============================================================
+   05 / EXECUTIVE OVERVIEW
+============================================================ */
+
+.ss-overview .xp-overview-block {
+  margin: 43px 0;
+}
+
+.ss-overview .xp-overview-heading {
+  font-size: clamp(21px, 2.25vw, 29px);
+}
+
+.ss-overview .xp-overview-conclusion {
+  margin-top: 48px;
+}
+
+.ss-overview .xp-principle {
+  margin-top: 28px;
+}
+
+.ss-overview .xp-principle strong {
+  max-width: 820px;
+}
+
+
+/* ============================================================
+   06 / GLOBAL ARCHITECTURE FIGURE
+============================================================ */
+
+.ss-figure {
+  width: 100%;
+  max-width: 100%;
+  margin: 40px 0 50px;
+}
+
+.ss-figure .xp-figure-heading {
+  background: var(--panel);
+}
+
+.ss-figure .xp-figure-image-link {
+  display: block;
+
+  width: 100%;
+  padding: 17px;
+
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.ss-figure .xp-figure-image-link img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  height: auto;
+  object-fit: contain;
+
+  background: #ffffff;
+}
+
+.ss-figure figcaption {
+  font-size: 10px;
+  line-height: 1.85;
+}
+
+
+/* ============================================================
+   07 / INTELLIGENCE LIFECYCLE
+============================================================ */
+
+.ss-lifecycle {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 9px;
+  margin: 27px 0 52px;
+}
+
+.ss-lifecycle > div {
+  min-width: 0;
+  min-height: 153px;
+
+  padding: 19px 15px;
+
+  background: var(--panel);
+
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+.ss-lifecycle > div:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.ss-lifecycle span {
+  display: block;
+
+  color: var(--accent2);
+  font: 500 9px/1.7 "DM Mono", monospace;
+
+  letter-spacing: .04em;
+  margin-bottom: 16px;
+}
+
+.ss-lifecycle strong {
+  display: block;
+
+  color: var(--text);
+  font-family: Manrope, sans-serif;
+
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+}
+
+.ss-lifecycle small {
+  display: block;
+
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   08 / ARCHITECTURE SCOPE
+============================================================ */
+
+.ss-scope-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+  margin: 27px 0 49px;
+}
+
+.ss-scope-card {
+  min-width: 0;
+  min-height: 235px;
+
+  padding: 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  border-top: 2px solid var(--accent2);
+}
+
+.ss-scope-card:first-child {
+  border-top-color: var(--accent);
+}
+
+.ss-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 7px 9px;
+
+  font: 500 9px/1.5 "DM Mono", monospace;
+  letter-spacing: .035em;
+
+  border: 1px solid var(--stroke);
+}
+
+.ss-status-core {
+  color: var(--accent);
+  background: rgba(197, 250, 95, .05);
+}
+
+.ss-status-planned {
+  color: var(--accent2);
+  background: var(--bg2);
+}
+
+.ss-scope-card h4 {
+  color: var(--text);
+  font-family: Manrope, sans-serif;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  letter-spacing: -.035em;
+  line-height: 1.4;
+
+  margin: 22px 0 13px;
+}
+
+.ss-scope-card p {
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+
+/* ============================================================
+   09 / NEXT CHAPTER LINK
+============================================================ */
+
+.ss-next-chapter {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px 20px;
+
+  align-items: center;
+
+  padding: 27px 30px;
+  margin-top: 37px;
+
+  text-decoration: none;
+
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+
+  transition:
+    border-color .25s ease,
+    background .25s ease;
+}
+
+.ss-next-chapter:hover {
+  background: var(--bg2);
+  border-color: var(--accent);
+}
+
+.ss-next-chapter > span:first-child {
+  grid-column: 1 / -1;
+
+  color: var(--accent2);
+  font: 500 10px "DM Mono", monospace;
+
+  letter-spacing: .08em;
+}
+
+.ss-next-chapter strong {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(16px, 2vw, 23px);
+
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.4;
+
+  color: var(--text);
+}
+
+.ss-next-chapter > span:last-child {
+  color: var(--accent);
+  font-size: 24px;
+}
+
+
+/* ============================================================
+   10 / UPCOMING DOCUMENTATION CHAPTERS
+============================================================ */
+
+.ss-upcoming {
+  min-height: 420px;
+}
+
+.ss-upcoming .xp-chapter-lead {
+  max-width: 840px;
+}
+
+.ss-chapter-placeholder {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 32px;
+  padding: 35px;
+
+  border: 1px solid var(--stroke);
+  border-left: 2px solid var(--accent2);
+
+  background:
+    radial-gradient(
+      ellipse at 95% 10%,
+      rgba(197, 250, 95, .035),
+      transparent 65%
+    ),
+    var(--panel);
+}
+
+.ss-chapter-placeholder > span {
+  display: block;
+
+  color: var(--accent2);
+
+  font: 500 10px/1.7 "DM Mono", monospace;
+  letter-spacing: .08em;
+
+  margin-bottom: 21px;
+}
+
+.ss-chapter-placeholder strong {
+  display: block;
+
+  color: var(--text);
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(18px, 2vw, 25px);
+
+  font-weight: 800;
+  letter-spacing: -.04em;
+
+  margin-bottom: 15px;
+}
+
+.ss-chapter-placeholder p {
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.85;
+
+  max-width: 780px;
+  margin: 0;
+}
+
+
+/* ============================================================
+   11 / FINAL NAVIGATION
+============================================================ */
+
+.ss-final-navigation {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin-top: 38px;
+}
+
+
+/* ============================================================
+   12 / MISSING IMAGE FALLBACK
+============================================================ */
+
+.ss-page .ss-image-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 180px;
+  padding: 24px;
+
+  color: var(--muted);
+  background: var(--bg2);
+
+  border: 1px dashed var(--stroke);
+
+  text-align: center;
+  overflow-wrap: anywhere;
+
+  font: 500 11px/1.9 "DM Mono", monospace;
+}
+
+.ss-page .ss-disabled-image-link {
+  pointer-events: none;
+  opacity: .5;
+}
+
+
+/* ============================================================
+   13 / RESPONSIVE — LAPTOP
+============================================================ */
+
+@media (max-width: 1250px) {
+
+  .ss-page .ss-nav .nav-link {
+    font-size: 9px;
+    padding-inline: 6px;
+  }
+
+  .ss-page .ss-hero-title {
+    font-size: clamp(44px, 6vw, 75px);
+  }
+
+  .ss-lifecycle {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ss-scope-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ============================================================
+   14 / RESPONSIVE — TABLET
+============================================================ */
+
+@media (max-width: 1060px) {
+
+  .ss-lifecycle {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ss-scope-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ss-scope-card {
+    min-height: auto;
+  }
+
+  .ss-page .ss-nav .nav-link {
+    font-size: 11px;
+    padding: 12px;
+  }
+
+}
+
+
+/* ============================================================
+   15 / RESPONSIVE — MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+  .ss-page section[id] {
+    scroll-margin-top: 95px;
+  }
+
+  .ss-page .ss-hero-title {
+    font-size: clamp(40px, 10vw, 58px);
+    overflow-wrap: anywhere;
+  }
+
+  .ss-hero .xp-hero-subtitle {
+    font-size: 21px;
+  }
+
+  .ss-visual {
+    padding: 17px;
+  }
+
+  .ss-visual .xp-domain-row {
+    gap: 6px;
+    margin-top: 27px;
+  }
+
+  .ss-visual .xp-domain {
+    min-height: 92px;
+    padding: 10px 4px;
+  }
+
+  .ss-visual .xp-domain strong {
+    font-size: 15px;
+  }
+
+  .ss-visual .xp-domain small {
+    font-size: 8px;
+  }
+
+  .ss-control-plane {
+    min-height: 140px;
+  }
+
+  .ss-control-plane strong {
+    font-size: clamp(19px, 5.5vw, 29px);
+  }
+
+  .ss-overview .xp-overview-block {
+    margin: 32px 0;
+  }
+
+  .ss-figure .xp-figure-image-link {
+    padding: 8px;
+  }
+
+  .ss-lifecycle {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .ss-lifecycle > div {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .ss-scope-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ss-scope-card {
+    padding: 20px;
+  }
+
+  .ss-next-chapter {
+    padding: 22px 19px;
+  }
+
+  .ss-chapter-placeholder {
+    padding: 24px 19px;
+  }
+
+  .ss-upcoming {
+    min-height: auto;
+  }
+
+  .ss-final-navigation {
+    flex-direction: column;
+  }
+
+  .ss-final-navigation .xp-button {
+    justify-content: space-between;
+  }
+
+}
+
+
+/* ============================================================
+   16 / REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ss-lifecycle > div,
+  .ss-next-chapter {
+    transition: none;
+  }
+
+  .ss-lifecycle > div:hover {
+    transform: none;
+  }
+
+}
+
+/* ============================================================
+   END — SHADOWSCOPE AM STYLESHEET
+============================================================ */
+
