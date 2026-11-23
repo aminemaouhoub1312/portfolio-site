@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="ShadowScope AM — Cyber Threat Intelligence, Knowledge Graphs, Semantic Search, AI Investigation and AI Security Engineering."
+    content="ShadowScope AM: engineering case study covering CTI collection, OpenSearch, Neo4j, Qdrant, AI investigation, detection engineering and security validation design."
   >
 
   <title>
@@ -29,10 +29,10 @@
   <link rel="stylesheet" href="../assets/css/exavigil.css?v=10">
 
   <!-- ShadowScope-specific design -->
-  <link rel="stylesheet" href="../assets/css/shadowscope.css?v=8">
+  <link rel="stylesheet" href="../assets/css/shadowscope.css?v=12">
 
   <script defer src="../assets/js/main.js"></script>
-  <script defer src="../assets/js/shadowscope.js?v=8"></script>
+  <script defer src="../assets/js/shadowscope.js?v=12"></script>
 </head>
 
 
@@ -8501,6 +8501,7 @@
      SHADOWSCOPE AM — ENGINEERING PORTFOLIO
      Figures D01–D08: existing views / documented previews
      Scenarios AS01–AS08: planned control evaluations
+     E01–E05: advanced UI previews; metrics require verification
 ============================================================ -->
 <section class="xp-chapter xp-reveal ss-a8" id="demonstrations" aria-labelledby="ss-ch08-title">
   <div class="xp-chapter-label"><span>08</span> TECHNICAL DEMONSTRATIONS / ENGINEERING EVIDENCE</div>
@@ -8509,7 +8510,7 @@
 
   <div class="ss-a8-evidence-policy">
     <div><span>DOCUMENTATION STANDARD / OBSERVED VS PROPOSED</span><h3>Show the workflow. Keep the evidence boundaries explicit.</h3></div>
-    <p>The first four demonstration groups present existing system views or documented previews. The security evaluation gallery presents <strong>scenario designs and expected controls</strong> that require reproducible execution evidence. A screenshot alone does not prove collector correctness, policy enforcement, model accuracy or detection effectiveness.</p>
+    <p>The first four demonstration groups present existing system views or documented previews. The security evaluation gallery defines <strong>scenario designs and expected controls</strong>. The advanced interfaces E01–E05 are <strong>UI prototypes</strong> whose displayed metrics and decisions must not be interpreted as independently measured results. A screenshot alone does not prove collector correctness, policy enforcement, model accuracy or detection effectiveness.</p>
   </div>
 
   <nav class="ss-a8-jump" aria-label="Demonstration groups">
@@ -8518,7 +8519,8 @@
     <a href="#ss-a8-knowledge">03 / Knowledge</a>
     <a href="#ss-a8-investigation">04 / Investigation</a>
     <a href="#ss-a8-security">05 / Security tests</a>
-    <a href="#ss-a8-integrity">06 / Evidence integrity</a>
+    <a href="#ss-a8-advanced">06 / Advanced interfaces</a>
+    <a href="#ss-a8-integrity">07 / Evidence integrity</a>
   </nav>
 
   <div class="ss-a8-quickfacts" aria-label="Technical scope">
@@ -8526,6 +8528,7 @@
     <article><span>CONTEXT LAYERS</span><strong>03</strong><small>OpenSearch / Neo4j / Qdrant</small></article>
     <article><span>DETECTION OUTPUTS</span><strong>04</strong><small>Sigma / Splunk / Wazuh / Suricata</small></article>
     <article><span>SECURITY CASES</span><strong>08</strong><small>Defined / validation pending</small></article>
+    <article><span>UI PROTOTYPES</span><strong>05</strong><small>E01–E05 / not benchmark evidence</small></article>
   </div>
 
   <!-- 8.1 / ACQUISITION -->
@@ -8713,9 +8716,77 @@
     </div>
   </details>
 
-  <!-- 8.6 / TEST EVIDENCE REQUIREMENTS -->
+<!-- 8.6 / ADVANCED ENGINEERING INTERFACES -->
+<div class="xp-overview-block" id="ss-a8-advanced">
+  <span class="xp-overview-kicker">8.6 / E01–E05 — ADVANCED PLATFORM INTERFACES</span>
+  <h3 class="xp-overview-heading">AI Security, Governance &amp; Assurance</h3>
+  <p>These five interface studies connect the security, governance and assurance requirements introduced in <a class="ss-a8-inline-link" href="#agent-security">Chapter 04</a>, <a class="ss-a8-inline-link" href="#governance">Chapter 06</a> and <a class="ss-a8-inline-link" href="#assurance">Chapter 07</a>. They describe the target analyst workflow and the evidence that future implementations must expose.</p>
+</div>
+
+<div class="ss-a8-proposed-banner ss-a8-advanced-notice">
+  <strong>INTERFACE PROTOTYPES / VALUES NOT INDEPENDENTLY VERIFIED</strong>
+  <p>The panels below contain example scores, dates, validation labels and audit decisions to demonstrate the intended user experience. They are not proof that the associated evaluations, approvals, security controls or regulatory checks have been completed. Reproducible original records are required before any result can be marked verified.</p>
+</div>
+
+<div class="ss-a8-gallery ss-a8-gallery--two ss-a8-advanced-gallery">
+  <figure class="ss-a8-shot ss-a8-advanced-card ss-a8-gallery-wide">
+    <div class="ss-a8-shot-head">
+      <span>E01 / ASSURANCE UI / PROTOTYPE</span>
+      <h4>Continuous AI Assurance Dashboard</h4>
+    </div>
+    <a class="ss-a8-image-link" href="../assets/img/projects/ss-e01-assurance.png" target="_blank" rel="noopener noreferrer" aria-label="Expand AI assurance interface prototype">
+      <img src="../assets/img/projects/ss-e01-assurance.png" alt="Prototype AI assurance dashboard featuring example grounding metrics, evaluation trend, scenario coverage and recent runs" loading="lazy" decoding="async" width="1600" height="900">
+      <span class="ss-a8-zoom" aria-hidden="true">VIEW FIGURE ↗</span>
+    </a>
+    <figcaption><strong>Engineering intent:</strong> present versioned evaluation runs, grounded-claim measurements, retrieval quality and AS01–AS08 coverage on one review surface. <em>The 92% and other displayed values are sample UI data, not verified benchmark results.</em> <a class="ss-a8-inline-link" href="#assurance">Evaluation methodology ↗</a></figcaption>
+  </figure>
+
+  <figure class="ss-a8-shot ss-a8-advanced-card">
+    <div class="ss-a8-shot-head"><span>E02 / INVESTIGATION UI / PROTOTYPE</span><h4>Evidence-Grounded AI Investigation</h4></div>
+    <a class="ss-a8-image-link" href="../assets/img/projects/ss-e02-evidence-grounding.png" target="_blank" rel="noopener noreferrer" aria-label="Expand evidence-grounding interface prototype">
+      <img src="../assets/img/projects/ss-e02-evidence-grounding.png" alt="Prototype investigation interface relating AI claims to OpenSearch, Neo4j and Qdrant source evidence" loading="lazy" decoding="async" width="1600" height="900">
+      <span class="ss-a8-zoom" aria-hidden="true">VIEW FIGURE ↗</span>
+    </a>
+    <figcaption><strong>Engineering intent:</strong> distinguish exact IOC evidence, graph relationships and semantic similarity; attach sources to individual claims and flag unsupported attribution. <em>Displayed 'Supported' indicators need source-level verification.</em></figcaption>
+  </figure>
+
+  <figure class="ss-a8-shot ss-a8-advanced-card">
+    <div class="ss-a8-shot-head"><span>E03 / DETECTION QA / PROTOTYPE</span><h4>Multi-Format Detection Rule Validation</h4></div>
+    <a class="ss-a8-image-link" href="../assets/img/projects/ss-e03-detection-validation.png" target="_blank" rel="noopener noreferrer" aria-label="Expand detection validation interface prototype">
+      <img src="../assets/img/projects/ss-e03-detection-validation.png" alt="Prototype detection engineering validation view with draft rule, schema checks and target output statuses" loading="lazy" decoding="async" width="1600" height="900">
+      <span class="ss-a8-zoom" aria-hidden="true">VIEW FIGURE ↗</span>
+    </a>
+    <figcaption><strong>Engineering intent:</strong> validate draft Sigma, Splunk, Wazuh and Suricata artifacts before release through syntax checks, field mapping, behavior testing and analyst review. <em>Sample PASS labels do not replace original validator logs.</em></figcaption>
+  </figure>
+
+  <figure class="ss-a8-shot ss-a8-advanced-card">
+    <div class="ss-a8-shot-head"><span>E04 / CONTROL PLANE / PROTOTYPE</span><h4>Security Audit &amp; Policy Decisions</h4></div>
+    <a class="ss-a8-image-link" href="../assets/img/projects/ss-e04-security-audit.png" target="_blank" rel="noopener noreferrer" aria-label="Expand security audit interface prototype">
+      <img src="../assets/img/projects/ss-e04-security-audit.png" alt="Prototype policy-audit interface showing example requests, subject identities, decision outcomes and trace identifiers" loading="lazy" decoding="async" width="1600" height="900">
+      <span class="ss-a8-zoom" aria-hidden="true">VIEW FIGURE ↗</span>
+    </a>
+    <figcaption><strong>Engineering intent:</strong> correlate policy input, OPA decision, tool-side execution outcome and immutable audit reference. <em>The decision totals shown are interface examples, not collected enforcement statistics.</em></figcaption>
+  </figure>
+
+  <figure class="ss-a8-shot ss-a8-advanced-card">
+    <div class="ss-a8-shot-head"><span>E05 / GOVERNANCE UI / PROTOTYPE</span><h4>AI Model, Risk &amp; Control Register</h4></div>
+    <a class="ss-a8-image-link" href="../assets/img/projects/ss-e05-governance.png" target="_blank" rel="noopener noreferrer" aria-label="Expand AI governance interface prototype">
+      <img src="../assets/img/projects/ss-e05-governance.png" alt="Prototype AI governance interface with model inventory, risk ownership, control monitoring and example review statuses" loading="lazy" decoding="async" width="1600" height="900">
+      <span class="ss-a8-zoom" aria-hidden="true">VIEW FIGURE ↗</span>
+    </a>
+    <figcaption><strong>Engineering intent:</strong> link model versions and intended uses to control owners, risk treatment and governance evidence. <em>Displayed 'Approved' or 'Compliant' statuses are not formal regulatory determinations.</em></figcaption>
+  </figure>
+</div>
+
+<div class="ss-a8-finding ss-a8-advanced-finding">
+  <span>IMPLEMENTATION &amp; VERIFICATION GATE</span>
+  <p>Before promoting any panel from prototype to verified functionality, retain the dataset revision, executed command or API request, actual outputs, policy or validator result, correlated logs and a reviewer decision. This preserves the boundary between interface design and reproducible technical evidence.</p>
+</div>
+
+<!-- 8.7 / TEST EVIDENCE REQUIREMENTS -->
+
   <div class="xp-overview-block" id="ss-a8-integrity">
-    <span class="xp-overview-kicker">8.6 / EVIDENCE INTEGRITY &amp; REPRODUCIBILITY</span>
+    <span class="xp-overview-kicker">8.7 / EVIDENCE INTEGRITY &amp; REPRODUCIBILITY</span>
     <h3 class="xp-overview-heading">What Constitutes Verified Engineering Evidence?</h3>
     <p>Interface previews establish what the application or demonstration screen displays. Independent validation additionally requires reproducible execution inputs, observed outputs and records from protected components. The distinction matters especially for control enforcement and the reliability of AI-generated conclusions.</p>
   </div>
@@ -8728,6 +8799,7 @@
       <tr><th scope="row">LLM Investigation</th><td>D07 analyst-facing assessment</td><td>Prompt/model version, exact retrieved records, complete API response, source availability and claim-level review.</td></tr>
       <tr><th scope="row">Detection Content</th><td>D08 draft storage</td><td>Generated rule, syntax/schema validation, attack/benign replay and documented analyst approval.</td></tr>
       <tr><th scope="row">AI Security Controls</th><td>AS01–AS08 test designs</td><td>Controlled payloads, policy inputs, actual tool and audit traces, measured outcomes and baseline comparison.</td></tr>
+      <tr><th scope="row">Advanced Interfaces</th><td>E01–E05 interface prototypes</td><td>Versioned datasets, source-linked claims, tool and validation logs, control evidence, reviewer approval and reproducible measurements.</td></tr>
     </tbody>
   </table></div>
 
@@ -8743,7 +8815,7 @@
   </div>
 
   <div class="xp-overview-block">
-    <span class="xp-overview-kicker">8.7 / ENGINEERING TAKEAWAYS</span>
+    <span class="xp-overview-kicker">8.8 / ENGINEERING TAKEAWAYS</span>
     <h3 class="xp-overview-heading">From Demonstrations to Defensible Evidence</h3>
     <p>The selected views communicate the platform's engineering coverage across collection, intelligence processing, graph knowledge, semantic search, AI-assisted investigation and detection preparation. The next quality milestone is an end-to-end verification package combining logged execution traces, reproducible inputs, explicit evidence grounding and reviewed detection artifacts.</p>
   </div>
@@ -8753,67 +8825,69 @@
 <!-- END CHAPTER 08 -->
 
 
-        <!-- ===================================================
-             CHAPTER 09 — IMPACT & ROADMAP
-        ==================================================== -->
+<!-- ===================================================
+     CHAPTER 09 — ENGINEERING IMPACT & ROADMAP
+==================================================== -->
+<section class="xp-chapter xp-reveal ss-a9" id="impact" aria-labelledby="ss-ch09-title">
+  <div class="xp-chapter-label"><span>09</span> ENGINEERING IMPACT / LIMITATIONS / ROADMAP</div>
+  <h2 id="ss-ch09-title">Engineering Impact, <span>Limitations &amp; Roadmap</span></h2>
+  <p class="xp-chapter-lead">ShadowScope AM combines structured CTI ingestion, investigative context and AI-assisted analysis. Its engineering maturity is assessed by separating demonstrated capabilities, documented limitations and the controls required for a verified release.</p>
 
-        <section
-          class="xp-chapter xp-reveal ss-upcoming"
-          id="impact"
-          aria-labelledby="ss-ch09-title"
-        >
+  <div class="xp-overview-block">
+    <span class="xp-overview-kicker">9.1 / ENGINEERING CONTRIBUTION</span>
+    <h3 class="xp-overview-heading">From Raw Intelligence to Analyst-Ready Context</h3>
+    <p>The current project brings together Python-based multi-source collectors, MinIO raw-object preservation, normalized OpenSearch intelligence, Neo4j relationships, Qdrant similarity search and local-LLM investigation. A draft detection layer supports Sigma, Splunk, Wazuh and Suricata preparation without treating generated rules as production-ready detections.</p>
+  </div>
+  <div class="ss-a9-grid ss-a9-grid--three">
+    <article><span>01 / INTELLIGENCE PIPELINE</span><h4>Collect &amp; structure</h4><p>Source-aware acquisition, parsing, deduplication and risk metadata provide a reproducible basis for intelligence processing.</p></article>
+    <article><span>02 / INVESTIGATION CONTEXT</span><h4>Connect &amp; interpret</h4><p>Explicit graph edges, vector similarity and structured IOC records offer complementary investigation context with distinct confidence boundaries.</p></article>
+    <article><span>03 / SECURITY ENGINEERING</span><h4>Control &amp; evaluate</h4><p>Proposed authorization, AI governance and assurance workflows establish measurable acceptance criteria for future implementation.</p></article>
+  </div>
 
-          <div class="xp-chapter-label">
-            <span>09</span>
-            ENGINEERING IMPACT / ROADMAP
-          </div>
+  <div class="xp-overview-block">
+    <span class="xp-overview-kicker">9.2 / EVIDENCE &amp; LIMITATIONS</span>
+    <h3 class="xp-overview-heading">Current Technical Boundaries</h3>
+    <p>The screenshots demonstrate application views and architectural intent, but do not replace a validated end-to-end test pack. Limitations are recorded explicitly so that the documentation remains useful for technical review and continued development.</p>
+  </div>
+  <div class="ss-a9-table-wrap">
+    <table class="ss-a9-table">
+      <thead><tr><th scope="col">AREA</th><th scope="col">CURRENT OBSERVATION</th><th scope="col">REQUIRED NEXT VERIFICATION</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">CTI acquisition</th><td>Collector console reports 20/20 source checks; MinIO source folders are visible.</td><td>Source availability, record counts, freshness, original payload hashes and replay.</td></tr>
+        <tr><th scope="row">Intelligence &amp; scoring</th><td>Normalized indicators and scoring records appear in OpenSearch views.</td><td>Scoring calibration, provenance checks and repeatable input-to-output tracing.</td></tr>
+        <tr><th scope="row">Graph &amp; retrieval</th><td>Neo4j and Qdrant demonstrations show linked and semantically retrieved records.</td><td>Relationship provenance, labeled retrieval relevance and failure handling.</td></tr>
+        <tr><th scope="row">LLM investigation</th><td>Investigation examples combine CTI context with AI-generated interpretation.</td><td>Claim-level citations, unsupported attribution detection, service-state reporting.</td></tr>
+        <tr><th scope="row">Detection rules</th><td>Draft detection artifacts are represented in the documented pipeline.</td><td>Schema, field mapping, benign/malicious replay, false positives and analyst sign-off.</td></tr>
+        <tr><th scope="row">AI Security &amp; governance</th><td>AS01–AS08 and E01–E05 define test targets and interface prototypes.</td><td>Original enforcement traces, controlled test outcomes, risk ownership and evaluation data.</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-          <h2 id="ss-ch09-title">
-            Engineering Impact,
-            <span>Limitations &amp; Roadmap</span>
-          </h2>
+  <div class="xp-overview-block">
+    <span class="xp-overview-kicker">9.3 / PHASED ENGINEERING ROADMAP</span>
+    <h3 class="xp-overview-heading">Engineering Priorities &amp; Release Gates</h3>
+    <p>Each phase has an explicit output and a verification gate. The roadmap is a development plan, not a claim of completed or production-approved functionality.</p>
+  </div>
+  <div class="ss-a9-roadmap">
+    <article><span class="ss-a9-phase">PHASE 01 / BASELINE</span><h4>CTI Integrity &amp; Evidence</h4><p>Version collector inputs, normalize provenance, verify exact IOC lookups and publish reproducible acquisition and retrieval tests.</p><small>GATE: source-linked, replayable investigation dataset</small></article>
+    <article><span class="ss-a9-phase">PHASE 02 / SECURITY</span><h4>Agent Authorization &amp; Tool Controls</h4><p>Integrate identity, least-privilege policy, secrets protection and audit correlation at the boundary between AI requests and protected tools.</p><small>GATE: AS01–AS06 executed with policy and target-side traces</small></article>
+    <article><span class="ss-a9-phase">PHASE 03 / DETECTION</span><h4>Rule Validation &amp; Human Review</h4><p>Implement format checks, ATT&amp;CK consistency review, benign/attack samples and an explicit approval step for generated detections.</p><small>GATE: AS07 validated and draft-to-release trace retained</small></article>
+    <article><span class="ss-a9-phase">PHASE 04 / ASSURANCE</span><h4>Governance &amp; Regression Evaluation</h4><p>Build versioned model and risk registers, grounded-claim evaluation, retrieval benchmarks and monitoring after changes.</p><small>GATE: AS08 benchmark runs, accountable reviews and release criteria</small></article>
+  </div>
 
-          <p class="xp-chapter-lead">
-            Technical contributions,
-            architecture tradeoffs,
-            engineering limitations
-            and future development priorities.
-          </p>
+  <div class="xp-overview-block">
+    <span class="xp-overview-kicker">9.4 / TECHNICAL SUCCESS CRITERIA</span>
+    <h3 class="xp-overview-heading">What a Defensible Release Must Demonstrate</h3>
+    <p>A credible engineering release must reproduce the acquisition-to-investigation path, explain evidence and uncertainty, prove that unauthorized tool requests do not reach protected targets, and validate detection content against appropriate test data. Performance and security rates should be published only with documented denominators, execution conditions and original logs.</p>
+  </div>
+  <div class="ss-a9-principle"><span>ENGINEERING CONCLUSION</span><strong>Reliable intelligence needs verifiable evidence. Safe AI needs independently enforced boundaries. Production readiness needs repeatable tests.</strong></div>
 
-          <div class="ss-chapter-placeholder">
-            <span>CHAPTER 09 / DOCUMENTATION IN PROGRESS</span>
-            <strong>Engineering Maturity &amp; Next Steps</strong>
-            <p>
-              Verified contributions,
-              current gaps, measurable results
-              and a phased development roadmap.
-            </p>
-          </div>
-
-
-          <div class="ss-final-navigation">
-
-            <a
-              class="xp-button xp-button-primary"
-              href="../index.html#projects"
-            >
-              All Projects
-              <span aria-hidden="true">↗</span>
-            </a>
-
-            <a
-              class="xp-button xp-button-outline"
-              href="#overview"
-            >
-              Back to Overview
-              <span aria-hidden="true">↑</span>
-            </a>
-
-          </div>
-
-        </section>
-
-        <!-- END CHAPTER 09 -->
+  <div class="ss-final-navigation">
+    <a class="xp-button xp-button-primary" href="../index.html#projects">All Projects <span aria-hidden="true">↗</span></a>
+    <a class="xp-button xp-button-outline" href="#overview">Back to Overview <span aria-hidden="true">↑</span></a>
+  </div>
+</section>
+<!-- END CHAPTER 09 -->
 
       </div>
       <!-- END PROJECT DOCUMENT -->
