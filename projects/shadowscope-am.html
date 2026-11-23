@@ -29,10 +29,10 @@
   <link rel="stylesheet" href="../assets/css/exavigil.css?v=10">
 
   <!-- ShadowScope-specific design -->
-  <link rel="stylesheet" href="../assets/css/shadowscope.css?v=1">
+  <link rel="stylesheet" href="../assets/css/shadowscope.css?v=8">
 
   <script defer src="../assets/js/main.js"></script>
-  <script defer src="../assets/js/shadowscope.js?v=1"></script>
+  <script defer src="../assets/js/shadowscope.js?v=8"></script>
 </head>
 
 
@@ -669,7 +669,7 @@
 
               <a
                 class="xp-figure-open"
-                href="../assets/img/projects/shadowscope-overview.png"
+                href="../assets/img/projects/shadowscope-overview.svg"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -681,14 +681,14 @@
 
             <a
               class="xp-figure-image-link"
-              href="../assets/img/projects/shadowscope-overview.png"
+              href="../assets/img/projects/shadowscope-overview.svg"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View ShadowScope AM global architecture"
             >
 
               <img
-                src="../assets/img/projects/shadowscope-overview.png"
+                src="../assets/img/projects/shadowscope-overview.svg"
                 alt="ShadowScope AM intelligence pipeline from global CTI sources through enrichment, OpenSearch, Neo4j, Qdrant, AI investigation and detection engineering, with planned AI Security, Governance and Assurance extensions"
                 loading="lazy"
                 decoding="async"
@@ -3125,7 +3125,7 @@
 
       <a
         class="xp-figure-open"
-        href="../assets/img/projects/shadowscope-ai-security-workflow.png"
+        href="../assets/img/projects/shadowscope-ai-security-workflow.svg"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -3137,14 +3137,14 @@
 
     <a
       class="xp-figure-image-link"
-      href="../assets/img/projects/shadowscope-ai-security-workflow.png"
+      href="../assets/img/projects/shadowscope-ai-security-workflow.svg"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open ShadowScope AM secure AI investigation workflow"
     >
 
       <img
-        src="../assets/img/projects/shadowscope-ai-security-workflow.png"
+        src="../assets/img/projects/shadowscope-ai-security-workflow.svg"
         alt="Proposed ShadowScope AI security workflow showing external CTI validation, AI investigation, Keycloak, OPA, OpenBao, independent policy decisions, human approval, audit, approved tools and detection artifact review"
         loading="lazy"
         decoding="async"
@@ -8496,44 +8496,261 @@
         
 
 
-        <!-- ===================================================
-             CHAPTER 08 — DEMONSTRATIONS
-        ==================================================== -->
+        <!-- ============================================================
+     08 / TECHNICAL DEMONSTRATIONS & EVIDENCE
+     SHADOWSCOPE AM — ENGINEERING PORTFOLIO
+     Figures D01–D08: existing views / documented previews
+     Scenarios AS01–AS08: planned control evaluations
+============================================================ -->
+<section class="xp-chapter xp-reveal ss-a8" id="demonstrations" aria-labelledby="ss-ch08-title">
+  <div class="xp-chapter-label"><span>08</span> TECHNICAL DEMONSTRATIONS / ENGINEERING EVIDENCE</div>
+  <h2 id="ss-ch08-title">Technical Demonstrations <span>&amp; Evidence</span></h2>
+  <p class="xp-chapter-lead">Selected laboratory views and application previews document the engineering workflow from multi-source CTI acquisition to scored intelligence, connected knowledge, AI-assisted investigation and draft detection content.</p>
 
-        <section
-          class="xp-chapter xp-reveal ss-upcoming"
-          id="demonstrations"
-          aria-labelledby="ss-ch08-title"
-        >
+  <div class="ss-a8-evidence-policy">
+    <div><span>DOCUMENTATION STANDARD / OBSERVED VS PROPOSED</span><h3>Show the workflow. Keep the evidence boundaries explicit.</h3></div>
+    <p>The first four demonstration groups present existing system views or documented previews. The security evaluation gallery presents <strong>scenario designs and expected controls</strong> that require reproducible execution evidence. A screenshot alone does not prove collector correctness, policy enforcement, model accuracy or detection effectiveness.</p>
+  </div>
 
-          <div class="xp-chapter-label">
-            <span>08</span>
-            TECHNICAL DEMONSTRATIONS / EVIDENCE
-          </div>
+  <nav class="ss-a8-jump" aria-label="Demonstration groups">
+    <a href="#ss-a8-acquisition">01 / Acquisition</a>
+    <a href="#ss-a8-processing">02 / Processing</a>
+    <a href="#ss-a8-knowledge">03 / Knowledge</a>
+    <a href="#ss-a8-investigation">04 / Investigation</a>
+    <a href="#ss-a8-security">05 / Security tests</a>
+    <a href="#ss-a8-integrity">06 / Evidence integrity</a>
+  </nav>
 
-          <h2 id="ss-ch08-title">
-            Technical Demonstrations
-            <span>&amp; Evidence</span>
-          </h2>
+  <div class="ss-a8-quickfacts" aria-label="Technical scope">
+    <article><span>SOURCES SHOWN</span><strong>20 / 20</strong><small>Collector console reports SUCCESS</small></article>
+    <article><span>CONTEXT LAYERS</span><strong>03</strong><small>OpenSearch / Neo4j / Qdrant</small></article>
+    <article><span>DETECTION OUTPUTS</span><strong>04</strong><small>Sigma / Splunk / Wazuh / Suricata</small></article>
+    <article><span>SECURITY CASES</span><strong>08</strong><small>Defined / validation pending</small></article>
+  </div>
 
-          <p class="xp-chapter-lead">
-            Existing technical demonstrations,
-            laboratory evidence, security
-            validation and engineering observations.
-          </p>
+  <!-- 8.1 / ACQUISITION -->
+  <div class="xp-overview-block" id="ss-a8-acquisition">
+    <span class="xp-overview-kicker">8.1 / D01 — ACQUISITION &amp; STORAGE</span>
+    <h3 class="xp-overview-heading">Multi-Source CTI Acquisition</h3>
+    <p>The acquisition workflow uses Python collectors to retrieve heterogeneous threat data and preserve source-specific records in MinIO. This supports the provenance and reprocessing requirements introduced in <a class="ss-a8-inline-link" href="#cti-architecture">Chapter 02 — CTI Architecture</a>.</p>
+  </div>
+  <div class="ss-a8-flow" aria-label="Acquisition data flow">CTI feeds <span>→</span> Python collectors <span>→</span> Raw object storage <span>→</span> Normalization</div>
+  <div class="ss-a8-gallery ss-a8-gallery--two">
+    <figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D01A / DOCUMENTED PREVIEW</span><h4>Multi-source CTI acquisition</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d01-acquisition.png" target="_blank" rel="noopener noreferrer" aria-label="Open Multi-source CTI acquisition in full size">
+    <img src="../assets/img/projects/ss-d01-acquisition.png" alt="Multi-source CTI acquisition — project screenshot or documented interface preview" width="2048" height="1152" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>The terminal displays a run of collect_all.py with 20 of 20 listed source checks marked SUCCESS. This demonstrates the reported collector-run status, not independent validation of feed freshness or payload completeness.</figcaption>
+</figure>
+    <figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D01B / DOCUMENTED PREVIEW</span><h4>Raw intelligence storage in MinIO</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d01-minio.png" target="_blank" rel="noopener noreferrer" aria-label="Open Raw intelligence storage in MinIO in full size">
+    <img src="../assets/img/projects/ss-d01-minio.png" alt="Raw intelligence storage in MinIO — project screenshot or documented interface preview" width="2048" height="1152" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>Object-browser view of the cti/raw hierarchy and source-specific folders. The interface demonstrates the intended preservation layer; object hashes and stored payload content should be verified separately.</figcaption>
+</figure>
+  </div>
+  <div class="ss-a8-finding"><span>ENGINEERING OBSERVATION</span><p>The console presents 20 source checks marked successful, and the MinIO view shows separate source directories. Source response validation, freshness, per-record lineage and replay from preserved objects remain distinct verification steps.</p></div>
 
-          <div class="ss-chapter-placeholder">
-            <span>CHAPTER 08 / EVIDENCE COLLECTION</span>
-            <strong>Technical Demonstration Archive</strong>
-            <p>
-              CTI pipeline, graph investigation,
-              semantic search, AI assistance,
-              detection generation and future
-              security validation cases.
-            </p>
-          </div>
+  <!-- 8.2 / PROCESSING -->
+  <div class="xp-overview-block" id="ss-a8-processing">
+    <span class="xp-overview-kicker">8.2 / D02–D03 — STRUCTURED INTELLIGENCE</span>
+    <h3 class="xp-overview-heading">Risk Scoring &amp; Intelligence Prioritization</h3>
+    <p>OpenSearch provides a searchable layer for normalized indicators, enriched attributes and investigation priority. The selected screenshots illustrate an individual scored record and a broader incident-response dashboard rather than a measured accuracy study.</p>
+  </div>
+  <div class="ss-a8-flow">Normalized records <span>→</span> CTI enrichment <span>→</span> Risk scoring <span>→</span> OpenSearch / IR view</div>
+  <div class="ss-a8-gallery ss-a8-gallery--two">
+    <figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D02 / DOCUMENTED PREVIEW</span><h4>Structured IOC scoring</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d02-scoring.png" target="_blank" rel="noopener noreferrer" aria-label="Open Structured IOC scoring in full size">
+    <img src="../assets/img/projects/ss-d02-scoring.png" alt="Structured IOC scoring — project screenshot or documented interface preview" width="2048" height="1152" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>OpenSearch example for a scored indicator, including priority P1, risk score 100 and contextual fields. The numerical score is an individual displayed record, not an evaluated prediction accuracy.</figcaption>
+</figure>
+    <figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D03 / DOCUMENTED PREVIEW</span><h4>Incident-response intelligence overview</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d03-ir-dashboard.png" target="_blank" rel="noopener noreferrer" aria-label="Open Incident-response intelligence overview in full size">
+    <img src="../assets/img/projects/ss-d03-ir-dashboard.png" alt="Incident-response intelligence overview — project screenshot or documented interface preview" width="2048" height="1082" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>Dashboard preview grouping priorities, entity types and timelines. Dashboard counts are illustrative of the displayed view, not benchmark measurements of the end-to-end system.</figcaption>
+</figure>
+  </div>
+  <div class="ss-a8-finding"><span>ENGINEERING OBSERVATION</span><p>Fields such as <code>risk_score</code>, <code>risk_level</code>, <code>priority</code> and source references support prioritized analyst review. Displayed values alone do not establish scoring calibration, analyst agreement or alert reduction.</p></div>
 
-        </section>
+  <!-- 8.3 / KNOWLEDGE -->
+  <div class="xp-overview-block" id="ss-a8-knowledge">
+    <span class="xp-overview-kicker">8.3 / D04–D06 — GRAPH &amp; SEMANTIC CONTEXT</span>
+    <h3 class="xp-overview-heading">Connected Intelligence &amp; Semantic Retrieval</h3>
+    <p>Neo4j and Qdrant provide complementary views of CTI: explicit graph relationships and similarity-ranked context. The engineering distinction between the two is explained in <a class="ss-a8-inline-link" href="#knowledge">Chapter 03 — Knowledge Graphs &amp; Investigation</a>.</p>
+  </div>
+  <div class="ss-a8-gallery ss-a8-gallery--two">
+    <figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D04 / DOCUMENTED PREVIEW</span><h4>Neo4j connected threat knowledge</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d04-neo4j.png" target="_blank" rel="noopener noreferrer" aria-label="Open Neo4j connected threat knowledge in full size">
+    <img src="../assets/img/projects/ss-d04-neo4j.png" alt="Neo4j connected threat knowledge — project screenshot or documented interface preview" width="2048" height="855" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>FlowerStorm-oriented graph exploration with associated indicators, clusters and relation types. Graph links represent stored relationships and should not be treated as independent proof of threat attribution.</figcaption>
+</figure>
+    <figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D05 / DOCUMENTED PREVIEW</span><h4>Qdrant context record</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d05-qdrant.png" target="_blank" rel="noopener noreferrer" aria-label="Open Qdrant context record in full size">
+    <img src="../assets/img/projects/ss-d05-qdrant.png" alt="Qdrant context record — project screenshot or documented interface preview" width="2048" height="1152" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>Vector collection inspection showing a CTI context payload, source index and priority metadata. Vector relevance is a retrieval property, not attribution evidence.</figcaption>
+</figure>
+    <div class="ss-a8-gallery-wide"><figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D06 / DOCUMENTED PREVIEW</span><h4>Semantic CTI search results</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d06-semantic.png" target="_blank" rel="noopener noreferrer" aria-label="Open Semantic CTI search results in full size">
+    <img src="../assets/img/projects/ss-d06-semantic.png" alt="Semantic CTI search results — project screenshot or documented interface preview" width="2048" height="1024" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>Natural-language search returning similarity-ranked CTI correlation records and risk metadata. The preview exposes undefined result metadata, a presentation defect to address in the application.</figcaption>
+</figure></div>
+  </div>
+  <div class="ss-a8-finding"><span>EVIDENCE INTERPRETATION</span><p>A graph edge is a recorded relationship requiring provenance. A Qdrant score measures embedding similarity, not a verified operational association. The semantic-search screenshot also contains undefined result metadata; the application should correct this UI state before treating it as a polished production interface.</p></div>
+
+  <!-- 8.4 / INVESTIGATION -->
+  <div class="xp-overview-block" id="ss-a8-investigation">
+    <span class="xp-overview-kicker">8.4 / D07–D08 — INVESTIGATION &amp; DETECTION</span>
+    <h3 class="xp-overview-heading">AI-Assisted Assessment &amp; Draft Detection</h3>
+    <p>The investigation layer combines available CTI records and semantic neighbors with LLM-generated interpretation. Detection artifacts can then be stored for separate review. As defined in <a class="ss-a8-inline-link" href="#assurance">Chapter 07 — AI Assurance</a>, an answer or a stored rule is not considered validated merely because it was generated successfully.</p>
+  </div>
+  <div class="ss-a8-flow">Analyst question <span>→</span> CTI / RAG context <span>→</span> Draft assessment <span>→</span> Rule review</div>
+  <div class="ss-a8-gallery ss-a8-gallery--two">
+    <figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D07 / DOCUMENTED PREVIEW</span><h4>Local AI-assisted investigation</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d07-ai-investigation.png" target="_blank" rel="noopener noreferrer" aria-label="Open Local AI-assisted investigation in full size">
+    <img src="../assets/img/projects/ss-d07-ai-investigation.png" alt="Local AI-assisted investigation — project screenshot or documented interface preview" width="1672" height="941" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>Investigation interface combining structured CTI with semantic neighbors and model-generated findings. The displayed Neo4j service is unavailable, so graph-based claims remain unverified and analyst review is required.</figcaption>
+</figure>
+    <figure class="ss-a8-shot">
+  <div class="ss-a8-shot-head"><span>FIGURE D08 / DOCUMENTED PREVIEW</span><h4>Detection content registered as draft</h4></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-d08-detection-store.png" target="_blank" rel="noopener noreferrer" aria-label="Open Detection content registered as draft in full size">
+    <img src="../assets/img/projects/ss-d08-detection-store.png" alt="Detection content registered as draft — project screenshot or documented interface preview" width="2048" height="1152" loading="lazy" decoding="async">
+    <span class="ss-a8-zoom">OPEN FULL SIZE ↗</span>
+  </a>
+  <figcaption>Qdrant record for Sigma, Splunk, Wazuh and Suricata draft outputs with deployment_status not_validated. Storage demonstrates artifact traceability, not deployment readiness.</figcaption>
+</figure>
+  </div>
+  <div class="ss-a8-finding"><span>ENGINEERING OBSERVATION</span><p>The AI investigation preview explicitly marks Neo4j unavailable and generated associations unverified. The detection record explicitly contains <code>deployment_status: not_validated</code>. Both are useful engineering boundaries: source availability must be disclosed, and generated detection content must remain a draft until tested and approved.</p></div>
+
+  <!-- 8.5 / SECURITY SCENARIO PREVIEWS -->
+  <div class="xp-overview-block" id="ss-a8-security">
+    <span class="xp-overview-kicker">8.5 / AS01–AS08 — SECURITY VALIDATION DESIGN</span>
+    <h3 class="xp-overview-heading">AI Security &amp; Assurance Test Cases</h3>
+    <p>Eight scenarios address untrusted CTI, RAG poisoning, unsupported attribution, service failure, unauthorized tools, protected secrets, invalid detection generation and regression testing. Their threat model and acceptance criteria are defined in <a class="ss-a8-inline-link" href="#threat-modeling">Chapter 05</a>; their future evaluation metrics are defined in Chapter 07.</p>
+  </div>
+  <div class="ss-a8-proposed-banner"><strong>DESIGN PREVIEWS — NOT COMPLETED TEST EVIDENCE</strong><p>The following screens document intended test inputs, expected behavior and evidence requirements. They do not demonstrate observed PASS results or actual enforcement. No measured block rate or evaluation percentage is claimed.</p></div>
+  <details class="ss-a8-scenario-archive" id="ss-a8-scenarios">
+    <summary><span><strong>Browse AS01–AS08 security scenario previews</strong><small>8 design captures · isolated-lab validation pending</small></span><span class="ss-a8-disclosure" aria-hidden="true">+</span></summary>
+    <div class="ss-a8-scenario-gallery">
+      <figure class="ss-a8-case">
+  <div class="ss-a8-case-head"><span>AS01 / DESIGN PREVIEW</span><a href="#as01">Scenario specification ↗</a></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-as01-preview.png" target="_blank" rel="noopener noreferrer" aria-label="Open AS01 scenario design preview">
+   <img src="../assets/img/projects/ss-as01-preview.png" alt="AS01 design preview: CTI feed instruction injection; not evidence of a completed test" width="1672" height="941" loading="lazy" decoding="async">
+   <span class="ss-a8-zoom">OPEN PREVIEW ↗</span>
+  </a>
+  <figcaption><strong>CTI feed instruction injection</strong> — External feed content is data, not a trusted instruction. <em>Expected behavior; verification pending.</em></figcaption>
+</figure><figure class="ss-a8-case">
+  <div class="ss-a8-case-head"><span>AS02 / DESIGN PREVIEW</span><a href="#as02">Scenario specification ↗</a></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-as02-preview.png" target="_blank" rel="noopener noreferrer" aria-label="Open AS02 scenario design preview">
+   <img src="../assets/img/projects/ss-as02-preview.png" alt="AS02 design preview: Poisoned RAG retrieval; not evidence of a completed test" width="1672" height="941" loading="lazy" decoding="async">
+   <span class="ss-a8-zoom">OPEN PREVIEW ↗</span>
+  </a>
+  <figcaption><strong>Poisoned RAG retrieval</strong> — Retrieved documents must not authorize restricted tool calls. <em>Expected behavior; verification pending.</em></figcaption>
+</figure><figure class="ss-a8-case">
+  <div class="ss-a8-case-head"><span>AS03 / DESIGN PREVIEW</span><a href="#as03">Scenario specification ↗</a></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-as03-preview.png" target="_blank" rel="noopener noreferrer" aria-label="Open AS03 scenario design preview">
+   <img src="../assets/img/projects/ss-as03-preview.png" alt="AS03 design preview: Unsupported attribution; not evidence of a completed test" width="1672" height="941" loading="lazy" decoding="async">
+   <span class="ss-a8-zoom">OPEN PREVIEW ↗</span>
+  </a>
+  <figcaption><strong>Unsupported attribution</strong> — Missing graph support must not become confirmed attribution. <em>Expected behavior; verification pending.</em></figcaption>
+</figure><figure class="ss-a8-case">
+  <div class="ss-a8-case-head"><span>AS04 / DESIGN PREVIEW</span><a href="#as04">Scenario specification ↗</a></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-as04-preview.png" target="_blank" rel="noopener noreferrer" aria-label="Open AS04 scenario design preview">
+   <img src="../assets/img/projects/ss-as04-preview.png" alt="AS04 design preview: Knowledge-service failure; not evidence of a completed test" width="1672" height="941" loading="lazy" decoding="async">
+   <span class="ss-a8-zoom">OPEN PREVIEW ↗</span>
+  </a>
+  <figcaption><strong>Knowledge-service failure</strong> — Neo4j outage requires a disclosed, controlled fallback. <em>Expected behavior; verification pending.</em></figcaption>
+</figure><figure class="ss-a8-case">
+  <div class="ss-a8-case-head"><span>AS05 / DESIGN PREVIEW</span><a href="#as05">Scenario specification ↗</a></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-as05-preview.png" target="_blank" rel="noopener noreferrer" aria-label="Open AS05 scenario design preview">
+   <img src="../assets/img/projects/ss-as05-preview.png" alt="AS05 design preview: Unauthorized tool request; not evidence of a completed test" width="1672" height="941" loading="lazy" decoding="async">
+   <span class="ss-a8-zoom">OPEN PREVIEW ↗</span>
+  </a>
+  <figcaption><strong>Unauthorized tool request</strong> — Policy must be evaluated before any sensitive API operation. <em>Expected behavior; verification pending.</em></figcaption>
+</figure><figure class="ss-a8-case">
+  <div class="ss-a8-case-head"><span>AS06 / DESIGN PREVIEW</span><a href="#as06">Scenario specification ↗</a></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-as06-preview.png" target="_blank" rel="noopener noreferrer" aria-label="Open AS06 scenario design preview">
+   <img src="../assets/img/projects/ss-as06-preview.png" alt="AS06 design preview: Protected secret access; not evidence of a completed test" width="1672" height="941" loading="lazy" decoding="async">
+   <span class="ss-a8-zoom">OPEN PREVIEW ↗</span>
+  </a>
+  <figcaption><strong>Protected secret access</strong> — Restricted credentials must remain inaccessible to unauthorized roles. <em>Expected behavior; verification pending.</em></figcaption>
+</figure><figure class="ss-a8-case">
+  <div class="ss-a8-case-head"><span>AS07 / DESIGN PREVIEW</span><a href="#as07">Scenario specification ↗</a></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-as07-preview.png" target="_blank" rel="noopener noreferrer" aria-label="Open AS07 scenario design preview">
+   <img src="../assets/img/projects/ss-as07-preview.png" alt="AS07 design preview: Invalid detection draft; not evidence of a completed test" width="1671" height="941" loading="lazy" decoding="async">
+   <span class="ss-a8-zoom">OPEN PREVIEW ↗</span>
+  </a>
+  <figcaption><strong>Invalid detection draft</strong> — Malformed detection content must fail validation before publication. <em>Expected behavior; verification pending.</em></figcaption>
+</figure><figure class="ss-a8-case">
+  <div class="ss-a8-case-head"><span>AS08 / DESIGN PREVIEW</span><a href="#as08">Scenario specification ↗</a></div>
+  <a class="ss-a8-image-link" href="../assets/img/projects/ss-as08-preview.png" target="_blank" rel="noopener noreferrer" aria-label="Open AS08 scenario design preview">
+   <img src="../assets/img/projects/ss-as08-preview.png" alt="AS08 design preview: AI and retrieval regression; not evidence of a completed test" width="1671" height="941" loading="lazy" decoding="async">
+   <span class="ss-a8-zoom">OPEN PREVIEW ↗</span>
+  </a>
+  <figcaption><strong>AI and retrieval regression</strong> — Baseline comparisons need versioned datasets and measured outcomes. <em>Expected behavior; verification pending.</em></figcaption>
+</figure>
+    </div>
+  </details>
+
+  <!-- 8.6 / TEST EVIDENCE REQUIREMENTS -->
+  <div class="xp-overview-block" id="ss-a8-integrity">
+    <span class="xp-overview-kicker">8.6 / EVIDENCE INTEGRITY &amp; REPRODUCIBILITY</span>
+    <h3 class="xp-overview-heading">What Constitutes Verified Engineering Evidence?</h3>
+    <p>Interface previews establish what the application or demonstration screen displays. Independent validation additionally requires reproducible execution inputs, observed outputs and records from protected components. The distinction matters especially for control enforcement and the reliability of AI-generated conclusions.</p>
+  </div>
+  <div class="ss-a8-table-wrap"><table class="ss-a8-table">
+    <thead><tr><th scope="col">DOMAIN</th><th scope="col">AVAILABLE ILLUSTRATION</th><th scope="col">REQUIRED TO CLAIM VERIFICATION</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Acquisition &amp; Storage</th><td>D01 terminal + MinIO object view</td><td>Original collector logs, timestamps, per-source record counts, storage object identifiers and checksums.</td></tr>
+      <tr><th scope="row">Intelligence Processing</th><td>D02 scoring + D03 dashboard</td><td>Input record, normalized output, scoring version, source citations and repeatable index query.</td></tr>
+      <tr><th scope="row">Knowledge &amp; Retrieval</th><td>D04 graph + D05/D06 vector search</td><td>Cypher result sets, Qdrant query parameters, returned IDs, labeled relevance cases and relationship provenance.</td></tr>
+      <tr><th scope="row">LLM Investigation</th><td>D07 analyst-facing assessment</td><td>Prompt/model version, exact retrieved records, complete API response, source availability and claim-level review.</td></tr>
+      <tr><th scope="row">Detection Content</th><td>D08 draft storage</td><td>Generated rule, syntax/schema validation, attack/benign replay and documented analyst approval.</td></tr>
+      <tr><th scope="row">AI Security Controls</th><td>AS01–AS08 test designs</td><td>Controlled payloads, policy inputs, actual tool and audit traces, measured outcomes and baseline comparison.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="ss-a8-repro">
+    <span>EVALUATION RECORD / MINIMUM REQUIRED FIELDS</span>
+    <div class="ss-a8-repro-grid">
+      <div><strong>IDENTITY</strong><small>Test ID · date · component versions</small></div>
+      <div><strong>INPUT</strong><small>Fixture · query · dataset revision</small></div>
+      <div><strong>OBSERVATION</strong><small>Raw response · tool logs · errors</small></div>
+      <div><strong>DECISION</strong><small>Criterion · PASS/FAIL/BLOCKED · reviewer</small></div>
+    </div>
+    <p>Only repeatable outcomes with supporting original records may be reported as validated results. Screenshots, mockups and expected-control previews must remain distinguishable from such results.</p>
+  </div>
+
+  <div class="xp-overview-block">
+    <span class="xp-overview-kicker">8.7 / ENGINEERING TAKEAWAYS</span>
+    <h3 class="xp-overview-heading">From Demonstrations to Defensible Evidence</h3>
+    <p>The selected views communicate the platform's engineering coverage across collection, intelligence processing, graph knowledge, semantic search, AI-assisted investigation and detection preparation. The next quality milestone is an end-to-end verification package combining logged execution traces, reproducible inputs, explicit evidence grounding and reviewed detection artifacts.</p>
+  </div>
+  <div class="xp-overview-conclusion"><span>SHADOWSCOPE AM / ENGINEERING EVIDENCE PRINCIPLE</span><p>Demonstrate the Pipeline. Verify the Claims. Preserve the Evidence.</p></div>
+  <a class="ss-next-chapter" href="#impact"><span>NEXT CHAPTER / 09</span><strong>Engineering Impact, Limitations &amp; Roadmap</strong><span aria-hidden="true">↗</span></a>
+</section>
+<!-- END CHAPTER 08 -->
 
 
         <!-- ===================================================
