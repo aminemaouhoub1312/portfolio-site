@@ -1,559 +1,253 @@
-
-'use strict';
+ 'use strict';
 
 /* ============================================================
    SHADOWSCOPE AM — PROJECT DOCUMENTATION
-   Reading Progress | Chapter Navigation | Reveal
-   Evidence Gallery | Image Validation | Security Deep Links
+   Chapters 01–09 | Scroll progress | Navigation | Figures
+   Scenario deep links | Responsive gallery | Image validation
 ============================================================ */
 
 (() => {
-
-  // ==========================================================
-  // 01 / ELEMENT REFERENCES
-  // ==========================================================
+  const page = document.querySelector('.ss-page');
+  if (!page) return;
 
   const root = document.documentElement;
-
-  const progressBar = document.getElementById(
-    'xp-reading-progress'
-  );
-
-  const chapters = [
-    ...document.querySelectorAll('.xp-chapter[id]')
-  ];
-
-  const railLinks = [
-    ...document.querySelectorAll('.xp-rail-link')
-  ];
-
-  const revealElements = [
-    ...document.querySelectorAll('.xp-reveal')
-  ];
-
-  const reducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  );
-
+  const progressBar = document.getElementById('xp-reading-progress');
+  const chapters = [...document.querySelectorAll('.xp-chapter[id]')];
+  const chapterLinks = [...document.querySelectorAll('.xp-rail-link, .ss-nav .nav-link')];
+  const revealElements = [...document.querySelectorAll('.xp-reveal')];
+  const preferReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const scenarioPattern = /^as0[1-8]$/;
+  let framePending = false;
 
-  let updatePending = false;
-
-
-  // ==========================================================
-  // 02 / READING PROGRESS
-  // ==========================================================
-
+  // 01 / Reading progress and current chapter.
   function updateReadingProgress() {
-
     if (!progressBar) return;
-
-    const documentHeight =
-      document.documentElement.scrollHeight;
-
-    const viewportHeight =
-      document.documentElement.clientHeight;
-
-    const scrollableDistance = Math.max(
-      0,
-      documentHeight - viewportHeight
-    );
-
-    const progress = scrollableDistance > 0
-      ? Math.min(
-          1,
-          Math.max(
-            0,
-            window.scrollY / scrollableDistance
-          )
-        )
-      : 0;
-
-    progressBar.style.transform =
-      `scaleX(${progress})`;
-
+    const distance = Math.max(0, root.scrollHeight - root.clientHeight);
+    const progress = distance > 0 ? Math.max(0, Math.min(1, window.scrollY / distance)) : 0;
+    progressBar.style.transform = `scaleX(${progress})`;
   }
 
-
-  // ==========================================================
-  // 03 / ACTIVE CHAPTER NAVIGATION
-  // ==========================================================
-
-  function setActiveChapter(id) {
-
-    railLinks.forEach(link => {
-
-      const isActive =
-        link.getAttribute('href') === `#${id}`;
-
-      link.classList.toggle(
-        'is-current',
-        isActive
-      );
-
-      if (isActive) {
-
-        link.setAttribute(
-          'aria-current',
-          'location'
-        );
-
-      } else {
-
-        link.removeAttribute('aria-current');
-
-      }
-
-    });
-
-  }
-
-
-  function updateActiveChapter() {
-
+  function updateCurrentChapter() {
     if (!chapters.length) return;
-
-    const activationPoint = Math.max(
-      110,
-      Math.min(
-        190,
-        window.innerHeight * 0.24
-      )
-    );
-
-    let activeId = chapters[0].id;
-
-    chapters.forEach(chapter => {
-
-      const rectangle =
-        chapter.getBoundingClientRect();
-
-      if (rectangle.top <= activationPoint) {
-
-        activeId = chapter.id;
-
-      }
-
+    const marker = Math.max(110, Math.min(190, window.innerHeight * 0.24));
+    let chapterId = chapters[0].id;
+    chapters.forEach((chapter) => {
+      if (chapter.getBoundingClientRect().top <= marker) chapterId = chapter.id;
     });
-
-    setActiveChapter(activeId);
-
+    chapterLinks.forEach((link) => {
+      const active = link.getAttribute('href') === `#${chapterId}`;
+      link.classList.toggle('is-current', active);
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
   }
 
-
-  // ==========================================================
-  // 04 / OPTIMIZED PAGE UPDATES
-  // ==========================================================
-
-  function updatePageState() {
-
-    updatePending = false;
-
+  function updatePage() {
+    framePending = false;
     updateReadingProgress();
-    updateActiveChapter();
-
+    updateCurrentChapter();
   }
 
-
-  function schedulePageUpdate() {
-
-    if (updatePending) return;
-
-    updatePending = true;
-
-    window.requestAnimationFrame(
-      updatePageState
-    );
-
+  function scheduleUpdate() {
+    if (framePending) return;
+    framePending = true;
+    window.requestAnimationFrame(updatePage);
   }
 
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener('pageshow', scheduleUpdate);
+  window.addEventListener('load', scheduleUpdate);
 
-  window.addEventListener(
-    'scroll',
-    schedulePageUpdate,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    'resize',
-    schedulePageUpdate
-  );
-
-  window.addEventListener(
-    'pageshow',
-    schedulePageUpdate
-  );
-
-  window.addEventListener(
-    'load',
-    schedulePageUpdate
-  );
-
-
-  // ==========================================================
-  // 05 / CHAPTER REVEAL ANIMATIONS
-  // ==========================================================
-
-  if (
-    !reducedMotion.matches &&
-    'IntersectionObserver' in window
-  ) {
-
+  // 02 / Reveal elements. With reduced motion or missing API, content stays visible.
+  if (!preferReducedMotion.matches && 'IntersectionObserver' in window) {
     root.classList.add('xp-js');
-
-    const revealObserver = new IntersectionObserver(
-
-      entries => {
-
-        entries.forEach(entry => {
-
-          if (!entry.isIntersecting) return;
-
-          entry.target.classList.add(
-            'is-visible'
-          );
-
-          revealObserver.unobserve(
-            entry.target
-          );
-
-        });
-
-      },
-
-      {
-        threshold: 0,
-        rootMargin: '0px 0px -4% 0px'
-      }
-
-    );
-
-    revealElements.forEach(element => {
-
-      revealObserver.observe(element);
-
-    });
-
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -4% 0px' });
+    revealElements.forEach((element) => observer.observe(element));
   } else {
-
-    revealElements.forEach(element => {
-
-      element.classList.add('is-visible');
-
-    });
-
+    revealElements.forEach((element) => element.classList.add('is-visible'));
   }
 
-
-  // ==========================================================
-  // 06 / DEEP LINK NAVIGATION
-  // Chapters | Figures | Security Scenarios
-  // ==========================================================
-
-  function getCurrentHashId() {
-
-    const rawHash =
-      window.location.hash.slice(1);
-
-    if (!rawHash) return '';
-
-    try {
-
-      return decodeURIComponent(rawHash);
-
-    } catch (_) {
-
-      return '';
-
-    }
-
+  // 03 / Accessible deep links to AS01–AS08 and content inside details.
+  function currentHashId() {
+    const value = window.location.hash.slice(1);
+    try { return decodeURIComponent(value); }
+    catch (_) { return ''; }
   }
-
 
   function activateHashTarget() {
-
-    const id = getCurrentHashId();
-
-    if (!id) {
-
-      schedulePageUpdate();
-      return;
-
-    }
-
+    const id = currentHashId();
+    if (!id) return scheduleUpdate();
     const target = document.getElementById(id);
-
-    if (!target) {
-
-      schedulePageUpdate();
-      return;
-
+    if (!target) return scheduleUpdate();
+    if (target.matches('details')) target.open = true;
+    let parent = target.closest('details');
+    while (parent) {
+      parent.open = true;
+      parent = parent.parentElement?.closest('details');
     }
-
-    // Open a parent accordion when a deep link targets
-    // content located inside a collapsed details element.
-
-    const parentDetails = target.closest('details');
-
-    if (parentDetails) {
-
-      parentDetails.open = true;
-
-    }
-
-    // Open the targeted security scenario.
-
-    if (
-      scenarioPattern.test(id) &&
-      target.matches('details.ss-a5-case')
-    ) {
-
-      target.open = true;
-
-    }
-
-    // Make the destination chapter visible immediately.
-
-    const chapter = target.closest('.xp-chapter');
-
-    if (chapter) {
-
-      chapter.classList.add('is-visible');
-
-    }
-
-    // Update navigation and scroll after expansion.
-
+    target.closest('.xp-chapter')?.classList.add('is-visible');
     window.requestAnimationFrame(() => {
-
-      if (scenarioPattern.test(id)) {
-
-        target.scrollIntoView({
-          behavior: 'auto',
-          block: 'start'
-        });
-
-      }
-
-      schedulePageUpdate();
-
+      if (scenarioPattern.test(id)) target.scrollIntoView({ behavior: 'auto', block: 'start' });
+      scheduleUpdate();
     });
-
   }
 
-
-  window.addEventListener(
-    'hashchange',
-    activateHashTarget
-  );
-
-  window.addEventListener(
-    'popstate',
-    activateHashTarget
-  );
-
-
-  // ==========================================================
-  // 07 / SECURITY TEST MATRIX NAVIGATION
-  // AS01 — AS08
-  // ==========================================================
-
-  document.querySelectorAll(
-    '.ss-a5-matrix a[href^="#as0"]'
-  ).forEach(link => {
-
+  document.querySelectorAll('.ss-a5-matrix a[href^="#as0"]').forEach((link) => {
     link.addEventListener('click', () => {
-
-      const id =
-        link.getAttribute('href').slice(1);
-
+      const id = link.getAttribute('href')?.slice(1) || '';
       if (!scenarioPattern.test(id)) return;
-
       const target = document.getElementById(id);
-
-      if (
-        target &&
-        target.matches('details.ss-a5-case')
-      ) {
-
-        target.open = true;
-
-      }
-
+      if (target?.matches('details.ss-a5-case')) target.open = true;
     });
-
   });
-
-
-  // ==========================================================
-  // 08 / ACCORDION STATE UPDATES
-  // Security Scenarios | Demonstration Archive
-  // ==========================================================
-
-  document.querySelectorAll(
-    'details'
-  ).forEach(details => {
-
-    details.addEventListener(
-      'toggle',
-      schedulePageUpdate
-    );
-
+  document.querySelectorAll('details').forEach((element) => {
+    element.addEventListener('toggle', scheduleUpdate);
   });
+  window.addEventListener('hashchange', activateHashTarget);
+  window.addEventListener('popstate', activateHashTarget);
 
+  // 04 / All project images. Report missing paths instead of broken boxes.
+  const imageSelector = [
+    '.ss-page .xp-overview-figure img',
+    '.ss-page .ss-a8-shot img',
+    '.ss-page .ss-a8-case img'
+  ].join(', ');
+  const projectImages = [...document.querySelectorAll(imageSelector)];
 
-  // ==========================================================
-  // 09 / PROJECT FIGURE VALIDATION
-  // Chapters 01–08
-  // ==========================================================
-
-  const projectImages = [
-    ...document.querySelectorAll(
-      '.ss-page .xp-overview-figure img, ' +
-      '.ss-page .ss-a8-shot img, ' +
-      '.ss-page .ss-a8-case img'
-    )
-  ];
-
-
-  projectImages.forEach(img => {
-
+  projectImages.forEach((img) => {
     function handleImageError() {
-
-      if (img.dataset.missing === 'true') {
-        return;
-      }
-
+      if (img.dataset.missing === 'true') return;
       img.dataset.missing = 'true';
-
+      const path = img.getAttribute('src') || '(unknown)';
       const figure = img.closest('figure');
-
       const imageLink = img.closest('a');
-
-      const imagePath =
-        img.getAttribute('src') || 'Unknown image';
-
-      const holder =
-        imageLink || img.parentElement;
-
-      if (!holder) return;
-
-      // Hide the unavailable image.
-
+      const parent = imageLink || img.parentElement;
+      if (!parent) return;
       img.hidden = true;
       img.style.display = 'none';
-
-
-      // Disable its full-size image link.
-
       if (imageLink) {
-
         imageLink.removeAttribute('href');
         imageLink.removeAttribute('target');
-
-        imageLink.setAttribute(
-          'aria-disabled',
-          'true'
-        );
-
-        imageLink.classList.add(
-          'ss-disabled-image-link'
-        );
-
+        imageLink.classList.add('ss-disabled-image-link');
+        imageLink.setAttribute('aria-disabled', 'true');
       }
-
-
-      // Insert a visible fallback message.
-
       const fallback = document.createElement('div');
-
       fallback.className = 'ss-image-fallback';
-
-      fallback.setAttribute(
-        'role',
-        'status'
-      );
-
-      fallback.textContent =
-        `Image unavailable: ${imagePath}. ` +
-        'Verify the exact filename and repository path.';
-
-      holder.appendChild(fallback);
-
-
-      // Disable any additional full-size figure link.
-
-      const fullSizeLink = figure?.querySelector(
-        '.xp-figure-open'
-      );
-
-      if (fullSizeLink) {
-
-        fullSizeLink.removeAttribute('href');
-        fullSizeLink.removeAttribute('target');
-
-        fullSizeLink.classList.add(
-          'ss-disabled-image-link'
-        );
-
-        fullSizeLink.setAttribute(
-          'aria-disabled',
-          'true'
-        );
-
-      }
-
-
-      console.warn(
-        '[ShadowScope AM] Missing image:',
-        imagePath
-      );
-
-      schedulePageUpdate();
-
+      fallback.setAttribute('role', 'status');
+      fallback.textContent = `Image unavailable: ${path}. Check the exact filename and repository path.`;
+      parent.appendChild(fallback);
+      figure?.querySelectorAll('.xp-figure-open').forEach((link) => {
+        link.removeAttribute('href');
+        link.removeAttribute('target');
+        link.classList.add('ss-disabled-image-link');
+        link.setAttribute('aria-disabled', 'true');
+      });
+      console.warn('[ShadowScope AM] Missing image:', path);
+      scheduleUpdate();
     }
-
-
-    img.addEventListener(
-      'error',
-      handleImageError,
-      { once: true }
-    );
-
-
-    img.addEventListener(
-      'load',
-      schedulePageUpdate,
-      { once: true }
-    );
-
-
-    // Detect an image that failed before the listener
-    // was registered.
-
-    if (
-      img.complete &&
-      img.naturalWidth === 0
-    ) {
-
-      handleImageError();
-
-    }
-
+    img.addEventListener('error', handleImageError, { once: true });
+    img.addEventListener('load', scheduleUpdate, { once: true });
+    if (img.complete && img.naturalWidth === 0) handleImageError();
   });
 
+  // 05 / Keyboard-operable lightbox. Ordinary image links still work if JS is unavailable.
+  if ('HTMLDialogElement' in window && typeof HTMLDialogElement.prototype.showModal === 'function') {
+    const imageLinks = projectImages.map((img) => img.closest('a[href]')).filter(Boolean);
+    if (imageLinks.length) {
+      const dialog = document.createElement('dialog');
+      dialog.className = 'ss-lightbox';
+      dialog.setAttribute('aria-label', 'Project figure viewer');
+      const frame = document.createElement('div');
+      frame.className = 'ss-lightbox-frame';
+      const bar = document.createElement('div');
+      bar.className = 'ss-lightbox-bar';
+      const label = document.createElement('strong');
+      label.className = 'ss-lightbox-label';
+      const controls = document.createElement('div');
+      controls.className = 'ss-lightbox-controls';
+      const previous = document.createElement('button');
+      previous.type = 'button';
+      previous.textContent = '‹';
+      previous.setAttribute('aria-label', 'Previous project figure');
+      const next = document.createElement('button');
+      next.type = 'button';
+      next.textContent = '›';
+      next.setAttribute('aria-label', 'Next project figure');
+      const close = document.createElement('button');
+      close.type = 'button';
+      close.textContent = '×';
+      close.setAttribute('aria-label', 'Close image viewer');
+      controls.append(previous, next, close);
+      bar.append(label, controls);
+      const imageWrap = document.createElement('div');
+      imageWrap.className = 'ss-lightbox-image-wrap';
+      const image = document.createElement('img');
+      image.className = 'ss-lightbox-image';
+      image.alt = '';
+      imageWrap.appendChild(image);
+      const footer = document.createElement('div');
+      footer.className = 'ss-lightbox-footer';
+      const counter = document.createElement('span');
+      const original = document.createElement('a');
+      original.textContent = 'OPEN ORIGINAL ↗';
+      original.target = '_blank';
+      original.rel = 'noopener noreferrer';
+      footer.append(counter, original);
+      frame.append(bar, imageWrap, footer);
+      dialog.appendChild(frame);
+      document.body.appendChild(dialog);
+      let active = 0;
+      let focusedBefore = null;
 
-  // ==========================================================
-  // 10 / INITIAL PAGE STATE
-  // ==========================================================
+      function showImage(index) {
+        active = (index + imageLinks.length) % imageLinks.length;
+        const link = imageLinks[active];
+        const source = link.querySelector('img');
+        if (!source || source.dataset.missing === 'true') return;
+        const figure = link.closest('figure');
+        label.textContent = figure?.querySelector('h3,h4')?.textContent.trim() || 'ShadowScope AM — Engineering Figure';
+        image.src = source.currentSrc || source.src;
+        image.alt = source.alt || label.textContent;
+        original.href = link.href;
+        counter.textContent = `FIGURE ${String(active + 1).padStart(2, '0')} / ${String(imageLinks.length).padStart(2, '0')}`;
+      }
+      imageLinks.forEach((link, index) => {
+        link.addEventListener('click', (event) => {
+          if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          const source = link.querySelector('img');
+          if (!source || source.dataset.missing === 'true') return;
+          event.preventDefault();
+          focusedBefore = document.activeElement;
+          showImage(index);
+          if (!dialog.open) dialog.showModal();
+          document.body.classList.add('ss-lightbox-open');
+          close.focus();
+        });
+      });
+      previous.addEventListener('click', () => showImage(active - 1));
+      next.addEventListener('click', () => showImage(active + 1));
+      close.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') { event.preventDefault(); showImage(active - 1); }
+        if (event.key === 'ArrowRight') { event.preventDefault(); showImage(active + 1); }
+      });
+      dialog.addEventListener('close', () => {
+        document.body.classList.remove('ss-lightbox-open');
+        focusedBefore?.focus?.();
+      });
+    }
+  }
 
   activateHashTarget();
-
-  schedulePageUpdate();
-
+  scheduleUpdate();
 })();
-
-
-/* ============================================================
-   END — SHADOWSCOPE AM JAVASCRIPT
-============================================================ */
+/* END — SHADOWSCOPE AM */
